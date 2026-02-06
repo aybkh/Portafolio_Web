@@ -1,6 +1,6 @@
 # 🌐 Ayoub Jerari — iOS Glass Portfolio
 <img width="1902" height="904" alt="Image" src="https://github.com/user-attachments/assets/f7807b67-d3ce-4d13-b70e-1df0a1498336" />
-Portafolio personal inspirado en la interfaz de **iOS16**, diseñado con un enfoque moderno, responsivo y minimalista.  
+Portafolio personal inspirado en la interfaz de **iOS 26**, diseñado con un enfoque moderno, responsivo y minimalista.  
 Desarrollado con **HTML**, **CSS** y **JavaScript**, integra una estética “glassmorphism” con animaciones suaves, modo claro/oscuro y una navegación dinámica tipo *Dynamic Island*.
 
 ---
