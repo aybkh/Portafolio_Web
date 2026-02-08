@@ -26,7 +26,8 @@ const I18N_DATA = {
             p1_desc: "Portafolio inspirado en iOS26 con HTML, CSS y JS. Modo oscuro/claro, selector de idioma y Dynamic Island como navegación.",
             p2_desc: "Aplicación de gestión hotelera con Python + PostgreSQL. Reservas, usuarios, seguridad, replicación y backups automáticos.",
             p3_desc: "Juego de acción con tres tipos de enemigos y mejoras de personaje. Hecho en Unity.",
-            p4_desc: "Shooter 2D con power-ups, sistema de puntuación y oleadas. Hecho en Unity.",
+            p5_desc: "Sistema TPV integral para restaurantes. Gestión de pedidos en tiempo real, pantalla de cocina (KDS), panel de administración y despliegue automático. Stack: Python (FastAPI), React y PostgreSQL.",
+            p6_desc: "Carta digital estática sincronizada con el TPV local. Optimizada para móviles (QR), SEO y carga instantánea. Multiidioma y responsive."
         },
         contact: { linkedin: "LinkedIn", email: "Email", github: "GitHub", whatsapp: "WhatsApp" }
     },
@@ -54,10 +55,11 @@ const I18N_DATA = {
         },
         skills: { net: "Networking", sys: "Systems", cloud: "Cloud", code: "Programming", db: "Databases", prod: "Productivity", hwvirt: "Virtualization", langs: "Languages" },
         projects: {
-            p1_desc: "Personal portfolio inspired by the iOS26 interface, developed with HTML, CSS, and JavaScript. Presents professional experience, skills, and projects in a modern and responsive design. Includes dark/light mode, language selection, and an interactive ‘Dynamic Island’ for navigation.",
-            p2_desc: "Complete application for the integral management of a hotel chain. Includes control of reservations, customers, staff, services, and data auditing. Developed in Python (Tkinter) with a PostgreSQL database, it incorporates security, high availability, replication, automated backups, and exports in JSON/PDF.",
-            p3_desc: "Action game set in the 18th century, starring ERAY, a character with magical abilities to defend his home. Includes three types of enemies with different attacks and items that improve the player's statistics. Developed with Unity, available in free executable format.",
-            p4_desc: "2D action game developed with Unity, where players control a spaceship that must face waves of enemies. The game includes power-ups and upgrades for the ship, as well as a scoring system based on survival and enemy destruction. Available in free executable format.",
+            p1_desc: "Personal portfolio inspired by the iOS26 interface, developed with HTML, CSS, and JavaScript. Includes dark/light mode, language selection, and an interactive ‘Dynamic Island’ for navigation.",
+            p2_desc: "Complete application for hotel management. Includes reservations, customers, staff, services, and data auditing. Developed in Python (Tkinter) with PostgreSQL, security features, replication, and automated backups.",
+            p3_desc: "Action game set in the 18th century, starring ERAY. Includes three types of enemies and character upgrades. Developed with Unity.",
+            p5_desc: "Comprehensive POS system for restaurants. Real-time order management, Kitchen Display System (KDS), admin dashboard, and automated deployment. Stack: Python (FastAPI), React, and PostgreSQL.",
+            p6_desc: "High-performance static digital menu synced with the local POS. Optimized for mobile (QR), SEO, and instant loading. Multi-language and responsive design."
         },
         contact: { linkedin: "LinkedIn", email: "Email", github: "GitHub", whatsapp: "WhatsApp" }
     },
@@ -88,7 +90,8 @@ const I18N_DATA = {
             p1_desc: "Portafoli inspirat en iOS26 amb HTML, CSS i JS. Mode fosc/claro, selector d'idioma i Dynamic Island com a navegació.",
             p2_desc: "Aplicació de gestió hotelera amb Python + PostgreSQL. Reserves, usuaris, seguretat, replicació i còpies de seguretat automàtiques.",
             p3_desc: "Joc d'acció amb tres tipus d'enemics i millores de personatge. Fet en Unity.",
-            p4_desc: "Shooter 2D amb power-ups, sistema de puntuación i onades. Fet en Unity.",
+            p5_desc: "Sistema TPV integral per a restaurants. Gestió de comandes en temps real, pantalla de cuina (KDS), tauler d'administració i desplegament automàtic. Amb Python (FastAPI), React i PostgreSQL.",
+            p6_desc: "Carta digital estàtica d'alt rendiment sincronitzada amb el TPV local. Optimitzada per a mòbils (QR), SEO i càrrega instantània. Multiidioma i disseny responsive."
         },
         contact: { linkedin: "LinkedIn", email: "Email", github: "GitHub", whatsapp: "WhatsApp" }
     },
@@ -116,10 +119,11 @@ const I18N_DATA = {
         },
         skills: { net: "Réseaux", sys: "Systèmes", cloud: "Cloud", code: "Programmation", db: "Bases de données", prod: "Productivité", hwvirt: "Virtualisation", langs: "Langues" },
         projects: {
-            p1_desc: "Portfolio personnel inspiré de l'interface iOS26, développé avec HTML, CSS et JavaScript. Il présente l'expérience professionnelle, les compétences et les projets dans un design moderne et réactif. Il comprend un mode sombre/clair, une sélection de langue et une « Dynamic Island » interactive pour la navigation.",
-            p2_desc: "Application complète pour la gestion intégrale d'une chaîne hôtelière. Elle comprend le contrôle des réservations, des clients, du personnel, des services et l'audit des données. Développée en Python (Tkinter) avec une base de données PostgreSQL, elle intègre la sécurité, la haute disponibilité, la réplication, les sauvegardes automatisées et les exportations en JSON/PDF.",
-            p3_desc: "Jeu d'action se déroulant au XVIIIe siècle, mettant en scène ERAY, un personnage doté de pouvoirs magiques pour défendre son foyer. Il comprend trois types d'ennemis avec des attaques différentes et des objets qui améliorent les statistiques du joueur. Développé avec Unity, disponible en format exécutable gratuit.",
-            p4_desc: "Jeu d'action en 2D développé avec Unity, dans lequel les joueurs contrôlent un vaisseau spatial qui doit affronter des vagues d'ennemis. Le jeu comprend des bonus et des améliorations pour le vaisseau, ainsi qu'un système de score basé sur la survie et la destruction des ennemis. Disponible en format exécutable gratuit.",
+            p1_desc: "Portfolio personnel inspiré de l'interface iOS26, développé avec HTML, CSS et JavaScript. Il présente l'expérience professionnelle, les compétences et les projets dans un design moderne et réactif. Il comprend un mode sombre/clair, et une « Dynamic Island ».",
+            p2_desc: "Application complète pour la gestion intégrale d'une chaîne hôtelière. Elle comprend le contrôle des réservations, des clients, du personnel, des services et l'audit des données. Développée en Python (Tkinter) avec PostgreSQL.",
+            p3_desc: "Jeu d'action se déroulant au XVIIIe siècle, mettant en scène ERAY, un personnage doté de pouvoirs magiques pour défendre son foyer. Développé avec Unity.",
+            p5_desc: "Système de point de vente complet pour les restaurants. Gestion des commandes en temps réel, écran de cuisine (KDS), tableau de bord d'administration et déploiement automatisé. Développé avec Python (FastAPI), React et PostgreSQL.",
+            p6_desc: "Menu numérique statique haute performance synchronisé avec le point de vente local. Optimisé pour les mobiles (QR), le référencement et le chargement instantané. Multilingue et responsive design."
         },
         contact: { linkedin: "LinkedIn", email: "Email", github: "GitHub", whatsapp: "WhatsApp" }
     },
@@ -147,10 +151,11 @@ const I18N_DATA = {
         },
         skills: { net: "Netzwerke", sys: "Systeme", cloud: "Cloud", code: "Programmierung", db: "Datenbanken", prod: "Produktivität", hwvirt: "Virtualisierung", langs: "Sprachen" },
         projects: {
-            p1_desc: "Persönliches Portfolio, inspiriert von der Benutzeroberfläche von iOS26, entwickelt mit HTML, CSS und JavaScript. Präsentiert Berufserfahrung, Fähigkeiten und Projekte in einem modernen und responsiven Design. Enthält einen Dunkel-/Hellmodus, Sprachauswahl und eine interaktive “Dynamic Island“ für die Navigation.",
-            p2_desc: "Anwendung zur umfassenden Verwaltung einer Hotelkette. Sie umfasst die Verwaltung von Buchungen, Gästen, Personal, Dienstleistungen und die Datenprüfung. Entwickelt in Python (Tkinter) mit einer PostgreSQL-Datenbank, integriert sie Sicherheit, hohe Verfügbarkeit, Replikation, automatisierte Backups und Exporte im JSON/PDF-Format.",
-            p3_desc: "Action-Spiel, das im 18. Jahrhundert spielt und ERAY, einen Charakter mit magischen Kräften zur Verteidigung seines Heims, in den Mittelpunkt stellt. Es umfasst drei Arten von Feinden mit unterschiedlichen Angriffen und Objekten, die die Statistiken des Spielers verbessern. Entwickelt mit Unity, verfügbar im kostenlosen ausführbaren Format.",
-            p4_desc: "2D-Action-Spiel, das mit Unity entwickelt wurde, in dem die Spieler ein Raumschiff steuern, das gegen Wellen von Feinden antreten muss. Das Spiel umfasst Boni und Verbesserungen für das Raumschiff sowie ein Punktesystem, das auf Überleben und Zerstörung von Feinden basiert. Verfügbar im kostenlosen ausführbaren Format.",
+            p1_desc: "Persönliches Portfolio, inspiriert von der Benutzeroberfläche von iOS26, entwickelt mit HTML, CSS und JavaScript. Enthält einen Dunkel-/Hellmodus, Sprachauswahl und eine interaktive “Dynamic Island“.",
+            p2_desc: "Anwendung zur umfassenden Verwaltung einer Hotelkette. Sie umfasst die Verwaltung von Buchungen, Gästen, Personal, Dienstleistungen und die Datenprüfung. Entwickelt in Python (Tkinter) mit einer PostgreSQL-Datenbank.",
+            p3_desc: "Action-Spiel, das im 18. Jahrhundert spielt und ERAY, einen Charakter mit magischen Kräften zur Verteidigung seines Heims, in den Mittelpunkt stellt. Entwickelt mit Unity.",
+            p5_desc: "Umfassendes Kassensystem für Restaurants. Bestellmanagement in Echtzeit, Küchendisplay (KDS), Admin-Dashboard und automatisierte Bereitstellung. Entwickelt mit Python (FastAPI), React und PostgreSQL.",
+            p6_desc: "Leistungsstarkes statisches digitales Menü, synchronisiert mit dem lokalen Kassensystem. Optimiert für Mobilgeräte (QR), SEO und sofortiges Laden. Mehrsprachiges und responsives Design."
         },
         contact: { linkedin: "LinkedIn", email: "E-Mail", github: "GitHub", whatsapp: "WhatsApp" }
     }
