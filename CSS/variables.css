@@ -1,0 +1,33 @@
+/* Variables base (Dark) */
+:root {
+    --panel: #0f1420;
+    --text: #eaf0ff;
+    --muted: #d1e1ff;
+
+    --glass: rgba(255, 255, 255, 0.081);
+    --border: rgba(255, 255, 255, 0.179);
+
+    --accent: #78e7ff;
+    --accent2: #8b7bff;
+
+    --radius: 24px;
+    --max: 1120px;
+
+    --blur: 18px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+
+    --bp-tablet: 900px;
+    --bp-mobile: 600px;
+}
+
+/* Modo claro (override) */
+:root[data-theme="light"] {
+    --text: #0b0d12;
+    --muted: #3f4c63;
+
+    --glass: rgba(0, 0, 0, 0.05);
+    --border: rgba(0, 18, 132, 0.10);
+
+    --accent: #8700c1;
+    --accent2: #6600ff;
+}
