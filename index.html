@@ -1,39 +1,41 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <title>Ayoub Jerari</title>
   <meta name="theme-color" content="#0b0d12" />
-  <link rel="icon" href="img/favicon.png" />
+  <link rel="icon" href="img/favicon.webp" />
   <link rel="stylesheet" href="CSS/styles.css" />
 </head>
+
 <body>
 
   <!-- Dynamic Island como NAV -->
   <div class="island" id="island" aria-live="polite">
     <button class="pill" id="islandBtn" aria-expanded="false">
-    <span class="dot" aria-hidden="true"></span>
-    <img class="brand-logo" src="img/logos/A.png" alt="Logo">
-    <span class="brand-left"><strong>AYOUB K. I. J.</strong></span>
+      <span class="dot" aria-hidden="true"></span>
+      <img class="brand-logo" src="img/logos/A.webp" alt="Logo">
+      <span class="brand-left"><strong>AYOUB K. I. J.</strong></span>
 
 
-    <span class="label-compact"><strong>AYOUB K. I. J.</strong></span>
+      <span class="label-compact"><strong>AYOUB K. I. J.</strong></span>
 
-    <nav class="label-expanded pill-nav" aria-label="Navegación">
+      <nav class="label-expanded pill-nav" aria-label="Navegación">
         <a href="#experiencia" data-i18n="nav.experience">Experiencia</a>
         <a href="#skills" data-i18n="nav.skills">Skills</a>
         <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
         <a href="#contacto" data-i18n="nav.contact">Contacto</a>
-    </nav>
-    <select id="langSelect" class="lang" aria-label="Idioma">
+      </nav>
+      <select id="langSelect" class="lang" aria-label="Idioma">
         <option value="es" selected>ES</option>
         <option value="en">EN</option>
         <option value="ca">CAT</option>
         <option value="fr">FR</option>
         <option value="de">DE</option>
-    </select>
-        <span class="switch" id="themeToggle" aria-label="Cambiar tema"><i></i></span>
+      </select>
+      <span class="switch" id="themeToggle" aria-label="Cambiar tema"><i></i></span>
     </button>
   </div>
 
@@ -43,342 +45,62 @@
       <div class="hero-grid">
         <div class="hero-text">
           <h1><span data-i18n="hero.title_prefix">Hola, soy </span><span class="accent"> Ayoub K. I. J.</span></h1>
-          <p class="lead" data-i18n="hero.subtitle">Especialista en soporte y administración IT, con experiencia en entornos corporativos y públicos. Gestiono sistemas Linux y Windows, redes, Microsoft 365, hardware y bases de datos, asegurando operaciones estables y eficientes. Me motiva resolver incidencias técnicas y mejorar la experiencia del usuario.</p>
+          <p class="lead" data-i18n="hero.subtitle">Especialista en soporte y administración IT, con experiencia en
+            entornos corporativos y públicos. Gestiono sistemas Linux y Windows, redes, Microsoft 365, hardware y bases
+            de datos, asegurando operaciones estables y eficientes. Me motiva resolver incidencias técnicas y mejorar la
+            experiencia del usuario.</p>
           <div class="cta">
             <a class="btn" href="#proyectos" data-i18n="cta.view">Ver proyectos</a>
-            <a class="btn ghost" href="https://drive.usercontent.google.com/download?id=1SunqfaSPK-aS-m922n-YBwUVPDF3zk8R&export=download&authuser=0" target="_blank" rel="noopener" data-i18n="cta.cv">Descargar CV</a>
+            <a class="btn ghost"
+              href="https://drive.usercontent.google.com/download?id=1SunqfaSPK-aS-m922n-YBwUVPDF3zk8R&export=download&authuser=0"
+              target="_blank" rel="noopener" data-i18n="cta.cv">Descargar CV</a>
           </div>
 
           <!-- Logos de tecnologías principales -->
           <ul class="logo-row">
-            <li><img src="img/logos/windows.png" alt="Windows Server"></li>
-            <li><img src="img/logos/linux.png" alt="Linux"></li>
-            <li><img src="img/logos/Python.png" alt="Python"></li>
-            <li><img src="img/logos/sql.png" alt="SQL"></li>
-            <li><img src="img/logos/git_logo.png" alt="Git"></li>
-            <li><img src="img/logos/docker.png" alt="Docker"></li>
-            <li><img src="img/logos/Microsoft_365.png" alt="Microsoft 365"></li>
+            <li><img src="img/logos/windows.webp" alt="Windows Server"></li>
+            <li><img src="img/logos/linux.webp" alt="Linux"></li>
+            <li><img src="img/logos/Python.webp" alt="Python"></li>
+            <li><img src="img/logos/sql.webp" alt="SQL"></li>
+            <li><img src="img/logos/git_logo.webp" alt="Git"></li>
+            <li><img src="img/logos/docker.webp" alt="Docker"></li>
+            <li><img src="img/logos/Microsoft_365.webp" alt="Microsoft 365"></li>
 
           </ul>
         </div>
 
         <figure class="hero-photo glass">
-          <img src="img/foto.png" alt="Foto de Ayoub">
+          <img src="img/foto.webp" alt="Foto de Ayoub">
         </figure>
       </div>
     </section>
 
-<!-- EXPERIENCIA: dos cajas -->
-<section id="experiencia" class="section">
-  <h2 data-i18n="sections.exp">Experiencia</h2>
-  <div class="grid exp-grid">
-
-    <!-- HIPRA -->
-    <article class="card exp">
-      <header class="exp-head">
-        <div class="exp-info">
-            <h3>Laboratorios HIPRA, S.A.</h3>
-            <p class="muted">Amer / Aiguaviva, Girona</p>
-            <p class="muted" data-i18n="exp.e1_place">Junio 2025 - Presente</p>
-        </div>
-        <div class="exp-role">
-          <span class="badge" data-i18n="exp.e1_role">IT Workplace Intern</span>
-          <a href="https://www.hipra.com/" target="_blank"><img src="img/logos/hipra.png" alt="HIPRA" class="exp-logo"></a>
-        </div>
-      </header>
-      <ul class="tasks">
-        <li data-i18n="exp.e1_t1">Soporte técnico de segundo nivel (hardware, software y conectividad).</li>
-        <li data-i18n="exp.e1_t2">Gestión de incidencias mediante Remedy y SmartIT.</li>
-        <li data-i18n="exp.e1_t3">Preparación y despliegue de equipos (portátiles, IGEL, periféricos).</li>
-        <li data-i18n="exp.e1_t4">Configuración de móviles iOS/Android, teléfonos Cisco y escáneres.</li>
-        <li data-i18n="exp.e1_t5">Configuración de impresoras RFID y térmicas (Zebra, Honeywell).</li>
-        <li data-i18n="exp.e1_t6">Gestión de garantías, reparaciones y coordinación con proveedores.</li>
-        <li data-i18n="exp.e1_t7">Colaboración en políticas de seguridad, parches y actualizaciones.</li>
-      </ul>
-    </article>
-
-    <!-- AJUNTAMENT -->
-    <article class="card exp">
-      <header class="exp-head">
-        <div class="exp-info">
-          <h3>Ajuntament de Malgrat de Mar</h3>
-          <p class="muted">Malgrat de Mar, Barcelona</p>
-          <p class="muted" data-i18n="exp.e2_place">Noviembre 2023 – Abril 2024</p>
-        </div>
-        <div class="exp-role">
-          <span class="badge" data-i18n="exp.e2_role">IT Helpdesk Intern</span>
-          <a href="https://www.ajmalgrat.cat/" target="_blank"><img src="img/logos/amm.svg" alt="Ajuntament de Malgrat de Mar" class="exp-logo"></a>
-        </div>
-      </header>
-      <ul class="tasks">
-        <li data-i18n="exp.e2_t1">Soporte técnico presencial y remoto para personal municipal.</li>
-        <li data-i18n="exp.e2_t2">Instalación y mantenimiento de equipos y periféricos.</li>
-        <li data-i18n="exp.e2_t3">Administración básica de sistemas y permisos de usuario.</li>
-        <li data-i18n="exp.e2_t4">Uso de herramientas Linux para diagnóstico y resolución de fallos.</li>
-        <li data-i18n="exp.e2_t5">Documentación de procedimientos y creación de guías de usuario.</li>
-        <li data-i18n="exp.e2_t6">Preparación y despliegue de equipos (PCs, portátiles, periféricos).</li>
-      </ul>
-    </article>
-
-  </div>
-</section>
+    <!-- EXPERIENCIA: dos cajas -->
+    <section id="experiencia" class="section">
+      <h2 data-i18n="sections.exp">Experiencia</h2>
+      <div class="grid exp-grid">
 
 
-<section id="skills" class="section">
-  <h2 data-i18n="sections.sk">Skills</h2>
 
-  <div class="skills-pills">
-    <!-- Redes -->
-    <button class="skill-pill" aria-expanded="false">
-      <div class="pill-left">
-        <img src="img/logos/Network.png" alt="" aria-hidden="true">
-        <span class="pill-title" data-i18n="skills.net">Redes</span>
       </div>
-      <div class="pill-body">
-        <img src="img/logos/dns.png" alt="DNS" loading="lazy">
-        <img src="img/logos/dhcp.png" alt="DHCP" loading="lazy">
-        <img src="img/logos/pfsense.png" alt="pfSense" loading="lazy">
-        <img src="img/logos/cisco.png" alt="Cisco" loading="lazy">
-        <img src="img/logos/grandstream.png" alt="Grandstream" loading="lazy">
-        <img src="img/logos/ssh.png" alt="SSH" loading="lazy">
-        <img src="img/logos/nmap.png" alt="Nmap" loading="lazy">
-        <img src="img/logos/Wireshark.png" alt="Wireshark" loading="lazy">
-      </div>
-    </button>
+    </section>
 
-    <!-- Sistemas -->
-    <button class="skill-pill" aria-expanded="false">
-      <div class="pill-left">
-        <img src="img/logos/os.png" alt="Operating Systems" aria-hidden="true">
-        <span class="pill-title" data-i18n="skills.sys">Sistemas</span>
-      </div>
-      <div class="pill-body">
-        <img src="img/logos/linux.png" alt="Linux" loading="lazy">
-        <img src="img/logos/windows.png" alt="Windows" loading="lazy">
-        <img src="img/logos/macos.png" alt="macOS" loading="lazy">
-        <img src="img/logos/Android.png" alt="Android" loading="lazy">
-        <img src="img/logos/Bash.png" alt="Bash" loading="lazy">
-        <img src="img/logos/Powershell.png" alt="PowerShell" loading="lazy">
-        <img src="img/logos/Microsoft_365.png" alt="Microsoft 365" loading="lazy">
-        <img src="img/logos/IOS.png" alt="iOS" loading="lazy">
-      </div>
-    </button>
 
-    <!-- Cloud -->
-    <button class="skill-pill" aria-expanded="false">
-      <div class="pill-left">
-        <img src="img/logos/cloud.png" alt="" aria-hidden="true">
-        <span class="pill-title" data-i18n="skills.cloud.title">Cloud</span>
-      </div>
-      <div class="pill-body">
-        <img src="img/logos/Amazon.png" alt="AWS" loading="lazy">
-        <img src="img/logos/Azure.png" alt="Azure" loading="lazy">
-        <img src="img/logos/google.png" alt="Google Cloud" loading="lazy">
-        <img src="img/logos/cloudflare.png" alt="Cloudflare" loading="lazy">
-        <img src="img/logos/docker.png" alt="Docker" loading="lazy">
-        <img src="img/logos/Kubernetes.webp" alt="Kubernetes" loading="lazy">
-        <img src="img/logos/Terraform.webp" alt="Terraform" loading="lazy">
-        <img src="img/logos/Ansible.png" alt="Ansible" loading="lazy">
-      </div>
-    </button>
+    <section id="skills" class="section">
+      <h2 data-i18n="sections.sk">Skills</h2>
 
-    <!-- Programación -->
-    <button class="skill-pill" aria-expanded="false">
-      <div class="pill-left">
-        <img src="img/logos/code.png" alt="" aria-hidden="true">
-        <span class="pill-title" data-i18n="skills.code">Programación</span>
-      </div>
-      <div class="pill-body">
-        <img src="img/logos/html-css.webp" alt="HTML5-CSS3" loading="lazy">
-        <img src="img/logos/Csharp.png" alt="CSharp" loading="lazy">
-        <img src="img/logos/Python.png" alt="Python" loading="lazy">
-        <img src="img/logos/js.png" alt="JavaScript" loading="lazy">
-        <img src="img/logos/PHP.png" alt="PHP" loading="lazy">
-        <img src="img/logos/JSON.png" alt="JSON" loading="lazy">
-        <img src="img/logos/github.png" alt="GitHub" loading="lazy">
-        <img src="img/logos/vscode.png" alt="VSCode" loading="lazy">
-      </div>
-    </button>
+      <div class="skills-pills">
 
-    <!-- BBDD -->
-    <button class="skill-pill" aria-expanded="false">
-      <div class="pill-left">
-        <img src="img/logos/Database.png" alt="" aria-hidden="true">
-        <span class="pill-title" data-i18n="skills.db">BBDD</span>
-      </div>
-      <div class="pill-body">
-        <img src="img/logos/sql.png" alt="SQL" loading="lazy">
-        <img src="img/logos/Postgresql.png" alt="PostgreSQL" loading="lazy">
-        <img src="img/logos/oracle.png" alt="Oracle" loading="lazy">
-        <img src="img/logos/mysql.png" alt="MySQL" loading="lazy">
-        <img src="img/logos/mongodb.png" alt="MongoDB" loading="lazy">
-        <img src="img/logos/Sqlite.png" alt="SQLite" loading="lazy">
-        <img src="img/logos/sqlserver.png" alt="SQL Server" loading="lazy">
-        <img src="img/logos/access.png" alt="Access" loading="lazy">
-      </div>
-    </button>
 
-    <!-- IA -->
-    <button class="skill-pill" aria-expanded="false">
-      <div class="pill-left">
-        <img src="img/logos/IA.png" alt="" aria-hidden="true">
-        <span class="pill-title">IA</span>
       </div>
-      <div class="pill-body">
-        <img src="img/logos/n8n.png" alt="n8n" loading="lazy">
-        <img src="img/logos/ChatGPT.png" alt="ChatGPT" loading="lazy">
-        <img src="img/logos/gemini.webp" alt="Gemini" loading="lazy">
-        <img src="img/logos/copilot.webp" alt="Copilot" loading="lazy">
-        <img src="img/logos/ollama.png" alt="Ollama" loading="lazy">
-        <img src="img/logos/notion.png" alt="Notion" loading="lazy">
-        <img src="img/logos/meta.png" alt="Meta" loading="lazy">
-        <img src="img/logos/openai.png" alt="OpenAI" loading="lazy">
-      </div>
-    </button>
-
-    <!-- Productivity -->
-    <button class="skill-pill" aria-expanded="false">
-      <div class="pill-left">
-        <img src="img/logos/productivity.png" alt="" aria-hidden="true">
-        <span class="pill-title" data-i18n="skills.prod">Productividad</span>
-      </div>
-      <div class="pill-body">
-        <img src="img/logos/Microsoft_Project.png" alt="Microsoft Project" loading="lazy">
-        <img src="img/logos/excel.png" alt="Excel" loading="lazy">
-        <img src="img/logos/word.png" alt="Word" loading="lazy">
-        <img src="img/logos/teams.png" alt="Teams" loading="lazy">
-        <img src="img/logos/sharepoint.png" alt="SharePoint" loading="lazy">
-        <img src="img/logos/webex.png" alt="Webex" loading="lazy">
-        <img src="img/logos/clickup.png" alt="ClickUp" loading="lazy">
-        <img src="img/logos/jira-logo.png" alt="Jira" loading="lazy">
-      </div>
-    </button>
-
-    <!-- Hardware Virtualization -->
-    <button class="skill-pill" aria-expanded="false">
-      <div class="pill-left">
-        <img src="img/logos/virtualization.png" alt="" aria-hidden="true">
-        <span class="pill-title" data-i18n="skills.hwvirt">Hardware <br/> Virtualización</span>
-      </div>
-      <div class="pill-body">
-        <img src="img/logos/vmware.png" alt="VMware" loading="lazy">
-        <img src="img/logos/vbox.png" alt="VirtualBox" loading="lazy">
-        <img src="img/logos/zebra.png" alt="Zebra" loading="lazy">
-        <img src="img/logos/honeywell.png" alt="Honeywell" loading="lazy">
-        <img src="img/logos/raspberry.png" alt="Raspberry" loading="lazy">
-        <img src="img/logos/igel-logo.png" alt="IGEL" loading="lazy">
-        <img src="img/logos/paralels.png" alt="Paralels" loading="lazy">
-        <img src="img/logos/scada.png" alt="SCADA" loading="lazy">
-      </div>
-    </button>
-
-    <!-- Languages -->
-    <button class="skill-pill" aria-expanded="false">
-      <div class="pill-left">
-        <img src="img/logos/language.png" alt="" aria-hidden="true">
-        <span class="pill-title" data-i18n="skills.langs">Idiomas</span>
-      </div>
-      <div class="pill-body">
-        <img src="img/logos/AR.png" alt="AR" loading="lazy">
-        <img src="img/logos/EN.png" alt="EN" loading="lazy">
-        <img src="img/logos/ES.webp" alt="ES" loading="lazy">
-        <img src="img/logos/CAT.png" alt="CAT" loading="lazy">
-        <img src="img/logos/FR.png" alt="FR" loading="lazy">
-        <img src="img/logos/DE.webp" alt="DE" loading="lazy">
-      </div>
-    </button>
-
-  </div>
-</section>
+    </section>
 
 
     <!-- PROYECTOS: dos cajas -->
     <section id="proyectos" class="section">
       <h2 data-i18n="sections.proj">Proyectos</h2>
       <div class="grid">
-        <article class="card project">
-          <img class="proj-img" src="img/project4.png" alt="Captura del Proyecto 4">
-          <div class="project-body">
-          <ul class="logo-row">
-            <li><img src="img/logos/html-css.webp" alt="HTML/CSS"></li>
-            <li><img src="img/logos/js.png" alt="JavaScript"></li>
-            <li><img src="img/logos/vscode.png" alt="Visual Studio Code"></li>
-            <li><img src="img/logos/ChatGPT.png" alt="ChatGPT"></li>
-            <li><img src="img/logos/git_logo.png" alt="Git"></li>
-            <li><img src="img/logos/github.png" alt="GitHub"></li>
-          </ul>
-            <h3>iOS Glass Portfolio — Personal Web Project</h3>
-            <p data-i18n="projects.p1_desc">Portafolio personal inspirado en la interfaz de iOS26, desarrollado con HTML, CSS y JavaScript. Presenta experiencia profesional, habilidades y proyectos en un diseño moderno y responsivo. Incluye modo oscuro/claro, selección de idioma y una "Dynamic Island" interactiva para navegación.</p>
-            <div class="row">
-              <a class="btn" href="https://github.com/aybkh/Portafolio_Personal" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </div>
-        </article>
-        <article class="card project">
-          <img class="proj-img" src="img/project1.png" alt="Captura del Proyecto 1">
-          <div class="project-body">
-          <ul class="logo-row">
-            <li><img src="img/logos/linux.png" alt="Linux"></li>
-            <li><img src="img/logos/Postgresql.png" alt="PostgreSQL"></li>
-            <li><img src="img/logos/Python.png" alt="Python"></li>
-            <li><img src="img/logos/sql.png" alt="SQL"></li>
-            <li><img src="img/logos/Bash.png" alt="Bash"></li>
-            <li><img src="img/logos/git_logo.png" alt="Git"></li>
-            <li><img src="img/logos/github.png" alt="GitHub"></li>
-          </ul>
-            <h3>Hotel Management System</h3>
-            <p data-i18n="projects.p2_desc">Aplicación completa para la gestión integral de una cadena hotelera. Incluye control de reservas, clientes, personal, servicios y auditoría de datos. Desarrollada en Python (Tkinter) con base de datos PostgreSQL, incorpora seguridad, alta disponibilidad, replicación, backups automatizados y exportaciones en JSON/PDF.</p>
-            <div class="row">
-              <a class="btn" href="https://github.com/aybkh/HaramResorts" target="_blank" rel="noopener">GitHub</a>
-              <a class="ghost made-in" href="https://www.sapalomera.cat" target="_blank" rel="noopener">
-                <span>MADE IN</span>
-                <img src="img/logos/logo-institut-sapalomera.png" alt="Institut Sa Palomera">
-              </a>
-            </div>
-          </div>
-        </article>
 
-        <article class="card project">
-          <img class="proj-img" src="img/project2.png" alt="Captura del Proyecto 2">
-          <div class="project-body">
-          <ul class="logo-row">
-            <li><img src="img/logos/unity.png" alt="Unity"></li>
-            <li><img src="img/logos/Csharp.png" alt="CSharp"></li>
-            <li><img src="img/logos/dotnet.svg" alt=".Net"></li>
-            <li><img src="img/logos/Visual_Studio.png" alt="Visual Studio"></li>
-            <li><img src="img/logos/git_logo.png" alt="Git"></li>
-            <li><img src="img/logos/github.png" alt="GitHub"></li>
-          </ul>
-            <h3>ERAY Slasher – Roguelite Shooter</h3>
-            <p data-i18n="projects.p3_desc">Juego de acción ambientado en el siglo XVIII, protagonizado por ERAY, un personaje con habilidades mágicas para defender su hogar. Incluye tres tipos de enemigos con ataques distintos y objetos que mejoran las estadísticas del jugador. Desarrollado con Unity, disponible en formato ejecutable gratuito.</p>
-            <div class="row">
-              <a class="btn" href="https://github.com/aybkh/ErAySlasher" target="_blank" rel="noopener">GitHub</a>
-              <a class="ghost made-in" href="https://www.sapalomera.cat" target="_blank" rel="noopener">
-                <span>MADE IN</span>
-                <img src="img/logos/logo-institut-sapalomera.png" alt="Institut Sa Palomera">
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="card project">
-          <img class="proj-img" src="img/project3.png" alt="Captura del Proyecto 3">
-          <div class="project-body">
-          <ul class="logo-row">
-            <li><img src="img/logos/unity.png" alt="Unity"></li>
-            <li><img src="img/logos/Csharp.png" alt="CSharp"></li>
-            <li><img src="img/logos/dotnet.svg" alt=".Net"></li>
-            <li><img src="img/logos/Visual_Studio.png" alt="Visual Studio"></li>
-            <li><img src="img/logos/git_logo.png" alt="Git"></li>
-            <li><img src="img/logos/github.png" alt="GitHub"></li>
-          </ul>
-            <h3>Spacecraft – Infinite Shooter Game</h3>
-            <p data-i18n="projects.p4_desc">Juego de acción en 2D desarrollado con Unity, donde los jugadores controlan una nave espacial que debe enfrentarse a oleadas de enemigos. El juego incluye power-ups y mejoras para la nave, así como un sistema de puntuación basado en la supervivencia y la destrucción de enemigos. Disponible en formato ejecutable gratuito.</p>
-            <div class="row">
-              <a class="btn" href="https://github.com/aybkh/spacecraft" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </div>
-        </article>
       </div>
     </section>
 
@@ -390,13 +112,13 @@
         <!-- Vista compacta -->
         <div class="contact-compact" aria-hidden="true">
           <a href="https://linkedin.com/in/ayoub-jerari" class="ic" target="_blank" rel="noopener">
-            <img src="img/logos/linkedin.png" alt="LinkedIn">
+            <img src="img/logos/linkedin.webp" alt="LinkedIn">
           </a>
           <a href="mailto:ayoubjerari47@gmail.com" class="ic">
-            <img src="img/logos/mail.png" alt="Email">
+            <img src="img/logos/mail.webp" alt="Email">
           </a>
           <a href="https://github.com/aybkh" class="ic" target="_blank" rel="noopener">
-            <img src="img/logos/github.png" alt="GitHub">
+            <img src="img/logos/github.webp" alt="GitHub">
           </a>
           <a href="https://wa.me/4915211209573" class="ic" target="_blank" rel="noopener">
             <img src="img/logos/whatsapp.webp" alt="WhatsApp">
@@ -406,13 +128,13 @@
         <!-- Vista expandida con logos + texto -->
         <nav class="contact-expanded" aria-label="Enlaces de contacto">
           <a href="https://linkedin.com/in/ayoub-jerari" target="_blank" rel="noopener">
-            <img src="img/logos/linkedin.png" alt=""> LinkedIn
+            <img src="img/logos/linkedin.webp" alt=""> LinkedIn
           </a>
           <a href="mailto:ayoubjerari47@gmail.com">
-            <img src="img/logos/mail.png" alt=""> Email
+            <img src="img/logos/mail.webp" alt=""> Email
           </a>
           <a href="https://github.com/aybkh" target="_blank" rel="noopener">
-            <img src="img/logos/github.png" alt=""> GitHub
+            <img src="img/logos/github.webp" alt=""> GitHub
           </a>
           <a href="https://wa.me/4915211209573" target="_blank" rel="noopener">
             <img src="img/logos/whatsapp.webp" alt=""> WhatsApp
@@ -425,6 +147,12 @@
   <footer class="foot">
     <p><span id="year"></span> Ayoub El Khalifi Idrissi El Jerari — Infra & NetOps</p>
   </footer>
+  <script src="JS/data.js" defer></script>
+  <script src="JS/translations.js" defer></script>
+  <script src="JS/theme.js" defer></script>
+  <script src="JS/ui.js" defer></script>
+  <script src="JS/renderer.js" defer></script>
   <script src="JS/main.js" defer></script>
 </body>
+
 </html>
