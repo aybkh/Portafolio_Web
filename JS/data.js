@@ -158,6 +158,42 @@ const skillsData = [
 
 const projectsData = [
     {
+        title: "Snack Tanger 303 – POS & Management Ecosystem",
+        img: "img/projects/project5.webp",
+        descKey: "projects.p5_desc",
+        stack: [
+            { name: "Python", img: "img/logos/Python.webp" },
+            { name: "JavaScript", img: "img/logos/js.webp" },
+            { name: "React", img: "img/logos/react.webp" },
+            { name: "PostgreSQL", img: "img/logos/Postgresql.webp" },
+            { name: "Docker", img: "img/logos/docker.webp" },
+            { name: "Linux", img: "img/logos/linux.webp" },
+            { name: "Git", img: "img/logos/git_logo.webp" },
+            { name: "GitHub", img: "img/logos/github.webp" },
+            { name: "Antigravity", img: "img/logos/antigravity.webp" },
+            { name: "Gemini", img: "img/logos/gemini.webp" }
+        ],
+        buttons: [
+            { text: "GitHub", url: "https://github.com/aybkh", type: "btn" }
+        ]
+    },
+    {
+        title: "Snack Tanger 303 – Digital Menu",
+        img: "img/projects/project6.webp",
+        descKey: "projects.p6_desc",
+        stack: [
+            { name: "React", img: "img/logos/react.webp" },
+            { name: "Tailwind CSS", img: "img/logos/tailwind-css-logo.webp" },
+            { name: "Git", img: "img/logos/git_logo.webp" },
+            { name: "GitHub", img: "img/logos/github.webp" },
+            { name: "Antigravity", img: "img/logos/antigravity.webp" },
+            { name: "Gemini", img: "img/logos/gemini.webp" }
+        ],
+        buttons: [
+            { text: "GitHub", url: "https://github.com/aybkh", type: "btn" }
+        ]
+    },
+    {
         title: "iOS Glass Portfolio — Personal Web Project",
         img: "img/projects/project4.webp",
         descKey: "projects.p1_desc",
@@ -216,22 +252,6 @@ const projectsData = [
                 img: "img/logos/logo-institut-sapalomera.webp",
                 text: "MADE IN"
             }
-        ]
-    },
-    {
-        title: "Spacecraft – Infinite Shooter Game",
-        img: "img/projects/project3.webp",
-        descKey: "projects.p4_desc",
-        stack: [
-            { name: "Unity", img: "img/logos/unity.webp" },
-            { name: "CSharp", img: "img/logos/Csharp.webp" },
-            { name: ".Net", img: "img/logos/dotnet.svg" },
-            { name: "Visual Studio", img: "img/logos/Visual_Studio.webp" },
-            { name: "Git", img: "img/logos/git_logo.webp" },
-            { name: "GitHub", img: "img/logos/github.webp" }
-        ],
-        buttons: [
-            { text: "GitHub", url: "https://github.com/aybkh/spacecraft", type: "btn" }
         ]
     }
 ];
