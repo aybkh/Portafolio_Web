@@ -332,10 +332,16 @@
         block-size: auto;
 
         transition:
-            width .4s cubic-bezier(.2, .8, .2, 1),
-            height .4s cubic-bezier(.2, .8, .2, 1),
-            border-radius .4s ease,
-            background .3s;
+            width .25s ease-out,
+            height .25s ease-out,
+            border-radius .25s ease-out,
+            background .2s ease,
+            transform .15s ease;
+    }
+
+    /* Feedback visual al tocar (rebote) */
+    .island .pill:active {
+        transform: scale(0.95);
     }
 
     /* 3. Ocultar TODO el contenido en estado cerrado excepto logo */
@@ -348,13 +354,15 @@
         pointer-events: none;
     }
 
-    /* 4. Logo visible siempre (centrado en cerrado) */
-    .island .pill .brand-logo {
+    /* 4. Dot visible en estado cerrado (punto de color) */
+    .island .pill .dot {
         display: block !important;
         opacity: 1 !important;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
+        width: 50px;
+        height: 18px;
+        border-radius: 999px;
+        /* Forma de píldora */
+        background: linear-gradient(45deg, var(--accent), var(--accent2));
         position: static;
         transform: none;
         margin: 0;
@@ -373,9 +381,14 @@
         }
 
         50% {
-            transform: scale(1.1);
-            opacity: 0.8;
+            transform: scale(1.15);
+            opacity: 0.7;
         }
+    }
+
+    /* Logo oculto en estado cerrado */
+    .island .pill .brand-logo {
+        display: none !important;
     }
 
     /* ======================================================================
@@ -398,13 +411,22 @@
 
     /* Mostrar hijos en abierto */
 
+    /* Ocultar dot en abierto */
+    .island.open .pill .dot {
+        display: none !important;
+    }
+
     /* Logo: Izquierda */
     .island.open .pill .brand-logo {
+        display: block !important;
+        opacity: 1;
         width: 38px;
         height: 38px;
         order: 1;
         margin-right: 10px;
         flex-shrink: 0;
+        animation: none;
+        /* Quitar pulso */
     }
 
     /* Nombre: Centro-Izquierda */
