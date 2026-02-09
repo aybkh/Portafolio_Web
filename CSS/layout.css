@@ -1,8 +1,13 @@
-/* Layout general */
 main {
     max-width: var(--max);
-    margin: 20px auto 0;
+    margin: 100px auto 0;
     padding: 0 16px;
+}
+
+@media (max-width: 600px) {
+    main {
+        margin-top: 80px;
+    }
 }
 
 .section {
