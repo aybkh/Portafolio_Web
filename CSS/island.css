@@ -332,9 +332,9 @@
         block-size: auto;
 
         transition:
-            width .25s ease-out,
-            height .25s ease-out,
-            border-radius .25s ease-out,
+            width .35s cubic-bezier(0.4, 0.0, 0.2, 1),
+            height .35s cubic-bezier(0.4, 0.0, 0.2, 1),
+            border-radius .35s cubic-bezier(0.4, 0.0, 0.2, 1),
             background .2s ease,
             transform .15s ease;
     }
