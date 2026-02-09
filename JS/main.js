@@ -1,14 +1,19 @@
-/* Main entry point */
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Iniciar tema (inmediato para evitar flicker, aunque ya carga defer)
-  if (typeof initTheme === 'function') initTheme();
+  /* Año */
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // 2. Renderizar contenido (Experiencia, Skills, Proyectos) a partir de datos
-  if (typeof renderAll === 'function') renderAll();
+  /* Setup */
+  setupTheme();
+  setupDock();
+  setupReveal();
+  setupSkills();
+  setupContact();
+  setupI18N();
+  setupLinks();
+  setupLogoTooltips();
 
-  // 3. Iniciar UI (eventos dinámicos sobre el contenido renderizado)
-  if (typeof initUI === 'function') initUI();
-
-  // 4. Traducir todo
-  if (typeof initI18n === 'function') initI18n();
+  /* Clock */
+  updateClock();
+  setInterval(updateClock, 1000);
 });
