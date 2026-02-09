@@ -1,8 +1,11 @@
 /* Dynamic Island NAV */
 .island {
-    position: sticky;
+    position: fixed;
     top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 9999;
+    width: 100%;
     display: flex;
     justify-content: center;
     padding: env(safe-area-inset-top) 12px 0;
@@ -286,50 +289,194 @@
     color: #0b0d12;
 }
 
-/* Móvil: compacta la island y oculta nav */
-@media (max-width:600px) {
-    .island .pill .label-expanded {
-        display: none !important;
-    }
+/* ==========================================================================
+   MÓVIL RESPONSIVE - DYNAMIC ISLAND (Notch / Cámara Style)
+   ========================================================================== */
+@media (max-width: 600px) {
 
+    /* 1. Contenedor principal alineado arriba-izquierda */
     .island {
-        top: 6px;
-        padding: 0 6px;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding-left: 16px;
+        pointer-events: none;
+        transform: none;
+        /* Reset transform desktop */
     }
 
+    /* 2. ESTADO CERRADO: Botón circular pequeño */
     .island .pill {
-        --w-compact: calc(100vw - 100px);
-        --w-expanded: calc(100vw - 20px);
-        inline-size: var(--w-compact);
-        block-size: 46px;
-        padding: 6px 12px;
-        border-radius: 20px;
-        gap: 10px;
-        justify-content: space-between;
+        width: 48px;
+        height: 48px;
+        padding: 0;
+        border-radius: 50%;
+        /* Círculo perfecto */
+        background: var(--glass);
+        backdrop-filter: saturate(140%) blur(12px);
+        border: 1px solid var(--border);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        pointer-events: auto;
+
+        /* Reset valores desktop */
+        min-width: 0;
+        max-width: none;
+        inline-size: auto;
+        block-size: auto;
+
+        transition:
+            width .4s cubic-bezier(.2, .8, .2, 1),
+            height .4s cubic-bezier(.2, .8, .2, 1),
+            border-radius .4s ease,
+            background .3s;
     }
 
-    .brand-left {
+    /* 3. Ocultar TODO el contenido en estado cerrado excepto logo */
+    .island .pill>* {
+        display: none;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        margin: 0;
+        pointer-events: none;
+    }
+
+    /* 4. Logo visible siempre (centrado en cerrado) */
+    .island .pill .brand-logo {
         display: block !important;
+        opacity: 1 !important;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
         position: static;
         transform: none;
+        margin: 0;
+        pointer-events: auto;
+
+        /* Animación de pulso para indicar interactividad */
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        50% {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+    }
+
+    /* ======================================================================
+       ESTADO ABIERTO: Expansión y Layout
+       ====================================================================== */
+    .island.open .pill {
+        width: calc(100vw - 32px);
+        height: 64px;
+        /* Altura fija suficiente para alinear todo */
+        padding: 0 16px;
+        border-radius: 32px;
+        background: var(--glass);
+        border: 1px solid var(--border);
+
+        /* Flex Layout Horizontal */
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+    }
+
+    /* Mostrar hijos en abierto */
+
+    /* Logo: Izquierda */
+    .island.open .pill .brand-logo {
+        width: 38px;
+        height: 38px;
+        order: 1;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+
+    /* Nombre: Centro-Izquierda */
+    .island.open .pill .brand-left {
+        display: block !important;
         opacity: 1;
-        font-weight: 600;
-        font-size: 14px;
+        font-size: 15px;
+        font-weight: 700;
         white-space: nowrap;
+        color: var(--text);
+
+        width: auto !important;
+        height: auto !important;
+        position: static;
+        transform: none;
+        pointer-events: auto;
+
+        flex-grow: 1;
+        /* Ocupar espacio libre */
+        order: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
-    .label-compact {
-        display: none !important;
-    }
+    /* Grupo de controles derecha (Lang + Switch) */
 
-    .lang {
-        height: 26px;
-        min-width: 60px;
+    /* Lang */
+    .island.open .pill .lang {
+        display: block !important;
+        opacity: 1;
+        width: auto !important;
+        height: 32px !important;
+        padding: 0 24px 0 10px;
+        margin: 0 8px 0 0;
         font-size: 13px;
+        pointer-events: auto;
+
+        order: 3;
+        flex-shrink: 0;
     }
 
-    .switch {
-        transform: scale(.9);
-        margin-left: 6px;
+    /* Switch */
+    .island.open .pill .switch {
+        display: flex !important;
+        opacity: 1;
+        width: 48px !important;
+        height: 28px !important;
+        margin: 0;
+        pointer-events: auto;
+
+        order: 4;
+        flex-shrink: 0;
+        transform: none;
+    }
+
+    /* Switch icon adjustment for mobile */
+    .island.open .switch i {
+        top: 50%;
+        left: 3px;
+        width: 22px;
+        height: 22px;
+        transform: translateY(-50%);
+    }
+
+    .island.open [data-theme="light"] .switch i {
+        left: 23px;
+    }
+
+    /* Ocultar definitivamente lo que no cabe */
+    .island .pill .label-expanded,
+    .island .pill .label-compact,
+    .island .pill .dot {
+        display: none !important;
     }
 }
