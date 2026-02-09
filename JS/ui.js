@@ -48,55 +48,6 @@ function initUI() {
         });
     }
 
-    /* Hamburger Menu & Sidebar (Móvil) */
-    const hamburger = document.getElementById('hamburgerBtn');
-    const sidebar = document.getElementById('sidebar');
-    const sidebarOverlay = document.getElementById('sidebarOverlay');
-
-    if (hamburger && sidebar && sidebarOverlay) {
-        // Abrir/cerrar sidebar
-        hamburger.addEventListener('click', () => {
-            const isOpen = sidebar.classList.toggle('open');
-            hamburger.classList.toggle('open');
-            sidebarOverlay.classList.toggle('show');
-            hamburger.setAttribute('aria-expanded', String(isOpen));
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
-
-        // Cerrar al tocar overlay
-        sidebarOverlay.addEventListener('click', () => {
-            sidebar.classList.remove('open');
-            hamburger.classList.remove('open');
-            sidebarOverlay.classList.remove('show');
-            hamburger.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        });
-
-        // Cerrar al tocar un enlace
-        sidebar.querySelectorAll('.sidebar-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                setTimeout(() => {
-                    sidebar.classList.remove('open');
-                    hamburger.classList.remove('open');
-                    sidebarOverlay.classList.remove('show');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                    document.body.style.overflow = '';
-                }, 150);
-            });
-        });
-
-        // Cerrar sidebar al cambiar a desktop
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 600 && sidebar.classList.contains('open')) {
-                sidebar.classList.remove('open');
-                hamburger.classList.remove('open');
-                sidebarOverlay.classList.remove('show');
-                hamburger.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            }
-        });
-    }
-
     /* Reveal */
     const revealTargets = document.querySelectorAll('.reveal');
     if (revealTargets.length) {
