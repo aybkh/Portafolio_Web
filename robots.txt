@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ayoubjerari.com/sitemap.xml
