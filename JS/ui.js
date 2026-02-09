@@ -1,103 +1,39 @@
-function initUI() {
-    /* Helpers */
-    const island = document.getElementById('island');
-    const pill = document.getElementById('islandBtn');
-    const touchLike = () => window.matchMedia('(hover: none)').matches;
+/* Clock */
+function updateClock() {
+    const clockEl = document.getElementById('macClock');
+    if (!clockEl) return;
+    const now = new Date();
+    const options = { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    clockEl.textContent = now.toLocaleDateString('en-US', options).replace(',', '');
+}
 
-    /* Táctil: abrir/cerrar pill */
-    if (island && pill) {
-        pill.addEventListener('click', (e) => {
-            if (e.target.closest('.switch') || e.target.closest('.lang')) return;
-            if (touchLike()) {
-                const open = island.classList.toggle('open');
-                pill.setAttribute('aria-expanded', String(open));
-                console.log('Island toggled:', open ? 'OPEN' : 'CLOSED'); // DEBUG
-            }
-        });
+/* Theme */
+function setupTheme() {
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeToggleDock');
+    const savedTheme = localStorage.getItem('theme');
 
-        document.addEventListener('click', (e) => {
-            if (!touchLike()) return;
-            if (!island.classList.contains('open')) return;
-            if (!island.contains(e.target)) {
-                island.classList.remove('open');
-                pill.setAttribute('aria-expanded', 'false');
-            }
-        }, true);
+    if (savedTheme) root.setAttribute('data-theme', savedTheme);
 
-        island.querySelectorAll('.pill-nav a').forEach(a => {
-            a.addEventListener('click', () => {
-                if (!touchLike()) return;
-                setTimeout(() => {
-                    island.classList.remove('open');
-                    pill.setAttribute('aria-expanded', 'false');
-                }, 150);
-            });
-        });
-
-        pill.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault(); pill.click();
-            }
-        });
-
-        window.addEventListener('resize', () => {
-            if (!touchLike() && island.classList.contains('open')) {
-                island.classList.remove('open');
-                pill.setAttribute('aria-expanded', 'false');
-            }
+    if (themeBtn) {
+        themeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const current = root.getAttribute('data-theme');
+            const next = current === 'light' ? 'dark' : 'light';
+            root.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
         });
     }
+}
 
-    /* Hamburger Menu & Sidebar (Móvil) */
-    const hamburger = document.getElementById('hamburgerBtn');
-    const sidebar = document.getElementById('sidebar');
-    const sidebarOverlay = document.getElementById('sidebarOverlay');
+/* Dock */
+function setupDock() {
+    // Dock hover effects are handled by CSS in components.css
+    // The previous JS implementation conflicted with CSS transitions
+}
 
-    if (hamburger && sidebar && sidebarOverlay) {
-        // Abrir/cerrar sidebar
-        hamburger.addEventListener('click', () => {
-            const isOpen = sidebar.classList.toggle('open');
-            hamburger.classList.toggle('open');
-            sidebarOverlay.classList.toggle('show');
-            hamburger.setAttribute('aria-expanded', String(isOpen));
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
-
-        // Cerrar al tocar overlay
-        sidebarOverlay.addEventListener('click', () => {
-            sidebar.classList.remove('open');
-            hamburger.classList.remove('open');
-            sidebarOverlay.classList.remove('show');
-            hamburger.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
-        });
-
-        // Cerrar al tocar un enlace
-        sidebar.querySelectorAll('.sidebar-nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                setTimeout(() => {
-                    sidebar.classList.remove('open');
-                    hamburger.classList.remove('open');
-                    sidebarOverlay.classList.remove('show');
-                    hamburger.setAttribute('aria-expanded', 'false');
-                    document.body.style.overflow = '';
-                }, 150);
-            });
-        });
-
-        // Cerrar sidebar al cambiar a desktop
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 600 && sidebar.classList.contains('open')) {
-                sidebar.classList.remove('open');
-                hamburger.classList.remove('open');
-                sidebarOverlay.classList.remove('show');
-                hamburger.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            }
-        });
-    }
-
-    /* Reveal */
+/* Reveal */
+function setupReveal() {
     const revealTargets = document.querySelectorAll('.reveal');
     if (revealTargets.length) {
         const io = new IntersectionObserver((entries) => {
@@ -107,8 +43,10 @@ function initUI() {
         }, { threshold: 0.12 });
         revealTargets.forEach(el => io.observe(el));
     }
+}
 
-    /* Skills: tap en móvil */
+/* Skills */
+function setupSkills() {
     document.querySelectorAll('.skill-pill').forEach(p => {
         p.addEventListener('click', () => {
             if (window.matchMedia('(hover: none)').matches) {
@@ -117,8 +55,10 @@ function initUI() {
             }
         });
     });
+}
 
-    /* Contacto: abrir/cerrar por tap */
+/* Contact */
+function setupContact() {
     const contactCard = document.querySelector('.contact-card');
     if (contactCard) {
         contactCard.addEventListener('click', () => {
@@ -127,12 +67,52 @@ function initUI() {
             }
         });
     }
+}
 
-    // Redirección a página de error si el enlace no tiene destino válido
+/* I18N */
+function i18nSet(lang) {
+    const dict = I18N[lang] || I18N.es;
+    document.documentElement.setAttribute('lang', lang);
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const txt = key.split('.').reduce((o, k) => o && o[k], dict);
+        if (typeof txt === 'string') el.textContent = txt;
+    });
+}
+
+function setupI18N() {
+    const langSel = document.getElementById('langSelect');
+    const prefLang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    if (langSel) {
+        if ([...langSel.options].some(o => o.value === prefLang)) langSel.value = prefLang;
+        i18nSet(langSel.value);
+        langSel.addEventListener('change', () => {
+            const v = langSel.value;
+            localStorage.setItem('lang', v);
+            i18nSet(v);
+        });
+    } else {
+        i18nSet(prefLang);
+    }
+}
+
+/* Links */
+function setupLinks() {
     document.querySelectorAll('a[href="#"], a[href=""]').forEach(a => {
         a.addEventListener('click', e => {
             e.preventDefault();
             window.location.href = 'error.html';
         });
+    });
+}
+
+/* Logo Tooltips */
+function setupLogoTooltips() {
+    const logos = document.querySelectorAll('.logo-row img, .pill-body img, .exp-logo, .contact-compact .ic img, .contact-expanded img');
+    logos.forEach(img => {
+        // Use alt text as title (native tooltip)
+        if (img.alt && !img.title) {
+            img.title = img.alt;
+        }
     });
 }
