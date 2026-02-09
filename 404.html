@@ -1,93 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-    <title>404 — Página no encontrada</title>
-    <meta name="theme-color" content="#0b0d12" />
-    <link rel="icon" type="image/webp" href="img/favicon.webp" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>404 - Página no encontrada | Ayoub Jerari</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0b0d12" />
+  <link rel="icon" href="img/favicon.webp" />
+  <link rel="stylesheet" href="CSS/styles.css" />
+  <style>
+    /* Estilos específicos para 404 */
+    .error-window {
+      max-width: 600px;
+      margin: 10vh auto;
+    }
 
-    <!-- Estilos del Portafolio -->
-    <link rel="stylesheet" href="CSS/variables.css" />
-    <link rel="stylesheet" href="CSS/base.css" />
-    <link rel="stylesheet" href="CSS/layout.css" />
-    <link rel="stylesheet" href="CSS/components.css" />
-    <link rel="stylesheet" href="CSS/island.css" />
+    .error-content {
+      text-align: center;
+      padding: 60px 40px;
+    }
 
-    <style>
-        /* Ajustes específicos para centrar el error */
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+    .error-code {
+      font-size: 120px;
+      font-weight: 900;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1;
+      margin: 0;
+    }
 
-        main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
+    .error-message {
+      font-size: 24px;
+      font-weight: 600;
+      margin: 20px 0;
+      color: var(--text);
+    }
 
-        .error-card {
-            text-align: center;
-            padding: 40px 30px;
-            max-width: 420px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-        }
+    .error-description {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
 
-        h1.big-404 {
-            font-size: clamp(6rem, 20vw, 8rem);
-            line-height: .9;
-            margin: 0;
-            letter-spacing: -4px;
-            opacity: .9;
-        }
-    </style>
+    .error-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn.ghost {
+      background: transparent;
+      border: 2px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn.ghost:hover {
+      background: var(--glass);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- Island Simplificada: Actúa como botón Home -->
-    <div class="island">
-        <a href="index.html" class="pill" style="width: auto; padding: 0 24px; text-decoration: none;">
-            <span class="dot"></span>
-            <span style="font-weight: 700;">Error 404</span>
-        </a>
+  <!-- MacOS Menu Bar -->
+  <header class="mac-menubar">
+    <div class="menubar-left">
+      <img class="apple-logo" src="img/logos/Apple-Logo.png" alt="">
+      <span class="menu-item bold">Portfolio</span>
     </div>
+    <div class="menubar-right">
+      <span class="menu-clock" id="macClock">Mon Jun 22 9:41 AM</span>
+    </div>
+  </header>
 
-    <main>
-        <div class="card error-card">
-            <h1 class="accent big-404">404</h1>
-            <h2 style="margin: 0;">Página No Encontrada</h2>
-            <p class="lead" style="margin: 0;">
-                La URL que intentas visitar no existe o ha sido movida.
-            </p>
-            <div style="margin-top: 10px;">
-                <a href="index.html" class="btn">Volver al Inicio</a>
-            </div>
+  <main>
+    <!-- Error Window -->
+    <section class="mac-window error-window">
+      <div class="window-header">
+        <div class="traffic-lights">
+          <span class="traffic-light close"></span>
+          <span class="traffic-light minimize"></span>
+          <span class="traffic-light maximize"></span>
         </div>
-    </main>
+        <div class="window-title">Error 404</div>
+      </div>
+      <div class="window-content">
+        <div class="error-content">
+          <h1 class="error-code">404</h1>
+          <h2 class="error-message">Página no encontrada</h2>
+          <p class="error-description">
+            Lo sentimos, la página que buscas no existe o ha sido movida.
+            <br>
+            Puede que hayas escrito mal la URL o que el enlace esté desactualizado.
+          </p>
+          <div class="error-actions">
+            <a href="/" class="btn">Volver al inicio</a>
+            <a href="/#contacto" class="btn ghost">Contactar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <footer class="foot">
-        <p>Ayoub El Khalifi Idrissi El Jerari</p>
-    </footer>
+  <!-- MacOS Dock -->
+  <div class="dock-container">
+    <div class="dock">
+      <a href="/" class="dock-item" aria-label="Inicio">
+        <div class="dock-icon finder">
+          <img src="img/logos/A.webp" alt="Home">
+        </div>
+        <span class="dock-tooltip">Home</span>
+      </a>
+      <a href="/#experiencia" class="dock-item" aria-label="Experiencia">
+        <div class="dock-icon launchpad">
+          <img src="img/logos/hipra.webp" alt="Experiencia">
+        </div>
+        <span class="dock-tooltip">Experiences</span>
+      </a>
+      <a href="/#skills" class="dock-item" aria-label="Skills">
+        <div class="dock-icon settings">
+          <img src="img/logos/os.webp" alt="Skills">
+        </div>
+        <span class="dock-tooltip">Skills</span>
+      </a>
+      <a href="/#proyectos" class="dock-item" aria-label="Proyectos">
+        <div class="dock-icon app-store">
+          <img src="img/logos/github.webp" alt="Proyectos">
+        </div>
+        <span class="dock-tooltip">Projects</span>
+      </a>
+      <a href="/#contacto" class="dock-item" aria-label="Contacto">
+        <div class="dock-icon mail">
+          <img src="img/logos/mail.webp" alt="Contacto">
+        </div>
+        <span class="dock-tooltip">Contact</span>
+      </a>
+    </div>
+  </div>
 
-    <!-- Script para mantener el tema oscuro/claro -->
-    <script src="JS/theme.js"></script>
-    <script>
-        // Iniciar tema manualmente ya que no cargamos main.js completo
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof initTheme === 'function') initTheme();
-        });
-    </script>
+  <footer class="foot">
+    <p><span id="year"></span> Ayoub El Khalifi Idrissi El Jerari</p>
+  </footer>
 
+  <script>
+    // Reloj
+    function updateClock() {
+      const now = new Date();
+      const options = {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: '2-digit'
+      };
+      document.getElementById('macClock').textContent = now.toLocaleString('en-US', options);
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // Año
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
