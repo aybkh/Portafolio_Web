@@ -5,8 +5,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="google-site-verification" content="HymCg807hs8qPjWImDNcNYt4uszffAdlPjhLlyQZ57g" />
+
   <!-- SEO Principal -->
-  <title>Ayoub Jerari — Infrastructure & Network Operations Specialist</title>
+  <title>Ayoub Jerari</title>
   <meta name="description"
     content="Especialista en infraestructura IT, administración de sistemas Windows/Linux, operaciones de red, cloud computing (Azure, AWS) y automatización. Experiencia en soporte técnico, virtualización y gestión de bases de datos." />
   <meta name="keywords"
@@ -37,188 +38,533 @@
     content="Especialista en infraestructura IT, administración de sistemas Windows/Linux, operaciones de red y cloud computing." />
   <meta name="twitter:image" content="https://ayoubjerari.com/img/foto.webp" />
 
-  <link rel="icon" type="image/webp" href="img/favicon.webp" />
-  <link rel="apple-touch-icon" href="img/favicon.webp" />
-
-  <!-- CSS Optimizado (Carga paralela) -->
-  <link rel="stylesheet" href="CSS/variables.css" />
-  <link rel="stylesheet" href="CSS/base.css" />
-  <link rel="stylesheet" href="CSS/layout.css" />
-  <link rel="stylesheet" href="CSS/components.css" />
-  <link rel="stylesheet" href="CSS/island.css" />
-
-  <!-- Datos Estructurados JSON-LD -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Ayoub El Khalifi Idrissi El Jerari",
-      "url": "https://ayoubjerari.com",
-      "image": "https://ayoubjerari.com/img/foto.webp",
-      "jobTitle": "IT Support & NetOps Specialist",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Laboratorios HIPRA"
-      },
-      "sameAs": [
-        "https://linkedin.com/in/ayoub-jerari",
-        "https://github.com/aybkh"
-      ]
-    }
-  </script>
+  <link rel="icon" href="img/favicon.webp" />
+  <link rel="stylesheet" href="CSS/styles.css" />
 </head>
 
 <body>
 
-  <!-- Dynamic Island como NAV -->
-  <div class="island" id="island" aria-live="polite">
-    <button class="pill" id="islandBtn" aria-expanded="false">
-      <span class="dot" aria-hidden="true"></span>
-      <img class="brand-logo" src="img/logos/A.webp" alt="Logo">
-      <span class="brand-left"><strong>AYOUB K. I. J.</strong></span>
-
-
-      <span class="label-compact"><strong>AYOUB K. I. J.</strong></span>
-
-      <nav class="label-expanded pill-nav" aria-label="Navegación">
-        <a href="#experiencia" data-i18n="nav.experience">Experiencia</a>
-        <a href="#skills" data-i18n="nav.skills">Skills</a>
-        <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
-        <a href="#contacto" data-i18n="nav.contact">Contacto</a>
-      </nav>
-      <select id="langSelect" class="lang" aria-label="Idioma">
-        <option value="es" selected>ES</option>
-        <option value="en">EN</option>
-        <option value="ca">CAT</option>
-        <option value="fr">FR</option>
-        <option value="de">DE</option>
-      </select>
-      <span class="switch" id="themeToggle" aria-label="Cambiar tema"><i></i></span>
-    </button>
-  </div>
-
-  <!-- Botón Hamburguesa (solo móvil) -->
-  <button class="hamburger" id="hamburgerBtn" aria-label="Menú" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <!-- Sidebar de Navegación (móvil) -->
-  <aside class="sidebar" id="sidebar">
-    <nav class="sidebar-nav" aria-label="Navegación principal">
-      <a href="#experiencia" data-i18n="nav.experience">Experiencia</a>
-      <a href="#skills" data-i18n="nav.skills">Skills</a>
-      <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
-      <a href="#contacto" data-i18n="nav.contact">Contacto</a>
-    </nav>
-  </aside>
-
-  <!-- Overlay para cerrar sidebar al tocar fuera -->
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <!-- MacOS Menu Bar -->
+  <header class="mac-menubar">
+    <div class="menubar-left">
+      <img class="apple-logo" src="img/logos/Apple-Logo.png" alt="">
+      <span class="menu-item bold">Portfolio</span>
+      <span class="menu-item">File</span>
+      <span class="menu-item">Edit</span>
+      <span class="menu-item">View</span>
+      <span class="menu-item">Go</span>
+      <span class="menu-item">Window</span>
+      <span class="menu-item">Help</span>
+    </div>
+    <div class="menu-center">
+      <span class="menu-clock" id="macClock">Mon Jun 22 9:41 AM</span>
+    </div>
+    <div class="menubar-right">
+      <div class="menu-icon battery">
+        <div class="battery-body">
+          <div class="battery-level"></div>
+        </div>
+      </div>
+      <div class="menu-icon wifi">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M12 2C7.95 2 4.21 3.34 1.2 5.5L12 18.5L22.8 5.5C19.79 3.34 16.05 2 12 2Z" />
+        </svg>
+      </div>
+      <div class="menu-icon search">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="M21 21L16.65 16.65" />
+        </svg>
+      </div>
+      <div class="menu-icon control-center">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </div>
+      <div class="menu-icon language">
+        <select id="langSelect" class="mac-lang-select" aria-label="Idioma">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+          <option value="ca">CAT</option>
+          <option value="fr">FR</option>
+          <option value="de">DE</option>
+        </select>
+      </div>
+    </div>
+  </header>
 
   <main>
+    <!-- HERO Window -->
+    <section class="mac-window" id="hero">
+      <div class="window-header">
+        <div class="traffic-lights">
+          <span class="traffic-light close"></span>
+          <span class="traffic-light minimize"></span>
+          <span class="traffic-light maximize"></span>
+        </div>
+        <div class="window-title">About Me</div>
+      </div>
+      <div class="window-content">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <h1><span data-i18n="hero.title_prefix">Hola, soy </span><span class="accent"> Ayoub K. I. J.</span>
+            </h1>
+            <p class="lead" data-i18n="hero.subtitle">Especialista en soporte y administración IT, con experiencia
+              en
+              entornos corporativos y públicos. Gestiono sistemas Linux y Windows, redes, Microsoft 365, hardware y
+              bases de datos, asegurando operaciones estables y eficientes. Me motiva resolver incidencias técnicas
+              y
+              mejorar la experiencia del usuario.</p>
+            <div class="cta">
+              <a class="btn" href="#proyectos" data-i18n="cta.view">Ver proyectos</a>
+              <a class="btn ghost"
+                href="https://drive.usercontent.google.com/download?id=1SunqfaSPK-aS-m922n-YBwUVPDF3zk8R&export=download&authuser=0"
+                target="_blank" rel="noopener" data-i18n="cta.cv">Descargar CV</a>
+            </div>
 
-    <!-- HERO con foto paralela y logos -->
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <h1><span data-i18n="hero.title_prefix">Hola, soy </span><span class="accent"> Ayoub K. I. J.</span></h1>
-          <p class="lead" data-i18n="hero.subtitle">Especialista en soporte y administración IT, con experiencia en
-            entornos corporativos y públicos. Gestiono sistemas Linux y Windows, redes, Microsoft 365, hardware y bases
-            de datos, asegurando operaciones estables y eficientes. Me motiva resolver incidencias técnicas y mejorar la
-            experiencia del usuario.</p>
-          <div class="cta">
-            <a class="btn" href="#proyectos" data-i18n="cta.view">Ver proyectos</a>
-            <a class="btn ghost"
-              href="https://drive.usercontent.google.com/download?id=1SunqfaSPK-aS-m922n-YBwUVPDF3zk8R&export=download&authuser=0"
-              target="_blank" rel="noopener" data-i18n="cta.cv">Descargar CV</a>
+            <!-- Logos de tecnologías principales -->
+            <ul class="logo-row">
+              <li><img src="img/logos/windows.webp" alt="Windows Server"></li>
+              <li><img src="img/logos/linux.webp" alt="Linux"></li>
+              <li><img src="img/logos/Python.webp" alt="Python"></li>
+              <li><img src="img/logos/sql.webp" alt="SQL"></li>
+              <li><img src="img/logos/git_logo.webp" alt="Git"></li>
+              <li><img src="img/logos/docker.webp" alt="Docker"></li>
+              <li><img src="img/logos/Microsoft_365.webp" alt="Microsoft 365"></li>
+            </ul>
           </div>
 
-          <!-- Logos de tecnologías principales -->
-          <ul class="logo-row">
-            <li><img src="img/logos/windows.webp" alt="Windows Server"></li>
-            <li><img src="img/logos/linux.webp" alt="Linux"></li>
-            <li><img src="img/logos/Python.webp" alt="Python"></li>
-            <li><img src="img/logos/sql.webp" alt="SQL"></li>
-            <li><img src="img/logos/git_logo.webp" alt="Git"></li>
-            <li><img src="img/logos/docker.webp" alt="Docker"></li>
-            <li><img src="img/logos/Microsoft_365.webp" alt="Microsoft 365"></li>
-
-          </ul>
+          <figure class="hero-photo glass">
+            <img src="img/foto.webp" alt="Foto de Ayoub">
+          </figure>
         </div>
-
-        <figure class="hero-photo glass">
-          <img src="img/foto.webp" alt="Foto de Ayoub">
-        </figure>
       </div>
     </section>
 
-    <!-- EXPERIENCIA: dos cajas -->
-    <section id="experiencia" class="section">
-      <h2 data-i18n="sections.exp">Experiencia</h2>
-      <div class="grid exp-grid">
-
-
-
-      </div>
-    </section>
-
-
-    <section id="skills" class="section">
-      <h2 data-i18n="sections.sk">Skills</h2>
-
-      <div class="skills-pills">
-
-
-      </div>
-    </section>
-
-
-    <!-- PROYECTOS: dos cajas -->
-    <section id="proyectos" class="section">
-      <h2 data-i18n="sections.proj">Proyectos</h2>
-      <div class="grid">
-
-      </div>
-    </section>
-
-    <!-- CONTACTO: una caja con iconos -->
-    <section id="contacto" class="section">
-      <h2 data-i18n="sections.contact">Contacto</h2>
-
-      <div class="card contact-card" aria-live="polite">
-        <!-- Vista compacta -->
-        <div class="contact-compact" aria-hidden="true">
-          <a href="https://linkedin.com/in/ayoub-jerari" class="ic" target="_blank" rel="noopener">
-            <img src="img/logos/linkedin.webp" alt="LinkedIn">
-          </a>
-          <a href="mailto:ayoubjerari47@gmail.com" class="ic">
-            <img src="img/logos/mail.webp" alt="Email">
-          </a>
-          <a href="https://github.com/aybkh" class="ic" target="_blank" rel="noopener">
-            <img src="img/logos/github.webp" alt="GitHub">
-          </a>
-          <a href="https://wa.me/4915211209573" class="ic" target="_blank" rel="noopener">
-            <img src="img/logos/whatsapp.webp" alt="WhatsApp">
-          </a>
+    <!-- EXPERIENCIA Window -->
+    <section id="experiencia" class="mac-window">
+      <div class="window-header">
+        <div class="traffic-lights">
+          <span class="traffic-light close"></span>
+          <span class="traffic-light minimize"></span>
+          <span class="traffic-light maximize"></span>
         </div>
+        <div class="window-title" data-i18n="sections.exp">Experiencia</div>
+      </div>
+      <div class="window-content">
+        <div class="grid exp-grid">
 
-        <!-- Vista expandida con logos + texto -->
-        <nav class="contact-expanded" aria-label="Enlaces de contacto">
-          <a href="https://linkedin.com/in/ayoub-jerari" target="_blank" rel="noopener">
-            <img src="img/logos/linkedin.webp" alt=""> LinkedIn
-          </a>
-          <a href="mailto:ayoubjerari47@gmail.com">
-            <img src="img/logos/mail.webp" alt=""> Email
-          </a>
-          <a href="https://github.com/aybkh" target="_blank" rel="noopener">
-            <img src="img/logos/github.webp" alt=""> GitHub
-          </a>
-          <a href="https://wa.me/4915211209573" target="_blank" rel="noopener">
-            <img src="img/logos/whatsapp.webp" alt=""> WhatsApp
-          </a>
-        </nav>
+          <!-- HIPRA -->
+          <article class="card exp">
+            <header class="exp-head">
+              <div class="exp-info">
+                <h3>Laboratorios HIPRA, S.A.</h3>
+                <p class="muted">Amer / Aiguaviva, Girona</p>
+                <p class="muted" data-i18n="exp.e1_place">Junio 2025 - Presente</p>
+              </div>
+              <div class="exp-role">
+                <span class="badge" data-i18n="exp.e1_role">IT Workplace Intern</span>
+                <a href="https://www.hipra.com/" target="_blank"><img src="img/logos/hipra.webp" alt="HIPRA"
+                    class="exp-logo"></a>
+              </div>
+            </header>
+            <ul class="tasks">
+              <li data-i18n="exp.e1_t1">Soporte técnico de segundo nivel (hardware, software y conectividad).</li>
+              <li data-i18n="exp.e1_t2">Gestión de incidencias mediante Remedy y SmartIT.</li>
+              <li data-i18n="exp.e1_t3">Preparación y despliegue de equipos (portátiles, IGEL, periféricos).</li>
+              <li data-i18n="exp.e1_t4">Configuración de móviles iOS/Android, teléfonos Cisco y escáneres.</li>
+              <li data-i18n="exp.e1_t5">Configuración de impresoras RFID y térmicas (Zebra, Honeywell).</li>
+              <li data-i18n="exp.e1_t6">Gestión de garantías, reparaciones y coordinación con proveedores.</li>
+              <li data-i18n="exp.e1_t7">Colaboración en políticas de seguridad, parches y actualizaciones.</li>
+            </ul>
+          </article>
+
+          <!-- AJUNTAMENT -->
+          <article class="card exp">
+            <header class="exp-head">
+              <div class="exp-info">
+                <h3>Ajuntament de Malgrat de Mar</h3>
+                <p class="muted">Malgrat de Mar, Barcelona</p>
+                <p class="muted" data-i18n="exp.e2_place">Noviembre 2023 – Abril 2024</p>
+              </div>
+              <div class="exp-role">
+                <span class="badge" data-i18n="exp.e2_role">IT Helpdesk Intern</span>
+                <a href="https://www.ajmalgrat.cat/" target="_blank"><img src="img/logos/amm.svg"
+                    alt="Ajuntament de Malgrat de Mar" class="exp-logo"></a>
+              </div>
+            </header>
+            <ul class="tasks">
+              <li data-i18n="exp.e2_t1">Soporte técnico presencial y remoto para personal municipal.</li>
+              <li data-i18n="exp.e2_t2">Instalación y mantenimiento de equipos y periféricos.</li>
+              <li data-i18n="exp.e2_t3">Administración básica de sistemas y permisos de usuario.</li>
+              <li data-i18n="exp.e2_t4">Uso de herramientas Linux para diagnóstico y resolución de fallos.</li>
+              <li data-i18n="exp.e2_t5">Documentación de procedimientos y creación de guías de usuario.</li>
+              <li data-i18n="exp.e2_t6">Preparación y despliegue de equipos (PCs, portátiles, periféricos).</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS Window -->
+    <section id="skills" class="mac-window">
+      <div class="window-header">
+        <div class="traffic-lights">
+          <span class="traffic-light close"></span>
+          <span class="traffic-light minimize"></span>
+          <span class="traffic-light maximize"></span>
+        </div>
+        <div class="window-title" data-i18n="sections.sk">Skills</div>
+      </div>
+      <div class="window-content">
+        <div class="skills-pills">
+          <!-- Redes -->
+          <button class="skill-pill" aria-expanded="false">
+            <div class="pill-left">
+              <img src="img/logos/Network.webp" alt="" aria-hidden="true">
+              <span class="pill-title" data-i18n="skills.net">Redes</span>
+            </div>
+            <div class="pill-body">
+              <img src="img/logos/dns.webp" alt="DNS" loading="lazy">
+              <img src="img/logos/dhcp.webp" alt="DHCP" loading="lazy">
+              <img src="img/logos/pfsense.webp" alt="pfSense" loading="lazy">
+              <img src="img/logos/cisco.webp" alt="Cisco" loading="lazy">
+              <img src="img/logos/grandstream.webp" alt="Grandstream" loading="lazy">
+              <img src="img/logos/ssh.webp" alt="SSH" loading="lazy">
+              <img src="img/logos/nmap.webp" alt="Nmap" loading="lazy">
+              <img src="img/logos/Wireshark.webp" alt="Wireshark" loading="lazy">
+            </div>
+          </button>
+
+          <!-- Sistemas -->
+          <button class="skill-pill" aria-expanded="false">
+            <div class="pill-left">
+              <img src="img/logos/os.webp" alt="Operating Systems" aria-hidden="true">
+              <span class="pill-title" data-i18n="skills.sys">Sistemas</span>
+            </div>
+            <div class="pill-body">
+              <img src="img/logos/linux.webp" alt="Linux" loading="lazy">
+              <img src="img/logos/windows.webp" alt="Windows" loading="lazy">
+              <img src="img/logos/macos.webp" alt="macOS" loading="lazy">
+              <img src="img/logos/Android.webp" alt="Android" loading="lazy">
+              <img src="img/logos/Bash.webp" alt="Bash" loading="lazy">
+              <img src="img/logos/Powershell.webp" alt="PowerShell" loading="lazy">
+              <img src="img/logos/Microsoft_365.webp" alt="Microsoft 365" loading="lazy">
+              <img src="img/logos/IOS.webp" alt="iOS" loading="lazy">
+            </div>
+          </button>
+
+          <!-- Cloud -->
+          <button class="skill-pill" aria-expanded="false">
+            <div class="pill-left">
+              <img src="img/logos/cloud.webp" alt="" aria-hidden="true">
+              <span class="pill-title" data-i18n="skills.cloud.title">Cloud</span>
+            </div>
+            <div class="pill-body">
+              <img src="img/logos/Amazon.webp" alt="AWS" loading="lazy">
+              <img src="img/logos/Azure.webp" alt="Azure" loading="lazy">
+              <img src="img/logos/google.webp" alt="Google Cloud" loading="lazy">
+              <img src="img/logos/cloudflare.webp" alt="Cloudflare" loading="lazy">
+              <img src="img/logos/docker.webp" alt="Docker" loading="lazy">
+              <img src="img/logos/Kubernetes.webp" alt="Kubernetes" loading="lazy">
+              <img src="img/logos/Terraform.webp" alt="Terraform" loading="lazy">
+              <img src="img/logos/Ansible.webp" alt="Ansible" loading="lazy">
+            </div>
+          </button>
+
+          <!-- Programación -->
+          <button class="skill-pill" aria-expanded="false">
+            <div class="pill-left">
+              <img src="img/logos/code.webp" alt="" aria-hidden="true">
+              <span class="pill-title" data-i18n="skills.code">Programación</span>
+            </div>
+            <div class="pill-body">
+              <img src="img/logos/html-css.webp" alt="HTML5-CSS3" loading="lazy">
+              <img src="img/logos/Csharp.webp" alt="CSharp" loading="lazy">
+              <img src="img/logos/Python.webp" alt="Python" loading="lazy">
+              <img src="img/logos/js.webp" alt="JavaScript" loading="lazy">
+              <img src="img/logos/PHP.webp" alt="PHP" loading="lazy">
+              <img src="img/logos/JSON.webp" alt="JSON" loading="lazy">
+              <img src="img/logos/github.webp" alt="GitHub" loading="lazy">
+              <img src="img/logos/vscode.webp" alt="VSCode" loading="lazy">
+            </div>
+          </button>
+
+          <!-- BBDD -->
+          <button class="skill-pill" aria-expanded="false">
+            <div class="pill-left">
+              <img src="img/logos/Database.webp" alt="" aria-hidden="true">
+              <span class="pill-title" data-i18n="skills.db">BBDD</span>
+            </div>
+            <div class="pill-body">
+              <img src="img/logos/sql.webp" alt="SQL" loading="lazy">
+              <img src="img/logos/Postgresql.webp" alt="PostgreSQL" loading="lazy">
+              <img src="img/logos/oracle.webp" alt="Oracle" loading="lazy">
+              <img src="img/logos/mysql.webp" alt="MySQL" loading="lazy">
+              <img src="img/logos/mongodb.webp" alt="MongoDB" loading="lazy">
+              <img src="img/logos/Sqlite.webp" alt="SQLite" loading="lazy">
+              <img src="img/logos/sqlserver.webp" alt="SQL Server" loading="lazy">
+              <img src="img/logos/access.webp" alt="Access" loading="lazy">
+            </div>
+          </button>
+
+          <!-- IA -->
+          <button class="skill-pill" aria-expanded="false">
+            <div class="pill-left">
+              <img src="img/logos/IA.webp" alt="" aria-hidden="true">
+              <span class="pill-title">IA</span>
+            </div>
+            <div class="pill-body">
+              <img src="img/logos/n8n.webp" alt="n8n" loading="lazy">
+              <img src="img/logos/ChatGPT.webp" alt="ChatGPT" loading="lazy">
+              <img src="img/logos/gemini.webp" alt="Gemini" loading="lazy">
+              <img src="img/logos/copilot.webp" alt="Copilot" loading="lazy">
+              <img src="img/logos/ollama.webp" alt="Ollama" loading="lazy">
+              <img src="img/logos/notion.webp" alt="Notion" loading="lazy">
+              <img src="img/logos/meta.webp" alt="Meta" loading="lazy">
+              <img src="img/logos/openai.webp" alt="OpenAI" loading="lazy">
+            </div>
+          </button>
+
+          <!-- Productivity -->
+          <button class="skill-pill" aria-expanded="false">
+            <div class="pill-left">
+              <img src="img/logos/productivity.webp" alt="" aria-hidden="true">
+              <span class="pill-title" data-i18n="skills.prod">Productividad</span>
+            </div>
+            <div class="pill-body">
+              <img src="img/logos/Microsoft_Project.webp" alt="Microsoft Project" loading="lazy">
+              <img src="img/logos/excel.webp" alt="Excel" loading="lazy">
+              <img src="img/logos/word.webp" alt="Word" loading="lazy">
+              <img src="img/logos/teams.webp" alt="Teams" loading="lazy">
+              <img src="img/logos/sharepoint.webp" alt="SharePoint" loading="lazy">
+              <img src="img/logos/webex.webp" alt="Webex" loading="lazy">
+              <img src="img/logos/clickup.webp" alt="ClickUp" loading="lazy">
+              <img src="img/logos/jira-logo.webp" alt="Jira" loading="lazy">
+            </div>
+          </button>
+
+          <!-- Hardware Virtualization -->
+          <button class="skill-pill" aria-expanded="false">
+            <div class="pill-left">
+              <img src="img/logos/virtualization.webp" alt="" aria-hidden="true">
+              <span class="pill-title" data-i18n="skills.hwvirt">Hardware <br /> Virtualización</span>
+            </div>
+            <div class="pill-body">
+              <img src="img/logos/vmware.webp" alt="VMware" loading="lazy">
+              <img src="img/logos/vbox.webp" alt="VirtualBox" loading="lazy">
+              <img src="img/logos/zebra.webp" alt="Zebra" loading="lazy">
+              <img src="img/logos/honeywell.webp" alt="Honeywell" loading="lazy">
+              <img src="img/logos/raspberry.webp" alt="Raspberry" loading="lazy">
+              <img src="img/logos/igel-logo.webp" alt="IGEL" loading="lazy">
+              <img src="img/logos/paralels.webp" alt="Paralels" loading="lazy">
+              <img src="img/logos/scada.webp" alt="SCADA" loading="lazy">
+            </div>
+          </button>
+
+          <!-- Languages -->
+          <button class="skill-pill" aria-expanded="false">
+            <div class="pill-left">
+              <img src="img/logos/language.webp" alt="" aria-hidden="true">
+              <span class="pill-title" data-i18n="skills.langs">Idiomas</span>
+            </div>
+            <div class="pill-body">
+              <img src="img/logos/AR.webp" alt="AR" loading="lazy">
+              <img src="img/logos/EN.webp" alt="EN" loading="lazy">
+              <img src="img/logos/ES.webp" alt="ES" loading="lazy">
+              <img src="img/logos/CAT.webp" alt="CAT" loading="lazy">
+              <img src="img/logos/FR.webp" alt="FR" loading="lazy">
+              <img src="img/logos/DE.webp" alt="DE" loading="lazy">
+            </div>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS Window -->
+    <section id="proyectos" class="mac-window">
+      <div class="window-header">
+        <div class="traffic-lights">
+          <span class="traffic-light close"></span>
+          <span class="traffic-light minimize"></span>
+          <span class="traffic-light maximize"></span>
+        </div>
+        <div class="window-title" data-i18n="sections.proj">Proyectos</div>
+      </div>
+      <div class="window-content">
+        <div class="grid">
+          <!-- Snack Tanger POS -->
+          <article class="card project">
+            <img class="proj-img" src="img/projects/project5.webp" alt="Snack Tanger 303">
+            <div class="project-body">
+              <ul class="logo-row">
+                <li><img src="img/logos/Python.webp" alt="Python"></li>
+                <li><img src="img/logos/js.webp" alt="JavaScript"></li>
+                <li><img src="img/logos/react.webp" alt="React"></li>
+                <li><img src="img/logos/Postgresql.webp" alt="PostgreSQL"></li>
+                <li><img src="img/logos/docker.webp" alt="Docker"></li>
+                <li><img src="img/logos/linux.webp" alt="Linux"></li>
+                <li><img src="img/logos/git_logo.webp" alt="Git"></li>
+                <li><img src="img/logos/github.webp" alt="GitHub"></li>
+              </ul>
+              <h3>Snack Tanger 303 – POS & Management Ecosystem</h3>
+              <p data-i18n="projects.p5_desc">Sistema TPV integral para restaurantes...</p>
+              <div class="row">
+                <a class="btn web" href="https://snacktanger303.com/#/menu" target="_blank" rel="noopener">Web Page</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Snack Tanger Menu -->
+          <article class="card project">
+            <img class="proj-img" src="img/projects/project6.webp" alt="Snack Tanger Menu">
+            <div class="project-body">
+              <ul class="logo-row">
+                <li><img src="img/logos/react.webp" alt="React"></li>
+                <li><img src="img/logos/tailwind-css-logo.webp" alt="Tailwind"></li>
+                <li><img src="img/logos/git_logo.webp" alt="Git"></li>
+                <li><img src="img/logos/github.webp" alt="GitHub"></li>
+              </ul>
+              <h3>Snack Tanger 303 – Digital Menu</h3>
+              <p data-i18n="projects.p6_desc">Carta digital estática...</p>
+              <div class="row">
+                <a class="btn" href="https://github.com/aybkh/snack-tanger-web-menu" target="_blank"
+                  rel="noopener">GitHub</a>
+                <a class="btn web" href="https://www.snacktanger.com" target="_blank" rel="noopener">Web Page</a>
+              </div>
+            </div>
+          </article>
+          <article class="card project">
+            <img class="proj-img" src="img/projects/project4.webp" alt="Captura del Proyecto 4">
+            <div class="project-body">
+              <ul class="logo-row">
+                <li><img src="img/logos/html-css.webp" alt="HTML/CSS"></li>
+                <li><img src="img/logos/js.webp" alt="JavaScript"></li>
+                <li><img src="img/logos/vscode.webp" alt="Visual Studio Code"></li>
+                <li><img src="img/logos/ChatGPT.webp" alt="ChatGPT"></li>
+                <li><img src="img/logos/git_logo.webp" alt="Git"></li>
+                <li><img src="img/logos/github.webp" alt="GitHub"></li>
+              </ul>
+              <h3>iOS Glass Portfolio — Personal Web Project</h3>
+              <p data-i18n="projects.p1_desc">Portafolio personal inspirado en la interfaz de iOS26, desarrollado
+                con
+                HTML, CSS y JavaScript. Presenta experiencia profesional, habilidades y proyectos en un diseño
+                moderno y
+                responsivo. Incluye modo oscuro/claro, selección de idioma y una "Dynamic Island" interactiva para
+                navegación.</p>
+              <div class="row">
+                <a class="btn" href="https://github.com/aybkh/Portafolio_Personal" target="_blank"
+                  rel="noopener">GitHub</a>
+              </div>
+            </div>
+          </article>
+          <article class="card project">
+            <img class="proj-img" src="img/projects/project1.webp" alt="Captura del Proyecto 1">
+            <div class="project-body">
+              <ul class="logo-row">
+                <li><img src="img/logos/linux.webp" alt="Linux"></li>
+                <li><img src="img/logos/Postgresql.webp" alt="PostgreSQL"></li>
+                <li><img src="img/logos/Python.webp" alt="Python"></li>
+                <li><img src="img/logos/sql.webp" alt="SQL"></li>
+                <li><img src="img/logos/Bash.webp" alt="Bash"></li>
+                <li><img src="img/logos/git_logo.webp" alt="Git"></li>
+                <li><img src="img/logos/github.webp" alt="GitHub"></li>
+              </ul>
+              <h3>Hotel Management System</h3>
+              <p data-i18n="projects.p2_desc">Aplicación completa para la gestión integral de una cadena hotelera.
+                Incluye control de reservas, clientes, personal, servicios y auditoría de datos. Desarrollada en
+                Python
+                (Tkinter) con base de datos PostgreSQL, incorpora seguridad, alta disponibilidad, replicación,
+                backups
+                automatizados y exportaciones en JSON/PDF.</p>
+              <div class="row">
+                <a class="btn" href="https://github.com/aybkh/HaramResorts" target="_blank" rel="noopener">GitHub</a>
+                <a class="ghost made-in" href="https://www.sapalomera.cat" target="_blank" rel="noopener">
+                  <span>MADE IN</span>
+                  <img src="img/logos/logo-institut-sapalomera.webp" alt="Institut Sa Palomera">
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card project">
+            <img class="proj-img" src="img/projects/project2.webp" alt="Captura del Proyecto 2">
+            <div class="project-body">
+              <ul class="logo-row">
+                <li><img src="img/logos/unity.webp" alt="Unity"></li>
+                <li><img src="img/logos/Csharp.webp" alt="CSharp"></li>
+                <li><img src="img/logos/dotnet.svg" alt=".Net"></li>
+                <li><img src="img/logos/Visual_Studio.webp" alt="Visual Studio"></li>
+                <li><img src="img/logos/git_logo.webp" alt="Git"></li>
+                <li><img src="img/logos/github.webp" alt="GitHub"></li>
+              </ul>
+              <h3>ERAY Slasher – Roguelite Shooter</h3>
+              <p data-i18n="projects.p3_desc">Juego de acción ambientado en el siglo XVIII, protagonizado por ERAY,
+                un
+                personaje con habilidades mágicas para defender su hogar. Incluye tres tipos de enemigos con ataques
+                distintos y objetos que mejoran las estadísticas del jugador. Desarrollado con Unity, disponible en
+                formato ejecutable gratuito.</p>
+              <div class="row">
+                <a class="btn" href="https://github.com/aybkh/ErAySlasher" target="_blank" rel="noopener">GitHub</a>
+                <a class="ghost made-in" href="https://www.sapalomera.cat" target="_blank" rel="noopener">
+                  <span>MADE IN</span>
+                  <img src="img/logos/logo-institut-sapalomera.webp" alt="Institut Sa Palomera">
+                </a>
+              </div>
+            </div>
+          </article>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO Window -->
+    <section id="contacto" class="mac-window">
+      <div class="window-header">
+        <div class="traffic-lights">
+          <span class="traffic-light close"></span>
+          <span class="traffic-light minimize"></span>
+          <span class="traffic-light maximize"></span>
+        </div>
+        <div class="window-title" data-i18n="sections.contact">Contacto</div>
+      </div>
+      <div class="window-content">
+        <div class="card contact-card" aria-live="polite">
+          <!-- Vista compacta -->
+          <div class="contact-compact" aria-hidden="true">
+            <a href="https://linkedin.com/in/ayoub-jerari" class="ic" target="_blank" rel="noopener">
+              <img src="img/logos/linkedin.webp" alt="LinkedIn">
+            </a>
+            <a href="mailto:ayoubjerari47@gmail.com" class="ic">
+              <img src="img/logos/mail.webp" alt="Email">
+            </a>
+            <a href="https://github.com/aybkh" class="ic" target="_blank" rel="noopener">
+              <img src="img/logos/github.webp" alt="GitHub">
+            </a>
+            <a href="https://wa.me/4915211209573" class="ic" target="_blank" rel="noopener">
+              <img src="img/logos/whatsapp.webp" alt="WhatsApp">
+            </a>
+          </div>
+
+          <!-- Vista expandida con logos + texto -->
+          <nav class="contact-expanded" aria-label="Enlaces de contacto">
+            <a href="https://linkedin.com/in/ayoub-jerari" target="_blank" rel="noopener">
+              <img src="img/logos/linkedin.webp" alt=""> LinkedIn
+            </a>
+            <a href="mailto:ayoubjerari47@gmail.com">
+              <img src="img/logos/mail.webp" alt=""> Email
+            </a>
+            <a href="https://github.com/aybkh" target="_blank" rel="noopener">
+              <img src="img/logos/github.webp" alt=""> GitHub
+            </a>
+            <a href="https://wa.me/4915211209573" target="_blank" rel="noopener">
+              <img src="img/logos/whatsapp.webp" alt=""> WhatsApp
+            </a>
+          </nav>
+        </div>
       </div>
     </section>
   </main>
@@ -226,11 +572,54 @@
   <footer class="foot">
     <p><span id="year"></span> Ayoub El Khalifi Idrissi El Jerari</p>
   </footer>
-  <script src="JS/data.js" defer></script>
-  <script src="JS/translations.js" defer></script>
-  <script src="JS/theme.js" defer></script>
-  <script src="JS/ui.js" defer></script>
-  <script src="JS/renderer.js" defer></script>
+
+  <!-- MacOS Dock -->
+  <div class="dock-container">
+    <div class="dock">
+      <a href="#hero" class="dock-item" aria-label="Inicio">
+        <div class="dock-icon finder">
+          <img src="img/logos/Azure.webp" alt="Home">
+        </div>
+        <span class="dock-tooltip">Home</span>
+      </a>
+      <a href="#experiencia" class="dock-item" aria-label="Experiencia">
+        <div class="dock-icon launchpad">
+          <img src="img/logos/hipra.webp" alt="Experiencia">
+        </div>
+        <span class="dock-tooltip">Experiences</span>
+      </a>
+      <a href="#skills" class="dock-item" aria-label="Skills">
+        <div class="dock-icon settings">
+          <img src="img/logos/os.webp" alt="Skills">
+        </div>
+        <span class="dock-tooltip">Skills</span>
+      </a>
+      <a href="#proyectos" class="dock-item" aria-label="Proyectos">
+        <div class="dock-icon app-store">
+          <img src="img/logos/github.webp" alt="Proyectos">
+        </div>
+        <span class="dock-tooltip">Projects</span>
+      </a>
+      <a href="#contacto" class="dock-item" aria-label="Contacto">
+        <div class="dock-icon mail">
+          <img src="img/logos/mail.webp" alt="Contacto">
+        </div>
+        <span class="dock-tooltip">Contact</span>
+      </a>
+
+      <div class="dock-separator"></div>
+
+      <div class="dock-item" id="themeToggleDock">
+        <div class="dock-icon trash">
+          <img src="img/logos/macos.webp" alt="Theme">
+        </div>
+        <span class="dock-tooltip">Theme</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/data.js"></script>
+  <script src="JS/ui.js"></script>
   <script src="JS/main.js" defer></script>
 </body>
 
