@@ -87,6 +87,26 @@
     </button>
   </div>
 
+  <!-- Botón Hamburguesa (solo móvil) -->
+  <button class="hamburger" id="hamburgerBtn" aria-label="Menú" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Sidebar de Navegación (móvil) -->
+  <aside class="sidebar" id="sidebar">
+    <nav class="sidebar-nav" aria-label="Navegación principal">
+      <a href="#experiencia" data-i18n="nav.experience">Experiencia</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+      <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+    </nav>
+  </aside>
+
+  <!-- Overlay para cerrar sidebar al tocar fuera -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
   <main>
 
     <!-- HERO con foto paralela y logos -->
