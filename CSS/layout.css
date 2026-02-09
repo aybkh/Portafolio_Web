@@ -1,13 +1,7 @@
 main {
     max-width: var(--max);
-    margin: 100px auto 0;
+    margin: calc(var(--menubar-height) + 20px) auto 0;
     padding: 0 16px;
-}
-
-@media (max-width: 600px) {
-    main {
-        margin-top: 80px;
-    }
 }
 
 .section {
@@ -19,9 +13,117 @@ main {
     font-size: clamp(22px, 3vw, 28px);
 }
 
-/* HERO */
-.hero {
-    margin: 24px 0 10px;
+h1 {
+    font-size: clamp(28px, 5vw, 52px);
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+#proyectos .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px;
+}
+
+.mac-window {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 40px;
+    backdrop-filter: blur(40px);
+}
+
+.window-header {
+    height: 38px;
+    background: var(--header-bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    position: relative;
+}
+
+.window-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    pointer-events: none;
+}
+
+.window-content {
+    padding: 24px;
+}
+
+.traffic-lights {
+    display: flex;
+    gap: 8px;
+}
+
+.traffic-light {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: default;
+    padding: 0;
+}
+
+.traffic-light::before {
+    content: '';
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+/* Show icons when hovering the container (macOS style) */
+.traffic-lights:hover .traffic-light::before {
+    opacity: 1;
+}
+
+.traffic-light.close {
+    background: #ff5f56;
+    border: 1px solid #e0443e;
+}
+
+.traffic-light.close::before {
+    content: '×';
+    font-size: 10px;
+}
+
+.traffic-light.minimize {
+    background: #ffbd2e;
+    border: 1px solid #dea123;
+}
+
+.traffic-light.minimize::before {
+    content: '−';
+    font-size: 10px;
+}
+
+.traffic-light.maximize {
+    background: #27c93f;
+    border: 1px solid #1aab29;
+}
+
+.traffic-light.maximize::before {
+    content: '+';
+    font-size: 10px;
 }
 
 .hero-grid {
@@ -35,59 +137,43 @@ main {
     min-width: 0;
 }
 
-/* Grids Generales */
-.grid {
-    display: grid;
-    gap: 16px;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+.hero {
+    margin: 24px 0 10px;
 }
 
-.exp-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.row {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-/* Footer / Terminal */
-.terminal {
-    border-radius: 22px;
-    overflow: auto;
-    border: 1px solid var(--border);
-    background: #0a0f18;
-    color: #cfe6ff;
-    box-shadow: var(--shadow);
-}
-
-.terminal pre {
-    margin: 0;
-    padding: 14px;
-}
-
-.foot {
-    margin: 40px 0 20px;
-    text-align: center;
-    color: var(--muted);
-}
-
-/* Responsive del Hero Grid */
-@media (max-width: 900px) {
+@media (max-width:900px) {
     .hero-grid {
         grid-template-columns: 1fr;
     }
+
+    .hero-photo {
+        /* Styles handled in components.css but layout adjustments are here */
+        order: -1;
+        max-height: 360px;
+        max-width: 280px;
+        width: 80%;
+        margin-bottom: 14px;
+        margin-inline: auto;
+    }
 }
 
-/* Proyectos Layout */
-#proyectos .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 18px;
-}
-
-@media (max-width: 700px) {
+/* Mobile Adjustments */
+@media (max-width: 600px) {
     #proyectos .grid {
         grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+
+    .window-content {
+        padding: 16px;
+    }
+
+    .mac-window {
+        margin-bottom: 24px;
+    }
+
+    h1 {
+        font-size: 28px;
+        /* Ensure readability */
     }
 }
