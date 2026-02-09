@@ -290,21 +290,21 @@
 }
 
 /* ==========================================================================
-   MÓVIL RESPONSIVE - HAMBURGER MENU
+   MÓVIL - DYNAMIC ISLAND (Izq) + HAMBURGER (Der)
    ========================================================================== */
 @media (max-width: 600px) {
 
-    /* Contenedor alineado a la izquierda */
+    /* Dynamic Island: Izquierda */
     .island {
-        top: 10px;
+        top: 18px;
         left: 0;
         transform: none;
-        width: auto;
         justify-content: flex-start;
         padding-left: 16px;
+        width: auto;
+        pointer-events: none;
     }
 
-    /* ESTADO CERRADO: Botón hamburger circular */
     .island .pill {
         width: 44px;
         height: 44px;
@@ -316,11 +316,9 @@
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 5px;
-        overflow: visible;
+        overflow: hidden;
         pointer-events: auto;
 
         min-width: 0;
@@ -329,9 +327,10 @@
         block-size: auto;
 
         transition:
-            width .35s cubic-bezier(0.4, 0.0, 0.2, 1),
-            height .35s cubic-bezier(0.4, 0.0, 0.2, 1),
-            border-radius .35s cubic-bezier(0.4, 0.0, 0.2, 1),
+            width .5s cubic-bezier(0.86, 0, 0.07, 1),
+            height .5s cubic-bezier(0.86, 0, 0.07, 1),
+            border-radius .5s cubic-bezier(0.86, 0, 0.07, 1),
+            background .3s,
             transform .15s ease;
     }
 
@@ -340,87 +339,93 @@
     }
 
     /* Ocultar todo excepto dot */
-    .island .pill>*:not(.dot) {
+    .island .pill>* {
         display: none;
         opacity: 0;
+        width: 0;
+        height: 0;
+        margin: 0;
+        pointer-events: none;
     }
 
-    /* Dot como contenedor de barras hamburger */
+    /* Dot visible */
     .island .pill .dot {
         display: block !important;
-        width: 20px;
-        height: 2px;
-        background: var(--text) !important;
-        border-radius: 2px;
-        position: relative;
         opacity: 1 !important;
-        transition: background .3s ease;
+        width: 36px;
+        height: 14px;
+        border-radius: 999px;
+        background: linear-gradient(45deg, var(--accent), var(--accent2));
+        position: static;
+        transform: none;
+        margin: 0;
+        pointer-events: auto;
+        animation: pulse 2s ease-in-out infinite;
     }
 
-    /* Barras superior e inferior con ::before y ::after */
-    .island .pill .dot::before,
-    .island .pill .dot::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        width: 20px;
-        height: 2px;
-        background: var(--text);
-        border-radius: 2px;
-        transition: all .3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    @keyframes pulse {
+
+        0%,
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        50% {
+            transform: scale(1.15);
+            opacity: 0.7;
+        }
     }
 
-    .island .pill .dot::before {
-        top: -7px;
+    .island .pill .brand-logo {
+        display: none !important;
     }
 
-    .island .pill .dot::after {
-        bottom: -7px;
-    }
-
-    /* Animación a X cuando abierto */
-    .island.open .pill .dot {
-        background: transparent !important;
-    }
-
-    .island.open .pill .dot::before {
-        top: 0;
-        transform: rotate(45deg);
-    }
-
-    .island.open .pill .dot::after {
-        bottom: 0;
-        transform: rotate(-45deg);
-    }
-
-    /* ESTADO ABIERTO: Card vertical */
+    /* ESTADO ABIERTO: Expandida horizontalmente */
     .island.open .pill {
-        width: 280px;
+        width: calc(100vw - 88px);
         height: auto;
-        max-height: 80vh;
-        padding: 20px;
+        min-height: 60px;
+        padding: 12px 16px;
+        background: var(--glass);
+        border: 1px solid var(--border);
+        justify-content: space-between;
         border-radius: 24px;
-        background: var(--panel);
-
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        overflow-y: auto;
+        gap: 10px;
     }
 
-    /* Header: Nombre */
+    .island.open .pill .dot {
+        display: none !important;
+    }
+
+    .island.open .pill .brand-logo {
+        display: block !important;
+        opacity: 1;
+        width: 38px;
+        height: 38px;
+        order: 1;
+        margin-right: 10px;
+        flex-shrink: 0;
+        animation: none;
+    }
+
     .island.open .pill .brand-left {
         display: block !important;
         opacity: 1;
-        font-size: 18px;
+        font-size: 15px;
         font-weight: 700;
-        text-align: center;
+        white-space: nowrap;
 
         width: auto !important;
         height: auto !important;
         position: static;
         transform: none;
-        margin-bottom: 8px;
+        pointer-events: auto;
+
+        flex-grow: 1;
+        order: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
 
         background: linear-gradient(45deg, var(--accent), var(--accent2));
         -webkit-background-clip: text;
@@ -428,67 +433,186 @@
         color: transparent;
     }
 
-    /* Idioma */
     .island.open .pill .lang {
         display: block !important;
         opacity: 1;
-        width: 100% !important;
-        height: 40px !important;
-        padding: 0 32px 0 12px;
-        margin: 0 0 8px 0;
-        text-align: center;
+        width: auto !important;
+        height: 32px !important;
+        padding: 0 24px 0 10px;
+        margin: 0 8px 0 0;
+        font-size: 13px;
+        pointer-events: auto;
+        order: 3;
+        flex-shrink: 0;
     }
 
-    /* Tema */
     .island.open .pill .switch {
         display: flex !important;
         opacity: 1;
-        width: 100% !important;
-        height: 40px !important;
-        margin: 0 0 16px 0;
-        justify-content: center;
+        width: 48px !important;
+        height: 28px !important;
+        margin: 0;
+        pointer-events: auto;
+        order: 4;
+        flex-shrink: 0;
+        transform: none;
     }
 
     .island.open .switch i {
-        left: calc(50% - 24px);
+        top: 50%;
+        left: 3px;
+        width: 22px;
+        height: 22px;
+        transform: translateY(-50%);
     }
 
     .island.open [data-theme="light"] .switch i {
-        left: calc(50% + 0px);
+        left: 23px;
     }
 
-    /* Navegación vertical */
-    .island.open .pill .label-expanded {
-        display: flex !important;
+    .island .pill .label-expanded,
+    .island .pill .label-compact {
+        display: none !important;
+    }
+
+    /* ======================================================================
+       HAMBURGER & SIDEBAR (Derecha)
+       ====================================================================== */
+
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 18px;
+        right: 16px;
+        z-index: 10000;
+
+        width: 44px;
+        height: 44px;
+        padding: 0;
+
+        background: var(--glass);
+        backdrop-filter: saturate(140%) blur(12px);
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+        cursor: pointer;
+        transition: transform .15s ease;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .hamburger:active {
+        transform: scale(0.95);
+    }
+
+    .hamburger span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: var(--text);
+        border-radius: 2px;
+        transition: all .3s ease;
+    }
+
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 280px;
+        height: 100vh;
+
+        background: var(--panel);
+        backdrop-filter: saturate(140%) blur(20px);
+        border-left: 1px solid var(--border);
+        box-shadow: -4px 0 24px rgba(0, 0, 0, 0.4);
+
+        z-index: 9999;
+
+        transform: translateX(100%);
+        transition: transform .5s cubic-bezier(0.86, 0, 0.07, 1);
+
+        padding: 80px 24px 24px;
+        overflow-y: auto;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar-nav {
+        display: flex;
         flex-direction: column;
         gap: 8px;
-        opacity: 1 !important;
-        max-width: none !important;
-        width: 100%;
     }
 
-    .island.open .pill .label-expanded a {
-        padding: 12px 16px;
-        font-size: 16px;
+    .sidebar-nav a {
+        display: block;
+        padding: 16px 20px;
+
+        font-size: 18px;
         font-weight: 600;
-        text-align: center;
+        color: var(--text);
         text-decoration: none;
 
         background: var(--glass);
         border: 1px solid var(--border);
-        border-radius: 12px;
+        border-radius: 16px;
 
         transition: all .2s ease;
     }
 
-    .island.open .pill .label-expanded a:active {
+    .sidebar-nav a:active {
         transform: scale(0.98);
         background: color-mix(in oklab, var(--glass) 70%, var(--accent));
     }
 
-    /* Ocultar elementos no usados */
-    .island .pill .label-compact,
-    .island .pill .brand-logo {
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(4px);
+
+        z-index: 9998;
+
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s ease;
+    }
+
+    .sidebar-overlay.show {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+/* Ocultar hamburger en desktop */
+@media (min-width: 601px) {
+
+    .hamburger,
+    .sidebar,
+    .sidebar-overlay {
         display: none !important;
     }
 }
