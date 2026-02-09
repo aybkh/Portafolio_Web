@@ -352,8 +352,8 @@
     .island .pill .dot {
         display: block !important;
         opacity: 1 !important;
-        width: 10px;
-        height: 10px;
+        width: 14px;
+        height: 14px;
         border-radius: 50%;
         /* Círculo perfecto */
         background: linear-gradient(45deg, var(--accent), var(--accent2));
