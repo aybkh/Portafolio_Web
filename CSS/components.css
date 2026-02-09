@@ -1,4 +1,223 @@
-/* Botones */
+/* MacOS Menu Bar */
+.mac-menubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--menubar-height);
+    background: var(--menubar-bg);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 9999;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.menubar-left {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.menu-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    pointer-events: none;
+    /* Let clicks pass through if empty space */
+}
+
+
+
+.menubar-right {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.menu-item {
+    cursor: default;
+    opacity: 0.9;
+    padding: 3px 8px;
+    border-radius: 4px;
+    transition: background 0.1s ease;
+}
+
+.menu-item:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item:active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.menu-item.bold {
+    font-weight: 700;
+}
+
+.apple-logo {
+    width: 20px;
+    height: 20px;
+}
+
+.menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+    padding: 3px 6px;
+    border-radius: 4px;
+    cursor: default;
+    transition: background 0.1s ease;
+}
+
+.menu-icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 1;
+}
+
+.menu-icon:active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Battery Icon */
+.battery-body {
+    width: 22px;
+    height: 10px;
+    border: 1px solid var(--icon-dim);
+    border-radius: 2px;
+    padding: 1px;
+    position: relative;
+}
+
+.battery-body::after {
+    content: '';
+    position: absolute;
+    right: -3px;
+    top: 2px;
+    width: 2px;
+    height: 4px;
+    background: var(--icon-dim);
+    border-radius: 0 1px 1px 0;
+}
+
+.battery-level {
+    width: 70%;
+    height: 100%;
+    background: var(--icon-solid);
+    border-radius: 1px;
+}
+
+/* MacOS Dock */
+.dock-container {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 9990;
+    pointer-events: none;
+}
+
+.dock {
+    pointer-events: auto;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    height: var(--dock-size);
+    transition: height 0.2s ease;
+}
+
+.dock-item {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: width 0.2s cubic-bezier(0.25, 1, 0.5, 1), margin-bottom 0.2s ease;
+    transform-origin: bottom center;
+}
+
+.dock-icon {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dock-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tooltip */
+.dock-tooltip {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    backdrop-filter: blur(10px);
+    white-space: nowrap;
+}
+
+.dock-item:hover .dock-tooltip {
+    opacity: 1;
+}
+
+.dock-separator {
+    width: 2px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 4px;
+}
+
+/* Magnification Effect */
+.dock-item:hover .dock-icon {
+    transform: scale(1.25) translateY(-10px);
+}
+
+
+
+/* UI Elements */
+.accent {
+    background: linear-gradient(45deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.lead {
+    color: var(--muted);
+    margin: 8px 0 16px;
+}
+
 .btn {
     display: inline-block;
     padding: 12px 16px;
@@ -34,24 +253,28 @@
     box-shadow: 0 14px 40px rgba(0, 0, 0, .35);
 }
 
-/* Card General */
-.card {
-    padding: 12px;
-    border-radius: 22px;
-    border: 1px solid var(--border);
-    background: var(--glass);
-    backdrop-filter: saturate(140%) blur(12px);
-    box-shadow: var(--shadow);
-    transform: translateY(4px);
-    transition: transform .25s ease, box-shadow .25s ease;
+.btn.web {
+    /* Yellow-Gold */
+    color: var(--btn-web-text);
+    border: 2px solid var(--web-accent);
+    background: rgba(245, 197, 24, 0.15);
+    backdrop-filter: blur(12px);
 }
 
-.card:hover {
-    transform: translateY(0);
-    box-shadow: 0 14px 35px rgba(0, 0, 0, .35);
+.btn.web:hover {
+    background: var(--web-accent);
+    color: #000;
+    box-shadow: 0 8px 25px rgba(245, 197, 24, 0.4);
+    transform: translateY(-2px);
 }
 
-/* Hero Photo & Logos */
+.row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Hero Elements */
 .hero-photo {
     display: block;
     overflow: hidden;
@@ -60,7 +283,6 @@
     background: var(--glass);
     backdrop-filter: saturate(140%) blur(12px);
     transition: transform .4s ease, box-shadow .4s ease;
-    aspect-ratio: 1/1;
 }
 
 .hero-photo img {
@@ -101,7 +323,26 @@
     transition: transform .12s ease;
 }
 
-/* Experiencia */
+/* Cards */
+.card {
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform .25s ease, background .25s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Experience */
+.exp-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
 .exp .muted {
     color: var(--muted);
     margin: 2px 0 0;
@@ -151,7 +392,7 @@
     max-width: 150px;
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
     .exp-role {
         flex-direction: row;
         gap: 6px;
@@ -162,7 +403,7 @@
     }
 }
 
-/* Skills Pills */
+/* Skills */
 .skills-pills {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -279,13 +520,13 @@
     height: 60px;
 }
 
-@media (max-width: 900px) {
+@media (max-width:900px) {
     .skills-pills {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
     .skills-pills {
         grid-template-columns: 1fr;
     }
@@ -317,14 +558,12 @@
     border-radius: 16px;
     border: 1px solid #262157;
     box-shadow: 0 8px 24px rgba(0, 0, 0, .28), inset 0 1px 0 rgba(255, 255, 255, .04);
-    aspect-ratio: 16/9;
 }
 
 .project-body {
     padding: 10px 2px 2px;
 }
 
-/* Botón "Made in" */
 .made-in {
     display: flex;
     align-items: center;
@@ -439,7 +678,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width:600px) {
     .contact-expanded {
         flex-wrap: wrap;
         gap: 10px;
@@ -471,5 +710,157 @@
         pointer-events: auto;
         flex-wrap: wrap;
         gap: 12px;
+    }
+}
+
+/* Footer / Terminal */
+.terminal {
+    border-radius: 22px;
+    overflow: auto;
+    border: 1px solid var(--border);
+    background: #0a0f18;
+    color: #cfe6ff;
+    box-shadow: var(--shadow);
+}
+
+.terminal pre {
+    margin: 0;
+    padding: 14px;
+}
+
+.foot {
+    margin: 40px 0 20px;
+    text-align: center;
+    color: var(--muted);
+}
+
+/* Lang Selectors (MenuBar) */
+.mac-lang-select {
+    appearance: none;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0 4px;
+    outline: none;
+    font-family: inherit;
+}
+
+.mac-lang-select option {
+    background: rgba(30, 30, 40, 0.95);
+    color: #fff;
+}
+
+/* Motion */
+.reveal {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .5s ease, transform .5s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reveal,
+    .card,
+    .dock-icon {
+        transition: none !important;
+    }
+}
+
+/* Mobile Component Tweaks */
+@media (max-width: 600px) {
+    .mac-menubar {
+        padding: 0 10px;
+    }
+
+    .menubar-left .menu-item:not(.bold) {
+        display: none;
+    }
+
+    .menubar-right .menu-icon:not(.battery):not(.wifi):not(.language) {
+        display: none;
+    }
+
+    .menu-clock {
+        font-size: 12px;
+    }
+
+    .dock-container {
+        bottom: 10px;
+    }
+
+    .dock {
+        gap: 8px;
+        padding: 8px;
+        height: 50px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        max-width: 95vw;
+        /* Hide scrollbar */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .dock::-webkit-scrollbar {
+        display: none;
+    }
+
+    .dock-item {
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+    }
+
+    .dock-item:hover {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 0;
+    }
+
+    .dock-tooltip {
+        display: none;
+    }
+
+    /* Layout Fixes */
+    .exp-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .logo-row {
+        gap: 10px;
+    }
+
+    .logo-row img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .proj-img {
+        border-radius: 12px;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .lead {
+        font-size: 0.95rem;
+    }
+
+    /* Ensure modal-like contact card fits */
+    .contact-card.open {
+        width: 100%;
+        max-width: 100%;
     }
 }
