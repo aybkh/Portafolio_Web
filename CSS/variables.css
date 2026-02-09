@@ -1,33 +1,59 @@
-/* Variables base (Dark) */
 :root {
-    --panel: #0f1420;
-    --text: #eaf0ff;
-    --muted: #d1e1ff;
+    --panel: rgba(30, 30, 40, 0.85);
+    --text: #ffffff;
+    --muted: #a1a1aa;
 
-    --glass: rgba(255, 255, 255, 0.081);
-    --border: rgba(255, 255, 255, 0.179);
+    --glass: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --border: rgba(255, 255, 255, 0.15);
 
-    --accent: #78e7ff;
-    --accent2: #8b7bff;
+    --header-bg: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
 
-    --radius: 24px;
-    --max: 1120px;
+    --accent: #007aff;
+    --accent2: #5ac8fa;
 
-    --blur: 18px;
-    --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    --web-accent: #f5c518;
+    --btn-web-text: #f5c518;
+
+    --radius: 12px;
+    --max: 1200px;
+
+    --blur: 20px;
+    --shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+    --dock-size: 70px;
+    --menubar-height: 30px;
+    --menubar-bg: rgba(20, 20, 30, 0.6);
+
+    --icon-dim: rgba(255, 255, 255, 0.5);
+    --icon-solid: #ffffff;
 
     --bp-tablet: 900px;
     --bp-mobile: 600px;
 }
 
-/* Modo claro (override) */
 :root[data-theme="light"] {
-    --text: #0b0d12;
-    --muted: #3f4c63;
+    --text: #0a0a0a;
+    --muted: #555555;
 
-    --glass: rgba(0, 0, 0, 0.05);
-    --border: rgba(0, 18, 132, 0.10);
+    /* Gray theme for windows */
+    --panel: rgba(242, 242, 247, 0.95);
+    --header-bg: rgba(229, 229, 234, 1);
 
-    --accent: #8700c1;
-    --accent2: #6600ff;
+    --menubar-bg: rgba(255, 255, 255, 0.45);
+
+    --glass: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --border: rgba(0, 0, 0, 0.12);
+
+    --icon-dim: rgba(0, 0, 0, 0.5);
+    --icon-solid: #000000;
+
+    --accent: #007aff;
+    --accent2: #5ac8fa;
+
+    --web-accent: #d4a017;
+    --btn-web-text: #000000;
+
+    --shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
