@@ -10,39 +10,49 @@
   <link rel="icon" href="img/favicon.webp" />
   <link rel="stylesheet" href="CSS/styles.css" />
   <style>
-    /* Estilos específicos para 404 */
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding-top: var(--menubar-height);
+      padding-bottom: calc(var(--dock-size) + 40px);
+      box-sizing: border-box;
+    }
+
     .error-window {
       max-width: 600px;
-      margin: 10vh auto;
+      width: 90%;
+      height: auto;
     }
 
     .error-content {
       text-align: center;
-      padding: 60px 40px;
+      padding: 40px;
     }
 
     .error-code {
-      font-size: 120px;
-      font-weight: 900;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-size: 100px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      line-height: 1;
       margin: 0;
+      line-height: 1.1;
     }
 
     .error-message {
       font-size: 24px;
       font-weight: 600;
-      margin: 20px 0;
+      margin: 10px 0 20px;
       color: var(--text);
     }
 
     .error-description {
-      font-size: 16px;
       color: var(--muted);
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       line-height: 1.6;
     }
 
@@ -50,34 +60,6 @@
       display: flex;
       gap: 16px;
       justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      text-decoration: none;
-      border-radius: 12px;
-      font-weight: 600;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-    }
-
-    .btn.ghost {
-      background: transparent;
-      border: 2px solid var(--border);
-      color: var(--text);
-    }
-
-    .btn.ghost:hover {
-      background: var(--glass);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
@@ -89,9 +71,47 @@
     <div class="menubar-left">
       <img class="apple-logo" src="img/logos/Apple-Logo.png" alt="">
       <span class="menu-item bold">Portfolio</span>
+      <span class="menu-item">File</span>
+      <span class="menu-item">Edit</span>
+      <span class="menu-item">View</span>
+      <span class="menu-item">Go</span>
+      <span class="menu-item">Window</span>
+      <span class="menu-item">Help</span>
+    </div>
+    <div class="menu-center">
+      <span class="menu-clock" id="macClock">Mon Jun 22 9:41 AM</span>
     </div>
     <div class="menubar-right">
-      <span class="menu-clock" id="macClock">Mon Jun 22 9:41 AM</span>
+      <div class="menu-icon battery">
+        <div class="battery-body">
+          <div class="battery-level"></div>
+        </div>
+      </div>
+      <div class="menu-icon wifi">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M12 2C7.95 2 4.21 3.34 1.2 5.5L12 18.5L22.8 5.5C19.79 3.34 16.05 2 12 2Z" />
+        </svg>
+      </div>
+      <div class="menu-icon search">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="M21 21L16.65 16.65" />
+        </svg>
+      </div>
+      <div class="menu-icon control-center">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </div>
+      <div class="menu-icon language">
+        <select id="langSelect" class="mac-lang-select" aria-label="Idioma">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+          <option value="ca">CAT</option>
+          <option value="fr">FR</option>
+          <option value="de">DE</option>
+        </select>
+      </div>
     </div>
   </header>
 
@@ -111,13 +131,10 @@
           <h1 class="error-code">404</h1>
           <h2 class="error-message">Página no encontrada</h2>
           <p class="error-description">
-            Lo sentimos, la página que buscas no existe o ha sido movida.
-            <br>
-            Puede que hayas escrito mal la URL o que el enlace esté desactualizado.
+            Lo sentimos, la página que buscas no existe o se ha movido.
           </p>
           <div class="error-actions">
             <a href="/" class="btn">Volver al inicio</a>
-            <a href="/#contacto" class="btn ghost">Contactar</a>
           </div>
         </div>
       </div>
@@ -129,7 +146,7 @@
     <div class="dock">
       <a href="/" class="dock-item" aria-label="Inicio">
         <div class="dock-icon finder">
-          <img src="img/logos/A.webp" alt="Home">
+          <img src="img/logos/Azure.webp" alt="Home">
         </div>
         <span class="dock-tooltip">Home</span>
       </a>
@@ -157,6 +174,15 @@
         </div>
         <span class="dock-tooltip">Contact</span>
       </a>
+
+      <div class="dock-separator"></div>
+
+      <div class="dock-item" id="themeToggleDock">
+        <div class="dock-icon trash">
+          <img src="img/logos/macos.webp" alt="Theme">
+        </div>
+        <span class="dock-tooltip">Theme</span>
+      </div>
     </div>
   </div>
 
@@ -164,25 +190,9 @@
     <p><span id="year"></span> Ayoub El Khalifi Idrissi El Jerari</p>
   </footer>
 
-  <script>
-    // Reloj
-    function updateClock() {
-      const now = new Date();
-      const options = {
-        weekday: 'short',
-        month: 'short',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: '2-digit'
-      };
-      document.getElementById('macClock').textContent = now.toLocaleString('en-US', options);
-    }
-    updateClock();
-    setInterval(updateClock, 1000);
-
-    // Año
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="JS/data.js"></script>
+  <script src="JS/ui.js"></script>
+  <script src="JS/main.js" defer></script>
 </body>
 
 </html>
