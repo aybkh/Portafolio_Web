@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>404 — Página no encontrada</title>
+    <meta name="theme-color" content="#0b0d12" />
+    <link rel="icon" type="image/webp" href="img/favicon.webp" />
+
+    <!-- Estilos del Portafolio -->
+    <link rel="stylesheet" href="CSS/variables.css" />
+    <link rel="stylesheet" href="CSS/base.css" />
+    <link rel="stylesheet" href="CSS/layout.css" />
+    <link rel="stylesheet" href="CSS/components.css" />
+    <link rel="stylesheet" href="CSS/island.css" />
+
+    <style>
+        /* Ajustes específicos para centrar el error */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .error-card {
+            text-align: center;
+            padding: 40px 30px;
+            max-width: 420px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        h1.big-404 {
+            font-size: clamp(6rem, 20vw, 8rem);
+            line-height: .9;
+            margin: 0;
+            letter-spacing: -4px;
+            opacity: .9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Island Simplificada: Actúa como botón Home -->
+    <div class="island">
+        <a href="index.html" class="pill" style="width: auto; padding: 0 24px; text-decoration: none;">
+            <span class="dot"></span>
+            <span style="font-weight: 700;">Error 404</span>
+        </a>
+    </div>
+
+    <main>
+        <div class="card error-card">
+            <h1 class="accent big-404">404</h1>
+            <h2 style="margin: 0;">Página No Encontrada</h2>
+            <p class="lead" style="margin: 0;">
+                La URL que intentas visitar no existe o ha sido movida.
+            </p>
+            <div style="margin-top: 10px;">
+                <a href="index.html" class="btn">Volver al Inicio</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="foot">
+        <p>Ayoub El Khalifi Idrissi El Jerari</p>
+    </footer>
+
+    <!-- Script para mantener el tema oscuro/claro -->
+    <script src="JS/theme.js"></script>
+    <script>
+        // Iniciar tema manualmente ya que no cargamos main.js completo
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initTheme === 'function') initTheme();
+        });
+    </script>
+
+</body>
+
+</html>
