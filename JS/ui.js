@@ -11,6 +11,7 @@ function initUI() {
             if (touchLike()) {
                 const open = island.classList.toggle('open');
                 pill.setAttribute('aria-expanded', String(open));
+                console.log('Island toggled:', open ? 'OPEN' : 'CLOSED'); // DEBUG
             }
         });
 
