@@ -797,9 +797,9 @@
     }
 
     .dock {
-        gap: 8px;
-        padding: 8px;
-        height: 50px;
+        gap: 6px;
+        padding: 6px;
+        height: 44px;
         overflow-x: auto;
         justify-content: flex-start;
         max-width: 95vw;
@@ -813,14 +813,14 @@
     }
 
     .dock-item {
-        width: 36px;
-        height: 36px;
+        width: 30px;
+        height: 30px;
         flex-shrink: 0;
     }
 
     .dock-item:hover {
-        width: 36px;
-        height: 36px;
+        width: 30px;
+        height: 30px;
         margin-bottom: 0;
     }
 
