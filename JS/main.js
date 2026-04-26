@@ -13,6 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
   setupLinks();
   setupLogoTooltips();
 
+  /* New macOS Header Features */
+  setupMenubar();
+  setupLangDropdown();
+  setupControlCenter();
+  setupBattery();
+  setupSpotlight();
+  setupAboutModal();
+  setupShortcutsModal();
+  setupKeyboard();
+
   /* Clock */
   updateClock();
   setInterval(updateClock, 1000);

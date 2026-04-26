@@ -1,6 +1,6 @@
 main {
     max-width: var(--max);
-    margin: calc(var(--menubar-height) + 20px) auto 0;
+    margin: var(--menubar-height) auto 0;
     padding: 0 16px;
 }
 

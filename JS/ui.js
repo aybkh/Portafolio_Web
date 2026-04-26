@@ -1,38 +1,95 @@
-/* Clock */
+/* ═══════════════════════════════════════════════
+   CLOCK
+═══════════════════════════════════════════════ */
 function updateClock() {
     const clockEl = document.getElementById('macClock');
     if (!clockEl) return;
     const now = new Date();
-    const options = { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
-    clockEl.textContent = now.toLocaleDateString('en-US', options).replace(',', '');
+    const isMobile = window.innerWidth <= 600;
+    const options = isMobile 
+        ? { hour: 'numeric', minute: 'numeric' }
+        : { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    
+    clockEl.textContent = now.toLocaleTimeString('en-US', options).replace(',', '');
+
+    // Sync calendar dropdown
+    const calMonth = document.getElementById('calMonth');
+    const calYear = document.getElementById('calYear');
+    if (calMonth) calMonth.textContent = now.toLocaleDateString('en-US', { month: 'long' });
+    if (calYear) calYear.textContent = now.getFullYear();
 }
 
-/* Theme */
-function setupTheme() {
-    const root = document.documentElement;
-    const themeBtn = document.getElementById('themeToggleDock');
-    const savedTheme = localStorage.getItem('theme');
+/* ═══════════════════════════════════════════════
+   THEME
+═══════════════════════════════════════════════ */
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
 
-    if (savedTheme) root.setAttribute('data-theme', savedTheme);
+    const isDark = theme !== 'light';
+    const label1 = document.getElementById('themeToggleLabel');
+    const label2 = document.getElementById('ccThemeLabel');
+    const aboutVal = document.getElementById('aboutThemeVal');
+    
+    // Use i18n for labels if available
+    const lang = document.documentElement.getAttribute('lang') || 'es';
+    const dict = I18N[lang] || I18N.es;
+    
+    if (label1) label1.textContent = isDark ? (dict.system.light_mode || 'Modo Claro') : (dict.system.dark_mode || 'Modo Oscuro');
+    if (label2) label2.textContent = isDark ? (dict.system.light || 'Claro') : (dict.system.dark || 'Oscuro');
+    if (aboutVal) aboutVal.textContent = isDark ? (dict.system.dark || 'Oscuro') : (dict.system.light || 'Claro');
 
-    if (themeBtn) {
-        themeBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const current = root.getAttribute('data-theme');
-            const next = current === 'light' ? 'dark' : 'light';
-            root.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-        });
+    // Sync dock toggle button
+    const dockBtn = document.getElementById('themeToggleDock');
+    if (dockBtn) {
+        dockBtn.onclick = null; // managed separately now
     }
 }
 
-/* Dock */
-function setupDock() {
-    // Dock hover effects are handled by CSS in components.css
-    // The previous JS implementation conflicted with CSS transitions
+function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme');
+    applyTheme(current === 'light' ? 'dark' : 'light');
 }
 
-/* Reveal */
+function setupTheme() {
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else {
+        applyTheme('dark');
+    }
+
+    // Dock button
+    const themeBtn = document.getElementById('themeToggleDock');
+    if (themeBtn) {
+        themeBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleTheme();
+        });
+    }
+
+    // View menu toggle
+    const menuToggle = document.getElementById('menuThemeToggle');
+    if (menuToggle) menuToggle.addEventListener('click', () => { toggleTheme(); closeAllDropdowns(); });
+
+    // Control Center toggle
+    const ccToggle = document.getElementById('ccTheme');
+    if (ccToggle) ccToggle.addEventListener('click', () => toggleTheme());
+
+    // Control + T shortcut support (handled in setupKeyboard)
+}
+
+/* ═══════════════════════════════════════════════
+   DOCK (CSS-driven, minimal JS)
+═══════════════════════════════════════════════ */
+function setupDock() {
+    // Magnification is CSS-driven
+}
+
+/* ═══════════════════════════════════════════════
+   REVEAL
+═══════════════════════════════════════════════ */
 function setupReveal() {
     const revealTargets = document.querySelectorAll('.reveal');
     if (revealTargets.length) {
@@ -45,7 +102,9 @@ function setupReveal() {
     }
 }
 
-/* Skills */
+/* ═══════════════════════════════════════════════
+   SKILLS
+═══════════════════════════════════════════════ */
 function setupSkills() {
     document.querySelectorAll('.skill-pill').forEach(p => {
         p.addEventListener('click', () => {
@@ -57,7 +116,9 @@ function setupSkills() {
     });
 }
 
-/* Contact */
+/* ═══════════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════════ */
 function setupContact() {
     const contactCard = document.querySelector('.contact-card');
     if (contactCard) {
@@ -69,7 +130,17 @@ function setupContact() {
     }
 }
 
-/* I18N */
+/* ═══════════════════════════════════════════════
+   I18N
+═══════════════════════════════════════════════ */
+const LANG_META = {
+    es: { icon: 'img/icons/es.svg', code: 'ES' },
+    en: { icon: 'img/icons/en.svg', code: 'EN' },
+    ca: { icon: 'img/icons/ca.svg', code: 'CAT' },
+    fr: { icon: 'img/icons/fr.svg', code: 'FR' },
+    de: { icon: 'img/icons/de.svg', code: 'DE' },
+};
+
 function i18nSet(lang) {
     const dict = I18N[lang] || I18N.es;
     document.documentElement.setAttribute('lang', lang);
@@ -78,41 +149,541 @@ function i18nSet(lang) {
         const txt = key.split('.').reduce((o, k) => o && o[k], dict);
         if (typeof txt === 'string') el.textContent = txt;
     });
-}
+    // Placeholders
+    document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+        const key = el.getAttribute('data-i18n-ph');
+        const txt = key.split('.').reduce((o, k) => o && o[k], dict);
+        if (typeof txt === 'string') el.placeholder = txt;
+    });
+    // Update custom lang button display
+    const meta = LANG_META[lang] || LANG_META.es;
+    const flagEl = document.getElementById('langFlag');
+    const codeEl = document.getElementById('langCode');
+    if (flagEl) flagEl.src = meta.icon;
+    if (codeEl) codeEl.textContent = meta.code;
 
-function setupI18N() {
-    const langSel = document.getElementById('langSelect');
-    const prefLang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
-    if (langSel) {
-        if ([...langSel.options].some(o => o.value === prefLang)) langSel.value = prefLang;
-        i18nSet(langSel.value);
-        langSel.addEventListener('change', () => {
-            const v = langSel.value;
-            localStorage.setItem('lang', v);
-            i18nSet(v);
+    // Update CV links based on language
+    const cvMap = {
+        ca: 'data/cv_ayoub_cat.pdf',
+        es: 'data/cv_ayoub_es.pdf',
+        en: 'data/cv_ayoub_en.pdf'
+    };
+    const cvPath = cvMap[lang] || cvMap.en;
+    document.querySelectorAll('.cv-link').forEach(a => {
+        a.href = cvPath;
+    });
+
+    // Update Spotlight data
+    if (typeof SPOTLIGHT_DATA !== 'undefined') {
+        const dict = I18N[lang] || I18N.es;
+        SPOTLIGHT_DATA.forEach(item => {
+            const title = item.titleKey ? item.titleKey.split('.').reduce((o, k) => o && o[k], dict) : item.title;
+            if (title === dict.system.download_cv || title === dict.system.print_cv) {
+                item.href = cvPath;
+            }
         });
-    } else {
-        i18nSet(prefLang);
+    }
+
+    // Update dynamic battery text for current language
+    if (typeof updateBatteryStatus === 'function') {
+        updateBatteryStatus();
+    }
+
+    // Refresh theme labels for the new language
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    if (typeof applyTheme === 'function') {
+        applyTheme(currentTheme);
     }
 }
 
-/* Links */
-function setupLinks() {
-    document.querySelectorAll('a[href="#"], a[href=""]').forEach(a => {
-        a.addEventListener('click', e => {
-            e.preventDefault();
-            window.location.href = 'error.html';
+function setupI18N() {
+    const prefLang = localStorage.getItem('lang') || (navigator.language || 'es').slice(0, 2);
+    const validLang = LANG_META[prefLang] ? prefLang : 'es';
+    i18nSet(validLang);
+
+    document.querySelectorAll('.lang-option').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.dataset.lang;
+            localStorage.setItem('lang', lang);
+            i18nSet(lang);
+            closeAllDropdowns();
         });
     });
 }
 
-/* Logo Tooltips */
+/* ═══════════════════════════════════════════════
+   LINKS — prevent empty hrefs
+═══════════════════════════════════════════════ */
+function setupLinks() {
+    document.querySelectorAll('a[href=""], a[href="#"]').forEach(a => {
+        if (!a.closest('[href^="#"]')) return; // allow anchor links
+        a.addEventListener('click', e => {
+            e.preventDefault();
+        });
+    });
+}
+
+/* ═══════════════════════════════════════════════
+   LOGO TOOLTIPS
+═══════════════════════════════════════════════ */
 function setupLogoTooltips() {
     const logos = document.querySelectorAll('.logo-row img, .pill-body img, .exp-logo, .contact-compact .ic img, .contact-expanded img');
     logos.forEach(img => {
-        // Use alt text as title (native tooltip)
         if (img.alt && !img.title) {
             img.title = img.alt;
         }
+    });
+}
+
+/* ═══════════════════════════════════════════════
+   macOS MENU BAR — Dropdowns
+═══════════════════════════════════════════════ */
+function closeAllDropdowns() {
+    document.querySelectorAll('.mac-dropdown.open').forEach(d => {
+        d.classList.remove('open');
+        const btn = d.previousElementSibling;
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+    });
+    // Close control center
+    const cc = document.getElementById('controlCenterPanel');
+    if (cc) cc.classList.remove('open');
+    // Close lang dropdown
+    const ld = document.getElementById('langDropdown');
+    const lb = document.getElementById('langBtn');
+    if (ld) ld.classList.remove('open');
+    if (lb) lb.setAttribute('aria-expanded', 'false');
+}
+
+function setupMenubar() {
+    // All menu buttons that open a mac-dropdown
+    const menuMap = [
+        { btnId: 'menu-apple',     dropId: 'drop-apple' },
+        { btnId: 'menu-portfolio', dropId: 'drop-portfolio' },
+        { btnId: 'menu-file',      dropId: 'drop-file' },
+        { btnId: 'menu-edit',      dropId: 'drop-edit' },
+        { btnId: 'menu-view',      dropId: 'drop-view' },
+        { btnId: 'menu-go',        dropId: 'drop-go' },
+        { btnId: 'menu-window',    dropId: 'drop-window' },
+        { btnId: 'menu-help',      dropId: 'drop-help' },
+        { btnId: 'clockBtn',       dropId: 'drop-calendar' },
+        { btnId: 'batteryBtn',     dropId: 'drop-battery' },
+        { btnId: 'wifiBtn',        dropId: 'drop-wifi' },
+    ];
+
+    menuMap.forEach(({ btnId, dropId }) => {
+        const btn = document.getElementById(btnId);
+        const drop = document.getElementById(dropId);
+        if (!btn || !drop) return;
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = drop.classList.contains('open');
+            closeAllDropdowns();
+            if (!isOpen) {
+                drop.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+
+        // Hover: open on hover if another menu is already open
+        btn.addEventListener('mouseenter', () => {
+            const anyOpen = document.querySelector('.mac-dropdown.open');
+            if (anyOpen && !drop.classList.contains('open')) {
+                closeAllDropdowns();
+                drop.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.menu-item-wrap') &&
+            !e.target.closest('.lang-wrap') &&
+            !e.target.closest('.control-center')) {
+            closeAllDropdowns();
+        }
+    });
+
+    // Special actions
+    const printBtn = document.getElementById('menuPrint');
+    if (printBtn) printBtn.addEventListener('click', () => { closeAllDropdowns(); window.print(); });
+
+    const fullscreenBtn = document.getElementById('menuFullscreen');
+    if (fullscreenBtn) fullscreenBtn.addEventListener('click', () => {
+        closeAllDropdowns();
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(() => {});
+        } else {
+            document.exitFullscreen().catch(() => {});
+        }
+    });
+
+    const ccFullscreen = document.getElementById('ccFullscreen');
+    if (ccFullscreen) ccFullscreen.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(() => {});
+        } else {
+            document.exitFullscreen().catch(() => {});
+        }
+    });
+
+    // Edit menu — copy to clipboard
+    document.querySelectorAll('[data-copy]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const text = btn.dataset.copy;
+            navigator.clipboard.writeText(text).then(() => showToast(`✓ Copiado: ${text}`));
+            closeAllDropdowns();
+        });
+    });
+
+    // Anchor links inside dropdowns close menu
+    document.querySelectorAll('.mac-dropdown a[href^="#"]').forEach(a => {
+        a.addEventListener('click', () => closeAllDropdowns());
+    });
+}
+
+/* ═══════════════════════════════════════════════
+   LANGUAGE DROPDOWN (custom)
+═══════════════════════════════════════════════ */
+function setupLangDropdown() {
+    const btn = document.getElementById('langBtn');
+    const drop = document.getElementById('langDropdown');
+    if (!btn || !drop) return;
+
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = drop.classList.contains('open');
+        closeAllDropdowns();
+        if (!isOpen) {
+            drop.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+        }
+    });
+}
+
+/* ═══════════════════════════════════════════════
+   CONTROL CENTER
+═══════════════════════════════════════════════ */
+function setupControlCenter() {
+    const btn = document.getElementById('controlCenterBtn');
+    const panel = document.getElementById('controlCenterPanel');
+    if (!btn || !panel) return;
+
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = panel.classList.contains('open');
+        closeAllDropdowns();
+        if (!isOpen) panel.classList.add('open');
+    });
+
+    // Brightness slider
+    const slider = document.getElementById('brightnessSlider');
+    const overlay = document.getElementById('brightnessOverlay');
+    if (slider && overlay) {
+        slider.addEventListener('input', () => {
+            // Slider 30 to 100
+            // Overlay opacity 0.7 to 0
+            const val = slider.value;
+            const opacity = (100 - val) / 100;
+            overlay.style.opacity = opacity;
+        });
+    }
+}
+
+/* ═══════════════════════════════════════════════
+   BATTERY
+═══════════════════════════════════════════════ */
+
+
+/* ═══════════════════════════════════════════════
+   SPOTLIGHT
+═══════════════════════════════════════════════ */
+const SPOTLIGHT_DATA = [
+    { titleKey: 'nav.home',       subKey: 'system.main_section', icon: '🏠', href: '#hero' },
+    { titleKey: 'sections.exp',   subKey: 'sections.exp_desc',   icon: '💼', href: '#experiencia' },
+    { titleKey: 'sections.sk',    subKey: 'sections.sk_desc',    icon: '⭐', href: '#skills' },
+    { titleKey: 'sections.proj',  subKey: 'sections.proj_desc',  icon: '📁', href: '#proyectos' },
+    { titleKey: 'sections.contact',subKey: 'sections.contact_desc',icon: '✉️', href: '#contacto' },
+    { titleKey: 'system.download_cv', subKey: 'system.curr_pdf', icon: '📄', href: 'data/cv_ayoub_cat.pdf', external: true },
+    { titleKey: 'system.print_cv',    subKey: 'system.curr_pdf', icon: '🖨️', href: 'data/cv_ayoub_cat.pdf', external: true },
+    { titleKey: 'contact.github',     sub: 'github.com/aybkh',   icon: '🐙', href: 'https://github.com/aybkh', external: true },
+    { titleKey: 'contact.linkedin',   sub: 'linkedin.com/in/ayoub-jerari', icon: '💼', href: 'https://linkedin.com/in/ayoub-jerari', external: true },
+    { titleKey: 'contact.whatsapp',   sub: '+34 631 714 568',    icon: '💬', href: 'https://wa.me/34631714568', external: true },
+    { titleKey: 'menubar.copy_email', sub: 'ayoubjerari47@gmail.com',  icon: '📧', href: 'mailto:ayoubjerari47@gmail.com' },
+    { title: 'Snack Tanger POS',      subKey: 'system.tpv_desc', icon: '🍔', href: '#proyectos' },
+    { title: 'Hotel Management',      sub: 'Python + PostgreSQL',icon: '🏨', href: '#proyectos' },
+    { title: 'ERAY Slasher',          sub: 'Unity Roguelite',    icon: '🎮', href: '#proyectos' },
+];
+
+function openSpotlight() {
+    const overlay = document.getElementById('spotlightOverlay');
+    const input = document.getElementById('spotlightInput');
+    if (!overlay) return;
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    setTimeout(() => { if (input) input.focus(); }, 100);
+    renderSpotlightResults('');
+}
+
+function closeSpotlight() {
+    const overlay = document.getElementById('spotlightOverlay');
+    const input = document.getElementById('spotlightInput');
+    if (!overlay) return;
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    if (input) input.value = '';
+    const results = document.getElementById('spotlightResults');
+    if (results) results.innerHTML = '';
+}
+
+function renderSpotlightResults(query) {
+    const container = document.getElementById('spotlightResults');
+    if (!container) return;
+
+    const q = query.toLowerCase().trim();
+    const lang = document.documentElement.getAttribute('lang') || 'es';
+    const dict = I18N[lang] || I18N.es;
+
+    const filtered = q
+        ? SPOTLIGHT_DATA.filter(item => {
+            const title = item.titleKey ? item.titleKey.split('.').reduce((o, k) => o && o[k], dict) : item.title;
+            const sub = item.subKey ? item.subKey.split('.').reduce((o, k) => o && o[k], dict) : item.sub;
+            return (title && title.toLowerCase().includes(q)) || (sub && sub.toLowerCase().includes(q));
+        })
+        : SPOTLIGHT_DATA.slice(0, 8);
+
+    if (filtered.length === 0) {
+        container.innerHTML = `<div class="sp-category">${dict.system.no_results}</div>`;
+        return;
+    }
+
+    container.innerHTML = (q ? '' : `<div class="sp-category">${dict.system.suggestions}</div>`) +
+        filtered.map((item, i) => {
+            const title = item.titleKey ? item.titleKey.split('.').reduce((o, k) => o && o[k], dict) : item.title;
+            const sub = item.subKey ? item.subKey.split('.').reduce((o, k) => o && o[k], dict) : item.sub;
+            return `
+            <a class="sp-result${i === 0 ? ' active' : ''}"
+               href="${item.href}"
+               ${item.external ? 'target="_blank" rel="noopener"' : ''}
+               data-idx="${i}">
+              <div class="sp-result-icon">${item.icon}</div>
+              <div class="sp-result-text">
+                <div class="sp-result-title">${title}</div>
+                <div class="sp-result-sub">${sub}</div>
+              </div>
+            </a>
+        `}).join('');
+
+    // Click closes spotlight
+    container.querySelectorAll('.sp-result').forEach(el => {
+        el.addEventListener('click', () => closeSpotlight());
+    });
+}
+
+function setupSpotlight() {
+    const overlay = document.getElementById('spotlightOverlay');
+    const input = document.getElementById('spotlightInput');
+    const spotBtn = document.getElementById('spotlightBtn');
+
+    if (spotBtn) spotBtn.addEventListener('click', (e) => { e.stopPropagation(); openSpotlight(); });
+
+    if (overlay) {
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeSpotlight();
+        });
+    }
+
+    if (input) {
+        input.addEventListener('input', () => renderSpotlightResults(input.value));
+
+        let activeIdx = 0;
+        input.addEventListener('keydown', (e) => {
+            const results = document.querySelectorAll('.sp-result');
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                results[activeIdx]?.classList.remove('active');
+                activeIdx = Math.min(activeIdx + 1, results.length - 1);
+                results[activeIdx]?.classList.add('active');
+                results[activeIdx]?.scrollIntoView({ block: 'nearest' });
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                results[activeIdx]?.classList.remove('active');
+                activeIdx = Math.max(activeIdx - 1, 0);
+                results[activeIdx]?.classList.add('active');
+                results[activeIdx]?.scrollIntoView({ block: 'nearest' });
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                results[activeIdx]?.click();
+            }
+        });
+    }
+}
+
+/* ═══════════════════════════════════════════════
+   ABOUT MODAL
+═══════════════════════════════════════════════ */
+function setupAboutModal() {
+    const openBtn = document.getElementById('openAbout');
+    const overlay = document.getElementById('aboutOverlay');
+    const closeBtn = document.getElementById('aboutClose');
+
+    if (openBtn) {
+        openBtn.addEventListener('click', () => {
+            closeAllDropdowns();
+            if (overlay) { overlay.classList.add('open'); overlay.setAttribute('aria-hidden', 'false'); }
+            // Sync theme label
+            const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+            const aboutThemeVal = document.getElementById('aboutThemeVal');
+            if (aboutThemeVal) aboutThemeVal.textContent = isDark ? 'Oscuro' : 'Claro';
+        });
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', () => {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+    });
+
+    if (overlay) overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.setAttribute('aria-hidden', 'true');
+        }
+    });
+}
+
+/* ═══════════════════════════════════════════════
+   SHORTCUTS MODAL
+═══════════════════════════════════════════════ */
+function setupShortcutsModal() {
+    const openBtn = document.getElementById('menuShortcuts');
+    const overlay = document.getElementById('shortcutsOverlay');
+    const closeBtn = document.getElementById('shortcutsClose');
+
+    if (openBtn) openBtn.addEventListener('click', () => {
+        closeAllDropdowns();
+        if (overlay) { overlay.classList.add('open'); overlay.setAttribute('aria-hidden', 'false'); }
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', () => {
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+    });
+
+    if (overlay) overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.classList.remove('open');
+            overlay.setAttribute('aria-hidden', 'true');
+        }
+    });
+}
+
+/* ═══════════════════════════════════════════════
+   KEYBOARD SHORTCUTS
+═══════════════════════════════════════════════ */
+function setupKeyboard() {
+    document.addEventListener('keydown', (e) => {
+        // Ctrl+K — Spotlight
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            const overlay = document.getElementById('spotlightOverlay');
+            if (overlay?.classList.contains('open')) {
+                closeSpotlight();
+            } else {
+                openSpotlight();
+            }
+        }
+
+        // Ctrl+T — Toggle Theme
+        if ((e.ctrlKey || e.metaKey) && e.key === 't') {
+            e.preventDefault();
+            toggleTheme();
+        }
+
+        // Esc — Close all
+        if (e.key === 'Escape') {
+            const spotOrb = document.getElementById('spotlightOverlay');
+            if (spotOrb?.classList.contains('open')) {
+                closeSpotlight();
+                return;
+            }
+            document.querySelectorAll('.mac-modal-overlay.open').forEach(m => {
+                m.classList.remove('open');
+                m.setAttribute('aria-hidden', 'true');
+            });
+            closeAllDropdowns();
+        }
+    });
+}
+
+/* ═══════════════════════════════════════════════
+   COPY TOAST
+═══════════════════════════════════════════════ */
+function showToast(msg) {
+    let toast = document.getElementById('copyToast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'copyToast';
+        toast.className = 'copy-toast';
+        document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => toast.classList.remove('show'), 2200);
+}
+
+/* ═══════════════════════════════════════════════
+   BATTERY
+   ═══════════════════════════════════════════════ */
+let globalBattery = null;
+
+function updateBatteryStatus() {
+    if (!globalBattery) return;
+    const level = Math.round(globalBattery.level * 100);
+    const batteryPct = document.getElementById('batteryPct');
+    const ccBatteryPct = document.getElementById('ccBatteryPct');
+    const levelEl = document.getElementById('batteryLevel');
+    
+    if (batteryPct) batteryPct.textContent = `${level}%`;
+    if (ccBatteryPct) ccBatteryPct.textContent = `${level}%`;
+    if (levelEl) {
+        levelEl.style.width = `${level}%`;
+        levelEl.style.background = level > 20 ? 'var(--icon-solid)' : '#ff3b30';
+    }
+    
+    // Dynamic status text
+    const statusText = document.getElementById('batteryStatusText');
+    if (statusText) {
+        const lang = document.documentElement.getAttribute('lang') || 'es';
+        const dict = I18N[lang] || I18N.es;
+        const chargingStr = globalBattery.charging 
+            ? (dict.system.charging || 'Cargando') 
+            : (dict.system.battery || 'Batería');
+        statusText.textContent = `${chargingStr} - ${level}%`;
+    }
+    
+    // Icon status (for special styles if any)
+    const icon = document.querySelector('.battery-icon');
+    if (icon) {
+        if (globalBattery.charging) icon.classList.add('charging');
+        else icon.classList.remove('charging');
+    }
+}
+
+function setupBattery() {
+    if (!('getBattery' in navigator)) {
+        const levelEl = document.getElementById('batteryLevel');
+        if (levelEl) levelEl.style.width = '100%'; // Default for unsupported browsers
+        const batteryPct = document.getElementById('batteryPct');
+        if (batteryPct) batteryPct.textContent = '100%';
+        return;
+    }
+
+    navigator.getBattery().then(battery => {
+        globalBattery = battery;
+        updateBatteryStatus();
+        battery.addEventListener('levelchange', updateBatteryStatus);
+        battery.addEventListener('chargingchange', updateBatteryStatus);
     });
 }
