@@ -69,48 +69,298 @@
   <!-- MacOS Menu Bar -->
   <header class="mac-menubar">
     <div class="menubar-left">
-      <img class="apple-logo" src="img/logos/Apple-Logo.png" alt="">
-      <span class="menu-item bold">Portfolio</span>
-      <span class="menu-item">File</span>
-      <span class="menu-item">Edit</span>
-      <span class="menu-item">View</span>
-      <span class="menu-item">Go</span>
-      <span class="menu-item">Window</span>
-      <span class="menu-item">Help</span>
-    </div>
-    <div class="menu-center">
-      <span class="menu-clock" id="macClock">Mon Jun 22 9:41 AM</span>
-    </div>
-    <div class="menubar-right">
-      <div class="menu-icon battery">
-        <div class="battery-body">
-          <div class="battery-level"></div>
+
+      <!-- Apple Menu -->
+      <div class="menu-item-wrap" id="wrap-apple">
+        <button type="button" class="menu-item bold apple-btn" id="menu-apple" aria-haspopup="true" aria-expanded="false" aria-label="Apple Menu">
+          <img class="apple-logo" src="img/logos/Apple-Logo.png" alt="">
+        </button>
+        <div class="mac-dropdown" id="drop-apple" role="menu">
+          <div class="drop-header">
+            <img src="img/foto.webp" alt="Ayoub" class="drop-avatar">
+            <div>
+              <div class="drop-name">Ayoub K.I.J.</div>
+              <div class="drop-sub">Portfolio v2.0</div>
+            </div>
+          </div>
+          <div class="drop-sep"></div>
+          <button type="button" class="drop-item" id="openAbout" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span data-i18n="menubar.apple_about">Acerca de este Mac</span>
+          </button>
+          <div class="drop-sep"></div>
+          <a class="drop-item" href="https://linkedin.com/in/ayoub-jerari" target="_blank" rel="noopener" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a class="drop-item" href="https://github.com/aybkh" target="_blank" rel="noopener" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            GitHub
+          </a>
         </div>
       </div>
-      <div class="menu-icon wifi">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-          <path d="M12 2C7.95 2 4.21 3.34 1.2 5.5L12 18.5L22.8 5.5C19.79 3.34 16.05 2 12 2Z" />
-        </svg>
+
+      <!-- Portfolio Menu -->
+      <div class="menu-item-wrap" id="wrap-portfolio">
+        <button type="button" class="menu-item bold" id="menu-portfolio" aria-haspopup="true" aria-expanded="false">Portfolio</button>
+        <div class="mac-dropdown" id="drop-portfolio" role="menu">
+          <a class="drop-item" href="/#hero" role="menuitem" data-i18n="nav.home">Home</a>
+          <a class="drop-item" href="/#experiencia" role="menuitem" data-i18n="sections.exp">Experiencia</a>
+          <a class="drop-item" href="/#skills" role="menuitem" data-i18n="sections.sk">Skills</a>
+          <a class="drop-item" href="/#proyectos" role="menuitem" data-i18n="sections.proj">Proyectos</a>
+          <a class="drop-item" href="/#contacto" role="menuitem" data-i18n="sections.contact">Contacto</a>
+        </div>
       </div>
-      <div class="menu-icon search">
+
+      <!-- File Menu -->
+      <div class="menu-item-wrap" id="wrap-file">
+        <button type="button" class="menu-item" id="menu-file" aria-haspopup="true" aria-expanded="false" data-i18n="menubar.file">File</button>
+        <div class="mac-dropdown" id="drop-file" role="menu">
+          <a class="drop-item cv-link" href="data/cv_ayoub_cat.pdf" target="_blank" rel="noopener" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="system.download_cv">Descargar CV</span>
+            <span class="drop-shortcut">⌘D</span>
+          </a>
+          <a class="drop-item cv-link" href="data/cv_ayoub_cat.pdf" target="_blank" rel="noopener" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <span data-i18n="system.print_cv">Imprimir CV</span>
+            <span class="drop-shortcut">⌘P</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Edit Menu -->
+      <div class="menu-item-wrap" id="wrap-edit">
+        <button type="button" class="menu-item" id="menu-edit" aria-haspopup="true" aria-expanded="false" data-i18n="menubar.edit">Edit</button>
+        <div class="mac-dropdown" id="drop-edit" role="menu">
+          <button type="button" class="drop-item" data-copy="ayoubjerari47@gmail.com" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span data-i18n="menubar.copy_email">Copiar Email</span>
+          </button>
+          <button type="button" class="drop-item" data-copy="https://linkedin.com/in/ayoub-jerari" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            <span data-i18n="menubar.copy_link">Copiar LinkedIn</span>
+          </button>
+          <button type="button" class="drop-item" data-copy="+34631714568" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.9v2.02z"/></svg>
+            <span data-i18n="menubar.copy_wa">Copiar WhatsApp</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- View Menu -->
+      <div class="menu-item-wrap" id="wrap-view">
+        <button type="button" class="menu-item" id="menu-view" aria-haspopup="true" aria-expanded="false" data-i18n="menubar.view">View</button>
+        <div class="mac-dropdown" id="drop-view" role="menu">
+          <button type="button" class="drop-item" id="menuThemeToggle" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <span id="themeToggleLabel">Modo Claro</span>
+            <span class="drop-shortcut">⌘T</span>
+          </button>
+          <button type="button" class="drop-item" id="menuFullscreen" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
+            <span data-i18n="system.fullscreen">Pantalla Completa</span>
+            <span class="drop-shortcut">⌃⌘F</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Go Menu -->
+      <div class="menu-item-wrap" id="wrap-go">
+        <button type="button" class="menu-item" id="menu-go" aria-haspopup="true" aria-expanded="false" data-i18n="menubar.go">Go</button>
+        <div class="mac-dropdown" id="drop-go" role="menu">
+          <a class="drop-item" href="https://github.com/aybkh" target="_blank" rel="noopener" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            <span data-i18n="contact.github">GitHub</span>
+            <span class="drop-shortcut">⇧⌘G</span>
+          </a>
+          <a class="drop-item" href="https://linkedin.com/in/ayoub-jerari" target="_blank" rel="noopener" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            <span data-i18n="contact.linkedin">LinkedIn</span>
+          </a>
+          <a class="drop-item" href="https://wa.me/34631714568" target="_blank" rel="noopener" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span data-i18n="contact.whatsapp">WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Window Menu -->
+      <div class="menu-item-wrap" id="wrap-window">
+        <button type="button" class="menu-item" id="menu-window" aria-haspopup="true" aria-expanded="false" data-i18n="menubar.window">Window</button>
+        <div class="mac-dropdown" id="drop-window" role="menu">
+          <div class="drop-label" data-i18n="menubar.open_windows">Ventanas Abiertas</div>
+          <a class="drop-item drop-window-item" href="/#hero" role="menuitem">
+            <span class="drop-dot" style="background:#ff5f56"></span>
+            <span data-i18n="nav.home">About Me</span>
+          </a>
+          <a class="drop-item drop-window-item" href="/#experiencia" role="menuitem" data-i18n="sections.exp">Experiencia</a>
+          <a class="drop-item drop-window-item" href="/#skills" role="menuitem" data-i18n="sections.sk">Skills</a>
+          <a class="drop-item drop-window-item" href="/#proyectos" role="menuitem" data-i18n="sections.proj">Proyectos</a>
+          <a class="drop-item drop-window-item" href="/#contacto" role="menuitem" data-i18n="sections.contact">Contacto</a>
+        </div>
+      </div>
+
+      <!-- Help Menu -->
+      <div class="menu-item-wrap" id="wrap-help">
+        <button type="button" class="menu-item" id="menu-help" aria-haspopup="true" aria-expanded="false" data-i18n="menubar.help">Help</button>
+        <div class="mac-dropdown" id="drop-help" role="menu">
+          <a class="drop-item" href="mailto:ayoubjerari47@gmail.com" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span data-i18n="menubar.send_email">Enviar un Email</span>
+          </a>
+          <div class="drop-sep"></div>
+          <button type="button" class="drop-item" id="menuShortcuts" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <span data-i18n="menubar.shortcuts">Atajos de Teclado</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="menu-center">
+      <div class="menu-item-wrap">
+        <button type="button" class="menu-item clock-btn" id="clockBtn" aria-haspopup="true" aria-expanded="false">
+          <span class="menu-clock" id="macClock"></span>
+        </button>
+        <div class="mac-dropdown calendar-dropdown" id="drop-calendar" style="left:50%; transform: translateX(-50%) translateY(-6px) scale(0.97);">
+          <div class="calendar-panel">
+            <div class="cal-header">
+              <span id="calMonth">June</span>
+              <span id="calYear">2026</span>
+            </div>
+            <div class="cal-grid">
+              <div class="cal-day-name">Su</div><div class="cal-day-name">Mo</div><div class="cal-day-name">Tu</div><div class="cal-day-name">We</div><div class="cal-day-name">Th</div><div class="cal-day-name">Fr</div><div class="cal-day-name">Sa</div>
+              <!-- Calendar days will be generated or static for now -->
+              <div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day">4</div><div class="cal-day">5</div>
+              <div class="cal-day">6</div><div class="cal-day">7</div><div class="cal-day">8</div><div class="cal-day">9</div><div class="cal-day">10</div><div class="cal-day">11</div><div class="cal-day">12</div>
+              <div class="cal-day">13</div><div class="cal-day">14</div><div class="cal-day">15</div><div class="cal-day">16</div><div class="cal-day">17</div><div class="cal-day">18</div><div class="cal-day">19</div>
+              <div class="cal-day">20</div><div class="cal-day">21</div><div class="cal-day today">22</div><div class="cal-day">23</div><div class="cal-day">24</div><div class="cal-day">25</div><div class="cal-day">26</div>
+              <div class="cal-day">27</div><div class="cal-day">28</div><div class="cal-day">29</div><div class="cal-day">30</div>
+            </div>
+            <div class="drop-sep"></div>
+            <button type="button" class="drop-item" data-i18n="system.date_settings">Configuración de fecha y hora...</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menubar-right">
+      <!-- Battery -->
+      <div class="menu-item-wrap">
+        <button type="button" class="menu-icon battery" id="batteryBtn" title="Batería" aria-haspopup="true" aria-expanded="false" style="background:none; border:none; color:inherit;">
+          <div class="battery-body">
+            <div class="battery-level" id="batteryLevel"></div>
+          </div>
+          <span class="battery-pct" id="batteryPct"></span>
+        </button>
+        <div class="mac-dropdown" id="drop-battery" style="right:0; left:auto; transform-origin: top right;">
+          <div class="drop-label" data-i18n="system.battery">Batería</div>
+          <div class="drop-item" style="cursor:default">
+            <span id="batteryStatusText">Cargando - 100%</span>
+          </div>
+          <div class="drop-sep"></div>
+          <button type="button" class="drop-item" data-i18n="system.config_battery">Configuración de la batería...</button>
+        </div>
+      </div>
+
+      <!-- WiFi -->
+      <div class="menu-item-wrap">
+        <button type="button" class="menu-icon wifi" id="wifiBtn" aria-haspopup="true" aria-expanded="false" style="background:none; border:none; color:inherit;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12 2C7.95 2 4.21 3.34 1.2 5.5L12 18.5L22.8 5.5C19.79 3.34 16.05 2 12 2Z" />
+          </svg>
+        </button>
+        <div class="mac-dropdown" id="drop-wifi" style="right:0; left:auto; transform-origin: top right;">
+          <div class="drop-label" data-i18n="system.wifi">Wi-Fi</div>
+          <div class="drop-item" style="justify-content: space-between;">
+            <span data-i18n="system.wifi">Wi-Fi</span>
+            <span style="color:var(--accent)" id="wifiStatusText" data-i18n="system.on">Activado</span>
+          </div>
+          <div class="drop-sep"></div>
+          <div class="drop-label" data-i18n="system.known_networks">Redes Conocidas</div>
+          <div class="drop-item">
+            <svg class="drop-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2C7.95 2 4.21 3.34 1.2 5.5L12 18.5L22.8 5.5C19.79 3.34 16.05 2 12 2Z" /></svg>
+            Wi‑Fi de Ayoub
+          </div>
+          <div class="drop-sep"></div>
+          <button type="button" class="drop-item" data-i18n="system.wifi_settings">Ajustes de Wi-Fi...</button>
+        </div>
+      </div>
+
+      <!-- Spotlight Search -->
+      <div class="menu-icon search" id="spotlightBtn" title="Buscar (Ctrl+K)" style="cursor:pointer">
         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="11" cy="11" r="8" />
           <path d="M21 21L16.65 16.65" />
         </svg>
       </div>
-      <div class="menu-icon control-center">
+
+      <!-- Control Center -->
+      <div class="menu-icon control-center" id="controlCenterBtn" style="cursor:pointer" title="Control Center">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M4 6h16M4 12h16M4 18h16" />
         </svg>
+        <!-- Control Center Panel -->
+        <div class="control-center-panel" id="controlCenterPanel">
+          <div class="cc-title" data-i18n="system.cc">Centro de Control</div>
+          <div class="cc-row cc-status-mobile" style="display:none">
+            <div class="cc-status-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12.55a11 11 0 0114.08 0M7.5 15.57a7.5 7.5 0 019 0M10.58 18.14a3.3 3.3 0 012.84 0M12 21.07V21"/></svg>
+              <span>Snack Tanger</span>
+            </div>
+            <div class="cc-status-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="2" y="7" width="16" height="10" rx="2" ry="2"/><line x1="22" y1="11" x2="22" y2="13"/></svg>
+              <span id="ccBatteryPct">100%</span>
+            </div>
+          </div>
+          <div class="cc-row">
+            <button type="button" class="cc-btn" id="ccTheme">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+              <span id="ccThemeLabel">Claro</span>
+            </button>
+            <button type="button" class="cc-btn" id="ccFullscreen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
+              <span data-i18n="system.fullscreen">Full</span>
+            </button>
+          </div>
+          <div class="cc-slider-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/></svg>
+            <input type="range" id="brightnessSlider" class="cc-slider" min="30" max="100" value="100" title="Brillo">
+          </div>
+          <div class="drop-sep" style="margin:10px 0"></div>
+          <a class="cc-link cv-link" href="data/cv_ayoub_cat.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="system.download_cv">Descargar CV</span>
+          </a>
+        </div>
       </div>
-      <div class="menu-icon language">
-        <select id="langSelect" class="mac-lang-select" aria-label="Idioma">
-          <option value="es">ES</option>
-          <option value="en">EN</option>
-          <option value="ca">CAT</option>
-          <option value="fr">FR</option>
-          <option value="de">DE</option>
-        </select>
+
+      <!-- Language Selector Custom -->
+      <div class="menu-icon language lang-wrap" id="langWrap">
+        <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Selector de idioma">
+          <img src="img/icons/es.svg" alt="" class="lang-flag-img" id="langFlag">
+          <span class="lang-code" id="langCode">ES</span>
+          <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="10" height="10"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="mac-dropdown lang-dropdown" id="langDropdown" role="listbox">
+          <button type="button" class="drop-item lang-option" data-lang="es" role="option">
+            <img src="img/icons/es.svg" alt="" class="lang-flag-img-lg"> Español
+          </button>
+          <button type="button" class="drop-item lang-option" data-lang="en" role="option">
+            <img src="img/icons/en.svg" alt="" class="lang-flag-img-lg"> English
+          </button>
+          <button type="button" class="drop-item lang-option" data-lang="ca" role="option">
+            <img src="img/icons/ca.svg" alt="" class="lang-flag-img-lg"> Català
+          </button>
+          <button type="button" class="drop-item lang-option" data-lang="fr" role="option">
+            <img src="img/icons/fr.svg" alt="" class="lang-flag-img-lg"> Français
+          </button>
+          <button type="button" class="drop-item lang-option" data-lang="de" role="option">
+            <img src="img/icons/de.svg" alt="" class="lang-flag-img-lg"> Deutsch
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -144,7 +394,7 @@
   <!-- MacOS Dock -->
   <div class="dock-container">
     <div class="dock">
-      <a href="/" class="dock-item" aria-label="Inicio">
+      <a href="/#hero" class="dock-item" aria-label="Inicio">
         <div class="dock-icon finder">
           <img src="img/logos/Azure.webp" alt="Home">
         </div>
@@ -189,6 +439,9 @@
   <footer class="foot">
     <p><span id="year"></span> Ayoub El Khalifi Idrissi El Jerari</p>
   </footer>
+
+  <!-- Brightness Overlay -->
+  <div id="brightnessOverlay" style="position:fixed; inset:0; pointer-events:none; background:black; z-index:1000000; opacity:0;"></div>
 
   <script src="JS/data.js"></script>
   <script src="JS/ui.js"></script>
