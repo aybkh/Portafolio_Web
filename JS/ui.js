@@ -106,11 +106,31 @@ function setupReveal() {
    SKILLS
 ═══════════════════════════════════════════════ */
 function setupSkills() {
-    document.querySelectorAll('.skill-pill').forEach(p => {
-        p.addEventListener('click', () => {
-            if (window.matchMedia('(hover: none)').matches) {
-                const open = p.classList.toggle('open');
-                p.setAttribute('aria-expanded', String(open));
+    const btns = document.querySelectorAll('.skill-cat-btn');
+    const groups = document.querySelectorAll('.skills-group');
+    
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-target');
+            if (!target) return;
+
+            // Update buttons
+            btns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Update groups
+            groups.forEach(g => {
+                if (g.id === target) {
+                    g.classList.add('active');
+                } else {
+                    g.classList.remove('active');
+                }
+            });
+            
+            // Mobile scroll to top of display
+            if (window.innerWidth <= 900) {
+                const display = document.querySelector('.skills-display');
+                if (display) display.scrollTop = 0;
             }
         });
     });

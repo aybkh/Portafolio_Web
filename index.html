@@ -40,6 +40,7 @@
 
   <link rel="icon" href="img/favicon.webp" />
   <link rel="stylesheet" href="CSS/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
@@ -536,168 +537,643 @@
         </div>
         <div class="window-title" data-i18n="sections.sk">Skills</div>
       </div>
-      <div class="window-content">
-        <div class="skills-pills">
-          <!-- Redes -->
-          <button type="button" class="skill-pill" aria-expanded="false">
-            <div class="pill-left">
-              <img src="img/logos/Network.webp" alt="" aria-hidden="true">
-              <span class="pill-title" data-i18n="skills.net">Redes</span>
-            </div>
-            <div class="pill-body">
-              <div class="skill-item"><img src="img/logos/dns.webp" alt="DNS" loading="lazy"><span>DNS</span></div>
-              <div class="skill-item"><img src="img/logos/dhcp.webp" alt="DHCP" loading="lazy"><span>DHCP</span></div>
-              <div class="skill-item"><img src="img/logos/pfsense.webp" alt="pfSense" loading="lazy"><span>pfSense</span></div>
-              <div class="skill-item"><img src="img/logos/cisco.webp" alt="Cisco" loading="lazy"><span>Cisco</span></div>
-              <div class="skill-item"><img src="img/logos/grandstream.webp" alt="Grandstream" loading="lazy"><span>Grandstream</span></div>
-              <div class="skill-item"><img src="img/logos/ssh.webp" alt="SSH" loading="lazy"><span>SSH</span></div>
-              <div class="skill-item"><img src="img/logos/nmap.webp" alt="Nmap" loading="lazy"><span>Nmap</span></div>
-              <div class="skill-item"><img src="img/logos/Wireshark.webp" alt="Wireshark" loading="lazy"><span>Wireshark</span></div>
-            </div>
-          </button>
+      <div class="window-content no-padding">
+        <div class="skills-container">
+          <!-- Sidebar: Categories -->
+          <aside class="skills-sidebar">
+            <button class="skill-cat-btn active" data-target="net">
+              <div class="cat-icon-tile bg-blue">
+                <i class="fas fa-network-wired"></i>
+              </div>
+              <span data-i18n="skills.categories.net">Redes</span>
+            </button>
+            <button class="skill-cat-btn" data-target="sys">
+              <div class="cat-icon-tile bg-grey">
+                <i class="fas fa-desktop"></i>
+              </div>
+              <span data-i18n="skills.categories.sys">Sistemas</span>
+            </button>
+            <button class="skill-cat-btn" data-target="cloud">
+              <div class="cat-icon-tile bg-sky">
+                <i class="fas fa-cloud"></i>
+              </div>
+              <span data-i18n="skills.categories.cloud">Cloud & DevOps</span>
+            </button>
+            <button class="skill-cat-btn" data-target="dev">
+              <div class="cat-icon-tile bg-purple">
+                <i class="fas fa-code"></i>
+              </div>
+              <span data-i18n="skills.categories.dev">Desarrollo</span>
+            </button>
+            <button class="skill-cat-btn" data-target="db">
+              <div class="cat-icon-tile bg-green">
+                <i class="fas fa-database"></i>
+              </div>
+              <span data-i18n="skills.categories.db">Bases de Datos</span>
+            </button>
+            <button class="skill-cat-btn" data-target="hw">
+              <div class="cat-icon-tile bg-orange">
+                <i class="fas fa-microchip"></i>
+              </div>
+              <span data-i18n="skills.categories.hw">Hardware & Support</span>
+            </button>
+            <button class="skill-cat-btn" data-target="ia">
+              <div class="cat-icon-tile bg-pink">
+                <i class="fas fa-brain"></i>
+              </div>
+              <span data-i18n="skills.categories.ia">IA & Automatización</span>
+            </button>
+            <button class="skill-cat-btn" data-target="prod">
+              <div class="cat-icon-tile bg-indigo">
+                <i class="fas fa-list-check"></i>
+              </div>
+              <span data-i18n="skills.categories.prod">Productividad</span>
+            </button>
+            <button class="skill-cat-btn" data-target="langs">
+              <div class="cat-icon-tile bg-yellow">
+                <i class="fas fa-language"></i>
+              </div>
+              <span data-i18n="skills.categories.langs">Idiomas</span>
+            </button>
+          </aside>
 
-          <!-- Sistemas -->
-          <button type="button" class="skill-pill" aria-expanded="false">
-            <div class="pill-left">
-              <img src="img/logos/os.webp" alt="Operating Systems" aria-hidden="true">
-              <span class="pill-title" data-i18n="skills.sys">Sistemas</span>
+          <!-- Main Area: Content -->
+          <main class="skills-display">
+            
+            <!-- Redes -->
+            <div class="skills-group active" id="net">
+              <div class="skills-group-header">
+                <h3 data-i18n="skills.categories.net">Redes & Seguridad</h3>
+                <p data-i18n="skills.desc.net">Infraestructura, conectividad y seguridad de red.</p>
+              </div>
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/dns.webp" alt="DNS"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">DNS</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.dns_desc">Domain Resolution & Management</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/dhcp.webp" alt="DHCP"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">DHCP</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.dhcp_desc">Dynamic IP Allocation & Subnetting</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/pfsense.webp" alt="pfSense"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">pfSense</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.pfsense_desc">Firewall, Routing & VPN Config</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/cisco.webp" alt="Cisco"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Cisco</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.cisco_desc">Routing, Switching & IOS Admin</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/grandstream.webp" alt="VoIP"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">VoIP & Telephony</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.grandstream_desc">VoIP & IP Telephony Support</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/Network.webp" alt="VLAN"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">VLANs / Subnetting</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.vlan_desc">Network Segmentation & Security</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/Wireshark.webp" alt="Wireshark"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Wireshark</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.wireshark_desc">Packet Analysis & Troubleshooting</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/nmap.webp" alt="Nmap"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Nmap</span>
+                    <span class="skill-card-desc">Network Mapping & Security Audit</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/ssh.webp" alt="SSH"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">SSH / SFTP</span>
+                    <span class="skill-card-desc">Secure Remote Admin & Data Transfer</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="pill-body">
-              <div class="skill-item"><img src="img/logos/linux.webp" alt="Linux" loading="lazy"><span>Linux</span></div>
-              <div class="skill-item"><img src="img/logos/windows.webp" alt="Windows" loading="lazy"><span>Windows</span></div>
-              <div class="skill-item"><img src="img/logos/macos.webp" alt="macOS" loading="lazy"><span>macOS</span></div>
-              <div class="skill-item"><img src="img/logos/Android.webp" alt="Android" loading="lazy"><span>Android</span></div>
-              <div class="skill-item"><img src="img/logos/Bash.webp" alt="Bash" loading="lazy"><span>Bash</span></div>
-              <div class="skill-item"><img src="img/logos/Powershell.webp" alt="PowerShell" loading="lazy"><span>PowerShell</span></div>
-              <div class="skill-item"><img src="img/logos/Microsoft_365.webp" alt="Microsoft 365" loading="lazy"><span>Microsoft 365</span></div>
-              <div class="skill-item"><img src="img/logos/IOS.webp" alt="iOS" loading="lazy"><span>iOS</span></div>
-            </div>
-          </button>
 
-          <!-- Cloud -->
-          <button type="button" class="skill-pill" aria-expanded="false">
-            <div class="pill-left">
-              <img src="img/logos/cloud.webp" alt="" aria-hidden="true">
-              <span class="pill-title" data-i18n="skills.cloud.title">Cloud</span>
+            <!-- Sistemas -->
+            <div class="skills-group" id="sys">
+              <div class="skills-group-header">
+                <h3 data-i18n="skills.categories.sys">Sistemas & Workspace</h3>
+                <p data-i18n="skills.desc.sys">Administración de sistemas operativos y entornos de trabajo.</p>
+              </div>
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/linux.webp" alt="Linux"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Linux</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.linux_desc">Server Admin & Troubleshooting</span>
+                  </div>
+                </div>
+                 <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/windows.webp" alt="Windows"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Windows Server / AD</span>
+                    <span class="skill-card-desc">Server Admin, AD & Group Policies (GPO)</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/Microsoft_365.webp" alt="M365"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Microsoft 365</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.m365_desc">Tenant Admin & Cloud Apps</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/macos.webp" alt="macOS"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">macOS</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.macos_desc">Advanced support and expert use</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/paralels.webp" alt="Parallels"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Parallels Desktop</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.parallels_desc">Virtualization on Apple systems</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/MDM.png" alt="MDM"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">MDM / AMM</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.mdm_desc">iOS and Android fleet management</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/Bash.webp" alt="Bash"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Shell Script</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.shell_desc">Bash & PowerShell Automation</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="pill-body">
-              <div class="skill-item"><img src="img/logos/Amazon.webp" alt="AWS" loading="lazy"><span>AWS</span></div>
-              <div class="skill-item"><img src="img/logos/Azure.webp" alt="Azure" loading="lazy"><span>Azure</span></div>
-              <div class="skill-item"><img src="img/logos/google.webp" alt="Google Cloud" loading="lazy"><span>GCP</span></div>
-              <div class="skill-item"><img src="img/logos/cloudflare.webp" alt="Cloudflare" loading="lazy"><span>Cloudflare</span></div>
-              <div class="skill-item"><img src="img/logos/docker.webp" alt="Docker" loading="lazy"><span>Docker</span></div>
-              <div class="skill-item"><img src="img/logos/Kubernetes.webp" alt="Kubernetes" loading="lazy"><span>K8s</span></div>
-              <div class="skill-item"><img src="img/logos/Terraform.webp" alt="Terraform" loading="lazy"><span>Terraform</span></div>
-              <div class="skill-item"><img src="img/logos/Ansible.webp" alt="Ansible" loading="lazy"><span>Ansible</span></div>
-            </div>
-          </button>
 
-          <!-- Programación -->
-          <button type="button" class="skill-pill" aria-expanded="false">
-            <div class="pill-left">
-              <img src="img/logos/code.webp" alt="" aria-hidden="true">
-              <span class="pill-title" data-i18n="skills.code">Programación</span>
+            <!-- Cloud -->
+            <div class="skills-group" id="cloud">
+              <div class="skills-group-header">
+                <h3 data-i18n="skills.categories.cloud">Cloud & DevOps</h3>
+                <p data-i18n="skills.desc.cloud">Infraestructura escalable y automatización de despliegues.</p>
+              </div>
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/Azure.webp" alt="Azure"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Azure</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.azure_desc">Cloud Infrastructure & Entra ID</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/Amazon.webp" alt="AWS"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">AWS</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.aws_desc">EC2, S3 & Cloud Foundations</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/docker.webp" alt="Docker"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Docker</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.docker_desc">Containerization & Microservices</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/terraform.webp" alt="Terraform"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Terraform</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.terraform_desc">Infrastructure as Code (IaC)</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/Ansible.webp" alt="Ansible"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Ansible</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.ansible_desc">Configuration Management</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/github.webp" alt="GitHub"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">CI/CD & Automation</span>
+                    <span class="skill-card-desc">GitHub Actions & Pages Hosting</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/cloudflare.webp" alt="Cloudflare"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Cloudflare</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.cloudflare_desc">WAF, DNS & CDN Performance</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="pill-body">
-              <div class="skill-item"><img src="img/logos/html-css.webp" alt="Web" loading="lazy"><span>HTML/CSS</span></div>
-              <div class="skill-item"><img src="img/logos/Csharp.webp" alt="CSharp" loading="lazy"><span>C#</span></div>
-              <div class="skill-item"><img src="img/logos/Python.webp" alt="Python" loading="lazy"><span>Python</span></div>
-              <div class="skill-item"><img src="img/logos/js.webp" alt="JavaScript" loading="lazy"><span>JS</span></div>
-              <div class="skill-item"><img src="img/logos/PHP.webp" alt="PHP" loading="lazy"><span>PHP</span></div>
-              <div class="skill-item"><img src="img/logos/JSON.webp" alt="JSON" loading="lazy"><span>JSON</span></div>
-              <div class="skill-item"><img src="img/logos/github.webp" alt="GitHub" loading="lazy"><span>GitHub</span></div>
-              <div class="skill-item"><img src="img/logos/vscode.webp" alt="VSCode" loading="lazy"><span>VS Code</span></div>
-            </div>
-          </button>
 
-          <!-- BBDD -->
-          <button type="button" class="skill-pill" aria-expanded="false">
-            <div class="pill-left">
-              <img src="img/logos/Database.webp" alt="" aria-hidden="true">
-              <span class="pill-title" data-i18n="skills.db">BBDD</span>
+            <!-- Desarrollo -->
+            <div class="skills-group" id="dev">
+              <div class="skills-group-header">
+                <h3 data-i18n="skills.categories.dev">Desarrollo & Herramientas</h3>
+                <p data-i18n="skills.desc.dev">Lenguajes de programación y herramientas de desarrollo.</p>
+              </div>
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/Python.webp" alt="Python"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Python / FastAPI</span>
+                    <span class="skill-card-desc">Backend, Scripting & API Dev</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/js.webp" alt="JS"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">JavaScript / React</span>
+                    <span class="skill-card-desc">Advanced Frontend & Logic</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/Bash.webp" alt="Shell"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Terminal / CLI</span>
+                    <span class="skill-card-desc">Advanced Command Line</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/react.webp" alt="React"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">React (Vite)</span>
+                    <span class="skill-card-desc">Modern web interfaces & SPA</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/tailwind-css-logo.webp" alt="Tailwind"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Tailwind CSS</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.tailwind_desc">Utility-first CSS Framework</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/dotnet.svg" alt=".NET"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">.NET / C#</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.dotnet_desc">Enterprise App Env</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/html-css.webp" alt="HTML/CSS"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">HTML & CSS</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.htmlcss_desc">Web layout & styling</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/git_logo.webp" alt="GitHub"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Git / GitHub</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.git_desc">Version Control & CI/CD</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/unity.webp" alt="Unity"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Unity Engine</span>
+                    <span class="skill-card-desc">Game Development (C#)</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="pill-body">
-              <div class="skill-item"><img src="img/logos/sql.webp" alt="SQL" loading="lazy"><span>SQL</span></div>
-              <div class="skill-item"><img src="img/logos/Postgresql.webp" alt="PostgreSQL" loading="lazy"><span>PostgreSQL</span></div>
-              <div class="skill-item"><img src="img/logos/oracle.webp" alt="Oracle" loading="lazy"><span>Oracle</span></div>
-              <div class="skill-item"><img src="img/logos/mysql.webp" alt="MySQL" loading="lazy"><span>MySQL</span></div>
-              <div class="skill-item"><img src="img/logos/mongodb.webp" alt="MongoDB" loading="lazy"><span>MongoDB</span></div>
-              <div class="skill-item"><img src="img/logos/Sqlite.webp" alt="SQLite" loading="lazy"><span>SQLite</span></div>
-              <div class="skill-item"><img src="img/logos/sqlserver.webp" alt="SQL Server" loading="lazy"><span>SQL Server</span></div>
-              <div class="skill-item"><img src="img/logos/access.webp" alt="Access" loading="lazy"><span>Access</span></div>
-            </div>
-          </button>
 
-          <!-- IA -->
-          <button type="button" class="skill-pill" aria-expanded="false">
-            <div class="pill-left">
-              <img src="img/logos/IA.webp" alt="" aria-hidden="true">
-              <span class="pill-title">IA</span>
+            <!-- Databases -->
+            <div class="skills-group" id="db">
+              <div class="skills-group-header">
+                <h3 data-i18n="skills.categories.db">Bases de Datos</h3>
+                <p data-i18n="skills.desc.db">Gestión de datos estructurados y no estructurados.</p>
+              </div>
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/Postgresql.webp" alt="Postgres"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">PostgreSQL</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.postgres_desc">Replication & Admin</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/mysql.webp" alt="MySQL"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">MySQL</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.mysql_desc">Relational DB Management</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/Sqlite.webp" alt="SQLite"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">SQLite & SQLModel</span>
+                    <span class="skill-card-desc">Local DBs & ORM Mapping</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/oracle.webp" alt="Oracle"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Oracle DB</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.oracle_desc">Corporate DB Management</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/access.webp" alt="Access"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">MS Access</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.access_desc">Relational DBs with Office</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/JSON.webp" alt="JSON"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">JSON / APIs</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.json_desc">Data structures & REST APIs</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/sqlserver.webp" alt="MSSQL"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">SQL Server</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.mssql_desc">Enterprise Database Admin</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/redis.png" alt="Redis"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Redis</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.redis_desc">Cache & In-memory DB</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/mongodb.webp" alt="MongoDB"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">NoSQL</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.nosql_desc">JSON Document Handling</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="pill-body">
-              <div class="skill-item"><img src="img/logos/n8n.webp" alt="n8n" loading="lazy"><span>n8n</span></div>
-              <div class="skill-item"><img src="img/logos/ChatGPT.webp" alt="ChatGPT" loading="lazy"><span>ChatGPT</span></div>
-              <div class="skill-item"><img src="img/logos/gemini.webp" alt="Gemini" loading="lazy"><span>Gemini</span></div>
-              <div class="skill-item"><img src="img/logos/copilot.webp" alt="Copilot" loading="lazy"><span>Copilot</span></div>
-              <div class="skill-item"><img src="img/logos/ollama.webp" alt="Ollama" loading="lazy"><span>Ollama</span></div>
-              <div class="skill-item"><img src="img/logos/notion.webp" alt="Notion" loading="lazy"><span>Notion</span></div>
-              <div class="skill-item"><img src="img/logos/meta.webp" alt="Meta" loading="lazy"><span>Meta</span></div>
-              <div class="skill-item"><img src="img/logos/openai.webp" alt="OpenAI" loading="lazy"><span>OpenAI</span></div>
-            </div>
-          </button>
 
-          <!-- Productivity -->
-          <button type="button" class="skill-pill" aria-expanded="false">
-            <div class="pill-left">
-              <img src="img/logos/productivity.webp" alt="" aria-hidden="true">
-              <span class="pill-title" data-i18n="skills.prod">Productividad</span>
+            <!-- Hardware & Support -->
+            <div class="skills-group" id="hw">
+              <div class="skills-group-header">
+                <h3 data-i18n="skills.categories.hw">Hardware & Support</h3>
+                <p data-i18n="skills.desc.hw">Soporte de campo especializado y virtualización.</p>
+              </div>
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/zebra.webp" alt="Zebra"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Zebra & RFID</span>
+                    <span class="skill-card-desc">Industrial Printers & RFID specialist</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/honeywell.webp" alt="Honeywell"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Honeywell Scanners</span>
+                    <span class="skill-card-desc">Industrial Scanning & HW Support</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/igel-logo.webp" alt="IGEL"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Thin Clients (IGEL)</span>
+                    <span class="skill-card-desc">IGEL OS & Workspace Management</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/vmware.webp" alt="VM"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">VM Infrastructure</span>
+                    <span class="skill-card-desc">VMware ESXi & VirtualBox Ops</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/virtualization.webp" alt="Diag"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">HW Support & Diagnostics</span>
+                    <span class="skill-card-desc">Advanced Peripherals & HW Troubleshooting</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="pill-body">
-              <div class="skill-item"><img src="img/logos/Microsoft_Project.webp" alt="Project" loading="lazy"><span>Project</span></div>
-              <div class="skill-item"><img src="img/logos/excel.webp" alt="Excel" loading="lazy"><span>Excel</span></div>
-              <div class="skill-item"><img src="img/logos/word.webp" alt="Word" loading="lazy"><span>Word</span></div>
-              <div class="skill-item"><img src="img/logos/teams.webp" alt="Teams" loading="lazy"><span>Teams</span></div>
-              <div class="skill-item"><img src="img/logos/sharepoint.webp" alt="SharePoint" loading="lazy"><span>SharePoint</span></div>
-              <div class="skill-item"><img src="img/logos/webex.webp" alt="Webex" loading="lazy"><span>Webex</span></div>
-              <div class="skill-item"><img src="img/logos/clickup.webp" alt="ClickUp" loading="lazy"><span>ClickUp</span></div>
-              <div class="skill-item"><img src="img/logos/jira-logo.webp" alt="Jira" loading="lazy"><span>Jira</span></div>
-            </div>
-          </button>
 
-          <!-- Hardware Virtualization -->
-          <button type="button" class="skill-pill" aria-expanded="false">
-            <div class="pill-left">
-              <img src="img/logos/virtualization.webp" alt="" aria-hidden="true">
-              <span class="pill-title" data-i18n="skills.hwvirt">Hardware <br /> Virtualización</span>
+            <!-- IA -->
+            <div class="skills-group" id="ia">
+              <div class="skills-group-header">
+                <h3 data-i18n="skills.categories.ia">IA & Automatización</h3>
+                <p data-i18n="skills.desc.ia">Nuevas tecnologías para optimizar procesos.</p>
+              </div>
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/n8n.webp" alt="n8n"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">n8n Automation</span>
+                    <span class="skill-card-desc">Advanced Workflow & API Automation</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/ChatGPT.webp" alt="ChatGPT"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">ChatGPT</span>
+                    <span class="skill-card-desc">Expert LLM Prompting & Analysis</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/copilot.webp" alt="Copilot"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">GitHub Copilot</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.copilot_desc">AI-powered coding assistant</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/Claude.png" alt="Claude"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Claude / Claude Code</span>
+                    <span class="skill-card-desc">Advanced Reasoning & CLI Tools</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/google.webp" alt="Gemini"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Google Gemini</span>
+                    <span class="skill-card-desc">LTM & Workspace Mastery</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/ollama.webp" alt="Ollama"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Ollama / Local</span>
+                    <span class="skill-card-desc">Edge LLM Execution</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/openclaw.png" alt="OpenClaw"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">OpenClaw</span>
+                    <span class="skill-card-desc">Autonomous AI Agents</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/nanobananapro.png" alt="NanoBanana"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Nano Banana Pro</span>
+                    <span class="skill-card-desc">Professional Image Generation</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/openai.webp" alt="OpenAI"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">OpenAI / GPT</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.llm_desc">Model usage & Fine-tuning</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="pill-body">
-              <div class="skill-item"><img src="img/logos/vmware.webp" alt="VMware" loading="lazy"><span>VMware</span></div>
-              <div class="skill-item"><img src="img/logos/vbox.webp" alt="VirtualBox" loading="lazy"><span>VBox</span></div>
-              <div class="skill-item"><img src="img/logos/zebra.webp" alt="Zebra" loading="lazy"><span>Zebra</span></div>
-              <div class="skill-item"><img src="img/logos/honeywell.webp" alt="Honeywell" loading="lazy"><span>Honeywell</span></div>
-              <div class="skill-item"><img src="img/logos/raspberry.webp" alt="Raspberry" loading="lazy"><span>R-Pi</span></div>
-              <div class="skill-item"><img src="img/logos/igel-logo.webp" alt="IGEL" loading="lazy"><span>IGEL</span></div>
-              <div class="skill-item"><img src="img/logos/paralels.webp" alt="Paralels" loading="lazy"><span>Paralels</span></div>
-              <div class="skill-item"><img src="img/logos/scada.webp" alt="SCADA" loading="lazy"><span>SCADA</span></div>
-            </div>
-          </button>
 
-          <!-- Languages -->
-          <button type="button" class="skill-pill" aria-expanded="false">
-            <div class="pill-left">
-              <img src="img/logos/language.webp" alt="" aria-hidden="true">
-              <span class="pill-title" data-i18n="skills.langs">Idiomas</span>
+            <!-- Productividad -->
+            <div class="skills-group" id="prod">
+              <div class="skills-group-header">
+                <h3 data-i18n="skills.categories.prod">Productividad & Colaboración</h3>
+                <p data-i18n="skills.desc.prod">Gestión de proyectos y comunicación corporativa.</p>
+              </div>
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/teams.webp" alt="Teams"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Microsoft Teams</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.teams_desc">Corporate communication & Teams</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/Office-365.webp" alt="Office"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Office 365</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.office_desc">Office 365 apps administration</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/excel.webp" alt="Excel"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Advanced Excel</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.excel_desc">Advanced Data Analysis</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/Microsoft_Project.webp" alt="Project"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">MS Project</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.project_desc">Planning & Scheduling</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/clickup.webp" alt="ClickUp"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">ClickUp</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.clickup_desc">Task and project management</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/notion.webp" alt="Notion"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Notion</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.notion_desc">Workspace and documentation</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/jira-logo.webp" alt="Jira"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Jira / Agile</span>
+                    <span class="skill-card-desc" data-i18n="skills.items.jira_desc">Issue tracking and Agile</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/hipra_logo.webp" alt="Remedy"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Remedy / SmartIT</span>
+                    <span class="skill-card-desc">Level 2 Incident Management</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="pill-body">
-              <div class="skill-item"><img src="img/logos/AR.webp" alt="AR" loading="lazy"><span>Árabe</span></div>
-              <div class="skill-item"><img src="img/logos/EN.webp" alt="EN" loading="lazy"><span>English</span></div>
-              <div class="skill-item"><img src="img/logos/ES.webp" alt="ES" loading="lazy"><span>Español</span></div>
-              <div class="skill-item"><img src="img/logos/CAT.webp" alt="CAT" loading="lazy"><span>Català</span></div>
-              <div class="skill-item"><img src="img/logos/FR.webp" alt="FR" loading="lazy"><span>Français</span></div>
-              <div class="skill-item"><img src="img/logos/DE.webp" alt="DE" loading="lazy"><span>Deutsch</span></div>
-            </div>
-          </button>
 
+            <!-- Idiomas -->
+            <div class="skills-group" id="langs">
+              <div class="skills-group-header">
+                <h3 data-i18n="skills.categories.langs">Idiomas</h3>
+                <p data-i18n="skills.desc.langs">Capacidad de comunicación en el ámbito profesional.</p>
+              </div>
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/ES.webp" alt="ES"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Español</span>
+                    <span class="skill-card-desc" data-i18n="system.native">Nativo / Bilingüe</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/CAT.webp" alt="CAT"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Català</span>
+                    <span class="skill-card-desc" data-i18n="system.native">Nativo / Bilingüe</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/AR.webp" alt="AR"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">Árabe</span>
+                    <span class="skill-card-desc" data-i18n="system.native">Nativo / Bilingüe</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-card-icon"><img src="img/logos/EN.webp" alt="EN"></div>
+                  <div class="skill-card-info">
+                    <span class="skill-card-name">English</span>
+                    <span class="skill-card-desc" data-i18n="system.prof_eng">Professional Working Proficiency</span>
+                  </div>
+                </div>
+                <div class="skill-card">
+                   <div class="skill-card-icon"><img src="img/logos/FR.webp" alt="FR"></div>
+                   <div class="skill-card-info">
+                     <span class="skill-card-name">Français</span>
+                     <span class="skill-card-desc" data-i18n="system.basic">Connaissance de base</span>
+                   </div>
+                 </div>
+                 <div class="skill-card">
+                   <div class="skill-card-icon"><img src="img/logos/DE.webp" alt="DE"></div>
+                   <div class="skill-card-info">
+                     <span class="skill-card-name">Deutsch</span>
+                     <span class="skill-card-desc" data-i18n="system.a1_level">A1 Beginner</span>
+                   </div>
+                 </div>
+              </div>
+            </div>
+
+          </main>
         </div>
       </div>
     </section>
