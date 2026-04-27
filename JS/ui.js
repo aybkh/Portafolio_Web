@@ -905,6 +905,13 @@ function setupBootAndLogin() {
     }, 120);
 
     function finishLogin() {
+        // Request Fullscreen (browser requires user gesture, login click works)
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(err => {
+                console.log("Fullscreen request denied or not supported.");
+            });
+        }
+
         loginScreen.classList.add('hidden');
         document.body.classList.remove('booting');
         setTimeout(() => {
