@@ -431,8 +431,8 @@ const SPOTLIGHT_DATA = [
     { titleKey: 'sections.sk',    subKey: 'sections.sk_desc',    icon: '⭐', href: '#skills' },
     { titleKey: 'sections.proj',  subKey: 'sections.proj_desc',  icon: '📁', href: '#proyectos' },
     { titleKey: 'sections.contact',subKey: 'sections.contact_desc',icon: '✉️', href: '#contacto' },
-    { titleKey: 'system.download_cv', subKey: 'system.curr_pdf', icon: '📄', href: 'data/cv_ayoub_cat.pdf', external: true },
-    { titleKey: 'system.print_cv',    subKey: 'system.curr_pdf', icon: '🖨️', href: 'data/cv_ayoub_cat.pdf', external: true },
+    { titleKey: 'system.download_cv', subKey: 'system.curr_pdf', icon: '📄', isCV: true },
+    { titleKey: 'system.print_cv',    subKey: 'system.curr_pdf', icon: '🖨️', isCV: true },
     { titleKey: 'contact.github',     sub: 'github.com/aybkh',   icon: '🐙', href: 'https://github.com/aybkh', external: true },
     { titleKey: 'contact.linkedin',   sub: 'linkedin.com/in/ayoub-jerari', icon: '💼', href: 'https://linkedin.com/in/ayoub-jerari', external: true },
     { titleKey: 'contact.whatsapp',   sub: '+34 631 714 568',    icon: '💬', href: 'https://wa.me/34631714568', external: true },
@@ -488,9 +488,13 @@ function renderSpotlightResults(query) {
         filtered.map((item, i) => {
             const title = item.titleKey ? item.titleKey.split('.').reduce((o, k) => o && o[k], dict) : item.title;
             const sub = item.subKey ? item.subKey.split('.').reduce((o, k) => o && o[k], dict) : item.sub;
+            
+            const href = item.isCV ? 'javascript:void(0)' : (item.href || '#');
+            const attr = item.isCV ? 'class="sp-result cv-btn-open"' : `class="sp-result${i === 0 ? ' active' : ''}"`;
+
             return `
-            <a class="sp-result${i === 0 ? ' active' : ''}"
-               href="${item.href}"
+            <a ${attr}
+               href="${href}"
                ${item.external ? 'target="_blank" rel="noopener"' : ''}
                data-idx="${i}">
               <div class="sp-result-icon">${item.icon}</div>
@@ -501,9 +505,17 @@ function renderSpotlightResults(query) {
             </a>
         `}).join('');
 
-    // Click closes spotlight
+    // Click closes spotlight and handles CV
     container.querySelectorAll('.sp-result').forEach(el => {
-        el.addEventListener('click', () => closeSpotlight());
+        el.addEventListener('click', (e) => {
+            if (el.classList.contains('cv-btn-open')) {
+                e.preventDefault();
+                // This will be handled by the global cv-btn-open listener if we ensure it's attached
+                // But since spotlight is dynamic, we might need to trigger it manually
+                if (typeof openCV === 'function') openCV();
+            }
+            closeSpotlight();
+        });
     });
 }
 
@@ -607,60 +619,62 @@ function setupShortcutsModal() {
 /* ═══════════════════════════════════════════════
    CV MODAL (PDF Viewer)
    ═══════════════════════════════════════════════ */
-function setupCVModal() {
+function openCV() {
     const overlay = document.getElementById('cvOverlay');
     const iframe = document.getElementById('cvIframe');
+    if (!overlay || !iframe) return;
+    
+    // Get current language and path
+    const lang = document.documentElement.getAttribute('lang') || 'es';
+    const cvMap = {
+        ca: 'data/cv_ayoub_es.pdf',
+        es: 'data/cv_ayoub_es.pdf',
+        en: 'data/cv_ayoub_es.pdf'
+    };
+    const cvPath = cvMap[lang] || cvMap.es;
+
+    // Fetch and create a Blob URL to hide the real path
+    fetch(cvPath)
+        .then(response => response.blob())
+        .then(blob => {
+            const blobUrl = URL.createObjectURL(blob);
+            iframe.src = blobUrl;
+            
+            // Cleanup the blob URL when closing
+            overlay.setAttribute('data-blob-url', blobUrl);
+        })
+        .catch(err => {
+            console.error("Error loading PDF:", err);
+            // Fallback to direct path if fetch fails
+            iframe.src = cvPath;
+        });
+
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    closeAllDropdowns();
+}
+
+function closeCV() {
+    const overlay = document.getElementById('cvOverlay');
+    const iframe = document.getElementById('cvIframe');
+    if (!overlay || !iframe) return;
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    
+    // Revoke the blob URL to free memory
+    const blobUrl = overlay.getAttribute('data-blob-url');
+    if (blobUrl) {
+        URL.revokeObjectURL(blobUrl);
+        overlay.removeAttribute('data-blob-url');
+    }
+    
+    iframe.src = ''; 
+}
+
+function setupCVModal() {
     const closeBtn = document.getElementById('cvClose');
     const maxBtn = document.getElementById('cvMaximize');
     const modal = document.querySelector('.cv-modal');
-
-    function openCV() {
-        if (!overlay || !iframe) return;
-        
-        // Get current language and path
-        const lang = document.documentElement.getAttribute('lang') || 'es';
-        const cvMap = {
-            ca: 'data/cv_ayoub_es.pdf',
-            es: 'data/cv_ayoub_es.pdf',
-            en: 'data/cv_ayoub_es.pdf'
-        };
-        const cvPath = cvMap[lang] || cvMap.es;
-
-        // Fetch and create a Blob URL to hide the real path
-        fetch(cvPath)
-            .then(response => response.blob())
-            .then(blob => {
-                const blobUrl = URL.createObjectURL(blob);
-                iframe.src = blobUrl;
-                
-                // Cleanup the blob URL when closing
-                overlay.setAttribute('data-blob-url', blobUrl);
-            })
-            .catch(err => {
-                console.error("Error loading PDF:", err);
-                // Fallback to direct path if fetch fails
-                iframe.src = cvPath;
-            });
-
-        overlay.classList.add('open');
-        overlay.setAttribute('aria-hidden', 'false');
-        closeAllDropdowns();
-    }
-
-    function closeCV() {
-        if (!overlay || !iframe) return;
-        overlay.classList.remove('open');
-        overlay.setAttribute('aria-hidden', 'true');
-        
-        // Revoke the blob URL to free memory
-        const blobUrl = overlay.getAttribute('data-blob-url');
-        if (blobUrl) {
-            URL.revokeObjectURL(blobUrl);
-            overlay.removeAttribute('data-blob-url');
-        }
-        
-        iframe.src = ''; 
-    }
 
     // Attach to all buttons with class cv-btn-open
     document.querySelectorAll('.cv-btn-open').forEach(btn => {
@@ -672,6 +686,7 @@ function setupCVModal() {
 
     if (closeBtn) closeBtn.addEventListener('click', closeCV);
 
+    const overlay = document.getElementById('cvOverlay');
     if (overlay) overlay.addEventListener('click', (e) => {
         if (e.target === overlay) closeCV();
     });
