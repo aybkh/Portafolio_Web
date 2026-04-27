@@ -2003,6 +2003,17 @@ body.booting {
     pointer-events: none;
 }
 
+@media (max-width: 600px) {
+    .boot-content {
+        width: 150px;
+        gap: 40px;
+    }
+    
+    .boot-logo {
+        width: 60px;
+    }
+}
+
 /* -----------------------------------------
    macOS Context Menu
    ----------------------------------------- */
