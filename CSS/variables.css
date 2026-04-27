@@ -33,27 +33,27 @@
 }
 
 :root[data-theme="light"] {
-    --text: #0a0a0a;
-    --muted: #555555;
+    --text: #1c1c1e;
+    --muted: #6e6e73;
 
-    /* Gray theme for windows */
-    --panel: rgba(242, 242, 247, 0.95);
-    --header-bg: rgba(229, 229, 234, 1);
+    /* Softer MacOS light theme */
+    --panel: rgba(235, 235, 240, 0.92);
+    --header-bg: rgba(220, 220, 225, 0.98);
 
-    --menubar-bg: rgba(255, 255, 255, 0.45);
+    --menubar-bg: rgba(255, 255, 255, 0.4);
 
-    --glass: rgba(255, 255, 255, 0.65);
-    --glass-border: rgba(0, 0, 0, 0.1);
-    --border: rgba(0, 0, 0, 0.12);
+    --glass: rgba(255, 255, 255, 0.5);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --border: rgba(0, 0, 0, 0.1);
 
-    --icon-dim: rgba(0, 0, 0, 0.5);
-    --icon-solid: #000000;
+    --icon-dim: rgba(0, 0, 0, 0.45);
+    --icon-solid: #1c1c1e;
 
     --accent: #007aff;
     --accent2: #5ac8fa;
 
-    --web-accent: #d4a017;
-    --btn-web-text: #000000;
+    --web-accent: #c6930a;
+    --btn-web-text: #1c1c1e;
 
-    --shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
