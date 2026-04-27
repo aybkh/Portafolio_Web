@@ -972,6 +972,21 @@ function setupBootAndLogin() {
             const wakeUp = () => {
                 overlay.style.opacity = '0';
                 setTimeout(() => overlay.remove(), 500);
+                
+                // Return to login screen
+                const loginScreen = document.getElementById('loginScreen');
+                const loginPass = document.getElementById('loginPass');
+                if (loginScreen) {
+                    loginScreen.style.display = 'flex';
+                    loginScreen.classList.remove('hidden');
+                    loginScreen.classList.add('visible');
+                    document.body.classList.add('booting');
+                    if (loginPass) {
+                        loginPass.value = '';
+                        loginPass.focus();
+                    }
+                }
+
                 window.removeEventListener('click', wakeUp);
                 window.removeEventListener('keydown', wakeUp);
             };
