@@ -896,10 +896,16 @@ function setupBootAndLogin() {
     document.body.style.backgroundRepeat = 'no-repeat';
 
     // Start Booting
-    let progress = 0;
+    let progress = 2;
+    if (bootProgress) bootProgress.style.width = '2%';
+    
     const bootInterval = setInterval(() => {
+        if (bootProgress) {
+            bootProgress.style.width = progress + '%';
+        }
+
         // Random incremental steps for realism
-        progress += 1.5 + (Math.random() * 5);
+        progress += 1.2 + (Math.random() * 4);
         
         if (progress >= 100) {
             progress = 100;
@@ -932,10 +938,6 @@ function setupBootAndLogin() {
                     }
                 }, 1000); 
             }, 800);
-        }
-        
-        if (bootProgress) {
-            bootProgress.style.width = progress + '%';
         }
     }, 100);
 
