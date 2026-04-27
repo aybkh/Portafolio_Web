@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* Setup Boot and Login First */
+  setupBootAndLogin();
+
   /* Setup */
   setupTheme();
   setupDock();
@@ -12,8 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupI18N();
   setupLinks();
   setupLogoTooltips();
-
-  /* New macOS Header Features */
   setupMenubar();
   setupLangDropdown();
   setupControlCenter();
@@ -23,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupShortcutsModal();
   setupCVModal();
   setupKeyboard();
-  setupBootAndLogin();
   setupContextMenu();
 
   /* Clock */
