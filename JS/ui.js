@@ -899,39 +899,45 @@ function setupBootAndLogin() {
     let progress = 0;
     const bootInterval = setInterval(() => {
         // Random incremental steps for realism
-        progress += Math.random() * 8;
+        progress += 1.5 + (Math.random() * 5);
+        
         if (progress >= 100) {
             progress = 100;
             clearInterval(bootInterval);
             
             // Transition to Login
             setTimeout(() => {
-                bootScreen.classList.add('fade-out');
+                if (bootScreen) bootScreen.classList.add('fade-out');
                 setTimeout(() => {
-                    bootScreen.style.display = 'none';
-                    loginScreen.classList.add('visible');
+                    if (bootScreen) bootScreen.style.display = 'none';
+                    if (loginScreen) {
+                        loginScreen.style.display = 'flex';
+                        loginScreen.classList.add('visible');
+                    }
                     
                     // Automate Login (Slower to appreciate)
                     if (loginPass) {
                         setTimeout(() => {
                             loginPass.focus();
                             const passText = "••••••••";
-                            let i = 0;
+                            let j = 0;
                             autoTypeInterval = setInterval(() => {
-                                loginPass.value += passText[i];
-                                i++;
-                                if (i >= passText.length) {
+                                loginPass.value += passText[j];
+                                j++;
+                                if (j >= passText.length) {
                                     clearInterval(autoTypeInterval);
-                                    // Removed autoLoginTimeout to allow manual entry only
                                 }
-                            }, 250); // Slower typing (from 150 to 250)
-                        }, 1200); // Wait 1.2s before starting to type
+                            }, 250);
+                        }, 1200);
                     }
-                }, 1000); // More time to see the transition
+                }, 1000); 
             }, 800);
         }
-        if (bootProgress) bootProgress.style.width = `${progress}%`;
-    }, 120);
+        
+        if (bootProgress) {
+            bootProgress.style.width = progress + '%';
+        }
+    }, 100);
 
     function finishLogin() {
         // Clear automation if user interacts manually
