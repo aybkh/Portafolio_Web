@@ -626,7 +626,22 @@ function setupCVModal() {
         };
         const cvPath = cvMap[lang] || cvMap.es;
 
-        iframe.src = cvPath;
+        // Fetch and create a Blob URL to hide the real path
+        fetch(cvPath)
+            .then(response => response.blob())
+            .then(blob => {
+                const blobUrl = URL.createObjectURL(blob);
+                iframe.src = blobUrl;
+                
+                // Cleanup the blob URL when closing
+                overlay.setAttribute('data-blob-url', blobUrl);
+            })
+            .catch(err => {
+                console.error("Error loading PDF:", err);
+                // Fallback to direct path if fetch fails
+                iframe.src = cvPath;
+            });
+
         overlay.classList.add('open');
         overlay.setAttribute('aria-hidden', 'false');
         closeAllDropdowns();
@@ -636,7 +651,15 @@ function setupCVModal() {
         if (!overlay || !iframe) return;
         overlay.classList.remove('open');
         overlay.setAttribute('aria-hidden', 'true');
-        iframe.src = ''; // Clear source to stop loading
+        
+        // Revoke the blob URL to free memory
+        const blobUrl = overlay.getAttribute('data-blob-url');
+        if (blobUrl) {
+            URL.revokeObjectURL(blobUrl);
+            overlay.removeAttribute('data-blob-url');
+        }
+        
+        iframe.src = ''; 
     }
 
     // Attach to all buttons with class cv-btn-open
