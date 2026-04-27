@@ -195,7 +195,8 @@ const I18N = {
             native: "Nativo / Bilingüe",
             prof_eng: "Competencia profesional",
             basic: "Conocimiento básico",
-            a1_level: "Nivel Inicial A1"
+            a1_level: "Nivel Inicial A1",
+            login_hint: "Pulsa Enter para entrar"
         },
         menubar: {
             apple_about: "Acerca de este Portfolio",
@@ -212,6 +213,9 @@ const I18N = {
             shortcuts: "Atajos de Teclado",
             open_windows: "Ventanas Abiertas",
             send_email: "Enviar un Email"
+        },
+        ctx: {
+            reload: "Recargar"
         }
     },
     en: {
@@ -416,7 +420,8 @@ const I18N = {
             native: "Native / Bilingual",
             prof_eng: "Professional Proficiency",
             basic: "Basic Knowledge",
-            a1_level: "A1 Beginner"
+            a1_level: "A1 Beginner",
+            login_hint: "Press Enter to log in"
         },
         menubar: {
             apple_about: "About This Portfolio",
@@ -433,6 +438,9 @@ const I18N = {
             shortcuts: "Keyboard Shortcuts",
             open_windows: "Open Windows",
             send_email: "Send an Email"
+        },
+        ctx: {
+            reload: "Reload"
         }
     },
     ca: {
@@ -631,7 +639,8 @@ const I18N = {
             native: "Natiu / Bilingüe",
             prof_eng: "Competència professional",
             basic: "Coneixement bàsic",
-            a1_level: "Nivell Inicial A1"
+            a1_level: "Nivell Inicial A1",
+            login_hint: "Prem Enter per entrar"
         },
         menubar: {
             apple_about: "Quant a aquest Portafoli",
@@ -648,6 +657,9 @@ const I18N = {
             shortcuts: "Atajos de Teclat",
             open_windows: "Finestres Obertes",
             send_email: "Enviar un Email"
+        },
+        ctx: {
+            reload: "Recarregar"
         }
     },
     fr: {
