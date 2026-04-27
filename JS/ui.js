@@ -846,6 +846,16 @@ function setupBootAndLogin() {
 
     if (!bootScreen || !loginScreen) return;
 
+    // Random Background
+    const wallpapers = [
+        "img/macos_bigsur.webp",
+        "img/macos_catalina.webp",
+        "img/macos_tahoe.webp",
+        "img/sequoia-sunrise.webp"
+    ];
+    const randomWall = wallpapers[Math.floor(Math.random() * wallpapers.length)];
+    loginScreen.style.backgroundImage = `url('${randomWall}')`;
+
     // Start Booting
     let progress = 0;
     const bootInterval = setInterval(() => {
