@@ -833,3 +833,135 @@ function setupBattery() {
         battery.addEventListener('chargingchange', updateBatteryStatus);
     });
 }
+
+/* ═══════════════════════════════════════════════
+   BOOT & LOGIN SEQUENCE
+   ═══════════════════════════════════════════════ */
+function setupBootAndLogin() {
+    const bootScreen = document.getElementById('bootScreen');
+    const bootProgress = document.getElementById('bootProgress');
+    const loginScreen = document.getElementById('loginScreen');
+    const loginPass = document.getElementById('loginPass');
+    const loginBtn = document.getElementById('loginBtn');
+
+    if (!bootScreen || !loginScreen) return;
+
+    // Start Booting
+    let progress = 0;
+    const bootInterval = setInterval(() => {
+        // Random incremental steps for realism
+        progress += Math.random() * 8;
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(bootInterval);
+            
+            // Transition to Login
+            setTimeout(() => {
+                bootScreen.classList.add('fade-out');
+                setTimeout(() => {
+                    bootScreen.style.display = 'none';
+                    loginScreen.classList.add('visible');
+                    
+                    // Automate Login
+                    if (loginPass) {
+                        loginPass.focus();
+                        const passText = "••••••••";
+                        let i = 0;
+                        const typeInterval = setInterval(() => {
+                            loginPass.value += passText[i];
+                            i++;
+                            if (i >= passText.length) {
+                                clearInterval(typeInterval);
+                                setTimeout(finishLogin, 600);
+                            }
+                        }, 150);
+                    } else {
+                        setTimeout(finishLogin, 1000);
+                    }
+                }, 800);
+            }, 600);
+        }
+        if (bootProgress) bootProgress.style.width = `${progress}%`;
+    }, 120);
+
+    function finishLogin() {
+        loginScreen.classList.add('hidden');
+        document.body.classList.remove('booting');
+        setTimeout(() => {
+            loginScreen.style.display = 'none';
+        }, 600);
+    }
+
+    if (loginBtn) loginBtn.addEventListener('click', finishLogin);
+    if (loginPass) {
+        loginPass.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') finishLogin();
+        });
+    }
+
+    // Footer buttons
+    const sleepBtn = document.querySelector('.login-footer-btn .sleep')?.parentElement;
+    const shutdownBtn = document.querySelector('.login-footer-btn .shutdown')?.parentElement;
+
+    if (sleepBtn) {
+        sleepBtn.addEventListener('click', () => {
+            document.body.style.filter = 'brightness(0)';
+            setTimeout(() => {
+                document.body.style.filter = '';
+            }, 2000);
+        });
+    }
+
+    if (shutdownBtn) {
+        shutdownBtn.addEventListener('click', () => {
+            document.body.innerHTML = '<div style="background:black; height:100vh; display:flex; align-items:center; justify-content:center; color:#333; font-family:sans-serif;">No signal</div>';
+            setTimeout(() => location.reload(), 3000);
+        });
+    }
+}
+
+/* ═══════════════════════════════════════════════
+   CONTEXT MENU
+   ═══════════════════════════════════════════════ */
+function setupContextMenu() {
+    const menu = document.getElementById('macContextMenu');
+    if (!menu) return;
+
+    document.addEventListener('contextmenu', (e) => {
+        // Don't show if clicking on interactive elements that might need native menu
+        if (e.target.closest('input, textarea, [contenteditable="true"]')) return;
+        
+        e.preventDefault();
+        
+        const winW = window.innerWidth;
+        const winH = window.innerHeight;
+        const menuW = menu.offsetWidth || 180;
+        const menuH = menu.offsetHeight || 200;
+        
+        let x = e.clientX;
+        let y = e.clientY;
+        
+        // Prevent overflow
+        if (x + menuW > winW) x -= menuW;
+        if (y + menuH > winH) y -= menuH;
+        
+        menu.style.left = `${x}px`;
+        menu.style.top = `${y}px`;
+        menu.style.display = 'flex';
+    });
+
+    document.addEventListener('click', () => {
+        menu.style.display = 'none';
+    });
+
+    // Sub-actions in the menu
+    const ctxAbout = document.getElementById('ctxAbout');
+    const ctxTheme = document.getElementById('ctxTheme');
+
+    if (ctxAbout) ctxAbout.addEventListener('click', () => {
+        const aboutBtn = document.getElementById('openAbout');
+        if (aboutBtn) aboutBtn.click();
+    });
+
+    if (ctxTheme) ctxTheme.addEventListener('click', () => toggleTheme());
+}
