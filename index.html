@@ -1400,10 +1400,6 @@
     </section>
   </main>
 
-  <footer class="foot">
-    <p><span id="year"></span> Ayoub El Khalifi Idrissi El Jerari</p>
-  </footer>
-
   <!-- MacOS Dock -->
   <div class="dock-container">
     <div class="dock">
@@ -1454,6 +1450,15 @@
     <button type="button" class="ctx-item" onclick="location.reload()">
       <svg class="ctx-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
       <span data-i18n="ctx.reload">Recargar</span>
+    </button>
+    <div class="ctx-sep"></div>
+    <button type="button" class="ctx-item" id="ctxCopy">
+      <svg class="ctx-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+      <span data-i18n="ctx.copy">Copiar</span>
+    </button>
+    <button type="button" class="ctx-item" id="ctxPaste">
+      <svg class="ctx-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+      <span data-i18n="ctx.paste">Pegar</span>
     </button>
     <div class="ctx-sep"></div>
     <button type="button" class="ctx-item" id="ctxAbout">
