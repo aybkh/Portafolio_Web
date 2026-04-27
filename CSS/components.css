@@ -1709,6 +1709,44 @@ kbd {
 }
 
 /* ─────────────────────────────────────────
+   CV Modal (PDF Viewer)
+   ───────────────────────────────────────── */
+.cv-modal {
+    width: 80vw;
+    height: 85vh;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cv-body {
+    flex: 1;
+    padding: 0;
+    overflow: hidden;
+    background: #525659; /* Standard PDF viewer background */
+}
+
+#cvIframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.cv-modal.maximized {
+    width: 98vw;
+    height: 94vh;
+    max-width: none;
+}
+
+@media (max-width: 768px) {
+    .cv-modal {
+        width: 95vw;
+        height: 80vh;
+    }
+}
+
+/* ─────────────────────────────────────────
    Control Center Panel
 ───────────────────────────────────────── */
 .control-center {
