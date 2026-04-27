@@ -846,12 +846,14 @@ function setupBootAndLogin() {
 
     if (!bootScreen || !loginScreen) return;
 
+    let autoTypeInterval;
+    let autoLoginTimeout;
+
     // Random Background
     const wallpapers = [
         "img/macos_bigsur.webp",
         "img/macos_catalina.webp",
-        "img/macos_tahoe.webp",
-        "img/sequoia-sunrise.webp"
+        "img/macos_tahoe.webp"
     ];
     const randomWall = wallpapers[Math.floor(Math.random() * wallpapers.length)];
     loginScreen.style.backgroundImage = `url('${randomWall}')`;
@@ -885,18 +887,18 @@ function setupBootAndLogin() {
                             loginPass.focus();
                             const passText = "••••••••";
                             let i = 0;
-                            const typeInterval = setInterval(() => {
+                            autoTypeInterval = setInterval(() => {
                                 loginPass.value += passText[i];
                                 i++;
                                 if (i >= passText.length) {
-                                    clearInterval(typeInterval);
+                                    clearInterval(autoTypeInterval);
                                     // Pause to see the full password before entering
-                                    setTimeout(finishLogin, 1500);
+                                    autoLoginTimeout = setTimeout(finishLogin, 1500);
                                 }
                             }, 250); // Slower typing (from 150 to 250)
                         }, 1200); // Wait 1.2s before starting to type
                     } else {
-                        setTimeout(finishLogin, 3000);
+                        autoLoginTimeout = setTimeout(finishLogin, 3000);
                     }
                 }, 1000); // More time to see the transition
             }, 800);
@@ -905,10 +907,14 @@ function setupBootAndLogin() {
     }, 120);
 
     function finishLogin() {
+        // Clear automation if user interacts manually
+        if (autoTypeInterval) clearInterval(autoTypeInterval);
+        if (autoLoginTimeout) clearTimeout(autoLoginTimeout);
+
         // Request Fullscreen (browser requires user gesture, login click works)
         if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen().catch(err => {
-                console.log("Fullscreen request denied or not supported.");
+                console.log("Fullscreen request denied.");
             });
         }
 
@@ -990,5 +996,32 @@ function setupContextMenu() {
         if (aboutBtn) aboutBtn.click();
     });
 
-    if (ctxTheme) ctxTheme.addEventListener('click', () => toggleTheme());
+    if (ctxTheme) ctxTheme.addEventListener('click', () => {
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) themeToggle.click();
+        menu.style.display = 'none';
+    });
+
+    const ctxCopy = document.getElementById('ctxCopy');
+    const ctxPaste = document.getElementById('ctxPaste');
+
+    if (ctxCopy) ctxCopy.addEventListener('click', () => {
+        document.execCommand('copy');
+        menu.style.display = 'none';
+    });
+
+    if (ctxPaste) ctxPaste.addEventListener('click', async () => {
+        try {
+            const text = await navigator.clipboard.readText();
+            const activeEl = document.activeElement;
+            if (activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA')) {
+                const start = activeEl.selectionStart;
+                const end = activeEl.selectionEnd;
+                activeEl.value = activeEl.value.substring(0, start) + text + activeEl.value.substring(end);
+            }
+        } catch (err) {
+            console.log("Paste failed", err);
+        }
+        menu.style.display = 'none';
+    });
 }
