@@ -1,0 +1,158 @@
+/* ─────────────────────────────────────────
+   macOS Login Screen
+   ───────────────────────────────────────── */
+.login-screen {
+    position: fixed;
+    inset: 0;
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.login-screen.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.login-screen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+}
+
+.login-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.login-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.login-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 25px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.login-input-group {
+    position: relative;
+    width: 220px;
+}
+
+#loginPass {
+    width: 100%;
+    padding: 8px 35px 8px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    backdrop-filter: blur(10px);
+}
+
+#loginPass::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.login-submit {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #333;
+    transition: background 0.2s;
+}
+
+.login-submit:hover {
+    background: #fff;
+}
+
+.login-submit svg {
+    width: 14px;
+    height: 14px;
+}
+
+.login-hint {
+    margin-top: 15px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+}
+
+.login-footer {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    gap: 40px;
+    z-index: 1;
+}
+
+.login-footer-btn {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 11px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.login-footer-btn:hover {
+    opacity: 1;
+}
+
+.footer-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.05);
+}
