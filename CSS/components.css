@@ -4,13 +4,14 @@
     top: 0;
     left: 0;
     right: 0;
-    height: var(--menubar-height);
+    height: 32px;
     background: var(--menubar-bg);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 0 16px;
     z-index: 9999;
     font-size: 13px;
     font-weight: 500;
@@ -46,7 +47,7 @@
 .menu-item {
     cursor: default;
     opacity: 0.9;
-    padding: 3px 8px;
+    padding: 2px 10px;
     border-radius: 4px;
     transition: background 0.1s ease, color 0.1s ease, opacity 0.1s ease;
     background: none;
@@ -57,6 +58,15 @@
     font-weight: 500;
     user-select: none;
     -webkit-user-select: none;
+    display: flex;
+    align-items: center;
+    height: 26px; /* Explicit height to fit in 32px bar */
+    line-height: 1;
+}
+
+.clock-btn {
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
 .menu-item:hover {
@@ -98,7 +108,8 @@
     align-items: center;
     justify-content: center;
     opacity: 0.85;
-    padding: 3px 6px;
+    padding: 2px 6px;
+    height: 26px;
     border-radius: 4px;
     cursor: default;
     transition: background 0.1s ease, opacity 0.1s ease;
@@ -876,15 +887,26 @@
         display: none;
     }
 
-    .menu-clock {
-        font-size: 11px;
-    }
-
     .menu-center {
         position: absolute;
         left: 50%;
-        transform: translateX(-50%);
-        flex: none;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .clock-btn {
+        padding: 2px 6px !important;
+        height: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-clock {
+        font-size: 11px;
+        white-space: nowrap;
     }
 
     .menubar-right {
