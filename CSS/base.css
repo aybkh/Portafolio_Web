@@ -24,6 +24,15 @@ body {
     padding-bottom: calc(var(--dock-size) + 40px);
 }
 
+/* Hide content during boot */
+body.booting .mac-menubar,
+body.booting main,
+body.booting .foot,
+body.booting .dock-container {
+    opacity: 0;
+    pointer-events: none;
+}
+
 [data-theme="light"] body {
     background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
 }
