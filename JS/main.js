@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSpotlight();
   setupAboutModal();
   setupShortcutsModal();
+  setupCVModal();
   setupKeyboard();
 
   /* Clock */
