@@ -872,24 +872,27 @@ function setupBootAndLogin() {
                     bootScreen.style.display = 'none';
                     loginScreen.classList.add('visible');
                     
-                    // Automate Login
+                    // Automate Login (Slower to appreciate)
                     if (loginPass) {
-                        loginPass.focus();
-                        const passText = "••••••••";
-                        let i = 0;
-                        const typeInterval = setInterval(() => {
-                            loginPass.value += passText[i];
-                            i++;
-                            if (i >= passText.length) {
-                                clearInterval(typeInterval);
-                                setTimeout(finishLogin, 600);
-                            }
-                        }, 150);
+                        setTimeout(() => {
+                            loginPass.focus();
+                            const passText = "••••••••";
+                            let i = 0;
+                            const typeInterval = setInterval(() => {
+                                loginPass.value += passText[i];
+                                i++;
+                                if (i >= passText.length) {
+                                    clearInterval(typeInterval);
+                                    // Pause to see the full password before entering
+                                    setTimeout(finishLogin, 1500);
+                                }
+                            }, 250); // Slower typing (from 150 to 250)
+                        }, 1200); // Wait 1.2s before starting to type
                     } else {
-                        setTimeout(finishLogin, 1000);
+                        setTimeout(finishLogin, 3000);
                     }
-                }, 800);
-            }, 600);
+                }, 1000); // More time to see the transition
+            }, 800);
         }
         if (bootProgress) bootProgress.style.width = `${progress}%`;
     }, 120);
