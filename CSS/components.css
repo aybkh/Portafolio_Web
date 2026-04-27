@@ -348,7 +348,7 @@
 
 .logo-row {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
     align-items: center;
     list-style: none;
