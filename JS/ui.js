@@ -442,6 +442,15 @@ const SPOTLIGHT_DATA = [
     { title: 'ERAY Slasher',          sub: 'Unity Roguelite',    icon: '🎮', href: '#proyectos' },
 ];
 
+function updateBodyScroll() {
+    const anyModalOpen = document.querySelector('.mac-modal-overlay.open, .spotlight-overlay.open');
+    if (anyModalOpen) {
+        document.body.classList.add('modal-open');
+    } else {
+        document.body.classList.remove('modal-open');
+    }
+}
+
 function openSpotlight() {
     const overlay = document.getElementById('spotlightOverlay');
     const input = document.getElementById('spotlightInput');
@@ -450,6 +459,7 @@ function openSpotlight() {
     overlay.setAttribute('aria-hidden', 'false');
     setTimeout(() => { if (input) input.focus(); }, 100);
     renderSpotlightResults('');
+    updateBodyScroll();
 }
 
 function closeSpotlight() {
@@ -461,6 +471,7 @@ function closeSpotlight() {
     if (input) input.value = '';
     const results = document.getElementById('spotlightResults');
     if (results) results.innerHTML = '';
+    updateBodyScroll();
 }
 
 function renderSpotlightResults(query) {
@@ -569,7 +580,11 @@ function setupAboutModal() {
     if (openBtn) {
         openBtn.addEventListener('click', () => {
             closeAllDropdowns();
-            if (overlay) { overlay.classList.add('open'); overlay.setAttribute('aria-hidden', 'false'); }
+            if (overlay) { 
+                overlay.classList.add('open'); 
+                overlay.setAttribute('aria-hidden', 'false'); 
+                updateBodyScroll();
+            }
             // Sync theme label
             const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
             const aboutThemeVal = document.getElementById('aboutThemeVal');
@@ -580,12 +595,14 @@ function setupAboutModal() {
     if (closeBtn) closeBtn.addEventListener('click', () => {
         overlay.classList.remove('open');
         overlay.setAttribute('aria-hidden', 'true');
+        updateBodyScroll();
     });
 
     if (overlay) overlay.addEventListener('click', (e) => {
         if (e.target === overlay) {
             overlay.classList.remove('open');
             overlay.setAttribute('aria-hidden', 'true');
+            updateBodyScroll();
         }
     });
 }
@@ -600,18 +617,24 @@ function setupShortcutsModal() {
 
     if (openBtn) openBtn.addEventListener('click', () => {
         closeAllDropdowns();
-        if (overlay) { overlay.classList.add('open'); overlay.setAttribute('aria-hidden', 'false'); }
+        if (overlay) { 
+            overlay.classList.add('open'); 
+            overlay.setAttribute('aria-hidden', 'false'); 
+            updateBodyScroll();
+        }
     });
 
     if (closeBtn) closeBtn.addEventListener('click', () => {
         overlay.classList.remove('open');
         overlay.setAttribute('aria-hidden', 'true');
+        updateBodyScroll();
     });
 
     if (overlay) overlay.addEventListener('click', (e) => {
         if (e.target === overlay) {
             overlay.classList.remove('open');
             overlay.setAttribute('aria-hidden', 'true');
+            updateBodyScroll();
         }
     });
 }
@@ -652,6 +675,7 @@ function openCV() {
     overlay.classList.add('open');
     overlay.setAttribute('aria-hidden', 'false');
     closeAllDropdowns();
+    updateBodyScroll();
 }
 
 function closeCV() {
@@ -660,6 +684,7 @@ function closeCV() {
     if (!overlay || !iframe) return;
     overlay.classList.remove('open');
     overlay.setAttribute('aria-hidden', 'true');
+    updateBodyScroll();
     
     // Revoke the blob URL to free memory
     const blobUrl = overlay.getAttribute('data-blob-url');
@@ -732,6 +757,7 @@ function setupKeyboard() {
                 m.setAttribute('aria-hidden', 'true');
             });
             closeAllDropdowns();
+            updateBodyScroll();
         }
     });
 }
