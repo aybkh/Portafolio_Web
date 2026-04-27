@@ -61,25 +61,31 @@
       <img src="img/foto.webp" alt="User" class="login-avatar">
       <h2 class="login-name">Ayoub El Jerari</h2>
       <div class="login-input-group">
-        <input type="password" id="loginPass" placeholder="Contraseña" autofocus>
+        <input type="password" id="loginPass" placeholder="Password" autofocus>
         <button id="loginBtn" class="login-submit">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </button>
       </div>
-      <p class="login-hint" data-i18n="system.login_hint">Pulsa Enter para entrar</p>
+      <p class="login-hint" data-i18n="system.login_hint">Press Enter to log in</p>
     </div>
     <div class="login-footer">
       <button class="login-footer-btn">
-        <div class="footer-icon sleep"></div>
-        <span>Reposo</span>
+        <div class="footer-icon sleep">
+          <i class="fas fa-moon"></i>
+        </div>
+        <span>Sleep</span>
       </button>
       <button class="login-footer-btn" onclick="location.reload()">
-        <div class="footer-icon restart"></div>
-        <span>Reiniciar</span>
+        <div class="footer-icon restart">
+          <i class="fas fa-redo"></i>
+        </div>
+        <span>Restart</span>
       </button>
       <button class="login-footer-btn">
-        <div class="footer-icon shutdown"></div>
-        <span>Apagar</span>
+        <div class="footer-icon shutdown">
+          <i class="fas fa-power-off"></i>
+        </div>
+        <span>Shut Down</span>
       </button>
     </div>
   </div>
