@@ -59,7 +59,7 @@ const I18N = {
                 linux_desc: "Admin de servidores y diagnóstico",
                 windows_desc: "Servidores, AD y soporte a usuarios",
                 m365_desc: "Admin de Tenant y Apps Cloud",
-                macos_desc: "Soporte avanzado y uso experto",
+                macos_desc: "Soporte y uso avanzado",
                 mdm_desc: "Gestión de flotas iOS y Android",
                 shell_desc: "Scripting Básico en Bash y PowerShell",
                 azure_desc: "Fundamentos de Azure y Entra ID",
