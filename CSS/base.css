@@ -17,7 +17,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
-    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+    background-color: #0b0d12;
     background-attachment: fixed;
     background-size: cover;
     transition: background .6s ease, color .3s ease;
