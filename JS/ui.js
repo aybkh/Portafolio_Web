@@ -802,7 +802,8 @@ function updateBatteryStatus() {
         levelEl.style.width = `${level}%`;
         levelEl.style.background = level > 20 ? 'var(--icon-solid)' : '#ff3b30';
     }
-    
+}
+
 /* Core logic moved to system.js */
 
 /* ═══════════════════════════════════════════════
