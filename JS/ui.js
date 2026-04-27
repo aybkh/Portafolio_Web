@@ -855,6 +855,13 @@ function setupBootAndLogin() {
     ];
     const randomWall = wallpapers[Math.floor(Math.random() * wallpapers.length)];
     loginScreen.style.backgroundImage = `url('${randomWall}')`;
+    
+    // Apply same wallpaper to body for consistency after login
+    document.body.style.backgroundImage = `url('${randomWall}')`;
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundAttachment = 'fixed';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.backgroundRepeat = 'no-repeat';
 
     // Start Booting
     let progress = 0;
