@@ -184,14 +184,20 @@ function i18nSet(lang) {
 
     // Update CV links based on language
     const cvMap = {
-        ca: 'data/cv_ayoub_cat.pdf',
+        ca: 'data/cv_ayoub_es.pdf', // Defaulting to ES if CAT doesn't exist
         es: 'data/cv_ayoub_es.pdf',
-        en: 'data/cv_ayoub_en.pdf'
+        en: 'data/cv_ayoub_es.pdf'  // Defaulting to ES if EN doesn't exist
     };
-    const cvPath = cvMap[lang] || cvMap.en;
+    const cvPath = cvMap[lang] || cvMap.es;
     document.querySelectorAll('.cv-link').forEach(a => {
         a.href = cvPath;
     });
+
+    // Update the Iframe source if it's already open or for next time
+    const cvIframe = document.getElementById('cvIframe');
+    if (cvIframe && cvIframe.src) {
+        cvIframe.src = cvPath;
+    }
 
     // Update Spotlight data
     if (typeof SPOTLIGHT_DATA !== 'undefined') {
@@ -596,6 +602,62 @@ function setupShortcutsModal() {
             overlay.setAttribute('aria-hidden', 'true');
         }
     });
+}
+
+/* ═══════════════════════════════════════════════
+   CV MODAL (PDF Viewer)
+   ═══════════════════════════════════════════════ */
+function setupCVModal() {
+    const overlay = document.getElementById('cvOverlay');
+    const iframe = document.getElementById('cvIframe');
+    const closeBtn = document.getElementById('cvClose');
+    const maxBtn = document.getElementById('cvMaximize');
+    const modal = document.querySelector('.cv-modal');
+
+    function openCV() {
+        if (!overlay || !iframe) return;
+        
+        // Get current language and path
+        const lang = document.documentElement.getAttribute('lang') || 'es';
+        const cvMap = {
+            ca: 'data/cv_ayoub_es.pdf',
+            es: 'data/cv_ayoub_es.pdf',
+            en: 'data/cv_ayoub_es.pdf'
+        };
+        const cvPath = cvMap[lang] || cvMap.es;
+
+        iframe.src = cvPath;
+        overlay.classList.add('open');
+        overlay.setAttribute('aria-hidden', 'false');
+        closeAllDropdowns();
+    }
+
+    function closeCV() {
+        if (!overlay || !iframe) return;
+        overlay.classList.remove('open');
+        overlay.setAttribute('aria-hidden', 'true');
+        iframe.src = ''; // Clear source to stop loading
+    }
+
+    // Attach to all buttons with class cv-btn-open
+    document.querySelectorAll('.cv-btn-open').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openCV();
+        });
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeCV);
+
+    if (overlay) overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeCV();
+    });
+
+    if (maxBtn && modal) {
+        maxBtn.addEventListener('click', () => {
+            modal.classList.toggle('maximized');
+        });
+    }
 }
 
 /* ═══════════════════════════════════════════════
