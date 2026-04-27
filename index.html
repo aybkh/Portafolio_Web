@@ -413,6 +413,23 @@
     </div>
   </div>
 
+  <!-- CV Viewer Modal (Quick Look) -->
+  <div class="mac-modal-overlay" id="cvOverlay" aria-hidden="true">
+    <div class="mac-modal cv-modal" role="dialog">
+      <div class="mac-modal-header">
+        <div class="traffic-lights">
+          <span class="traffic-light close" id="cvClose"></span>
+          <span class="traffic-light minimize"></span>
+          <span class="traffic-light maximize" id="cvMaximize"></span>
+        </div>
+        <div class="window-title" id="cvTitle">Curriculum Vitae</div>
+      </div>
+      <div class="mac-modal-body cv-body">
+        <iframe id="cvIframe" src="" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+
   <main>
     <!-- HERO Window -->
     <section class="mac-window" id="hero">
@@ -437,9 +454,7 @@
               mejorar la experiencia del usuario.</p>
             <div class="cta">
               <a class="btn" href="#proyectos" data-i18n="cta.view">Ver proyectos</a>
-              <a class="btn ghost"
-                href="https://drive.google.com/file/d/1SiXMzyh-ohzb-eEZIzrBHUuEUIF63gn9/view"
-                target="_blank" rel="noopener" data-i18n="cta.cv">Ver CV</a>
+              <button class="btn ghost cv-btn-open" id="heroCVBtn" data-i18n="cta.cv">Ver CV</button>
             </div>
 
             <!-- Logos de tecnologías principales -->
