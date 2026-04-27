@@ -1,3 +1,7 @@
+body.modal-open {
+    overflow: hidden !important;
+}
+
 main {
     max-width: var(--max);
     margin: var(--menubar-height) auto 0;
