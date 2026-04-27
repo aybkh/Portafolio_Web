@@ -787,24 +787,7 @@ function showToast(msg) {
 /* ═══════════════════════════════════════════════
    BATTERY
    ═══════════════════════════════════════════════ */
-let globalBattery = null;
-
-function updateBatteryStatus() {
-    if (!globalBattery) return;
-    const level = Math.round(globalBattery.level * 100);
-    const batteryPct = document.getElementById('batteryPct');
-    const ccBatteryPct = document.getElementById('ccBatteryPct');
-    const levelEl = document.getElementById('batteryLevel');
-    
-    if (batteryPct) batteryPct.textContent = `${level}%`;
-    if (ccBatteryPct) ccBatteryPct.textContent = `${level}%`;
-    if (levelEl) {
-        levelEl.style.width = `${level}%`;
-        levelEl.style.background = level > 20 ? 'var(--icon-solid)' : '#ff3b30';
-    }
-}
-
-/* Core logic moved to system.js */
+/* System logic moved to system.js */
 
 /* ═══════════════════════════════════════════════
    CONTEXT MENU
