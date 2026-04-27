@@ -39,11 +39,30 @@ function applyTheme(theme) {
     if (label2) label2.textContent = isDark ? (dict.system.light || 'Claro') : (dict.system.dark || 'Oscuro');
     if (aboutVal) aboutVal.textContent = isDark ? (dict.system.dark || 'Oscuro') : (dict.system.light || 'Claro');
 
-    // Sync dock toggle button
-    const dockBtn = document.getElementById('themeToggleDock');
     if (dockBtn) {
         dockBtn.onclick = null; // managed separately now
     }
+
+    // Theme-aware Wallpapers
+    const lightWallpapers = [
+        "img/macos-mojave-day.webp",
+        "img/macos-monterey-day.webp",
+        "img/macos-monterey-day2.webp",
+        "img/macos_catalina.webp",
+        "img/macos_bigsur.webp"
+    ];
+    const darkWallpapers = [
+        "img/macos-mojave-night.webp",
+        "img/macos-sequoia-night.webp",
+        "img/macos_tahoe.webp"
+    ];
+
+    const wallList = theme === 'light' ? lightWallpapers : darkWallpapers;
+    const randomWall = wallList[Math.floor(Math.random() * wallList.length)];
+    
+    document.body.style.backgroundImage = `url('${randomWall}')`;
+    const loginScreen = document.getElementById('loginScreen');
+    if (loginScreen) loginScreen.style.backgroundImage = `url('${randomWall}')`;
 }
 
 function toggleTheme() {
@@ -849,13 +868,24 @@ function setupBootAndLogin() {
     let autoTypeInterval;
     let autoLoginTimeout;
 
-    // Random Background
-    const wallpapers = [
-        "img/macos_bigsur.webp",
+    // Theme-aware Random Background
+    const lightWallpapers = [
+        "img/macos-mojave-day.webp",
+        "img/macos-monterey-day.webp",
+        "img/macos-monterey-day2.webp",
         "img/macos_catalina.webp",
+        "img/macos_bigsur.webp"
+    ];
+    const darkWallpapers = [
+        "img/macos-mojave-night.webp",
+        "img/macos-sequoia-night.webp",
         "img/macos_tahoe.webp"
     ];
-    const randomWall = wallpapers[Math.floor(Math.random() * wallpapers.length)];
+
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const wallList = currentTheme === 'light' ? lightWallpapers : darkWallpapers;
+    const randomWall = wallList[Math.floor(Math.random() * wallList.length)];
+
     loginScreen.style.backgroundImage = `url('${randomWall}')`;
     
     // Apply same wallpaper to body for consistency after login
@@ -892,13 +922,10 @@ function setupBootAndLogin() {
                                 i++;
                                 if (i >= passText.length) {
                                     clearInterval(autoTypeInterval);
-                                    // Pause to see the full password before entering
-                                    autoLoginTimeout = setTimeout(finishLogin, 1500);
+                                    // Removed autoLoginTimeout to allow manual entry only
                                 }
                             }, 250); // Slower typing (from 150 to 250)
                         }, 1200); // Wait 1.2s before starting to type
-                    } else {
-                        autoLoginTimeout = setTimeout(finishLogin, 3000);
                     }
                 }, 1000); // More time to see the transition
             }, 800);
@@ -938,17 +965,33 @@ function setupBootAndLogin() {
 
     if (sleepBtn) {
         sleepBtn.addEventListener('click', () => {
-            document.body.style.filter = 'brightness(0)';
+            const overlay = document.createElement('div');
+            overlay.style.cssText = 'position:fixed; inset:0; background:black; z-index:10000000; cursor:none; transition: opacity 0.5s;';
+            document.body.appendChild(overlay);
+            
+            const wakeUp = () => {
+                overlay.style.opacity = '0';
+                setTimeout(() => overlay.remove(), 500);
+                window.removeEventListener('click', wakeUp);
+                window.removeEventListener('keydown', wakeUp);
+            };
+            
             setTimeout(() => {
-                document.body.style.filter = '';
-            }, 2000);
+                window.addEventListener('click', wakeUp);
+                window.addEventListener('keydown', wakeUp);
+            }, 500);
         });
     }
 
     if (shutdownBtn) {
         shutdownBtn.addEventListener('click', () => {
-            document.body.innerHTML = '<div style="background:black; height:100vh; display:flex; align-items:center; justify-content:center; color:#333; font-family:sans-serif;">No signal</div>';
-            setTimeout(() => location.reload(), 3000);
+            document.body.innerHTML = `
+                <div style="background:black; height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#555; font-family:sans-serif; cursor:default;">
+                    <button onclick="location.reload()" style="background:none; border:1px solid #333; color:#444; padding:10px 20px; border-radius:5px; cursor:pointer; transition: 0.3s;" onmouseover="this.style.color='#888';this.style.borderColor='#555'" onmouseout="this.style.color='#444';this.style.borderColor='#333'">
+                        <i class="fas fa-power-off" style="font-size:24px; margin-bottom:10px; display:block;"></i>
+                        Power On
+                    </button>
+                </div>`;
         });
     }
 }
@@ -997,8 +1040,35 @@ function setupContextMenu() {
     });
 
     if (ctxTheme) ctxTheme.addEventListener('click', () => {
-        const themeToggle = document.getElementById('themeToggle');
-        if (themeToggle) themeToggle.click();
+        toggleTheme();
+        menu.style.display = 'none';
+    });
+
+    const ctxWallpaper = document.getElementById('ctxWallpaper');
+    if (ctxWallpaper) ctxWallpaper.addEventListener('click', () => {
+        const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const lightWallpapers = [
+            "img/macos-mojave-day.webp",
+            "img/macos-monterey-day.webp",
+            "img/macos-monterey-day2.webp",
+            "img/macos_catalina.webp",
+            "img/macos_bigsur.webp"
+        ];
+        const darkWallpapers = [
+            "img/macos-mojave-night.webp",
+            "img/macos-sequoia-night.webp",
+            "img/macos_tahoe.webp"
+        ];
+        
+        const wallList = theme === 'light' ? lightWallpapers : darkWallpapers;
+        let current = document.body.style.backgroundImage || "";
+        let index = wallList.findIndex(w => current.includes(w));
+        let next = wallList[(index + 1) % wallList.length];
+        
+        document.body.style.backgroundImage = `url('${next}')`;
+        const loginScreen = document.getElementById('loginScreen');
+        if (loginScreen) loginScreen.style.backgroundImage = `url('${next}')`;
+        
         menu.style.display = 'none';
     });
 
