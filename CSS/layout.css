@@ -37,7 +37,7 @@ h1 {
     overflow: hidden;
     margin-bottom: 40px;
     backdrop-filter: blur(40px);
-    margin-top: 40px;
+    margin-top: 15%;
 }
 
 .window-header {
