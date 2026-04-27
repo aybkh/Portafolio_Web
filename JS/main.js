@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
   setupShortcutsModal();
   setupCVModal();
   setupKeyboard();
+  setupBootAndLogin();
+  setupContextMenu();
 
   /* Clock */
   updateClock();
