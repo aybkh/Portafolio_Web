@@ -39,6 +39,8 @@ function applyTheme(theme) {
     if (label2) label2.textContent = isDark ? (dict.system.light || 'Claro') : (dict.system.dark || 'Oscuro');
     if (aboutVal) aboutVal.textContent = isDark ? (dict.system.dark || 'Oscuro') : (dict.system.light || 'Claro');
 
+    // Sync dock toggle button
+    const dockBtn = document.getElementById('themeToggleDock');
     if (dockBtn) {
         dockBtn.onclick = null; // managed separately now
     }
