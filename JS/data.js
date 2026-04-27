@@ -215,7 +215,9 @@ const I18N = {
             send_email: "Enviar un Email"
         },
         ctx: {
-            reload: "Recargar"
+            reload: "Recargar",
+            copy: "Copiar",
+            paste: "Pegar"
         }
     },
     en: {
@@ -440,7 +442,9 @@ const I18N = {
             send_email: "Send an Email"
         },
         ctx: {
-            reload: "Reload"
+            reload: "Reload",
+            copy: "Copy",
+            paste: "Paste"
         }
     },
     ca: {
@@ -659,7 +663,9 @@ const I18N = {
             send_email: "Enviar un Email"
         },
         ctx: {
-            reload: "Recarregar"
+            reload: "Recarregar",
+            copy: "Copiar",
+            paste: "Enganxar"
         }
     },
     fr: {
