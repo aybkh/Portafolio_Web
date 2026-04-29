@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   safeCall(setupControlCenter, 'setupControlCenter');
   safeCall(setupBattery, 'setupBattery');
   safeCall(setupSpotlight, 'setupSpotlight');
+  safeCall(setupQuickLook, 'setupQuickLook');
   safeCall(setupAboutModal, 'setupAboutModal');
   safeCall(setupShortcutsModal, 'setupShortcutsModal');
   safeCall(setupCVModal, 'setupCVModal');
