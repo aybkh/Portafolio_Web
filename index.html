@@ -121,6 +121,12 @@
             <svg class="drop-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
             GitHub
           </a>
+          <div class="drop-sep"></div>
+          <button type="button" class="drop-item" id="menuLogout" role="menuitem">
+            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            <span data-i18n="menubar.logout">Cerrar sesión de Ayoub...</span>
+            <span class="drop-shortcut">⇧⌘Q</span>
+          </button>
         </div>
       </div>
 
@@ -128,11 +134,14 @@
       <div class="menu-item-wrap" id="wrap-portfolio">
         <button type="button" class="menu-item bold" id="menu-portfolio" aria-haspopup="true" aria-expanded="false">Portfolio</button>
         <div class="mac-dropdown" id="drop-portfolio" role="menu">
-          <a class="drop-item" href="#hero" role="menuitem" data-i18n="nav.home">Home</a>
-          <a class="drop-item" href="#experiencia" role="menuitem" data-i18n="sections.exp">Experiencia</a>
-          <a class="drop-item" href="#skills" role="menuitem" data-i18n="sections.sk">Skills</a>
-          <a class="drop-item" href="#proyectos" role="menuitem" data-i18n="sections.proj">Proyectos</a>
-          <a class="drop-item" href="#contacto" role="menuitem" data-i18n="sections.contact">Contacto</a>
+          <button type="button" class="drop-item" id="menuAboutPortfolio" role="menuitem">
+            <span data-i18n="menubar.about_portfolio">Acerca de Portfolio</span>
+          </button>
+          <div class="drop-sep"></div>
+          <button type="button" class="drop-item logout-trigger" role="menuitem">
+            <span data-i18n="menubar.quit">Salir de Portfolio</span>
+            <span class="drop-shortcut">⌘Q</span>
+          </button>
         </div>
       </div>
 
