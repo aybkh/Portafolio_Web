@@ -156,8 +156,44 @@ const I18N = {
             p2_desc: "Aplicación de gestión hotelera con Python + PostgreSQL. Reservas, usuarios, seguridad, replicación y backups automáticos.",
             p3_desc: "Juego de acción con tres tipos de enemigos y mejoras de personaje. Hecho en Unity.",
             p4_desc: "Shooter 2D con power-ups, sistema de puntuación y oleadas. Hecho en Unity.",
-            p5_desc: "Sistema TPV integral para restaurantes. Gestión de pedidos en tiempo real, pantalla de cocina (KDS), panel de administración y despliegue automático. Stack: Python (FastAPI), React y PostgreSQL.",
-            p6_desc: "Carta digital estática sincronizada con el TPV local. Optimizada para móviles (QR), SEO y carga instantánea. Multiidioma y responsive."
+            p5_desc: "Ecosistema integral on-premise (.NET 8 & React 19) para la gestión táctil de restaurantes. Control de comandas, impresión multi-cocina, delivery y facturación legal.",
+            p5_details: {
+                title: "Snack Tanger 303 – TPV & Management Ecosystem",
+                subtitle: "Solución de gestión 360° para restauración moderna",
+                description: "Plataforma profesional diseñada para optimizar el ciclo completo de un restaurante. Desde la toma de pedidos táctil hasta el cierre de caja contable, el sistema garantiza una operación estable y eficiente sin dependencia de la nube.",
+                    "Gestión Táctil: UX optimizada para pantallas industriales.",
+                    "Multi-Delivery: Integración de Uber Eats, Glovo y Just Eat.",
+                    "Facturación Legal: Reportes Informe Z y tickets legales.",
+                    "Control de Cajas: Gestión total de arqueos y cierres locales."
+                ],
+                stack: [".NET", "React", "SQLite", "TailwindCSS", "Entity Framework", "ESC/POS", "GitHub"]
+            },
+            p2_details: {
+                title: "Hotel Management System",
+                subtitle: "Gestión integral de cadenas hoteleras",
+                description: "Aplicación robusta para la administración de reservas, clientes, personal y auditoría de datos. Incluye sistemas de seguridad avanzada y backups automáticos.",
+                features: ["Control de reservas y huéspedes", "Gestión de personal y servicios", "Base de datos PostgreSQL con replicación", "Exportación de informes JSON/PDF"],
+                stack: ["Python", "Tkinter", "PostgreSQL", "JSON", "PDF"]
+            },
+            p3_details: {
+                title: "ERAY Slasher – Roguelite Shooter",
+                subtitle: "Videojuego de acción ambientado en el siglo XVIII",
+                description: "Un shooter de acción donde controlas a ERAY, defendiendo su hogar con habilidades mágicas frente a hordas de enemigos dinámicos.",
+                features: ["Sistema de oleadas y enemigos", "Mejoras de estadísticas y objetos", "Motor de física Unity 2D", "Diseño artístico original"],
+                stack: ["Unity", "C#", "Visual Studio", ".NET"]
+            },
+            p7_desc: "Ecosistema integral TPV y Carta Digital para The Kebab Lab. Gestión de pedidos en tiempo real, KDS, administración avanzada y despliegue automático.",
+            p7_details: {
+                title: "The Kebab Lab – TPV & Management Ecosystem",
+                subtitle: "Solución de gestión 360° para restauración moderna",
+                description: "Plataforma profesional diseñada para optimizar el ciclo completo de un restaurante. Basado en el ecosistema Snack Tanger, adaptado a las necesidades específicas de The Kebab Lab.",
+                    "Gestión Táctil: UX optimizada para tablets.",
+                    "Multi-Delivery: Integración de plataformas externas.",
+                    "Facturación Legal: Reportes Informe Z y tickets legales.",
+                    "Smart Printing: Sistema ESC/POS para cocina y barra."
+                ],
+                stack: [".NET", "React", "SQLite", "TailwindCSS", "Entity Framework", "ESC/POS", "GitHub"]
+            }
         },
         contact: { linkedin: "LinkedIn", email: "Email", github: "GitHub", whatsapp: "WhatsApp" },
         system: {
@@ -196,7 +232,10 @@ const I18N = {
             prof_eng: "Competencia profesional",
             basic: "Conocimiento básico",
             a1_level: "Nivel Inicial A1",
-            login_hint: "Pulsa Enter para entrar"
+            login_hint: "Pulsa Enter para entrar",
+            mission: "La Misión",
+            capabilities: "Funcionalidades Clave",
+            engineered: "Tecnologías Utilizadas"
         },
         menubar: {
             apple_about: "Acerca de este Portfolio",
@@ -381,8 +420,44 @@ const I18N = {
             p2_desc: "Complete application for the integral management of a hotel chain. Includes control of reservations, customers, staff, services, and data auditing. Developed in Python (Tkinter) with a PostgreSQL database, it incorporates security, high availability, replication, automated backups, and exports in JSON/PDF.",
             p3_desc: "Action game set in the 18th century, starring ERAY, a character with magical abilities to defend his home. Includes three types of enemies with different attacks and items that improve the player's statistics. Developed with Unity, available in free executable format.",
             p4_desc: "2D action game developed with Unity, where players control a spaceship that must face waves of enemies. The game includes power-ups and upgrades for the ship, as well as a scoring system based on survival and enemy destruction. Available in free executable format.",
-            p5_desc: "Comprehensive POS system for restaurants. Real-time order management, Kitchen Display System (KDS), admin dashboard, and automated deployment. Stack: Python (FastAPI), React, and PostgreSQL.",
-            p6_desc: "High-performance static digital menu synced with the local POS. Optimized for mobile (QR), SEO, and instant loading. Multi-language and responsive design."
+            p5_desc: "On-premise ecosystem (.NET 8 & React 19) for tactile restaurant management. Order control, multi-kitchen printing, delivery, and legal invoicing.",
+            p5_details: {
+                title: "Snack Tanger 303 – POS & Management Ecosystem",
+                subtitle: "360° Management Solution for Modern Restaurants",
+                description: "Professional platform designed to optimize the complete cycle of a restaurant. From tactile order taking to daily accounting closing, the system ensures stable and efficient operation without cloud dependency.",
+                    "Touch Management: Optimized UX for industrial screens.",
+                    "Multi-Delivery: Uber Eats, Glovo, and Just Eat integration.",
+                    "Legal Invoicing: Z-Reports and legal billing compliance.",
+                    "Cash Control: Full control of local audits and closings."
+                ],
+                stack: [".NET", "React", "SQLite", "TailwindCSS", "Entity Framework", "ESC/POS", "GitHub"]
+            },
+            p2_details: {
+                title: "Hotel Management System",
+                subtitle: "Integrated Management for Hotel Chains",
+                description: "Robust application for managing reservations, guests, staff, and data auditing. Includes advanced security systems and automatic backups.",
+                features: ["Reservations and guest control", "Staff and services management", "PostgreSQL database with replication", "JSON/PDF report exports"],
+                stack: ["Python", "Tkinter", "PostgreSQL", "JSON", "PDF"]
+            },
+            p3_details: {
+                title: "ERAY Slasher – Roguelite Shooter",
+                subtitle: "18th-century Action Video Game",
+                description: "An action shooter where you control ERAY, defending his home with magical abilities against waves of dynamic enemies.",
+                features: ["Wave and enemy system", "Stats and item upgrades", "Unity 2D physics engine", "Original artistic design"],
+                stack: ["Unity", "C#", "Visual Studio", ".NET"]
+            },
+            p7_desc: "Integrated POS System and Digital Menu for The Kebab Lab. Real-time order management, KDS, advanced administration, and automated deployment.",
+            p7_details: {
+                title: "The Kebab Lab – POS & Management Ecosystem",
+                subtitle: "360° Management Solution for Modern Restaurants",
+                description: "Professional platform designed to optimize the complete cycle of a restaurant. Based on the Snack Tanger ecosystem, adapted to the specific needs of The Kebab Lab.",
+                    "Touch Management: Optimized UX for tablets.",
+                    "Multi-Delivery: External platform integration.",
+                    "Legal Invoicing: Z-Reports and legal tickets.",
+                    "Smart Printing: ESC/POS system for kitchen and bar."
+                ],
+                stack: [".NET", "React", "SQLite", "TailwindCSS", "Entity Framework", "ESC/POS", "GitHub"]
+            }
         },
         contact: { linkedin: "LinkedIn", email: "Email", github: "GitHub", whatsapp: "WhatsApp" },
         system: {
@@ -415,6 +490,9 @@ const I18N = {
             light_mode: "Light Mode",
             suggestions: "Suggestions",
             no_results: "No results",
+            mission: "The Mission",
+            capabilities: "Key Capabilities",
+            engineered: "Engineered With",
             curr_pdf: "Curriculum in PDF",
             main_section: "Main Section",
             tpv_desc: "Integral POS System",
@@ -604,8 +682,22 @@ const I18N = {
             p2_desc: "Aplicació de gestió hotelera amb Python + PostgreSQL. Reserves, usuaris, seguretat, replicació i còpies de seguretat automàtiques.",
             p3_desc: "Joc d'acció amb tres tipus d'enemics i millores de personatge. Fet en Unity.",
             p4_desc: "Shooter 2D amb power-ups, sistema de puntuació i onades. Fet en Unity.",
-            p5_desc: "Sistema TPV integral per a restaurants. Gestió de comandes en temps real, pantalla de cuina (KDS), tauler d'administració i desplegament automàtic. Amb Python (FastAPI), React i PostgreSQL.",
-            p6_desc: "Carta digital estàtica d'alt rendiment sincronitzada amb el TPV local. Optimitzada per a mòbils (QR), SEO i càrrega instantània. Multiidioma i disseny responsive."
+            p5_desc: "Ecosistema integral on-premise (.NET 8 & React 19) per a la gestió tàctil de restaurants. Control de comandes, impressió multi-cuina, delivery i facturació legal.",
+            p5_details: {
+                title: "Snack Tanger 303 – TPV & Management Ecosystem",
+                subtitle: "Solució de gestió 360° per a restauració moderna",
+                description: "Plataforma professional dissenyada per optimitzar el cicle complet d'un restaurant. Des de la presa de comandes tàctil fins al tancament de caixa comptable, el sistema garanteix una operació estable i eficient sense dependència del núvol.",
+                features: [
+                    "Gestió Tàctil: UX optimitzada per a tablets i pantalles industrials.",
+                    "Multi-Delivery: Integració unificada d'Uber Eats, Glovo, Just Eat i repartiment propi.",
+                    "Facturació Legal: Emissió de factures nominals, simplificades i informes Informe Z.",
+                    "Impressió Intel·ligent: Sistema multi-impresora (Cuina/Bar) amb protocol ESC/POS.",
+                    "Control de Caixa: Pagaments parcials, divisió de compte i gestió de descomptes.",
+                    "Desplegament All-in-One: Executable únic que serveix API, BBDD i Web de forma local."
+                ],
+                stack: ["C#", ".NET 8", "React 19", "Vite", "TailwindCSS", "SQLite", "Entity Framework", "ESC/POS"]
+            },
+            p7_desc: "Ecosistema integral TPV i Carta Digital per a The Kebab Lab. Gestió de comandes en temps real, KDS, administració avançada i desplegament automàtic. Stack: Python (FastAPI), React i PostgreSQL."
         },
         contact: { linkedin: "LinkedIn", email: "Email", github: "GitHub", whatsapp: "WhatsApp" },
         system: {
@@ -829,8 +921,22 @@ const I18N = {
             p2_desc: "Application complète pour la gestion intégrale d'une chaîne hôtelière. Elle comprend le contrôle des réservations, des clients, du personnel, des services et l'audit des données. Développée en Python (Tkinter) avec une base de données PostgreSQL, elle intègre la sécurité, la haute disponibilité, la réplication, les sauvegardes automatisées et les exportations en JSON/PDF.",
             p3_desc: "Jeu d'action se déroulant au XVIIIe siècle, mettant en scène ERAY, un personnage doté de pouvoirs magiques pour défendre son foyer. Il comprend trois types d'ennemis avec des attaques différentes et des objets qui améliorent les statistiques du joueur. Développé avec Unity, disponible en format exécutable gratuit.",
             p4_desc: "Jeu d'action en 2D développé avec Unity, dans lequel les joueurs contrôlent un vaisseau spatial qui doit affronter des vagues d'ennemis. Le jeu comprend des bonus et des améliorations pour le vaisseau, ainsi qu'un système de score basé sur la survie et la destruction des ennemis. Disponible en format exécutable gratuit.",
-            p5_desc: "Système de point de vente complet pour les restaurants. Gestion des commandes en temps réel, écran de cuisine (KDS), tableau de bord d'administration et déploiement automatisé. Développé avec Python (FastAPI), React et PostgreSQL.",
-            p6_desc: "Menu numérique statique haute performance synchronisé avec le point de vente local. Optimisé pour les mobiles (QR), le référencement et le chargement instantané. Multilingue et responsive design."
+            p5_desc: "Écosystème on-premise (.NET 8 & React 19) pour la gestion tactile des restaurants. Contrôle des commandes, impression multi-cuisine, livraison et facturation légale.",
+            p5_details: {
+                title: "Snack Tanger 303 – TPV & Management Ecosystem",
+                subtitle: "Solution de gestion 360° pour la restauration moderne",
+                description: "Plateforme professionnelle conçue pour optimiser le cycle complet d'un restaurant. De la prise de commande tactile à la clôture comptable, le système garantit un fonctionnement stable sans dépendance au cloud.",
+                features: [
+                    "Gestion Tactile : UX optimisée pour les tablettes et écrans tactiles industriels.",
+                    "Multi-Livraison : Intégration unifiée d'Uber Eats, Glovo, Just Eat et propre livraison.",
+                    "Facturation Légale : Émission de factures nominales, simplifiées et rapports Z.",
+                    "Impression Intelligente : Système multi-imprimante (Cuisine/Bar) avec protocole ESC/POS.",
+                    "Contrôle de Caisse : Paiements partiels, division de note et gestion des remises.",
+                    "Déploiement All-in-One : Exécutable unique servant l'API, la BDD et le Web localement."
+                ],
+                stack: ["C#", ".NET 8", "React 19", "Vite", "TailwindCSS", "SQLite", "Entity Framework", "ESC/POS"]
+            },
+            p7_desc: "Système de point de vente (TPV) complet et Menu Numérique pour The Kebab Lab. Gestion des commandes en temps réel, KDS, administration avancée et déploiement automatisé. Stack : Python (FastAPI), React et PostgreSQL."
         },
         contact: { linkedin: "LinkedIn", email: "Email", github: "GitHub", whatsapp: "WhatsApp" },
         system: {
@@ -1050,8 +1156,22 @@ const I18N = {
             p2_desc: "Anwendung zur umfassenden Verwaltung einer Hotelkette. Sie umfasst die Verwaltung von Buchungen, Gästen, Personal, Dienstleistungen und die Datenprüfung. Entwickelt in Python (Tkinter) mit einer PostgreSQL-Datenbank, integriert sie Sicherheit, hohe Verfügbarkeit, Replikation, automatisierte Backups und Exporte im JSON/PDF-Format.",
             p3_desc: "Action-Spiel, das im 18. Jahrhundert spielt und ERAY, einen Charakter mit magischen Kräften zur Verteidigung seines Heims, in den Mittelpunkt stellt. Es umfasst drei Arten von Feinden mit unterschiedlichen Angriffen und Objekten, die die Statistiken des Spielers verbessern. Entwickelt mit Unity, verfügbar im kostenlosen ausführbaren Format.",
             p4_desc: "2D-Action-Spiel, das mit Unity entwickelt wurde, in dem die Spieler ein Raumschiff steuern, das gegen Wellen von Feinden antreten muss. Das Spiel umfasst Boni und Verbesserungen für das Raumschiff sowie ein Punktesystem, das auf Überleben und Zerstörung von Feinden basiert. Verfügbar im kostenlosen ausführbaren Format.",
-            p5_desc: "Umfassendes POS-System für Restaurants. Echtzeit-Bestellverwaltung, Küchendisplay-System (KDS), Admin-Dashboard und automatische Bereitstellung. Stack: Python (FastAPI), React und PostgreSQL.",
-            p6_desc: "Hochleistungsfähiges statisches digitales Menü, das mit dem lokalen POS synchronisiert ist. Optimiert für Mobilgeräte (QR), SEO und sofortiges Laden. Mehrsprachiges und responsives Design."
+            p5_desc: "On-Premise-Ökosystem (.NET 8 & React 19) für die taktile Restaurantverwaltung. Bestellkontrolle, Multi-Küchendruck, Lieferung und Abrechnung.",
+            p5_details: {
+                title: "Snack Tanger 303 – POS & Management Ecosystem",
+                subtitle: "360°-Management-Lösung für moderne Restaurants",
+                description: "Professionelle Plattform zur Optimierung des gesamten Restaurantzyklus. Von der taktilen Bestellung bis zum Kassenabschluss gewährleistet das System einen stabilen Betrieb ohne Cloud-Abhängigkeit.",
+                features: [
+                    "Taktile Verwaltung: Optimierte UX für Tablets und Industrie-Touchscreens.",
+                    "Multi-Delivery: Integration von Uber Eats, Glovo, Just Eat und eigenem Versand.",
+                    "Rechnungsstellung: Ausstellung von Rechnungen und Z-Berichten nach geltendem Recht.",
+                    "Smart Printing: Multi-Drucker-System (Küche/Bar) mit ESC/POS-Protokoll.",
+                    "Kassenkontrolle: Teilzahlungen, Rechnungstrennung und Rabattverwaltung.",
+                    "All-in-One Deployment: Einzelne EXE-Datei für API, DB und Web lokal."
+                ],
+                stack: ["C#", ".NET 8", "React 19", "Vite", "TailwindCSS", "SQLite", "Entity Framework", "ESC/POS"]
+            },
+            p7_desc: "Integriertes Kassensystem (POS) und digitale Speisekarte für The Kebab Lab. Echtzeit-Bestellverwaltung, KDS, erweiterte Administration und automatisierte Bereitstellung. Stack: Python (FastAPI), React und PostgreSQL."
         },
         contact: { linkedin: "LinkedIn", email: "E-Mail", github: "GitHub", whatsapp: "WhatsApp" },
         system: {
