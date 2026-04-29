@@ -139,7 +139,7 @@ function setupBootAndLogin() {
     }
 
     if (loginBtn) loginBtn.addEventListener('click', finishLogin);
-    if (loginPass) loginPass.addEventListener('keypress', (e) => { if (e.key === 'Enter') finishLogin(); });
+    if (loginPass) loginPass.addEventListener('keydown', (e) => { if (e.key === 'Enter') finishLogin(); });
 
     const sleepBtn = document.querySelector('.login-footer-btn .sleep')?.parentElement;
     const shutdownBtn = document.querySelector('.login-footer-btn .shutdown')?.parentElement;
