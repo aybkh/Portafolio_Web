@@ -183,6 +183,12 @@
         width: 190px;
     }
 
+    .login-submit {
+        width: 32px;
+        height: 32px;
+        right: 4px;
+    }
+
     .login-footer {
         bottom: 40px;
         gap: 25px;
