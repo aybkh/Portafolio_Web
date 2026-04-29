@@ -6,7 +6,7 @@
 /* ═══════════════════════════════════════════════
    THEME
 ═══════════════════════════════════════════════ */
-function applyTheme(theme, skipWallpaper = false) {
+function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
 
@@ -15,6 +15,7 @@ function applyTheme(theme, skipWallpaper = false) {
     const label2 = document.getElementById('ccThemeLabel');
     const aboutVal = document.getElementById('aboutThemeVal');
     
+    // Use i18n for labels if available
     const lang = document.documentElement.getAttribute('lang') || 'es';
     const dict = I18N[lang] || I18N.es;
     
@@ -22,11 +23,25 @@ function applyTheme(theme, skipWallpaper = false) {
     if (label2) label2.textContent = isDark ? (dict.system.light || 'Claro') : (dict.system.dark || 'Oscuro');
     if (aboutVal) aboutVal.textContent = isDark ? (dict.system.dark || 'Oscuro') : (dict.system.light || 'Claro');
 
-    if (skipWallpaper) return;
+    // Sync dock toggle button
+    const dockBtn = document.getElementById('themeToggleDock');
+    if (dockBtn) {
+        dockBtn.onclick = null; // managed separately now
+    }
 
     // Theme-aware Wallpapers
-    const lightWallpapers = ["img/macos-mojave-day.webp", "img/macos-monterey-day.webp", "img/macos-monterey-day2.webp", "img/macos_catalina.webp", "img/macos_bigsur.webp"];
-    const darkWallpapers = ["img/macos-mojave-night.webp", "img/macos-sequoia-night.webp", "img/macos_tahoe.webp"];
+    const lightWallpapers = [
+        "img/macos-mojave-day.webp",
+        "img/macos-monterey-day.webp",
+        "img/macos-monterey-day2.webp",
+        "img/macos_catalina.webp",
+        "img/macos_bigsur.webp"
+    ];
+    const darkWallpapers = [
+        "img/macos-mojave-night.webp",
+        "img/macos-sequoia-night.webp",
+        "img/macos_tahoe.webp"
+    ];
 
     const wallList = theme === 'light' ? lightWallpapers : darkWallpapers;
     const randomWall = wallList[Math.floor(Math.random() * wallList.length)];
@@ -208,7 +223,7 @@ function i18nSet(lang) {
     // Refresh theme labels for the new language
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
     if (typeof applyTheme === 'function') {
-        applyTheme(currentTheme, true);
+        applyTheme(currentTheme);
     }
 }
 
@@ -274,6 +289,7 @@ function setupMenubar() {
     // All menu buttons that open a mac-dropdown
     const menuMap = [
         { btnId: 'menu-apple',     dropId: 'drop-apple' },
+        { btnId: 'menu-portfolio', dropId: 'drop-portfolio' },
         { btnId: 'menu-file',      dropId: 'drop-file' },
         { btnId: 'menu-edit',      dropId: 'drop-edit' },
         { btnId: 'menu-view',      dropId: 'drop-view' },
@@ -323,6 +339,15 @@ function setupMenubar() {
     // Special actions
     const printBtn = document.getElementById('menuPrint');
     if (printBtn) printBtn.addEventListener('click', () => { closeAllDropdowns(); window.print(); });
+
+    const aboutPortfolioBtn = document.getElementById('menuAboutPortfolio');
+    if (aboutPortfolioBtn) {
+        aboutPortfolioBtn.addEventListener('click', () => {
+            closeAllDropdowns();
+            const aboutBtn = document.getElementById('openAbout');
+            if (aboutBtn) aboutBtn.click();
+        });
+    }
 
     const fullscreenBtn = document.getElementById('menuFullscreen');
     if (fullscreenBtn) fullscreenBtn.addEventListener('click', () => {
@@ -717,38 +742,21 @@ function setupCVModal() {
 ═══════════════════════════════════════════════ */
 function setupKeyboard() {
     document.addEventListener('keydown', (e) => {
-        const isMod = e.ctrlKey || e.metaKey;
-
         // Ctrl+K — Spotlight
-        if (isMod && e.key === 'k') {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
             e.preventDefault();
             const overlay = document.getElementById('spotlightOverlay');
-            overlay?.classList.contains('open') ? closeSpotlight() : openSpotlight();
+            if (overlay?.classList.contains('open')) {
+                closeSpotlight();
+            } else {
+                openSpotlight();
+            }
         }
 
-        // Ctrl+P — Print
-        if (isMod && e.key === 'p') {
+        // Ctrl+T — Toggle Theme
+        if ((e.ctrlKey || e.metaKey) && e.key === 't') {
             e.preventDefault();
-            window.print();
-        }
-
-        // Ctrl+D — Download/Open CV
-        if (isMod && e.key === 'd') {
-            e.preventDefault();
-            if (typeof openCV === 'function') openCV();
-        }
-
-        // Ctrl+I — About
-        if (isMod && e.key === 'i') {
-            e.preventDefault();
-            const aboutBtn = document.getElementById('openAbout');
-            aboutBtn?.click();
-        }
-
-        // Ctrl+L or Shift+Ctrl+Q — Logout
-        if ((isMod && e.key === 'l') || (isMod && e.shiftKey && e.key === 'q')) {
-            e.preventDefault();
-            if (typeof handleLogout === 'function') handleLogout();
+            toggleTheme();
         }
 
         // Esc — Close all
@@ -886,6 +894,183 @@ function setupContextMenu() {
         } catch (err) {
             console.log("Paste failed", err);
         }
-        menu.style.display = 'none';
     });
+}
+
+/* ═══════════════════════════════════════════════
+   UI SOUNDS
+   ═══════════════════════════════════════════════ */
+const UI_SOUNDS = {
+    pop: new Audio('https://raw.githubusercontent.com/aybkh/Portafolio_Web/main/sounds/pop.mp3'), // Placeholder
+    click: new Audio('data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAD//wEAAAA=') // Tiny silence
+};
+
+function playSound(type) {
+    if (UI_SOUNDS[type]) {
+        UI_SOUNDS[type].currentTime = 0;
+        UI_SOUNDS[type].play().catch(() => {});
+    }
+}
+
+/* ═══════════════════════════════════════════════
+   QUICK LOOK & SELECTION
+   ═══════════════════════════════════════════════ */
+function setupQuickLook() {
+    const qlOverlay = document.getElementById('quickLookOverlay');
+    const qlTitle = document.getElementById('qlTitle');
+    const qlBody = document.getElementById('qlBody');
+    const qlClose = document.getElementById('qlClose');
+
+    let selectedItem = null;
+
+    // Make elements selectable
+    const selectables = document.querySelectorAll('.skill-card, .project-card, .dock-item');
+    selectables.forEach(el => {
+        el.classList.add('selectable');
+        el.addEventListener('click', (e) => {
+            e.stopPropagation();
+            selectables.forEach(s => s.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedItem = el;
+            playSound('click');
+        });
+    });
+
+    // Clear selection on desktop click
+    document.addEventListener('click', () => {
+        selectables.forEach(s => s.classList.remove('selected'));
+        selectedItem = null;
+    });
+
+    // Quick Look Trigger
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Space') {
+            // Block scroll always if we have a selection
+            if (selectedItem) {
+                e.preventDefault();
+                if (qlOverlay.classList.contains('open')) {
+                    closeQuickLook();
+                } else {
+                    openQuickLook(selectedItem);
+                }
+            }
+        }
+        if (e.key === 'Escape') closeQuickLook();
+    });
+
+    function openQuickLook(item) {
+        if (!qlOverlay || !item) return;
+
+        let title = "Quick Look";
+        let content = "";
+
+        if (item.classList.contains('project-card')) {
+            title = item.querySelector('h3')?.textContent || "Proyecto";
+            const img = item.querySelector('.project-img img')?.src;
+            const desc = item.querySelector('.project-info p')?.textContent;
+            content = `
+                ${img ? `<img src="${img}" class="ql-preview-img">` : ''}
+                <div class="ql-info">
+                    <h2>${title}</h2>
+                    <p>${desc}</p>
+                    <div style="margin-top:20px;">
+                        <button class="cc-btn active" style="padding:10px 20px; font-size:14px; display:inline-block; width:auto;" onclick="window.open('${item.querySelector('a')?.href || '#'}', '_blank')">Abrir Proyecto</button>
+                    </div>
+                </div>
+            `;
+        } else if (item.classList.contains('skill-card')) {
+            title = item.querySelector('.skill-card-name')?.textContent || "Skill";
+            const icon = item.querySelector('.skill-card-icon img')?.src;
+            const desc = item.querySelector('.skill-card-desc')?.textContent;
+            content = `
+                <div class="ql-info">
+                    ${icon ? `<img src="${icon}" style="width:100px; margin-bottom:20px;">` : ''}
+                    <h2>${title}</h2>
+                    <p style="font-size:18px; opacity:0.8;">${desc}</p>
+                </div>
+            `;
+        } else if (item.classList.contains('dock-item')) {
+            const iconImg = item.querySelector('img');
+            title = item.querySelector('.dock-tooltip')?.textContent || "Aplicación";
+            content = `
+                <div class="ql-info">
+                    ${iconImg ? `<img src="${iconImg.src}" style="width:128px; height:128px; margin-bottom:30px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));">` : ''}
+                    <h2>${title}</h2>
+                    <p>Esta es una aplicación del sistema macOS Sonoma.</p>
+                </div>
+            `;
+        }
+
+        qlTitle.textContent = title;
+        qlBody.innerHTML = content;
+        qlOverlay.classList.add('open');
+        playSound('pop');
+    }
+
+    function closeQuickLook() {
+        if (qlOverlay) qlOverlay.classList.remove('open');
+    }
+
+    if (qlClose) qlClose.addEventListener('click', closeQuickLook);
+    if (qlOverlay) qlOverlay.addEventListener('click', (e) => {
+        if (e.target === qlOverlay) closeQuickLook();
+    });
+}
+
+/* ═══════════════════════════════════════════════
+   KEYBOARD SHORTCUTS
+   ═══════════════════════════════════════════════ */
+function setupKeyboard() {
+    document.addEventListener('keydown', (e) => {
+        // Use Alt as a modifier to avoid browser conflicts (Ctrl+K, Ctrl+P, etc)
+        const isMod = e.altKey;
+
+        if (isMod) {
+            switch(e.key.toLowerCase()) {
+                case 'k': // Alt + K -> Spotlight
+                    e.preventDefault();
+                    const spotBtn = document.getElementById('spotlightBtn');
+                    if (spotBtn) spotBtn.click();
+                    break;
+                case 't': // Alt + T -> Theme
+                    e.preventDefault();
+                    toggleTheme();
+                    break;
+                case 'l': // Alt + L -> Logout
+                    e.preventDefault();
+                    handleLogout();
+                    break;
+                case 'p': // Alt + P -> About
+                    e.preventDefault();
+                    const aboutBtn = document.getElementById('openAbout');
+                    if (aboutBtn) aboutBtn.click();
+                    break;
+                case 'c': // Alt + C -> CV
+                    e.preventDefault();
+                    const cvBtns = document.querySelectorAll('.cv-btn-open');
+                    if (cvBtns[0]) cvBtns[0].click();
+                    break;
+                case 's': // Alt + S -> Shortcuts
+                    e.preventDefault();
+                    const shortBtn = document.getElementById('menuShortcuts');
+                    if (shortBtn) shortBtn.click();
+                    break;
+            }
+        }
+
+        // Global Esc
+        if (e.key === 'Escape') {
+            closeAllModals();
+            closeAllDropdowns();
+        }
+    });
+}
+
+function closeAllModals() {
+    const overlays = document.querySelectorAll('.mac-modal-overlay, .spotlight-overlay, .quicklook-overlay');
+    overlays.forEach(o => {
+        o.classList.remove('open');
+        o.setAttribute('aria-hidden', 'true');
+    });
+    updateBodyScroll();
 }
