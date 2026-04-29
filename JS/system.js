@@ -104,6 +104,12 @@ function setupBootAndLogin() {
         if (progress >= 100) {
             progress = 100;
             clearInterval(bootInterval);
+            
+            // Play boot sound
+            const chime = new Audio('https://github.com/ChrisWren/macOS-Startup-Chime/raw/master/macOS-Startup-Chime.mp3');
+            chime.volume = 0.5;
+            chime.play().catch(e => console.log("Sound blocked by browser policy"));
+
             setTimeout(() => {
                 bootScreen.classList.add('fade-out');
                 setTimeout(() => {
