@@ -36,8 +36,6 @@
     background: var(--glass);
     border: 1px solid var(--border);
     backdrop-filter: saturate(140%) blur(var(--blur));
-    will-change: inline-size, block-size, border-radius, padding;
-    transform: translateZ(0);
     box-shadow: var(--shadow);
     color: var(--text);
     cursor: pointer;
@@ -543,9 +541,7 @@
         height: 100vh;
 
         background: var(--panel);
-        backdrop-filter: saturate(140%) blur(12px);
-    will-change: transform;
-    transform: translateZ(0);
+        backdrop-filter: saturate(140%) blur(20px);
         border-left: 1px solid var(--border);
         box-shadow: -4px 0 24px rgba(0, 0, 0, 0.4);
 
