@@ -8,8 +8,6 @@
     background: var(--menubar-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    will-change: backdrop-filter, transform;
-    transform: translateZ(0);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -2023,10 +2021,8 @@ body.booting {
     position: fixed;
     z-index: 1000000;
     background: rgba(28, 28, 32, 0.9);
-    backdrop-filter: blur(15px) saturate(180%);
-    -webkit-backdrop-filter: blur(15px) saturate(180%);
-    will-change: transform, opacity;
-    transform: translateZ(0);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -2093,4 +2089,148 @@ body.booting {
 
 :root[data-theme="light"] .ctx-sep {
     background: rgba(0, 0, 0, 0.1);
+}/* -----------------------------------------
+   Genie Effect & Quick Look
+   ----------------------------------------- */
+.genie-effect {
+    transform-origin: bottom center;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+}
+
+.mac-modal-overlay.genie-closing .mac-modal {
+    transform: scale(0.1) translateY(500px);
+    opacity: 0;
+}
+
+.mac-modal-overlay.genie-opening .mac-modal {
+    animation: genieIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes genieIn {
+    from { transform: scale(0.1) translateY(500px); opacity: 0; }
+    to { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* Quick Look Overlay */
+.quicklook-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1000000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.quicklook-overlay.open {
+    display: flex;
+    opacity: 1;
+}
+
+.quicklook-modal {
+    background: rgba(30, 30, 30, 0.7);
+    backdrop-filter: blur(50px) saturate(200%);
+    -webkit-backdrop-filter: blur(50px) saturate(200%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    width: 70vw;
+    height: 70vh;
+    max-width: 900px;
+    position: relative;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+.quicklook-overlay.open .quicklook-modal {
+    transform: scale(1);
+}
+
+.ql-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 44px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.ql-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+}
+
+.ql-close {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 0.5px solid rgba(255,255,255,0.2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 10px;
+    transition: background 0.2s;
+}
+
+.ql-close:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+.ql-body {
+    flex: 1;
+    overflow: auto;
+    padding: 60px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ql-preview-img {
+    max-width: 100%;
+    max-height: 60%;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.ql-info {
+    text-align: center;
+    color: #fff;
+    max-width: 600px;
+}
+
+.ql-info h2 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+.ql-info p { font-size: 15px; opacity: 0.7; line-height: 1.6; }
+
+/* Selection state */
+.selectable {
+    transition: transform 0.2s ease;
+}
+
+.selectable.selected {
+    box-shadow: 0 0 0 3px var(--accent);
+    border-radius: 8px;
+}
+
+.dock-item.selectable.selected {
+    background: rgba(255,255,255,0.1);
 }
