@@ -961,10 +961,15 @@ function openProjectModal(id) {
             ext = 'svg';
         } else if (logoName === 'c#') logoName = 'Csharp';
         else if (logoName === 'sqlite') logoName = 'Sqlite';
+        else if (logoName === 'postgresql') logoName = 'Postgresql';
+        else if (logoName === 'python') logoName = 'Python';
+        else if (logoName === 'bash') logoName = 'Bash';
+        else if (logoName === 'visual studio') logoName = 'Visual_Studio';
         else if (logoName === 'tailwindcss' || logoName === 'tailwind') logoName = 'tailwind-css-logo';
         else if (logoName.includes('entity framework') || logoName === 'ef core') logoName = 'Database';
         else if (logoName.includes('esc/pos')) logoName = 'Network';
         else if (logoName === 'github') logoName = 'github';
+        else if (logoName === 'git') logoName = 'git_logo';
         else if (logoName === 'vite') logoName = 'react'; 
         else {
             logoName = logoName.replace(/#/g, 'sharp').replace(/\./g, '').replace(/ /g, '_');
