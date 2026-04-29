@@ -179,3 +179,29 @@ function setupBootAndLogin() {
         });
     }
 }
+
+function handleLogout() {
+    const loginScreen = document.getElementById('loginScreen');
+    const loginPass = document.getElementById('loginPass');
+    
+    if (loginScreen) {
+        loginScreen.style.display = 'flex';
+        loginScreen.classList.remove('hidden');
+        loginScreen.classList.add('visible');
+        document.body.classList.add('booting');
+        if (loginPass) {
+            loginPass.value = '';
+            loginPass.focus();
+        }
+        // If in fullscreen, maybe stay in fullscreen or exit?
+        // Most OS logout exits special modes.
+    }
+    closeAllDropdowns();
+}
+
+function setupLogout() {
+    const logoutBtns = document.querySelectorAll('#menuLogout, .logout-trigger');
+    logoutBtns.forEach(btn => {
+        btn.addEventListener('click', handleLogout);
+    });
+}
