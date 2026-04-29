@@ -340,6 +340,15 @@ function setupMenubar() {
     const printBtn = document.getElementById('menuPrint');
     if (printBtn) printBtn.addEventListener('click', () => { closeAllDropdowns(); window.print(); });
 
+    const aboutPortfolioBtn = document.getElementById('menuAboutPortfolio');
+    if (aboutPortfolioBtn) {
+        aboutPortfolioBtn.addEventListener('click', () => {
+            closeAllDropdowns();
+            const aboutBtn = document.getElementById('openAbout');
+            if (aboutBtn) aboutBtn.click();
+        });
+    }
+
     const fullscreenBtn = document.getElementById('menuFullscreen');
     if (fullscreenBtn) fullscreenBtn.addEventListener('click', () => {
         closeAllDropdowns();
