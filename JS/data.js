@@ -161,6 +161,7 @@ const I18N = {
                 title: "Snack Tanger 303 – TPV & Management Ecosystem",
                 subtitle: "Solución de gestión 360° para restauración moderna",
                 description: "Plataforma profesional diseñada para optimizar el ciclo completo de un restaurante. Desde la toma de pedidos táctil hasta el cierre de caja contable, el sistema garantiza una operación estable y eficiente sin dependencia de la nube.",
+                features: [
                     "Gestión Táctil: UX optimizada para pantallas industriales.",
                     "Multi-Delivery: Integración de Uber Eats, Glovo y Just Eat.",
                     "Facturación Legal: Reportes Informe Z y tickets legales.",
@@ -187,6 +188,7 @@ const I18N = {
                 title: "The Kebab Lab – TPV & Management Ecosystem",
                 subtitle: "Solución de gestión 360° para restauración moderna",
                 description: "Plataforma profesional diseñada para optimizar el ciclo completo de un restaurante. Basado en el ecosistema Snack Tanger, adaptado a las necesidades específicas de The Kebab Lab.",
+                features: [
                     "Gestión Táctil: UX optimizada para tablets.",
                     "Multi-Delivery: Integración de plataformas externas.",
                     "Facturación Legal: Reportes Informe Z y tickets legales.",
@@ -425,6 +427,7 @@ const I18N = {
                 title: "Snack Tanger 303 – POS & Management Ecosystem",
                 subtitle: "360° Management Solution for Modern Restaurants",
                 description: "Professional platform designed to optimize the complete cycle of a restaurant. From tactile order taking to daily accounting closing, the system ensures stable and efficient operation without cloud dependency.",
+                features: [
                     "Touch Management: Optimized UX for industrial screens.",
                     "Multi-Delivery: Uber Eats, Glovo, and Just Eat integration.",
                     "Legal Invoicing: Z-Reports and legal billing compliance.",
@@ -451,6 +454,7 @@ const I18N = {
                 title: "The Kebab Lab – POS & Management Ecosystem",
                 subtitle: "360° Management Solution for Modern Restaurants",
                 description: "Professional platform designed to optimize the complete cycle of a restaurant. Based on the Snack Tanger ecosystem, adapted to the specific needs of The Kebab Lab.",
+                features: [
                     "Touch Management: Optimized UX for tablets.",
                     "Multi-Delivery: External platform integration.",
                     "Legal Invoicing: Z-Reports and legal tickets.",
