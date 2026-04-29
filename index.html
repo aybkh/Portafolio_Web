@@ -1254,48 +1254,49 @@
       </div>
       <div class="window-content">
         <div class="grid">
-          <!-- Snack Tanger POS -->
-          <article class="card project">
+          <!-- Snack Tanger POS & Menu -->
+          <article class="card project" data-project="p5">
             <img class="proj-img" src="img/projects/project5.webp" alt="Snack Tanger 303">
             <div class="project-body">
               <ul class="logo-row">
-                <li><img src="img/logos/Python.webp" alt="Python"></li>
-                <li><img src="img/logos/js.webp" alt="JavaScript"></li>
+                <li><img src="img/logos/dotnet.svg" alt=".NET"></li>
                 <li><img src="img/logos/react.webp" alt="React"></li>
-                <li><img src="img/logos/Postgresql.webp" alt="PostgreSQL"></li>
-                <li><img src="img/logos/docker.webp" alt="Docker"></li>
-                <li><img src="img/logos/linux.webp" alt="Linux"></li>
-                <li><img src="img/logos/git_logo.webp" alt="Git"></li>
+                <li><img src="img/logos/Sqlite.webp" alt="SQLite"></li>
+                <li><img src="img/logos/tailwind-css-logo.webp" alt="TailwindCSS"></li>
+                <li><img src="img/logos/Database.webp" alt="Entity Framework"></li>
+                <li><img src="img/logos/Network.webp" alt="ESC/POS"></li>
                 <li><img src="img/logos/github.webp" alt="GitHub"></li>
               </ul>
-              <h3>Snack Tanger 303 – POS & Management Ecosystem</h3>
-              <p data-i18n="projects.p5_desc">Sistema TPV integral para restaurantes...</p>
+              <h3>Snack Tanger 303 – POS & Digital Menu</h3>
+              <p data-i18n="projects.p5_desc">Ecosistema integral on-premise (.NET 8 & React 19) para la gestión táctil de restaurantes. Control de comandas, impresión multi-cocina, delivery y facturación legal.</p>
               <div class="row">
                 <a class="btn web" href="https://snacktanger303.com/#/menu" target="_blank" rel="noopener">Web Page</a>
               </div>
             </div>
           </article>
 
-          <!-- Snack Tanger Menu -->
-          <article class="card project">
-            <img class="proj-img" src="img/projects/project6.webp" alt="Snack Tanger Menu">
+          <!-- The Kebab Lab POS & Menu -->
+          <article class="card project" data-project="p7">
+            <img class="proj-img" src="img/projects/project7.webp" alt="The Kebab Lab">
             <div class="project-body">
               <ul class="logo-row">
+                <li><img src="img/logos/dotnet.svg" alt=".NET"></li>
                 <li><img src="img/logos/react.webp" alt="React"></li>
-                <li><img src="img/logos/tailwind-css-logo.webp" alt="Tailwind"></li>
-                <li><img src="img/logos/git_logo.webp" alt="Git"></li>
+                <li><img src="img/logos/Sqlite.webp" alt="SQLite"></li>
+                <li><img src="img/logos/tailwind-css-logo.webp" alt="TailwindCSS"></li>
+                <li><img src="img/logos/Database.webp" alt="Entity Framework"></li>
+                <li><img src="img/logos/Network.webp" alt="ESC/POS"></li>
                 <li><img src="img/logos/github.webp" alt="GitHub"></li>
               </ul>
-              <h3>Snack Tanger 303 – Digital Menu</h3>
-              <p data-i18n="projects.p6_desc">Carta digital estática...</p>
+              <h3>The Kebab Lab – POS & Digital Menu</h3>
+              <p data-i18n="projects.p7_desc">Ecosistema integral TPV y Carta Digital para The Kebab Lab. Gestión de pedidos en tiempo real, KDS, administración avanzada y despliegue automático.</p>
               <div class="row">
-                <a class="btn" href="https://github.com/aybkh/snack-tanger-web-menu" target="_blank"
-                  rel="noopener">GitHub</a>
-                <a class="btn web" href="https://www.snacktanger303.com" target="_blank" rel="noopener">Web Page</a>
+                <a class="btn web" href="https://thekebablab.es" target="_blank" rel="noopener">Web Page</a>
               </div>
             </div>
           </article>
-          <article class="card project">
+
+          <article class="card project" data-project="p2">
             <img class="proj-img" src="img/projects/project1.webp" alt="Captura del Proyecto 1">
             <div class="project-body">
               <ul class="logo-row">
@@ -1324,7 +1325,7 @@
             </div>
           </article>
 
-          <article class="card project">
+          <article class="card project" data-project="p3">
             <img class="proj-img" src="img/projects/project2.webp" alt="Captura del Proyecto 2">
             <div class="project-body">
               <ul class="logo-row">
@@ -1492,15 +1493,55 @@
   <!-- Brightness Overlay -->
   <div id="brightnessOverlay" style="position:fixed; inset:0; pointer-events:none; background:black; z-index:1000000; opacity:0;"></div>
 
-  <!-- Quick Look Overlay -->
-  <div id="quickLookOverlay" class="quicklook-overlay">
-    <div class="quicklook-modal genie-effect">
-      <div class="ql-header">
-        <span id="qlTitle" class="ql-title">Quick Look</span>
-        <button id="qlClose" class="ql-close"><i class="fas fa-times"></i></button>
+
+  <!-- Project Detail Modal -->
+  <div id="projectModal" class="mac-modal-overlay">
+    <div class="mac-modal project-modal-window">
+      <div class="creative-modal-header">
+        <div class="traffic-lights">
+          <span class="traffic-light close" onclick="closeProjectModal()"></span>
+          <span class="traffic-light minimize"></span>
+          <span class="traffic-light maximize"></span>
+        </div>
       </div>
-      <div id="qlBody" class="ql-body">
-        <!-- Content will be injected here -->
+      <div class="mac-modal-body project-modal-content">
+        <!-- Hero Section -->
+        <div class="modal-hero">
+          <img id="modalProjectImg" src="" alt="Project Image" class="modal-main-img">
+          <div class="hero-overlay">
+            <p id="modalProjectSubtitle" class="modal-subtitle">Subtitle</p>
+            <div class="project-title-group">
+              <h2 id="modalProjectName">Project Name</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info Grid -->
+        <div class="modal-info-grid">
+          <div class="info-section">
+            <h3 data-i18n="system.mission">The Mission</h3>
+            <p id="modalProjectDesc" class="modal-description">Description</p>
+          </div>
+          <div class="info-section">
+            <h3 data-i18n="system.capabilities">Key Capabilities</h3>
+            <ul id="modalProjectFeatures" class="modal-features-list">
+              <!-- Features will be injected here -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Footer / Stack -->
+        <div class="modal-footer-creative">
+          <div class="footer-left">
+            <h4 data-i18n="system.engineered">Engineered With</h4>
+            <ul id="modalProjectStack" class="modal-stack">
+              <!-- Stack icons -->
+            </ul>
+          </div>
+          <div class="modal-actions">
+            <a id="modalProjectLink" href="#" target="_blank" class="btn web">Ver Proyecto</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
