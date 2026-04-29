@@ -913,109 +913,97 @@ function playSound(type) {
 }
 
 /* ═══════════════════════════════════════════════
-   QUICK LOOK & SELECTION
+   PROJECT MODAL
    ═══════════════════════════════════════════════ */
-function setupQuickLook() {
-    const qlOverlay = document.getElementById('quickLookOverlay');
-    const qlTitle = document.getElementById('qlTitle');
-    const qlBody = document.getElementById('qlBody');
-    const qlClose = document.getElementById('qlClose');
+function openProjectModal(id) {
+    const lang = document.documentElement.getAttribute('lang') || 'es';
+    const dict = I18N[lang] || I18N.es;
+    const project = dict.projects[`${id}_details`];
+    
+    if (!project) return;
 
-    let selectedItem = null;
+    const modal = document.getElementById('projectModal');
+    const name = document.getElementById('modalProjectName');
+    const subtitle = document.getElementById('modalProjectSubtitle');
+    const desc = document.getElementById('modalProjectDesc');
+    const img = document.getElementById('modalProjectImg');
+    const stack = document.getElementById('modalProjectStack');
+    const features = document.getElementById('modalProjectFeatures');
+    const link = document.getElementById('modalProjectLink');
 
-    // Make elements selectable
-    const selectables = document.querySelectorAll('.skill-card, .project-card, .dock-item');
-    selectables.forEach(el => {
-        el.classList.add('selectable');
-        el.addEventListener('click', (e) => {
-            e.stopPropagation();
-            selectables.forEach(s => s.classList.remove('selected'));
-            el.classList.add('selected');
-            selectedItem = el;
-            playSound('click');
+    // Fill content
+    name.textContent = project.title;
+    subtitle.textContent = project.subtitle;
+    desc.textContent = project.description;
+    
+    // Image from the card
+    const cardImg = document.querySelector(`.card.project[data-project="${id}"] .proj-img`);
+    if (cardImg) img.src = cardImg.src;
+
+    // Link from the card
+    const cardLink = document.querySelector(`.card.project[data-project="${id}"] a.web`);
+    if (cardLink) {
+        link.href = cardLink.href;
+        link.style.display = 'inline-block';
+    } else {
+        link.style.display = 'none';
+    }
+
+    // Stack
+    stack.innerHTML = project.stack.map(s => {
+        let logoName = s.toLowerCase().trim();
+        let ext = 'webp';
+
+        // Specific mappings
+        if (logoName.includes('react')) logoName = 'react';
+        else if (logoName.includes('dotnet') || logoName.includes('.net')) {
+            logoName = 'dotnet';
+            ext = 'svg';
+        } else if (logoName === 'c#') logoName = 'Csharp';
+        else if (logoName === 'sqlite') logoName = 'Sqlite';
+        else if (logoName === 'tailwindcss' || logoName === 'tailwind') logoName = 'tailwind-css-logo';
+        else if (logoName.includes('entity framework') || logoName === 'ef core') logoName = 'Database';
+        else if (logoName.includes('esc/pos')) logoName = 'Network';
+        else if (logoName === 'github') logoName = 'github';
+        else if (logoName === 'vite') logoName = 'react'; 
+        else {
+            logoName = logoName.replace(/#/g, 'sharp').replace(/\./g, '').replace(/ /g, '_');
+        }
+
+        return `<li><img src="img/logos/${logoName}.${ext}" alt="${s}" title="${s}"></li>`;
+    }).join('');
+
+    // Features
+    features.innerHTML = project.features.map(f => `<li>${f}</li>`).join('');
+
+    // Open
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    playSound('pop');
+    updateBodyScroll();
+}
+
+function closeProjectModal() {
+    const modal = document.getElementById('projectModal');
+    if (modal) {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+    }
+    updateBodyScroll();
+}
+
+function setupProjectCards() {
+    document.querySelectorAll('.card.project').forEach(card => {
+        card.addEventListener('click', (e) => {
+            // If clicking on a button inside the card, don't open modal
+            if (e.target.closest('a')) return;
+            
+            const id = card.dataset.project;
+            if (id) openProjectModal(id);
         });
     });
-
-    // Clear selection on desktop click
-    document.addEventListener('click', () => {
-        selectables.forEach(s => s.classList.remove('selected'));
-        selectedItem = null;
-    });
-
-    // Quick Look Trigger
-    document.addEventListener('keydown', (e) => {
-        if (e.code === 'Space') {
-            // Block scroll always if we have a selection
-            if (selectedItem) {
-                e.preventDefault();
-                if (qlOverlay.classList.contains('open')) {
-                    closeQuickLook();
-                } else {
-                    openQuickLook(selectedItem);
-                }
-            }
-        }
-        if (e.key === 'Escape') closeQuickLook();
-    });
-
-    function openQuickLook(item) {
-        if (!qlOverlay || !item) return;
-
-        let title = "Quick Look";
-        let content = "";
-
-        if (item.classList.contains('project-card')) {
-            title = item.querySelector('h3')?.textContent || "Proyecto";
-            const img = item.querySelector('.project-img img')?.src;
-            const desc = item.querySelector('.project-info p')?.textContent;
-            content = `
-                ${img ? `<img src="${img}" class="ql-preview-img">` : ''}
-                <div class="ql-info">
-                    <h2>${title}</h2>
-                    <p>${desc}</p>
-                    <div style="margin-top:20px;">
-                        <button class="cc-btn active" style="padding:10px 20px; font-size:14px; display:inline-block; width:auto;" onclick="window.open('${item.querySelector('a')?.href || '#'}', '_blank')">Abrir Proyecto</button>
-                    </div>
-                </div>
-            `;
-        } else if (item.classList.contains('skill-card')) {
-            title = item.querySelector('.skill-card-name')?.textContent || "Skill";
-            const icon = item.querySelector('.skill-card-icon img')?.src;
-            const desc = item.querySelector('.skill-card-desc')?.textContent;
-            content = `
-                <div class="ql-info">
-                    ${icon ? `<img src="${icon}" style="width:100px; margin-bottom:20px;">` : ''}
-                    <h2>${title}</h2>
-                    <p style="font-size:18px; opacity:0.8;">${desc}</p>
-                </div>
-            `;
-        } else if (item.classList.contains('dock-item')) {
-            const iconImg = item.querySelector('img');
-            title = item.querySelector('.dock-tooltip')?.textContent || "Aplicación";
-            content = `
-                <div class="ql-info">
-                    ${iconImg ? `<img src="${iconImg.src}" style="width:128px; height:128px; margin-bottom:30px; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3));">` : ''}
-                    <h2>${title}</h2>
-                    <p>Esta es una aplicación del sistema macOS Sonoma.</p>
-                </div>
-            `;
-        }
-
-        qlTitle.textContent = title;
-        qlBody.innerHTML = content;
-        qlOverlay.classList.add('open');
-        playSound('pop');
-    }
-
-    function closeQuickLook() {
-        if (qlOverlay) qlOverlay.classList.remove('open');
-    }
-
-    if (qlClose) qlClose.addEventListener('click', closeQuickLook);
-    if (qlOverlay) qlOverlay.addEventListener('click', (e) => {
-        if (e.target === qlOverlay) closeQuickLook();
-    });
 }
+
 
 /* ═══════════════════════════════════════════════
    KEYBOARD SHORTCUTS
@@ -1067,7 +1055,7 @@ function setupKeyboard() {
 }
 
 function closeAllModals() {
-    const overlays = document.querySelectorAll('.mac-modal-overlay, .spotlight-overlay, .quicklook-overlay');
+    const overlays = document.querySelectorAll('.mac-modal-overlay, .spotlight-overlay, .quicklook-overlay, #projectModal');
     overlays.forEach(o => {
         o.classList.remove('open');
         o.setAttribute('aria-hidden', 'true');
