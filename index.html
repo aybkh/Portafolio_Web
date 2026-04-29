@@ -39,8 +39,18 @@
   <meta name="twitter:image" content="https://ayoubjerari.com/img/foto.webp" />
 
   <link rel="icon" href="img/favicon.webp" />
-  <link rel="stylesheet" href="CSS/styles.css" />
+  
+  <!-- CSS Optimization: Separate links for parallel loading -->
+  <link rel="stylesheet" href="CSS/variables.css" />
+  <link rel="stylesheet" href="CSS/base.css" />
+  <link rel="stylesheet" href="CSS/layout.css" />
+  <link rel="stylesheet" href="CSS/components.css" />
+  <link rel="stylesheet" href="CSS/login.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Preload Critical Assets -->
+  <link rel="preload" href="img/logos/Apple-Logo.png" as="image">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 
 <body class="booting">
@@ -48,7 +58,7 @@
   <!-- Apple Boot Sequence -->
   <div id="bootScreen" class="boot-screen">
     <div class="boot-content">
-      <img loading=" lazy\ src="img/logos/Apple-Logo.png" alt="Apple" class="boot-logo">
+      <img src="img/logos/Apple-Logo.png" alt="Apple" class="boot-logo">
       <div class="boot-progress-container">
         <div id="bootProgress" class="boot-progress"></div>
       </div>
@@ -58,7 +68,7 @@
   <!-- MacOS Login Screen -->
   <div id="loginScreen" class="login-screen">
     <div class="login-content">
-      <img loading=" lazy\ src="img/foto.webp" alt="User" class="login-avatar">
+      <img src="img/foto.webp" alt="User" class="login-avatar">
       <h2 class="login-name">Ayoub El Jerari</h2>
       <div class="login-input-group">
         <input type="password" id="loginPass" placeholder="Password" autofocus>
@@ -97,11 +107,11 @@
       <!-- Apple Menu -->
       <div class="menu-item-wrap" id="wrap-apple">
         <button type="button" class="menu-item bold apple-btn" id="menu-apple" aria-haspopup="true" aria-expanded="false" aria-label="Apple Menu">
-          <img loading=" lazy\ class="apple-logo" src="img/logos/Apple-Logo.png" alt="">
+          <img class="apple-logo" src="img/logos/Apple-Logo.png" alt="">
         </button>
         <div class="mac-dropdown" id="drop-apple" role="menu">
           <div class="drop-header">
-            <img loading=" lazy\ src="img/foto.webp" alt="Ayoub" class="drop-avatar">
+            <img src="img/foto.webp" alt="Ayoub" class="drop-avatar">
             <div>
               <div class="drop-name">Ayoub K.I.J.</div>
               <div class="drop-sub">Portfolio v2.0</div>
@@ -111,7 +121,6 @@
           <button type="button" class="drop-item" id="openAbout" role="menuitem">
             <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             <span data-i18n="menubar.apple_about">Acerca de este Mac</span>
-            <span class="drop-shortcut">⌘I</span>
           </button>
           <div class="drop-sep"></div>
           <a class="drop-item" href="https://linkedin.com/in/ayoub-jerari" target="_blank" rel="noopener" role="menuitem">
@@ -174,6 +183,7 @@
           <button type="button" class="drop-item" id="menuThemeToggle" role="menuitem">
             <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
             <span id="themeToggleLabel">Modo Claro</span>
+            <span class="drop-shortcut">⌘T</span>
           </button>
           <button type="button" class="drop-item" id="menuFullscreen" role="menuitem">
             <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
@@ -358,25 +368,25 @@
       <!-- Language Selector Custom -->
       <div class="menu-icon language lang-wrap" id="langWrap">
         <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Selector de idioma">
-          <img loading=" lazy\ src="img/icons/es.svg" alt="" class="lang-flag-img" id="langFlag">
+          <img src="img/icons/es.svg" alt="" class="lang-flag-img" id="langFlag">
           <span class="lang-code" id="langCode">ES</span>
           <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="10" height="10"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="mac-dropdown lang-dropdown" id="langDropdown" role="listbox">
           <button type="button" class="drop-item lang-option" data-lang="es" role="option">
-            <img loading=" lazy\ src="img/icons/es.svg" alt="" class="lang-flag-img-lg"> Español
+            <img src="img/icons/es.svg" alt="" class="lang-flag-img-lg"> Español
           </button>
           <button type="button" class="drop-item lang-option" data-lang="en" role="option">
-            <img loading=" lazy\ src="img/icons/en.svg" alt="" class="lang-flag-img-lg"> English
+            <img src="img/icons/en.svg" alt="" class="lang-flag-img-lg"> English
           </button>
           <button type="button" class="drop-item lang-option" data-lang="ca" role="option">
-            <img loading=" lazy\ src="img/icons/ca.svg" alt="" class="lang-flag-img-lg"> Català
+            <img src="img/icons/ca.svg" alt="" class="lang-flag-img-lg"> Català
           </button>
           <button type="button" class="drop-item lang-option" data-lang="fr" role="option">
-            <img loading=" lazy\ src="img/icons/fr.svg" alt="" class="lang-flag-img-lg"> Français
+            <img src="img/icons/fr.svg" alt="" class="lang-flag-img-lg"> Français
           </button>
           <button type="button" class="drop-item lang-option" data-lang="de" role="option">
-            <img loading=" lazy\ src="img/icons/de.svg" alt="" class="lang-flag-img-lg"> Deutsch
+            <img src="img/icons/de.svg" alt="" class="lang-flag-img-lg"> Deutsch
           </button>
         </div>
       </div>
@@ -395,7 +405,7 @@
   </div>
 
   <div class="mac-modal-overlay" id="aboutOverlay" aria-hidden="true">
-    <div class="mac-modal" role="dialog">
+    <div class="mac-modal genie-effect" role="dialog">
       <div class="mac-modal-header">
         <div class="traffic-lights">
           <span class="traffic-light close" id="aboutClose"></span>
@@ -405,7 +415,7 @@
         <div class="window-title" data-i18n="system.about_title">Acerca de este Portfolio</div>
       </div>
       <div class="mac-modal-body">
-        <img loading=" lazy\ src="img/foto.webp" alt="Ayoub" class="about-avatar">
+        <img src="img/foto.webp" alt="Ayoub" class="about-avatar">
         <h2 class="about-name">Ayoub K. I. J.</h2>
         <p class="about-role">Infrastructure &amp; IT Support Specialist</p>
         <div class="about-specs">
@@ -432,8 +442,8 @@
     </div>
   </div>
 
-  <div class="mac-modal-overlay" id="shortcutsOverlay" aria-hidden="true">
-    <div class="mac-modal" role="dialog">
+  <div id="shortcutsOverlay" class="mac-modal-overlay" aria-hidden="true">
+    <div class="mac-modal genie-effect" style="width:500px" role="dialog">
       <div class="mac-modal-header">
         <div class="traffic-lights">
           <span class="traffic-light close" id="shortcutsClose"></span>
@@ -454,7 +464,7 @@
 
   <!-- CV Viewer Modal (Quick Look) -->
   <div class="mac-modal-overlay" id="cvOverlay" aria-hidden="true">
-    <div class="mac-modal cv-modal" role="dialog">
+    <div class="mac-modal cv-modal genie-effect" role="dialog">
       <div class="mac-modal-header">
         <div class="traffic-lights">
           <span class="traffic-light close" id="cvClose"></span>
@@ -498,18 +508,18 @@
 
             <!-- Logos de tecnologías principales -->
             <ul class="logo-row">
-              <li><img loading=" lazy\ src="img/logos/windows.webp" alt="Windows Server"></li>
-              <li><img loading=" lazy\ src="img/logos/linux.webp" alt="Linux"></li>
-              <li><img loading=" lazy\ src="img/logos/Python.webp" alt="Python"></li>
-              <li><img loading=" lazy\ src="img/logos/sql.webp" alt="SQL"></li>
-              <li><img loading=" lazy\ src="img/logos/git_logo.webp" alt="Git"></li>
-              <li><img loading=" lazy\ src="img/logos/docker.webp" alt="Docker"></li>
-              <li><img loading=" lazy\ src="img/logos/Microsoft_365.webp" alt="Microsoft 365"></li>
+              <li><img src="img/logos/windows.webp" alt="Windows Server"></li>
+              <li><img src="img/logos/linux.webp" alt="Linux"></li>
+              <li><img src="img/logos/Python.webp" alt="Python"></li>
+              <li><img src="img/logos/sql.webp" alt="SQL"></li>
+              <li><img src="img/logos/git_logo.webp" alt="Git"></li>
+              <li><img src="img/logos/docker.webp" alt="Docker"></li>
+              <li><img src="img/logos/Microsoft_365.webp" alt="Microsoft 365"></li>
             </ul>
           </div>
 
           <figure class="hero-photo glass">
-            <img loading=" lazy\ src="img/foto.webp" alt="Foto de Ayoub">
+            <img src="img/foto.webp" alt="Foto de Ayoub">
           </figure>
         </div>
       </div>
@@ -538,7 +548,7 @@
               </div>
               <div class="exp-role">
                 <span class="badge" data-i18n="exp.e1_role">IT Workplace Intern</span>
-                <a href="https://www.hipra.com/" target="_blank"><img loading=" lazy\ src="img/logos/hipra.webp" alt="HIPRA"
+                <a href="https://www.hipra.com/" target="_blank"><img src="img/logos/hipra.webp" alt="HIPRA"
                     class="exp-logo"></a>
               </div>
             </header>
@@ -563,7 +573,7 @@
               </div>
               <div class="exp-role">
                 <span class="badge" data-i18n="exp.e2_role">IT Helpdesk Intern</span>
-                <a href="https://www.ajmalgrat.cat/" target="_blank"><img loading=" lazy\ src="img/logos/amm.svg"
+                <a href="https://www.ajmalgrat.cat/" target="_blank"><img src="img/logos/amm.svg"
                     alt="Ajuntament de Malgrat de Mar" class="exp-logo"></a>
               </div>
             </header>
@@ -662,63 +672,63 @@
               </div>
               <div class="skills-grid">
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/dns.webp" alt="DNS"></div>
+                  <div class="skill-card-icon"><img src="img/logos/dns.webp" alt="DNS"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">DNS</span>
                     <span class="skill-card-desc" data-i18n="skills.items.dns_desc">Domain Resolution & Management</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/dhcp.webp" alt="DHCP"></div>
+                  <div class="skill-card-icon"><img src="img/logos/dhcp.webp" alt="DHCP"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">DHCP</span>
                     <span class="skill-card-desc" data-i18n="skills.items.dhcp_desc">Dynamic IP Allocation & Subnetting</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/pfsense.webp" alt="pfSense"></div>
+                  <div class="skill-card-icon"><img src="img/logos/pfsense.webp" alt="pfSense"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">pfSense</span>
                     <span class="skill-card-desc" data-i18n="skills.items.pfsense_desc">Firewall, Routing & VPN Config</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/cisco.webp" alt="Cisco"></div>
+                  <div class="skill-card-icon"><img src="img/logos/cisco.webp" alt="Cisco"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Cisco</span>
                     <span class="skill-card-desc" data-i18n="skills.items.cisco_desc">Routing, Switching & IOS Admin</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/grandstream.webp" alt="VoIP"></div>
+                  <div class="skill-card-icon"><img src="img/logos/grandstream.webp" alt="VoIP"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">VoIP & Telephony</span>
                     <span class="skill-card-desc" data-i18n="skills.items.grandstream_desc">VoIP & IP Telephony Support</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/Network.webp" alt="VLAN"></div>
+                  <div class="skill-card-icon"><img src="img/logos/Network.webp" alt="VLAN"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">VLANs / Subnetting</span>
                     <span class="skill-card-desc" data-i18n="skills.items.vlan_desc">Network Segmentation & Security</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/Wireshark.webp" alt="Wireshark"></div>
+                  <div class="skill-card-icon"><img src="img/logos/Wireshark.webp" alt="Wireshark"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Wireshark</span>
                     <span class="skill-card-desc" data-i18n="skills.items.wireshark_desc">Packet Analysis & Troubleshooting</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/nmap.webp" alt="Nmap"></div>
+                  <div class="skill-card-icon"><img src="img/logos/nmap.webp" alt="Nmap"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Nmap</span>
                     <span class="skill-card-desc">Basic Network Scanning</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/ssh.webp" alt="SSH"></div>
+                  <div class="skill-card-icon"><img src="img/logos/ssh.webp" alt="SSH"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">SSH / SFTP</span>
                     <span class="skill-card-desc">Secure Remote Admin & Data Transfer</span>
@@ -735,49 +745,49 @@
               </div>
               <div class="skills-grid">
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/linux.webp" alt="Linux"></div>
+                  <div class="skill-card-icon"><img src="img/logos/linux.webp" alt="Linux"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Linux</span>
                     <span class="skill-card-desc" data-i18n="skills.items.linux_desc">Server Admin & Troubleshooting</span>
                   </div>
                 </div>
                  <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/windows.webp" alt="Windows"></div>
+                  <div class="skill-card-icon"><img src="img/logos/windows.webp" alt="Windows"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Windows Server / AD</span>
                     <span class="skill-card-desc">Active Directory & GPO Fundamentals</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/Microsoft_365.webp" alt="M365"></div>
+                  <div class="skill-card-icon"><img src="img/logos/Microsoft_365.webp" alt="M365"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Microsoft 365</span>
                     <span class="skill-card-desc" data-i18n="skills.items.m365_desc">Tenant Admin & Cloud Apps</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/macos.webp" alt="macOS"></div>
+                  <div class="skill-card-icon"><img src="img/logos/macos.webp" alt="macOS"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">macOS</span>
                     <span class="skill-card-desc" data-i18n="skills.items.macos_desc">Advanced support and expert use</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/paralels.webp" alt="Parallels"></div>
+                  <div class="skill-card-icon"><img src="img/logos/paralels.webp" alt="Parallels"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Parallels Desktop</span>
                     <span class="skill-card-desc" data-i18n="skills.items.parallels_desc">Virtualization on Apple systems</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/MDM.png" alt="MDM"></div>
+                  <div class="skill-card-icon"><img src="img/logos/MDM.png" alt="MDM"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">MDM / AMM</span>
                     <span class="skill-card-desc" data-i18n="skills.items.mdm_desc">iOS and Android fleet management</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/Bash.webp" alt="Bash"></div>
+                  <div class="skill-card-icon"><img src="img/logos/Bash.webp" alt="Bash"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Shell Script</span>
                     <span class="skill-card-desc" data-i18n="skills.items.shell_desc">Bash & PowerShell Automation</span>
@@ -794,49 +804,49 @@
               </div>
               <div class="skills-grid">
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/Azure.webp" alt="Azure"></div>
+                  <div class="skill-card-icon"><img src="img/logos/Azure.webp" alt="Azure"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Azure</span>
                     <span class="skill-card-desc" data-i18n="skills.items.azure_desc">Cloud Infrastructure & Entra ID</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/Amazon.webp" alt="AWS"></div>
+                  <div class="skill-card-icon"><img src="img/logos/Amazon.webp" alt="AWS"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">AWS</span>
                     <span class="skill-card-desc" data-i18n="skills.items.aws_desc">EC2, S3 & Cloud Foundations</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/docker.webp" alt="Docker"></div>
+                  <div class="skill-card-icon"><img src="img/logos/docker.webp" alt="Docker"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Docker</span>
                     <span class="skill-card-desc" data-i18n="skills.items.docker_desc">Containerization & Microservices</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/terraform.webp" alt="Terraform"></div>
+                  <div class="skill-card-icon"><img src="img/logos/terraform.webp" alt="Terraform"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Terraform</span>
                     <span class="skill-card-desc" data-i18n="skills.items.terraform_desc">Infrastructure as Code (IaC)</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/Ansible.webp" alt="Ansible"></div>
+                  <div class="skill-card-icon"><img src="img/logos/Ansible.webp" alt="Ansible"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Ansible</span>
                     <span class="skill-card-desc" data-i18n="skills.items.ansible_desc">Configuration Management</span>
                   </div>
                 </div>
                  <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/github.webp" alt="GitHub"></div>
+                  <div class="skill-card-icon"><img src="img/logos/github.webp" alt="GitHub"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.cicd">CI/CD & Automation</span>
                     <span class="skill-card-desc" data-i18n="skills.items.cicd_desc">GitHub Actions & Pages Hosting</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/cloudflare.webp" alt="Cloudflare"></div>
+                  <div class="skill-card-icon"><img src="img/logos/cloudflare.webp" alt="Cloudflare"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Cloudflare</span>
                     <span class="skill-card-desc" data-i18n="skills.items.cloudflare_desc">WAF, DNS & CDN Performance</span>
@@ -853,63 +863,63 @@
               </div>
               <div class="skills-grid">
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/Python.webp" alt="Python"></div>
+                  <div class="skill-card-icon"><img src="img/logos/Python.webp" alt="Python"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.python_fastapi">Python / FastAPI</span>
                     <span class="skill-card-desc" data-i18n="skills.items.python_fastapi_desc">Backend, Scripting & API Dev</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/js.webp" alt="JS"></div>
+                  <div class="skill-card-icon"><img src="img/logos/js.webp" alt="JS"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.js_react">JavaScript / React</span>
                     <span class="skill-card-desc" data-i18n="skills.items.js_desc">Advanced Frontend & Logic</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/Bash.webp" alt="Shell"></div>
+                  <div class="skill-card-icon"><img src="img/logos/Bash.webp" alt="Shell"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Terminal / CLI</span>
                     <span class="skill-card-desc">Advanced Command Line</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/react.webp" alt="React"></div>
+                  <div class="skill-card-icon"><img src="img/logos/react.webp" alt="React"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">React (Vite)</span>
                     <span class="skill-card-desc">Basic SPA Development</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/tailwind-css-logo.webp" alt="Tailwind"></div>
+                  <div class="skill-card-icon"><img src="img/logos/tailwind-css-logo.webp" alt="Tailwind"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Tailwind CSS</span>
                     <span class="skill-card-desc" data-i18n="skills.items.tailwind_desc">Utility-first CSS Framework</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/dotnet.svg" alt=".NET"></div>
+                  <div class="skill-card-icon"><img src="img/logos/dotnet.svg" alt=".NET"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">.NET / C#</span>
                     <span class="skill-card-desc" data-i18n="skills.items.dotnet_desc">Enterprise App Env</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/html-css.webp" alt="HTML/CSS"></div>
+                  <div class="skill-card-icon"><img src="img/logos/html-css.webp" alt="HTML/CSS"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">HTML & CSS</span>
                     <span class="skill-card-desc" data-i18n="skills.items.htmlcss_desc">Web layout & styling</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/git_logo.webp" alt="GitHub"></div>
+                  <div class="skill-card-icon"><img src="img/logos/git_logo.webp" alt="GitHub"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Git / GitHub</span>
                     <span class="skill-card-desc" data-i18n="skills.items.git_desc">Version Control & CI/CD</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/unity.webp" alt="Unity"></div>
+                  <div class="skill-card-icon"><img src="img/logos/unity.webp" alt="Unity"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Unity Engine</span>
                     <span class="skill-card-desc">Game Development (C#)</span>
@@ -926,63 +936,63 @@
               </div>
               <div class="skills-grid">
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/Postgresql.webp" alt="Postgres"></div>
+                  <div class="skill-card-icon"><img src="img/logos/Postgresql.webp" alt="Postgres"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">PostgreSQL</span>
                     <span class="skill-card-desc" data-i18n="skills.items.postgres_desc">Replication & Admin</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/mysql.webp" alt="MySQL"></div>
+                  <div class="skill-card-icon"><img src="img/logos/mysql.webp" alt="MySQL"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">MySQL</span>
                     <span class="skill-card-desc" data-i18n="skills.items.mysql_desc">Relational DB Management</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/Sqlite.webp" alt="SQLite"></div>
+                  <div class="skill-card-icon"><img src="img/logos/Sqlite.webp" alt="SQLite"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.sqlite_orm">SQLite & SQLModel</span>
                     <span class="skill-card-desc" data-i18n="skills.items.sqlite_orm_desc">Local DBs & ORM Mapping</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/oracle.webp" alt="Oracle"></div>
+                  <div class="skill-card-icon"><img src="img/logos/oracle.webp" alt="Oracle"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Oracle DB</span>
                     <span class="skill-card-desc" data-i18n="skills.items.oracle_desc">Corporate DB Management</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/access.webp" alt="Access"></div>
+                  <div class="skill-card-icon"><img src="img/logos/access.webp" alt="Access"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">MS Access</span>
                     <span class="skill-card-desc" data-i18n="skills.items.access_desc">Relational DBs with Office</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/JSON.webp" alt="JSON"></div>
+                  <div class="skill-card-icon"><img src="img/logos/JSON.webp" alt="JSON"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">JSON / APIs</span>
                     <span class="skill-card-desc" data-i18n="skills.items.json_desc">Data structures & REST APIs</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/sqlserver.webp" alt="MSSQL"></div>
+                  <div class="skill-card-icon"><img src="img/logos/sqlserver.webp" alt="MSSQL"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">SQL Server</span>
                     <span class="skill-card-desc" data-i18n="skills.items.mssql_desc">Enterprise Database Admin</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/redis.png" alt="Redis"></div>
+                  <div class="skill-card-icon"><img src="img/logos/redis.png" alt="Redis"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Redis</span>
                     <span class="skill-card-desc" data-i18n="skills.items.redis_desc">Cache & In-memory DB</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/mongodb.webp" alt="MongoDB"></div>
+                  <div class="skill-card-icon"><img src="img/logos/mongodb.webp" alt="MongoDB"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">NoSQL</span>
                     <span class="skill-card-desc" data-i18n="skills.items.nosql_desc">JSON Document Handling</span>
@@ -999,35 +1009,35 @@
               </div>
               <div class="skills-grid">
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/zebra.webp" alt="Zebra"></div>
+                  <div class="skill-card-icon"><img src="img/logos/zebra.webp" alt="Zebra"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.zebra_rfid">Zebra & RFID</span>
                     <span class="skill-card-desc" data-i18n="skills.items.zebra_rfid_desc">Industrial Printers & RFID specialist</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/honeywell.webp" alt="Honeywell"></div>
+                  <div class="skill-card-icon"><img src="img/logos/honeywell.webp" alt="Honeywell"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.honeywell_scan">Honeywell Scanners</span>
                     <span class="skill-card-desc" data-i18n="skills.items.honeywell_scan_desc">Industrial Scanning & HW Support</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/igel-logo.webp" alt="IGEL"></div>
+                  <div class="skill-card-icon"><img src="img/logos/igel-logo.webp" alt="IGEL"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.igel_new">Thin Clients (IGEL)</span>
                     <span class="skill-card-desc" data-i18n="skills.items.igel_new_desc">IGEL OS & Workspace Management</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/vmware.webp" alt="VM"></div>
+                  <div class="skill-card-icon"><img src="img/logos/vmware.webp" alt="VM"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.vminfra">VM Infrastructure</span>
                     <span class="skill-card-desc" data-i18n="skills.items.vminfra_desc">VMware ESXi & VirtualBox Ops</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/virtualization.webp" alt="Diag"></div>
+                  <div class="skill-card-icon"><img src="img/logos/virtualization.webp" alt="Diag"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.hw_diag">HW Support & Diagnostics</span>
                     <span class="skill-card-desc" data-i18n="skills.items.hw_diag_desc">Advanced Peripherals & HW Troubleshooting</span>
@@ -1044,63 +1054,63 @@
               </div>
               <div class="skills-grid">
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/n8n.webp" alt="n8n"></div>
+                  <div class="skill-card-icon"><img src="img/logos/n8n.webp" alt="n8n"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.n8n_new">n8n Automation</span>
                     <span class="skill-card-desc" data-i18n="skills.items.n8n_new_desc">Advanced Workflow & API Automation</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/ChatGPT.webp" alt="ChatGPT"></div>
+                  <div class="skill-card-icon"><img src="img/logos/ChatGPT.webp" alt="ChatGPT"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.chatgpt_new">ChatGPT</span>
                     <span class="skill-card-desc" data-i18n="skills.items.chatgpt_new_desc">Expert LLM Prompting & Analysis</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/copilot.webp" alt="Copilot"></div>
+                  <div class="skill-card-icon"><img src="img/logos/copilot.webp" alt="Copilot"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.copilot">Copilot</span>
                     <span class="skill-card-desc" data-i18n="skills.items.copilot_desc">AI-powered coding assistant</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/Claude.png" alt="Claude"></div>
+                  <div class="skill-card-icon"><img src="img/logos/Claude.png" alt="Claude"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.claude_new">Claude / Claude Code</span>
                     <span class="skill-card-desc" data-i18n="skills.items.claude_new_desc">Advanced Reasoning & CLI Tools</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/gemini.webp" alt="Gemini"></div>
+                  <div class="skill-card-icon"><img src="img/logos/gemini.webp" alt="Gemini"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.gemini">Google Gemini</span>
                     <span class="skill-card-desc" data-i18n="skills.items.gemini_desc">LTM & Workspace Mastery</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/ollama.webp" alt="Ollama"></div>
+                  <div class="skill-card-icon"><img src="img/logos/ollama.webp" alt="Ollama"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.ollama">Ollama / Local</span>
                     <span class="skill-card-desc" data-i18n="skills.items.ollama_desc">Edge LLM Execution</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/openclaw.png" alt="OpenClaw"></div>
+                  <div class="skill-card-icon"><img src="img/logos/openclaw.png" alt="OpenClaw"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.openclaw_new">OpenClaw</span>
                     <span class="skill-card-desc" data-i18n="skills.items.openclaw_new_desc">Autonomous AI Agents</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/nanobananapro.png" alt="NanoBanana"></div>
+                  <div class="skill-card-icon"><img src="img/logos/nanobananapro.png" alt="NanoBanana"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.nanobanana_new">Nano Banana Pro</span>
                     <span class="skill-card-desc" data-i18n="skills.items.nanobanana_new_desc">Professional Image Generation</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/openai.webp" alt="OpenAI"></div>
+                  <div class="skill-card-icon"><img src="img/logos/openai.webp" alt="OpenAI"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name" data-i18n="skills.items.openai_new">OpenAI / GPT</span>
                     <span class="skill-card-desc" data-i18n="skills.items.openai_new_desc">Model usage & Fine-tuning</span>
@@ -1117,56 +1127,56 @@
               </div>
               <div class="skills-grid">
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/teams.webp" alt="Teams"></div>
+                  <div class="skill-card-icon"><img src="img/logos/teams.webp" alt="Teams"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Microsoft Teams</span>
                     <span class="skill-card-desc" data-i18n="skills.items.teams_desc">Corporate communication & Teams</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/Office-365.webp" alt="Office"></div>
+                  <div class="skill-card-icon"><img src="img/logos/Office-365.webp" alt="Office"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Office 365</span>
                     <span class="skill-card-desc" data-i18n="skills.items.office_desc">Office 365 apps administration</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/excel.webp" alt="Excel"></div>
+                  <div class="skill-card-icon"><img src="img/logos/excel.webp" alt="Excel"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Advanced Excel</span>
                     <span class="skill-card-desc" data-i18n="skills.items.excel_desc">Advanced Data Analysis</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/Microsoft_Project.webp" alt="Project"></div>
+                  <div class="skill-card-icon"><img src="img/logos/Microsoft_Project.webp" alt="Project"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">MS Project</span>
                     <span class="skill-card-desc" data-i18n="skills.items.project_desc">Planning & Scheduling</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/clickup.webp" alt="ClickUp"></div>
+                  <div class="skill-card-icon"><img src="img/logos/clickup.webp" alt="ClickUp"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">ClickUp</span>
                     <span class="skill-card-desc" data-i18n="skills.items.clickup_desc">Task and project management</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/notion.webp" alt="Notion"></div>
+                  <div class="skill-card-icon"><img src="img/logos/notion.webp" alt="Notion"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Notion</span>
                     <span class="skill-card-desc" data-i18n="skills.items.notion_desc">Workspace and documentation</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/jira-logo.webp" alt="Jira"></div>
+                  <div class="skill-card-icon"><img src="img/logos/jira-logo.webp" alt="Jira"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Jira / Agile</span>
                     <span class="skill-card-desc" data-i18n="skills.items.jira_desc">Issue tracking and Agile</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/hipra_logo.webp" alt="Remedy"></div>
+                  <div class="skill-card-icon"><img src="img/logos/hipra_logo.webp" alt="Remedy"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Remedy / SmartIT</span>
                     <span class="skill-card-desc">Level 2 Incident Management</span>
@@ -1183,42 +1193,42 @@
               </div>
               <div class="skills-grid">
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/ES.webp" alt="ES"></div>
+                  <div class="skill-card-icon"><img src="img/logos/ES.webp" alt="ES"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Español</span>
                     <span class="skill-card-desc" data-i18n="system.native">Nativo / Bilingüe</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/CAT.webp" alt="CAT"></div>
+                  <div class="skill-card-icon"><img src="img/logos/CAT.webp" alt="CAT"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Català</span>
                     <span class="skill-card-desc" data-i18n="system.native">Nativo / Bilingüe</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/AR.webp" alt="AR"></div>
+                  <div class="skill-card-icon"><img src="img/logos/AR.webp" alt="AR"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">Árabe</span>
                     <span class="skill-card-desc" data-i18n="system.native">Nativo / Bilingüe</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                  <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/EN.webp" alt="EN"></div>
+                  <div class="skill-card-icon"><img src="img/logos/EN.webp" alt="EN"></div>
                   <div class="skill-card-info">
                     <span class="skill-card-name">English</span>
                     <span class="skill-card-desc" data-i18n="system.prof_eng">Professional Working Proficiency</span>
                   </div>
                 </div>
                 <div class="skill-card">
-                   <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/FR.webp" alt="FR"></div>
+                   <div class="skill-card-icon"><img src="img/logos/FR.webp" alt="FR"></div>
                    <div class="skill-card-info">
                      <span class="skill-card-name">Français</span>
                      <span class="skill-card-desc" data-i18n="system.basic">Connaissance de base</span>
                    </div>
                  </div>
                  <div class="skill-card">
-                   <div class="skill-card-icon"><img loading=" lazy\ src="img/logos/DE.webp" alt="DE"></div>
+                   <div class="skill-card-icon"><img src="img/logos/DE.webp" alt="DE"></div>
                    <div class="skill-card-info">
                      <span class="skill-card-name">Deutsch</span>
                      <span class="skill-card-desc" data-i18n="system.a1_level">A1 Beginner</span>
@@ -1246,17 +1256,17 @@
         <div class="grid">
           <!-- Snack Tanger POS -->
           <article class="card project">
-            <img loading=" lazy\ class="proj-img" src="img/projects/project5.webp" alt="Snack Tanger 303">
+            <img class="proj-img" src="img/projects/project5.webp" alt="Snack Tanger 303">
             <div class="project-body">
               <ul class="logo-row">
-                <li><img loading=" lazy\ src="img/logos/Python.webp" alt="Python"></li>
-                <li><img loading=" lazy\ src="img/logos/js.webp" alt="JavaScript"></li>
-                <li><img loading=" lazy\ src="img/logos/react.webp" alt="React"></li>
-                <li><img loading=" lazy\ src="img/logos/Postgresql.webp" alt="PostgreSQL"></li>
-                <li><img loading=" lazy\ src="img/logos/docker.webp" alt="Docker"></li>
-                <li><img loading=" lazy\ src="img/logos/linux.webp" alt="Linux"></li>
-                <li><img loading=" lazy\ src="img/logos/git_logo.webp" alt="Git"></li>
-                <li><img loading=" lazy\ src="img/logos/github.webp" alt="GitHub"></li>
+                <li><img src="img/logos/Python.webp" alt="Python"></li>
+                <li><img src="img/logos/js.webp" alt="JavaScript"></li>
+                <li><img src="img/logos/react.webp" alt="React"></li>
+                <li><img src="img/logos/Postgresql.webp" alt="PostgreSQL"></li>
+                <li><img src="img/logos/docker.webp" alt="Docker"></li>
+                <li><img src="img/logos/linux.webp" alt="Linux"></li>
+                <li><img src="img/logos/git_logo.webp" alt="Git"></li>
+                <li><img src="img/logos/github.webp" alt="GitHub"></li>
               </ul>
               <h3>Snack Tanger 303 – POS & Management Ecosystem</h3>
               <p data-i18n="projects.p5_desc">Sistema TPV integral para restaurantes...</p>
@@ -1268,13 +1278,13 @@
 
           <!-- Snack Tanger Menu -->
           <article class="card project">
-            <img loading=" lazy\ class="proj-img" src="img/projects/project6.webp" alt="Snack Tanger Menu">
+            <img class="proj-img" src="img/projects/project6.webp" alt="Snack Tanger Menu">
             <div class="project-body">
               <ul class="logo-row">
-                <li><img loading=" lazy\ src="img/logos/react.webp" alt="React"></li>
-                <li><img loading=" lazy\ src="img/logos/tailwind-css-logo.webp" alt="Tailwind"></li>
-                <li><img loading=" lazy\ src="img/logos/git_logo.webp" alt="Git"></li>
-                <li><img loading=" lazy\ src="img/logos/github.webp" alt="GitHub"></li>
+                <li><img src="img/logos/react.webp" alt="React"></li>
+                <li><img src="img/logos/tailwind-css-logo.webp" alt="Tailwind"></li>
+                <li><img src="img/logos/git_logo.webp" alt="Git"></li>
+                <li><img src="img/logos/github.webp" alt="GitHub"></li>
               </ul>
               <h3>Snack Tanger 303 – Digital Menu</h3>
               <p data-i18n="projects.p6_desc">Carta digital estática...</p>
@@ -1286,16 +1296,16 @@
             </div>
           </article>
           <article class="card project">
-            <img loading=" lazy\ class="proj-img" src="img/projects/project1.webp" alt="Captura del Proyecto 1">
+            <img class="proj-img" src="img/projects/project1.webp" alt="Captura del Proyecto 1">
             <div class="project-body">
               <ul class="logo-row">
-                <li><img loading=" lazy\ src="img/logos/linux.webp" alt="Linux"></li>
-                <li><img loading=" lazy\ src="img/logos/Postgresql.webp" alt="PostgreSQL"></li>
-                <li><img loading=" lazy\ src="img/logos/Python.webp" alt="Python"></li>
-                <li><img loading=" lazy\ src="img/logos/sql.webp" alt="SQL"></li>
-                <li><img loading=" lazy\ src="img/logos/Bash.webp" alt="Bash"></li>
-                <li><img loading=" lazy\ src="img/logos/git_logo.webp" alt="Git"></li>
-                <li><img loading=" lazy\ src="img/logos/github.webp" alt="GitHub"></li>
+                <li><img src="img/logos/linux.webp" alt="Linux"></li>
+                <li><img src="img/logos/Postgresql.webp" alt="PostgreSQL"></li>
+                <li><img src="img/logos/Python.webp" alt="Python"></li>
+                <li><img src="img/logos/sql.webp" alt="SQL"></li>
+                <li><img src="img/logos/Bash.webp" alt="Bash"></li>
+                <li><img src="img/logos/git_logo.webp" alt="Git"></li>
+                <li><img src="img/logos/github.webp" alt="GitHub"></li>
               </ul>
               <h3>Hotel Management System</h3>
               <p data-i18n="projects.p2_desc">Aplicación completa para la gestión integral de una cadena hotelera.
@@ -1308,22 +1318,22 @@
                 <a class="btn" href="https://github.com/aybkh/HaramResorts" target="_blank" rel="noopener">GitHub</a>
                 <a class="ghost made-in" href="https://www.sapalomera.cat" target="_blank" rel="noopener">
                   <span>MADE IN</span>
-                  <img loading=" lazy\ src="img/logos/logo-institut-sapalomera.webp" alt="Institut Sa Palomera">
+                  <img src="img/logos/logo-institut-sapalomera.webp" alt="Institut Sa Palomera">
                 </a>
               </div>
             </div>
           </article>
 
           <article class="card project">
-            <img loading=" lazy\ class="proj-img" src="img/projects/project2.webp" alt="Captura del Proyecto 2">
+            <img class="proj-img" src="img/projects/project2.webp" alt="Captura del Proyecto 2">
             <div class="project-body">
               <ul class="logo-row">
-                <li><img loading=" lazy\ src="img/logos/unity.webp" alt="Unity"></li>
-                <li><img loading=" lazy\ src="img/logos/Csharp.webp" alt="CSharp"></li>
-                <li><img loading=" lazy\ src="img/logos/dotnet.svg" alt=".Net"></li>
-                <li><img loading=" lazy\ src="img/logos/Visual_Studio.webp" alt="Visual Studio"></li>
-                <li><img loading=" lazy\ src="img/logos/git_logo.webp" alt="Git"></li>
-                <li><img loading=" lazy\ src="img/logos/github.webp" alt="GitHub"></li>
+                <li><img src="img/logos/unity.webp" alt="Unity"></li>
+                <li><img src="img/logos/Csharp.webp" alt="CSharp"></li>
+                <li><img src="img/logos/dotnet.svg" alt=".Net"></li>
+                <li><img src="img/logos/Visual_Studio.webp" alt="Visual Studio"></li>
+                <li><img src="img/logos/git_logo.webp" alt="Git"></li>
+                <li><img src="img/logos/github.webp" alt="GitHub"></li>
               </ul>
               <h3>ERAY Slasher – Roguelite Shooter</h3>
               <p data-i18n="projects.p3_desc">Juego de acción ambientado en el siglo XVIII, protagonizado por ERAY,
@@ -1335,7 +1345,7 @@
                 <a class="btn" href="https://github.com/aybkh/ErAySlasher" target="_blank" rel="noopener">GitHub</a>
                 <a class="ghost made-in" href="https://www.sapalomera.cat" target="_blank" rel="noopener">
                   <span>MADE IN</span>
-                  <img loading=" lazy\ src="img/logos/logo-institut-sapalomera.webp" alt="Institut Sa Palomera">
+                  <img src="img/logos/logo-institut-sapalomera.webp" alt="Institut Sa Palomera">
                 </a>
               </div>
             </div>
@@ -1361,32 +1371,32 @@
           <!-- Vista compacta -->
           <div class="contact-compact" aria-hidden="true">
             <a href="https://linkedin.com/in/ayoub-jerari" class="ic" target="_blank" rel="noopener">
-              <img loading=" lazy\ src="img/logos/linkedin.webp" alt="LinkedIn">
+              <img src="img/logos/linkedin.webp" alt="LinkedIn">
             </a>
             <a href="mailto:ayoubjerari47@gmail.com" class="ic">
-              <img loading=" lazy\ src="img/logos/mail.webp" alt="Email">
+              <img src="img/logos/mail.webp" alt="Email">
             </a>
             <a href="https://github.com/aybkh" class="ic" target="_blank" rel="noopener">
-              <img loading=" lazy\ src="img/logos/github.webp" alt="GitHub">
+              <img src="img/logos/github.webp" alt="GitHub">
             </a>
             <a href="https://wa.me/34631714568" class="ic" target="_blank" rel="noopener">
-              <img loading=" lazy\ src="img/logos/whatsapp.webp" alt="WhatsApp">
+              <img src="img/logos/whatsapp.webp" alt="WhatsApp">
             </a>
           </div>
 
           <!-- Vista expandida con logos + texto -->
           <nav class="contact-expanded" aria-label="Enlaces de contacto">
             <a href="https://linkedin.com/in/ayoub-jerari" target="_blank" rel="noopener">
-              <img loading=" lazy\ src="img/logos/linkedin.webp" alt=""> LinkedIn
+              <img src="img/logos/linkedin.webp" alt=""> LinkedIn
             </a>
             <a href="mailto:ayoubjerari47@gmail.com">
-              <img loading=" lazy\ src="img/logos/mail.webp" alt=""> Email
+              <img src="img/logos/mail.webp" alt=""> Email
             </a>
             <a href="https://github.com/aybkh" target="_blank" rel="noopener">
-              <img loading=" lazy\ src="img/logos/github.webp" alt=""> GitHub
+              <img src="img/logos/github.webp" alt=""> GitHub
             </a>
             <a href="https://wa.me/34631714568" target="_blank" rel="noopener">
-              <img loading=" lazy\ src="img/logos/whatsapp.webp" alt=""> WhatsApp
+              <img src="img/logos/whatsapp.webp" alt=""> WhatsApp
             </a>
           </nav>
         </div>
@@ -1399,31 +1409,31 @@
     <div class="dock">
       <a href="#hero" class="dock-item" aria-label="Inicio">
         <div class="dock-icon finder">
-          <img loading=" lazy\ src="img/logos/Azure.webp" alt="Home">
+          <img src="img/logos/Azure.webp" alt="Home" loading="lazy">
         </div>
         <span class="dock-tooltip">Home</span>
       </a>
       <a href="#experiencia" class="dock-item" aria-label="Experiencia">
         <div class="dock-icon launchpad">
-          <img loading=" lazy\ src="img/logos/hipra.webp" alt="Experiencia">
+          <img src="img/logos/hipra.webp" alt="Experiencia">
         </div>
         <span class="dock-tooltip">Experiences</span>
       </a>
       <a href="#skills" class="dock-item" aria-label="Skills">
         <div class="dock-icon settings">
-          <img loading=" lazy\ src="img/logos/os.webp" alt="Skills">
+          <img src="img/logos/os.webp" alt="Skills">
         </div>
         <span class="dock-tooltip">Skills</span>
       </a>
       <a href="#proyectos" class="dock-item" aria-label="Proyectos">
         <div class="dock-icon app-store">
-          <img loading=" lazy\ src="img/logos/github.webp" alt="Proyectos">
+          <img src="img/logos/github.webp" alt="Proyectos">
         </div>
         <span class="dock-tooltip">Projects</span>
       </a>
       <a href="#contacto" class="dock-item" aria-label="Contacto">
         <div class="dock-icon mail">
-          <img loading=" lazy\ src="img/logos/mail.webp" alt="Contacto">
+          <img src="img/logos/mail.webp" alt="Contacto">
         </div>
         <span class="dock-tooltip">Contact</span>
       </a>
@@ -1432,7 +1442,7 @@
 
       <div class="dock-item" id="themeToggleDock">
         <div class="dock-icon trash">
-          <img loading=" lazy\ src="img/logos/macos.webp" alt="Theme">
+          <img src="img/logos/macos.webp" alt="Theme">
         </div>
         <span class="dock-tooltip">Theme</span>
       </div>
@@ -1481,6 +1491,19 @@
 
   <!-- Brightness Overlay -->
   <div id="brightnessOverlay" style="position:fixed; inset:0; pointer-events:none; background:black; z-index:1000000; opacity:0;"></div>
+
+  <!-- Quick Look Overlay -->
+  <div id="quickLookOverlay" class="quicklook-overlay">
+    <div class="quicklook-modal genie-effect">
+      <div class="ql-header">
+        <span id="qlTitle" class="ql-title">Quick Look</span>
+        <button id="qlClose" class="ql-close"><i class="fas fa-times"></i></button>
+      </div>
+      <div id="qlBody" class="ql-body">
+        <!-- Content will be injected here -->
+      </div>
+    </div>
+  </div>
 
   <script src="JS/data.js"></script>
   <script src="JS/system.js"></script>
