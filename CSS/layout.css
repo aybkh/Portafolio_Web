@@ -40,9 +40,7 @@ h1 {
     box-shadow: var(--shadow);
     overflow: hidden;
     margin-bottom: 40px;
-    backdrop-filter: blur(20px);
-    will-change: transform, opacity;
-    transform: translateZ(0);
+    backdrop-filter: blur(40px);
     margin-top: 40px;
 }
 
