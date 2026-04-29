@@ -6,7 +6,7 @@
 /* ═══════════════════════════════════════════════
    THEME
 ═══════════════════════════════════════════════ */
-function applyTheme(theme) {
+function applyTheme(theme, skipWallpaper = false) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
 
@@ -15,7 +15,6 @@ function applyTheme(theme) {
     const label2 = document.getElementById('ccThemeLabel');
     const aboutVal = document.getElementById('aboutThemeVal');
     
-    // Use i18n for labels if available
     const lang = document.documentElement.getAttribute('lang') || 'es';
     const dict = I18N[lang] || I18N.es;
     
@@ -23,25 +22,11 @@ function applyTheme(theme) {
     if (label2) label2.textContent = isDark ? (dict.system.light || 'Claro') : (dict.system.dark || 'Oscuro');
     if (aboutVal) aboutVal.textContent = isDark ? (dict.system.dark || 'Oscuro') : (dict.system.light || 'Claro');
 
-    // Sync dock toggle button
-    const dockBtn = document.getElementById('themeToggleDock');
-    if (dockBtn) {
-        dockBtn.onclick = null; // managed separately now
-    }
+    if (skipWallpaper) return;
 
     // Theme-aware Wallpapers
-    const lightWallpapers = [
-        "img/macos-mojave-day.webp",
-        "img/macos-monterey-day.webp",
-        "img/macos-monterey-day2.webp",
-        "img/macos_catalina.webp",
-        "img/macos_bigsur.webp"
-    ];
-    const darkWallpapers = [
-        "img/macos-mojave-night.webp",
-        "img/macos-sequoia-night.webp",
-        "img/macos_tahoe.webp"
-    ];
+    const lightWallpapers = ["img/macos-mojave-day.webp", "img/macos-monterey-day.webp", "img/macos-monterey-day2.webp", "img/macos_catalina.webp", "img/macos_bigsur.webp"];
+    const darkWallpapers = ["img/macos-mojave-night.webp", "img/macos-sequoia-night.webp", "img/macos_tahoe.webp"];
 
     const wallList = theme === 'light' ? lightWallpapers : darkWallpapers;
     const randomWall = wallList[Math.floor(Math.random() * wallList.length)];
@@ -223,7 +208,7 @@ function i18nSet(lang) {
     // Refresh theme labels for the new language
     const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
     if (typeof applyTheme === 'function') {
-        applyTheme(currentTheme);
+        applyTheme(currentTheme, true);
     }
 }
 
@@ -289,7 +274,6 @@ function setupMenubar() {
     // All menu buttons that open a mac-dropdown
     const menuMap = [
         { btnId: 'menu-apple',     dropId: 'drop-apple' },
-        { btnId: 'menu-portfolio', dropId: 'drop-portfolio' },
         { btnId: 'menu-file',      dropId: 'drop-file' },
         { btnId: 'menu-edit',      dropId: 'drop-edit' },
         { btnId: 'menu-view',      dropId: 'drop-view' },
@@ -339,15 +323,6 @@ function setupMenubar() {
     // Special actions
     const printBtn = document.getElementById('menuPrint');
     if (printBtn) printBtn.addEventListener('click', () => { closeAllDropdowns(); window.print(); });
-
-    const aboutPortfolioBtn = document.getElementById('menuAboutPortfolio');
-    if (aboutPortfolioBtn) {
-        aboutPortfolioBtn.addEventListener('click', () => {
-            closeAllDropdowns();
-            const aboutBtn = document.getElementById('openAbout');
-            if (aboutBtn) aboutBtn.click();
-        });
-    }
 
     const fullscreenBtn = document.getElementById('menuFullscreen');
     if (fullscreenBtn) fullscreenBtn.addEventListener('click', () => {
@@ -742,21 +717,38 @@ function setupCVModal() {
 ═══════════════════════════════════════════════ */
 function setupKeyboard() {
     document.addEventListener('keydown', (e) => {
+        const isMod = e.ctrlKey || e.metaKey;
+
         // Ctrl+K — Spotlight
-        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        if (isMod && e.key === 'k') {
             e.preventDefault();
             const overlay = document.getElementById('spotlightOverlay');
-            if (overlay?.classList.contains('open')) {
-                closeSpotlight();
-            } else {
-                openSpotlight();
-            }
+            overlay?.classList.contains('open') ? closeSpotlight() : openSpotlight();
         }
 
-        // Ctrl+T — Toggle Theme
-        if ((e.ctrlKey || e.metaKey) && e.key === 't') {
+        // Ctrl+P — Print
+        if (isMod && e.key === 'p') {
             e.preventDefault();
-            toggleTheme();
+            window.print();
+        }
+
+        // Ctrl+D — Download/Open CV
+        if (isMod && e.key === 'd') {
+            e.preventDefault();
+            if (typeof openCV === 'function') openCV();
+        }
+
+        // Ctrl+I — About
+        if (isMod && e.key === 'i') {
+            e.preventDefault();
+            const aboutBtn = document.getElementById('openAbout');
+            aboutBtn?.click();
+        }
+
+        // Ctrl+L or Shift+Ctrl+Q — Logout
+        if ((isMod && e.key === 'l') || (isMod && e.shiftKey && e.key === 'q')) {
+            e.preventDefault();
+            if (typeof handleLogout === 'function') handleLogout();
         }
 
         // Esc — Close all
