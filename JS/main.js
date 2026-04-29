@@ -29,13 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
   safeCall(setupControlCenter, 'setupControlCenter');
   safeCall(setupBattery, 'setupBattery');
   safeCall(setupSpotlight, 'setupSpotlight');
-  safeCall(setupQuickLook, 'setupQuickLook');
   safeCall(setupAboutModal, 'setupAboutModal');
   safeCall(setupShortcutsModal, 'setupShortcutsModal');
   safeCall(setupCVModal, 'setupCVModal');
   safeCall(setupKeyboard, 'setupKeyboard');
   safeCall(setupLogout, 'setupLogout');
   safeCall(setupContextMenu, 'setupContextMenu');
+  safeCall(setupProjectCards, 'setupProjectCards');
 
   /* Clock */
   safeCall(updateClock, 'updateClock');
