@@ -136,16 +136,45 @@ function setupBootAndLogin() {
     function finishLogin() {
         if (autoTypeInterval) clearInterval(autoTypeInterval);
         if (autoLoginTimeout) clearTimeout(autoLoginTimeout);
-        if (!document.fullscreenElement) {
-            document.documentElement.requestFullscreen().catch(() => {});
+        
+        // Fullscreen only if possible and supported
+        if (window.innerWidth > 600 && !document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(() => {
+                console.log("Fullscreen request denied or unsupported");
+            });
         }
+        
         loginScreen.classList.add('hidden');
         document.body.classList.remove('booting');
-        setTimeout(() => { loginScreen.style.display = 'none'; }, 600);
+        setTimeout(() => { 
+            loginScreen.style.display = 'none'; 
+            // Trigger any reveal animations after login
+            if (typeof setupReveal === 'function') setupReveal();
+        }, 600);
     }
 
-    if (loginBtn) loginBtn.addEventListener('click', finishLogin);
-    if (loginPass) loginPass.addEventListener('keydown', (e) => { if (e.key === 'Enter') finishLogin(); });
+    if (loginBtn) {
+        loginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            finishLogin();
+        });
+    }
+    if (loginPass) {
+        loginPass.addEventListener('keydown', (e) => { 
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                finishLogin();
+            }
+        });
+        
+        // Stop auto-type if user interacts with the input
+        loginPass.addEventListener('mousedown', () => {
+            if (autoTypeInterval) clearInterval(autoTypeInterval);
+        });
+        loginPass.addEventListener('touchstart', () => {
+            if (autoTypeInterval) clearInterval(autoTypeInterval);
+        });
+    }
 
     const sleepBtn = document.querySelector('.login-footer-btn .sleep')?.parentElement;
     const shutdownBtn = document.querySelector('.login-footer-btn .shutdown')?.parentElement;
