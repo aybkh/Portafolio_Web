@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   safeCall(setupShortcutsModal, 'setupShortcutsModal');
   safeCall(setupCVModal, 'setupCVModal');
   safeCall(setupKeyboard, 'setupKeyboard');
+  safeCall(setupLogout, 'setupLogout');
   safeCall(setupContextMenu, 'setupContextMenu');
 
   /* Clock */
