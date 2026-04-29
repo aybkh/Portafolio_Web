@@ -174,14 +174,14 @@ const I18N = {
                 subtitle: "Gestión integral de cadenas hoteleras",
                 description: "Aplicación robusta para la administración de reservas, clientes, personal y auditoría de datos. Incluye sistemas de seguridad avanzada y backups automáticos.",
                 features: ["Control de reservas y huéspedes", "Gestión de personal y servicios", "Base de datos PostgreSQL con replicación", "Exportación de informes JSON/PDF"],
-                stack: ["Python", "Tkinter", "PostgreSQL", "JSON", "PDF"]
+                stack: ["Linux", "PostgreSQL", "Python", "SQL", "Bash", "Git", "GitHub"]
             },
             p3_details: {
                 title: "ERAY Slasher – Roguelite Shooter",
                 subtitle: "Videojuego de acción ambientado en el siglo XVIII",
                 description: "Un shooter de acción donde controlas a ERAY, defendiendo su hogar con habilidades mágicas frente a hordas de enemigos dinámicos.",
                 features: ["Sistema de oleadas y enemigos", "Mejoras de estadísticas y objetos", "Motor de física Unity 2D", "Diseño artístico original"],
-                stack: ["Unity", "C#", "Visual Studio", ".NET"]
+                stack: ["Unity", "C#", ".NET", "Visual Studio", "Git", "GitHub"]
             },
             p7_desc: "Ecosistema integral TPV y Carta Digital para The Kebab Lab. Gestión de pedidos en tiempo real, KDS, administración avanzada y despliegue automático.",
             p7_details: {
@@ -440,14 +440,14 @@ const I18N = {
                 subtitle: "Integrated Management for Hotel Chains",
                 description: "Robust application for managing reservations, guests, staff, and data auditing. Includes advanced security systems and automatic backups.",
                 features: ["Reservations and guest control", "Staff and services management", "PostgreSQL database with replication", "JSON/PDF report exports"],
-                stack: ["Python", "Tkinter", "PostgreSQL", "JSON", "PDF"]
+                stack: ["Linux", "PostgreSQL", "Python", "SQL", "Bash", "Git", "GitHub"]
             },
             p3_details: {
                 title: "ERAY Slasher – Roguelite Shooter",
                 subtitle: "18th-century Action Video Game",
                 description: "An action shooter where you control ERAY, defending his home with magical abilities against waves of dynamic enemies.",
                 features: ["Wave and enemy system", "Stats and item upgrades", "Unity 2D physics engine", "Original artistic design"],
-                stack: ["Unity", "C#", "Visual Studio", ".NET"]
+                stack: ["Unity", "C#", ".NET", "Visual Studio", "Git", "GitHub"]
             },
             p7_desc: "Integrated POS System and Digital Menu for The Kebab Lab. Real-time order management, KDS, advanced administration, and automated deployment.",
             p7_details: {
