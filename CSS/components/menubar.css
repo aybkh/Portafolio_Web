@@ -1,0 +1,514 @@
+/* MacOS Menu Bar */
+.mac-menubar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 32px;
+    background: var(--menubar-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    z-index: 9999;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.menubar-left {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.menu-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.menubar-right {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.menu-item {
+    cursor: default;
+    opacity: 0.9;
+    padding: 2px 10px;
+    border-radius: 4px;
+    transition: background 0.1s ease, color 0.1s ease, opacity 0.1s ease;
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    user-select: none;
+    -webkit-user-select: none;
+    display: flex;
+    align-items: center;
+    height: 26px; /* Explicit height to fit in 32px bar */
+    line-height: 1;
+}
+
+.clock-btn {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.menu-item:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.12);
+    cursor: default;
+}
+
+.menu-item:active,
+.menu-item[aria-expanded="true"] {
+    background: #007aff;
+    color: #fff !important;
+    opacity: 1;
+}
+
+/* Light mode active */
+:root[data-theme="light"] .menu-item:active,
+:root[data-theme="light"] .menu-item[aria-expanded="true"] {
+    background: #007aff;
+    color: #fff !important;
+}
+
+:root[data-theme="light"] .menu-item:hover:not([aria-expanded="true"]) {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+.menu-item.bold {
+    font-weight: 700;
+}
+
+.apple-logo {
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+.menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+    padding: 2px 6px;
+    height: 26px;
+    border-radius: 4px;
+    cursor: default;
+    transition: background 0.1s ease, opacity 0.1s ease;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.menu-icon:hover {
+    background: rgba(255, 255, 255, 0.12);
+    opacity: 1;
+}
+
+.menu-icon:active {
+    background: rgba(255, 255, 255, 0.22);
+    opacity: 1;
+}
+
+/* Light mode icon hover */
+:root[data-theme="light"] .menu-icon:hover {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+:root[data-theme="light"] .menu-icon:active {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+/* Battery Icon */
+.battery-body {
+    width: 22px;
+    height: 10px;
+    border: 1px solid var(--icon-dim);
+    border-radius: 2px;
+    padding: 1px;
+    position: relative;
+}
+
+.battery-body::after {
+    content: '';
+    position: absolute;
+    right: -3px;
+    top: 2px;
+    width: 2px;
+    height: 4px;
+    background: var(--icon-dim);
+    border-radius: 0 1px 1px 0;
+}
+
+.battery-level {
+    width: 100%;
+    height: 100%;
+    background: var(--icon-solid);
+    border-radius: 1px;
+}
+
+.battery-pct {
+    font-size: 10px;
+    margin-left: 2px;
+    opacity: 0.7;
+    font-weight: 600;
+}
+
+/* ─────────────────────────────────────────
+   macOS Dropdown Menus
+   ───────────────────────────────────────── */
+.menu-item-wrap {
+    position: relative;
+}
+
+.apple-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 8px;
+}
+
+.mac-dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    min-width: 220px;
+    background: rgba(28, 28, 32, 0.92);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    z-index: 99999;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px) scale(0.97);
+    transform-origin: top left;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+:root[data-theme="light"] .mac-dropdown {
+    background: rgba(245, 245, 250, 0.96);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18), 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.mac-dropdown.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+/* Position right-side dropdowns to the right edge */
+.lang-dropdown,
+.mac-dropdown#langDropdown {
+    left: auto;
+    right: 0;
+    transform-origin: top right;
+}
+
+.drop-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--text);
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.1s ease, color 0.1s ease;
+    white-space: nowrap;
+}
+
+:root[data-theme="light"] .drop-item {
+    color: #1c1c1e;
+}
+
+.drop-item:hover,
+.drop-item:focus-visible {
+    background: #007aff;
+    color: #fff;
+    outline: none;
+}
+
+.drop-item:hover .drop-icon,
+.drop-item:focus-visible .drop-icon {
+    stroke: #fff;
+    fill: #fff;
+}
+
+.drop-icon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    opacity: 0.75;
+    color: var(--text);
+}
+
+:root[data-theme="light"] .drop-icon {
+    color: #1c1c1e;
+}
+
+.drop-shortcut {
+    margin-left: auto;
+    font-size: 11px;
+    opacity: 0.45;
+    letter-spacing: 0.02em;
+}
+
+.drop-item:hover .drop-shortcut {
+    opacity: 0.7;
+}
+
+.drop-sep {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 4px 0;
+}
+
+:root[data-theme="light"] .drop-sep {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.drop-label {
+    font-size: 11px;
+    color: var(--muted);
+    padding: 3px 9px 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.drop-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 9px;
+}
+
+.drop-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.drop-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.drop-sub {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+.drop-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────
+   Language Selector
+   ───────────────────────────────────────── */
+.lang-wrap {
+    position: relative;
+    margin-right: 6px;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    font: inherit;
+    color: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 3px 6px;
+    border-radius: 4px;
+    transition: background 0.1s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.lang-flag {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.lang-code {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.lang-arrow {
+    opacity: 0.6;
+    transition: transform 0.2s ease;
+}
+
+.lang-btn[aria-expanded="true"] .lang-arrow {
+    transform: rotate(180deg);
+}
+
+.lang-flag-img {
+    width: 16px;
+    height: 12px;
+    object-fit: cover;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.lang-flag-img-lg {
+    width: 20px;
+    height: 14px;
+    object-fit: cover;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+/* Calendar Panel */
+.calendar-panel {
+    padding: 10px;
+    min-width: 200px;
+}
+
+.cal-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding: 0 5px;
+}
+
+.cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    text-align: center;
+}
+
+.cal-day-name {
+    font-size: 10px;
+    font-weight: 700;
+    opacity: 0.5;
+    padding-bottom: 5px;
+}
+
+.cal-day {
+    font-size: 11px;
+    padding: 4px 0;
+    border-radius: 4px;
+}
+
+.cal-day.today {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 700;
+}
+
+.cal-day.empty {
+    visibility: hidden;
+}
+
+/* Ensure right icons match menu items */
+.menubar-right .menu-icon {
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
+    padding: 4px 6px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.1s ease;
+}
+
+.menubar-right .menu-icon:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.menubar-right .menu-icon[aria-expanded="true"] {
+    background: #007aff !important;
+    color: #fff !important;
+}
+
+/* Mobile Component Tweaks */
+@media (max-width: 600px) {
+    .mac-menubar {
+        padding: 0 10px;
+    }
+
+    .menubar-left .menu-item:not(.apple-btn) {
+        display: none;
+    }
+
+    /* Solo mostrar Idioma y Centro de Control a la derecha */
+    .menubar-right .menu-icon:not(.language):not(.control-center) {
+        display: none;
+    }
+
+    .menu-center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    .clock-btn {
+        padding: 2px 6px !important;
+        height: auto;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-clock {
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    .menubar-right {
+        gap: 8px; /* Espaciado entre bandera y menú */
+    }
+
+    .mac-dropdown {
+        min-width: 180px;
+        font-size: 12px;
+    }
+}
