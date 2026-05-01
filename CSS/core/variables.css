@@ -1,0 +1,59 @@
+:root {
+    --panel: rgba(30, 30, 40, 0.85);
+    --text: #ffffff;
+    --muted: #a1a1aa;
+
+    --glass: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --border: rgba(255, 255, 255, 0.15);
+
+    --header-bg: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0));
+
+    --accent: #007aff;
+    --accent2: #5ac8fa;
+
+    --web-accent: #f5c518;
+    --btn-web-text: #f5c518;
+
+    --radius: 12px;
+    --max: 1200px;
+
+    --blur: 20px;
+    --shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+    --dock-size: 70px;
+    --menubar-height: 30px;
+    --menubar-bg: rgba(20, 20, 30, 0.6);
+
+    --icon-dim: rgba(255, 255, 255, 0.5);
+    --icon-solid: #ffffff;
+
+    --bp-tablet: 900px;
+    --bp-mobile: 600px;
+}
+
+:root[data-theme="light"] {
+    --text: #1c1c1e;
+    --muted: #6e6e73;
+
+    /* Softer MacOS light theme */
+    --panel: rgba(235, 235, 240, 0.92);
+    --header-bg: rgba(220, 220, 225, 0.98);
+
+    --menubar-bg: rgba(255, 255, 255, 0.4);
+
+    --glass: rgba(255, 255, 255, 0.5);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --border: rgba(0, 0, 0, 0.1);
+
+    --icon-dim: rgba(0, 0, 0, 0.45);
+    --icon-solid: #1c1c1e;
+
+    --accent: #007aff;
+    --accent2: #5ac8fa;
+
+    --web-accent: #c6930a;
+    --btn-web-text: #1c1c1e;
+
+    --shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
