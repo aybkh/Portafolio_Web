@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    margin: 0;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-color: #0b0d12;
+    background-attachment: fixed;
+    background-size: cover;
+    transition: background .6s ease, color .3s ease;
+    padding-bottom: calc(var(--dock-size) + 40px);
+}
+
+/* Hide content during boot */
+body.booting .mac-menubar,
+body.booting main,
+body.booting .foot,
+body.booting .dock-container {
+    opacity: 0;
+    pointer-events: none;
+}
+
+[data-theme="light"] body {
+    background: linear-gradient(to bottom, #a1c4fd, #c2e9fb);
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin: 1em 0;
+    font-weight: 700;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
