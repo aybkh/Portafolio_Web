@@ -1,0 +1,76 @@
+/* -----------------------------------------
+   macOS Context Menu
+   ----------------------------------------- */
+.mac-context-menu {
+    position: fixed;
+    z-index: 1000000;
+    background: rgba(28, 28, 32, 0.9);
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    padding: 5px;
+    min-width: 180px;
+    display: none;
+    flex-direction: column;
+    animation: ctxFade 0.12s ease-out;
+}
+
+:root[data-theme="light"] .mac-context-menu {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+@keyframes ctxFade {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.ctx-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 6px 10px;
+    border: none;
+    background: none;
+    color: var(--text);
+    font: inherit;
+    font-size: 13px;
+    text-align: left;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.1s ease;
+}
+
+:root[data-theme="light"] .ctx-item {
+    color: #1c1c1e;
+}
+
+.ctx-item:hover {
+    background: #007aff;
+    color: #fff;
+}
+
+.ctx-icon {
+    width: 14px;
+    height: 14px;
+    opacity: 0.7;
+}
+
+.ctx-item:hover .ctx-icon {
+    opacity: 1;
+    stroke: #fff;
+}
+
+.ctx-sep {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 4px 0;
+}
+
+:root[data-theme="light"] .ctx-sep {
+    background: rgba(0, 0, 0, 0.1);
+}
