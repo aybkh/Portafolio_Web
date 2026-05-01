@@ -1,0 +1,20 @@
+/* Footer / Terminal */
+.terminal {
+    border-radius: 22px;
+    overflow: auto;
+    border: 1px solid var(--border);
+    background: #0a0f18;
+    color: #cfe6ff;
+    box-shadow: var(--shadow);
+}
+
+.terminal pre {
+    margin: 0;
+    padding: 14px;
+}
+
+.foot {
+    margin: 40px 0 20px;
+    text-align: center;
+    color: var(--muted);
+}
