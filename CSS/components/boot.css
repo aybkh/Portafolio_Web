@@ -1,0 +1,62 @@
+/* -----------------------------------------
+   Apple Boot Sequence
+   ----------------------------------------- */
+.boot-screen {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 9999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease;
+}
+
+.boot-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    width: 200px;
+}
+
+.boot-logo {
+    width: 80px;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+.boot-progress-container {
+    width: 100%;
+    height: 4px;
+    background: #333;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.boot-progress {
+    width: 0%;
+    height: 100%;
+    background: #fff;
+    transition: width 0.1s linear;
+}
+
+body.booting {
+    overflow: hidden !important;
+}
+
+.boot-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    .boot-content {
+        width: 150px;
+        gap: 40px;
+    }
+    
+    .boot-logo {
+        width: 60px;
+    }
+}
