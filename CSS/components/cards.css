@@ -194,34 +194,60 @@
     }
 
     .exp-head {
-        flex-direction: column;
-        align-items: flex-start !important;
-        gap: 12px;
+        display: grid !important;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+        gap: 6px 16px;
+        align-items: start;
+        margin-bottom: 12px;
+    }
+
+    .exp-info {
+        grid-column: 2;
+        grid-row: 1;
+        max-width: none !important;
+    }
+
+    .exp-info h3 {
+        font-size: 1.1rem;
+        margin: 0 0 2px 0;
+        line-height: 1.2;
+    }
+
+    .exp-info .muted {
+        font-size: 0.85rem;
+        margin: 0;
     }
 
     .exp-role {
-        align-self: stretch;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-        flex-direction: row;
+        display: contents; /* Allows children to be placed in the exp-head grid */
+    }
+
+    .exp-role a {
+        grid-column: 1;
+        grid-row: 1 / span 2;
     }
 
     .exp-logo {
-        width: 32px;
-        height: 32px;
+        width: 48px !important;
+        height: 48px !important;
+        padding: 6px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--glass-border);
+        border-radius: 12px;
     }
 
     .badge {
+        grid-column: 2;
+        grid-row: 2;
         position: static !important;
         transform: none !important;
-        border-radius: 6px !important;
-        width: auto !important;
+        width: fit-content !important;
         height: auto !important;
-        padding: 4px 8px !important;
-        flex: 1;
-        text-align: center;
+        padding: 3px 10px !important;
+        font-size: 0.75rem !important;
+        border-radius: 8px !important;
+        margin-top: 2px;
     }
 
     .card {
