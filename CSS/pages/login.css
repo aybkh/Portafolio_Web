@@ -184,9 +184,9 @@
     }
 
     .login-submit {
-        width: 44px; /* Improved touch target */
-        height: 44px;
-        right: 2px;
+        width: 30px; /* Improved touch target */
+        height: 30px;
+        right: 3px;
     }
 
     .login-footer {
