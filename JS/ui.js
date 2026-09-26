@@ -117,13 +117,15 @@ function setupReveal() {
 ═══════════════════════════════════════════════ */
 function setupSkills() {
     const btns = document.querySelectorAll('.skill-cat-btn');
+    const popoverItems = document.querySelectorAll('.mac-popover-item');
     const groups = document.querySelectorAll('.skills-group');
-    const mobileSelect = document.getElementById('skillsMobileSelect');
-    
+    const popoverBtn = document.getElementById('skillsPopoverBtn');
+    const popoverMenu = document.getElementById('skillsPopoverMenu');
+
     function activateCategory(target) {
         if (!target) return;
 
-        // Update desktop buttons
+        // Desktop sidebar buttons
         btns.forEach(b => {
             if (b.getAttribute('data-target') === target) {
                 b.classList.add('active');
@@ -132,12 +134,31 @@ function setupSkills() {
             }
         });
 
-        // Sync mobile select value
-        if (mobileSelect && mobileSelect.value !== target) {
-            mobileSelect.value = target;
-        }
+        // Popover menu items
+        popoverItems.forEach(item => {
+            if (item.getAttribute('data-target') === target) {
+                item.classList.add('active');
+                
+                // Update popover button active icon and label
+                const activeTile = item.querySelector('.cat-icon-tile');
+                const activeSpan = item.querySelector('span');
+                const btnTile = document.getElementById('popoverActiveTile');
+                const btnSpan = document.getElementById('popoverActiveText');
+                
+                if (btnTile && activeTile) {
+                    btnTile.className = activeTile.className;
+                    btnTile.innerHTML = activeTile.innerHTML;
+                }
+                if (btnSpan && activeSpan) {
+                    btnSpan.textContent = activeSpan.textContent;
+                    btnSpan.setAttribute('data-i18n', activeSpan.getAttribute('data-i18n') || '');
+                }
+            } else {
+                item.classList.remove('active');
+            }
+        });
 
-        // Update active group display
+        // Content groups
         groups.forEach(g => {
             if (g.id === target) {
                 g.classList.add('active');
@@ -153,18 +174,36 @@ function setupSkills() {
         }
     }
 
+    // Toggle popover menu
+    if (popoverBtn && popoverMenu) {
+        popoverBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = popoverMenu.classList.contains('open');
+            popoverMenu.classList.toggle('open', !isOpen);
+            popoverBtn.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!popoverBtn.contains(e.target) && !popoverMenu.contains(e.target)) {
+                popoverMenu.classList.remove('open');
+                popoverBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
-            const target = btn.getAttribute('data-target');
-            activateCategory(target);
+            activateCategory(btn.getAttribute('data-target'));
         });
     });
 
-    if (mobileSelect) {
-        mobileSelect.addEventListener('change', (e) => {
-            activateCategory(e.target.value);
+    popoverItems.forEach(item => {
+        item.addEventListener('click', () => {
+            activateCategory(item.getAttribute('data-target'));
+            if (popoverMenu) popoverMenu.classList.remove('open');
+            if (popoverBtn) popoverBtn.setAttribute('aria-expanded', 'false');
         });
-    }
+    });
 }
 
 /* ═══════════════════════════════════════════════

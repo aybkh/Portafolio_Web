@@ -176,75 +176,139 @@
     line-height: 1.3;
 }
 
-/* Mobile Category Dropdown Selector */
+/* macOS Mobile Popover Menu */
 .skills-mobile-header {
     display: none;
+    position: relative;
     width: 100%;
-    padding: 14px 16px;
+    padding: 12px 14px;
     background: rgba(255, 255, 255, 0.03);
     border-bottom: 1px solid var(--border);
+    z-index: 50;
 }
 
-.skills-select-box {
-    position: relative;
+.mac-popover-btn {
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    padding: 10px 14px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-    transition: border-color 0.2s ease, background 0.2s ease;
+    border-radius: 10px;
+    color: var(--text);
+    cursor: pointer;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
 }
 
-[data-theme="light"] .skills-select-box {
+[data-theme="light"] .mac-popover-btn {
     background: rgba(255, 255, 255, 0.85);
     border-color: rgba(0, 0, 0, 0.12);
 }
 
-.skills-select-box .select-icon {
-    font-size: 16px;
+.mac-popover-btn:active {
+    transform: scale(0.99);
+}
+
+.popover-selected-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.popover-selected-info .cat-icon-tile {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+}
+
+.mac-popup-chevrons {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    font-size: 9px;
     color: var(--accent);
-    margin-right: 12px;
+    opacity: 0.9;
     flex-shrink: 0;
 }
 
-.skills-select-box select {
-    width: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: var(--text);
-    font-size: 15px;
-    font-weight: 600;
-    appearance: none;
-    -webkit-appearance: none;
-    cursor: pointer;
-    padding-right: 24px;
-}
-
-[data-theme="light"] .skills-select-box select {
-    color: #1d1d1f;
-}
-
-.skills-select-box select option {
-    background: #141722;
-    color: #ffffff;
-    font-size: 14px;
-    padding: 8px;
-}
-
-[data-theme="light"] .skills-select-box select option {
-    background: #ffffff;
-    color: #1d1d1f;
-}
-
-.skills-select-box .arrow-icon {
+.mac-popover-menu {
     position: absolute;
+    top: calc(100% + 4px);
+    left: 14px;
     right: 14px;
-    font-size: 13px;
-    color: var(--muted);
-    pointer-events: none;
+    background: rgba(24, 28, 42, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(35px) saturate(200%);
+    -webkit-backdrop-filter: blur(35px) saturate(200%);
+    border-radius: 14px;
+    padding: 6px;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px) scale(0.96);
+    transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                visibility 0.2s ease;
+    z-index: 100;
+}
+
+[data-theme="light"] .mac-popover-menu {
+    background: rgba(245, 245, 250, 0.96);
+    border-color: rgba(0, 0, 0, 0.12);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.mac-popover-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.mac-popover-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+[data-theme="light"] .mac-popover-item {
+    color: #1d1d1f;
+}
+
+.mac-popover-item:hover,
+.mac-popover-item.active {
+    background: var(--accent);
+    color: #ffffff !important;
+}
+
+.mac-popover-item .check-mark {
+    margin-left: auto;
+    font-size: 12px;
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.mac-popover-item.active .check-mark {
+    opacity: 1;
 }
 
 @keyframes fadeIn {
@@ -259,7 +323,7 @@
         height: auto;
     }
     .skills-sidebar {
-        display: none !important; /* Hide cramped horizontal tabs on mobile */
+        display: none !important;
     }
     .skills-mobile-header {
         display: block;

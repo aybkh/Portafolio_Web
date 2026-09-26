@@ -700,22 +700,68 @@
         <div class="window-title" data-i18n="sections.sk">Skills</div>
       </div>
         <div class="skills-container">
-          <!-- Mobile Category Dropdown Selector -->
+          <!-- macOS Mobile Category Popover Menu -->
           <div class="skills-mobile-header">
-            <div class="skills-select-box">
-              <i class="fas fa-layer-group select-icon"></i>
-              <select id="skillsMobileSelect" aria-label="Seleccionar categoría de habilidades">
-                <option value="net" selected data-i18n="skills.categories.net">Redes & Seguridad</option>
-                <option value="sys" data-i18n="skills.categories.sys">Sistemas & Workspace</option>
-                <option value="cloud" data-i18n="skills.categories.cloud">Cloud & DevOps</option>
-                <option value="dev" data-i18n="skills.categories.dev">Desarrollo</option>
-                <option value="db" data-i18n="skills.categories.db">Bases de Datos</option>
-                <option value="hw" data-i18n="skills.categories.hw">Hardware & Support</option>
-                <option value="ia" data-i18n="skills.categories.ia">IA & Automatización</option>
-                <option value="prod" data-i18n="skills.categories.prod">Productividad</option>
-                <option value="langs" data-i18n="skills.categories.langs">Idiomas</option>
-              </select>
-              <i class="fas fa-chevron-down arrow-icon"></i>
+            <button type="button" class="mac-popover-btn" id="skillsPopoverBtn" aria-expanded="false" aria-haspopup="true">
+              <div class="popover-selected-info">
+                <div class="cat-icon-tile bg-blue" id="popoverActiveTile">
+                  <i class="fas fa-network-wired"></i>
+                </div>
+                <span id="popoverActiveText" data-i18n="skills.categories.net">Redes</span>
+              </div>
+              <div class="mac-popup-chevrons">
+                <i class="fas fa-chevron-up"></i>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+            </button>
+
+            <!-- Floating macOS Popover Menu -->
+            <div class="mac-popover-menu" id="skillsPopoverMenu" role="menu">
+              <button type="button" class="mac-popover-item active" data-target="net" role="menuitem">
+                <div class="cat-icon-tile bg-blue"><i class="fas fa-network-wired"></i></div>
+                <span data-i18n="skills.categories.net">Redes</span>
+                <i class="fas fa-check check-mark"></i>
+              </button>
+              <button type="button" class="mac-popover-item" data-target="sys" role="menuitem">
+                <div class="cat-icon-tile bg-grey"><i class="fas fa-desktop"></i></div>
+                <span data-i18n="skills.categories.sys">Sistemas</span>
+                <i class="fas fa-check check-mark"></i>
+              </button>
+              <button type="button" class="mac-popover-item" data-target="cloud" role="menuitem">
+                <div class="cat-icon-tile bg-sky"><i class="fas fa-cloud"></i></div>
+                <span data-i18n="skills.categories.cloud">Cloud & DevOps</span>
+                <i class="fas fa-check check-mark"></i>
+              </button>
+              <button type="button" class="mac-popover-item" data-target="dev" role="menuitem">
+                <div class="cat-icon-tile bg-purple"><i class="fas fa-code"></i></div>
+                <span data-i18n="skills.categories.dev">Desarrollo</span>
+                <i class="fas fa-check check-mark"></i>
+              </button>
+              <button type="button" class="mac-popover-item" data-target="db" role="menuitem">
+                <div class="cat-icon-tile bg-green"><i class="fas fa-database"></i></div>
+                <span data-i18n="skills.categories.db">Bases de Datos</span>
+                <i class="fas fa-check check-mark"></i>
+              </button>
+              <button type="button" class="mac-popover-item" data-target="hw" role="menuitem">
+                <div class="cat-icon-tile bg-orange"><i class="fas fa-microchip"></i></div>
+                <span data-i18n="skills.categories.hw">Hardware & Support</span>
+                <i class="fas fa-check check-mark"></i>
+              </button>
+              <button type="button" class="mac-popover-item" data-target="ia" role="menuitem">
+                <div class="cat-icon-tile bg-pink"><i class="fas fa-brain"></i></div>
+                <span data-i18n="skills.categories.ia">IA & Automatización</span>
+                <i class="fas fa-check check-mark"></i>
+              </button>
+              <button type="button" class="mac-popover-item" data-target="prod" role="menuitem">
+                <div class="cat-icon-tile bg-indigo"><i class="fas fa-list-check"></i></div>
+                <span data-i18n="skills.categories.prod">Productividad</span>
+                <i class="fas fa-check check-mark"></i>
+              </button>
+              <button type="button" class="mac-popover-item" data-target="langs" role="menuitem">
+                <div class="cat-icon-tile bg-yellow"><i class="fas fa-language"></i></div>
+                <span data-i18n="skills.categories.langs">Idiomas</span>
+                <i class="fas fa-check check-mark"></i>
+              </button>
             </div>
           </div>
 
