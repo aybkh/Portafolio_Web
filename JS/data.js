@@ -4,27 +4,33 @@ const I18N = {
         hero: { title_prefix: "Hola, soy", subtitle: "Especialista en soporte y administración IT, con experiencia en entornos corporativos y públicos. Gestiono sistemas Linux y Windows, redes, Microsoft 365, hardware y bases de datos, asegurando operaciones estables y eficientes. Me motiva resolver incidencias técnicas y mejorar la experiencia del usuario." },
         cta: { view: "Ver proyectos", cv: "Descargar CV" },
         sections: { exp: "Experiencia", sk: "Habilidades", proj: "Proyectos", contact: "Contacto",
-            exp_desc: "HIPRA · Ajuntament",
+            exp_desc: "HIPRA · My Home Market · Ajuntament",
             sk_desc: "Redes · Cloud · Dev · IA",
             proj_desc: "Snack Tanger · ERAY · Hotel",
             contact_desc: "LinkedIn · Email · GitHub"
         },
         exp: {
-            e1_place: "Junio 2025 - Presente", e1_role: "IT Workplace Intern",
-            e1_t1: "Soporte técnico de segundo nivel (hardware, software y conectividad).",
-            e1_t2: "Gestión de incidencias mediante Remedy y SmartIT.",
-            e1_t3: "Preparación y despliegue de equipos (portátiles, IGEL, periféricos).",
-            e1_t4: "Configuración de móviles iOS/Android, teléfonos Cisco y escáneres.",
-            e1_t5: "Impresoras RFID y térmicas (Zebra, Honeywell).",
-            e1_t6: "Gestión de garantías y reparaciones con proveedores.",
-            e1_t7: "Colaboración en seguridad, parches y actualizaciones.",
-            e2_place: "Noviembre 2023 – Abril 2024", e2_role: "IT Helpdesk Intern",
-            e2_t1: "Soporte técnico presencial y remoto para personal municipal.",
-            e2_t2: "Instalación y mantenimiento de equipos y periféricos.",
-            e2_t3: "Administración básica de sistemas y permisos de usuario.",
-            e2_t4: "Herramientas Linux para diagnóstico y resolución de fallos.",
-            e2_t5: "Documentación de procedimientos y guías de usuario.",
-            e2_t6: "Preparación y despliegue de equipos."
+            e1_place: "Mayo 2026 - Presente", e1_role: "IT Workplace Technician",
+            e1_t1: "IT Procurement (SAP): Gestión de compras de hardware, presupuestos y pruebas PoC (Try and Buy).",
+            e1_t2: "Proyectos Industriales: Coordinación del despliegue de infraestructura IT en plantas de producción.",
+            e1_t3: "Hardware & Leasing: Administración de flotas Apple/Dell, aprovisionamiento y contratos de leasing.",
+            e1_t4: "Salas AV: Gestión de salas de videoconferencia (Cisco Room Bar, Evoko) y migración a MS Teams.",
+            e1_t5: "IT Onboarding & Seguridad: Sesiones semanales de bienvenida técnica y buenas prácticas en ciberseguridad.",
+            e1_t6: "Operaciones Diarias: Soporte técnico L2 y resolución de tickets corporativos e industriales.",
+
+            e2_place: "Junio 2025 - Mayo 2026", e2_role: "IT Workplace Intern",
+            e2_t1: "Soporte L2 & M365: Resolución de incidencias complejas y gestión de usuarios Microsoft 365.",
+            e2_t2: "Ticketing & Despliegues: Incidencias en Remedy/SmartIT y preparación de equipos (portátiles, IGEL).",
+            e2_t3: "Móviles e Impresión: Configuración de iOS/Android, VoIP Cisco e impresoras RFID/térmicas (Zebra/Honeywell).",
+            e2_t4: "Seguridad & Garantías: Coordinación con proveedores de hardware y despliegue de parches de seguridad.",
+
+            e3_place: "Julio 2020 - Junio 2025", e3_role: "Sales Assistant",
+            e3_t1: "Atención al Cliente: Asesoramiento personalizado e identificación de necesidades.",
+            e3_t2: "Gestión de Stock & Caja: Control de inventario, reposición de productos y operaciones de caja.",
+
+            e4_place: "Noviembre 2023 – Abril 2024", e4_role: "IT Helpdesk Intern",
+            e4_t1: "Soporte Municipal: Soporte presencial y remoto a usuarios municipales en hardware, software y red.",
+            e4_t2: "Sistemas & Guías: Diagnóstico con herramientas Linux, gestión de permisos y creación de manuales."
         },
         skills: {
             categories: {
@@ -195,6 +201,58 @@ const I18N = {
                     "Smart Printing: Sistema ESC/POS para cocina y barra."
                 ],
                 stack: [".NET", "React", "SQLite", "TailwindCSS", "Entity Framework", "ESC/POS", "GitHub"]
+            },
+            p8_desc: "Plataforma web corporativa y marketplace de licencias VTC en España. Incluye gestión de licencias (comprar/vender), blog del sector y panel de administración en /admin.",
+            p8_details: {
+                title: "GetVTC – Marketplace & Consultoría VTC",
+                subtitle: "Plataforma web corporativa y gestión de licencias VTC",
+                description: "Plataforma integral orientada al sector VTC en España. Combina una web pública con marketplace para comprar, vender y solicitar licencias con un panel de administración para la gestión de clientes y contenidos.",
+                features: [
+                    "Marketplace VTC: Gestión de ofertas de licencias en tiempo real.",
+                    "Panel Admin: Control de leads, solicitudes y publicaciones.",
+                    "Contenido & Blog: Sección de actualidad y ofertas de empleo.",
+                    "Arquitectura Serverless: Despliegue en Cloudflare Pages con backend Supabase."
+                ],
+                stack: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p9_desc: "Galería web pública de imágenes gastronómicas generadas con IA de alta calidad para cartas digitales, TPVs y marketing sin costes de almacenamiento.",
+            p9_details: {
+                title: "FoodPix – Food Image Hub",
+                subtitle: "Galería de imágenes gastronómicas generadas con IA",
+                description: "Banco de imágenes de alta resolución dedicado a la restauración. Permite a propietarios y desarrolladores obtener fotografías de comida para menús digitales y TPVs sin derechos de autor.",
+                features: [
+                    "Almacenamiento Cloudflare R2: 10GB de imágenes servidas en WebP.",
+                    "Internacionalización: Soporte multiidioma (ES/EN/FR).",
+                    "Cero Costes: Operatividad total sobre la capa gratuita de Cloudflare.",
+                    "Panel Admin: Gestión de catálogo a través de Pages Functions."
+                ],
+                stack: ["React", "Vite", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p10_desc: "Sistema web de reservas online en tiempo real para barberías con notificaciones automáticas por Telegram Bot API, gestión sin registro y TPV integrado.",
+            p10_details: {
+                title: "R7Sultan – Reservas & TPV Barbería",
+                subtitle: "Plataforma de reservas en tiempo real y gestión TPV",
+                description: "Sistema de reservas de última generación para barberías. Garantiza disponibilidad sin solapamientos mediante constraints en PostgreSQL y notifica instantáneamente al barbero vía Telegram.",
+                features: [
+                    "Control de Disponibilidad: Algoritmo anti-double booking en base de datos.",
+                    "Notificaciones Instantáneas: Alertas automáticas por Telegram Bot y Email.",
+                    "Acceso Directo: Gestión de cita mediante token único sin necesidad de registro.",
+                    "Panel Admin & TPV: Control de citas, horarios y registro de cobros (Efectivo/Tarjeta/Bizum)."
+                ],
+                stack: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p11_desc: "Web pública y panel de administración para el restaurante Amigos2. Gestión interactiva de carta digital, promociones y galería con backend Supabase.",
+            p11_details: {
+                title: "Amigos2 – Web & Admin Restauración",
+                subtitle: "Plataforma web corporativa y panel de gestión",
+                description: "Solución desacoplada en dos aplicaciones React (Web pública y Panel Admin) que permite al propietario gestionar la carta, promociones y fotos del restaurante de forma autónoma.",
+                features: [
+                    "Carta Digital: Categorías, productos, precios y alérgenos.",
+                    "Panel de Gestión: Administración intuitiva en admin.amigos2.com.",
+                    "Supabase Backend: Base de datos PostgreSQL, autenticación y storage.",
+                    "Despliegue CD: Integración continua en Cloudflare Pages."
+                ],
+                stack: ["React", "Vite", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
             }
         },
         contact: { linkedin: "LinkedIn", email: "Email", github: "GitHub", whatsapp: "WhatsApp" },
@@ -266,27 +324,33 @@ const I18N = {
         hero: { title_prefix: "Hi, I'm", subtitle: "IT support and administration specialist with experience in corporate and public environments. I manage Linux and Windows systems, networks, Microsoft 365, hardware, and databases, ensuring stable and efficient operations. I am motivated by resolving technical issues and improving the user experience." },
         cta: { view: "View projects", cv: "Download CV" },
         sections: { exp: "Experience", sk: "Skills", proj: "Projects", contact: "Contact",
-            exp_desc: "HIPRA · Ajuntament",
+            exp_desc: "HIPRA · My Home Market · Ajuntament",
             sk_desc: "Network · Cloud · Dev · IA",
             proj_desc: "Snack Tanger · ERAY · Hotel",
             contact_desc: "LinkedIn · Email · GitHub"
         },
         exp: {
-            e1_place: "Jun 2025 - Present", e1_role: "IT Workplace Intern",
-            e1_t1: "L2 support for hardware, software and connectivity.",
-            e1_t2: "Incident management via Remedy and ClickUp.",
-            e1_t3: "Staging and deployment of laptops, IGEL and peripherals.",
-            e1_t4: "iOS/Android mobiles, Cisco phones and scanners setup.",
-            e1_t5: "RFID and thermal printers (Zebra, Honeywell).",
-            e1_t6: "Warranty and repair management with vendors.",
-            e1_t7: "Collaboration on security, patching and updates.",
-            e2_place: "Nov 2023 – Apr 2024", e2_role: "IT Helpdesk Intern",
-            e2_t1: "On-site and remote tech support for municipal staff.",
-            e2_t2: "Equipment and peripheral installation and maintenance.",
-            e2_t3: "Basic systems admin and user permissions.",
-            e2_t4: "Linux tools for fault diagnosis and resolution.",
-            e2_t5: "Process documentation and user guides.",
-            e2_t6: "Staging and deployment of devices."
+            e1_place: "May 2026 - Present", e1_role: "IT Workplace Technician",
+            e1_t1: "IT Procurement (SAP): Managing hardware purchases, quotes, and PoC (Try & Buy) testing.",
+            e1_t2: "Industrial IT Projects: Deployment coordination of IT infrastructure in production plants.",
+            e1_t3: "Hardware & Leasing: Apple/Dell corporate fleet administration, staging, and leasing contracts.",
+            e1_t4: "AV Solutions: Video conferencing management (Cisco Room Bar, Evoko) and migration to MS Teams.",
+            e1_t5: "IT Onboarding & Security: Leading weekly technical onboarding and cybersecurity training.",
+            e1_t6: "Daily Operations: L2 technical support and resolving corporate & industrial tickets.",
+
+            e2_place: "Jun 2025 - May 2026", e2_role: "IT Workplace Intern",
+            e2_t1: "L2 Support & M365: Resolving complex issues and administering Microsoft 365 accounts.",
+            e2_t2: "Ticketing & Staging: Remedy/SmartIT incident management and laptop/IGEL staging.",
+            e2_t3: "Mobile & Printing: iOS/Android setup, Cisco VoIP, and RFID/thermal printers (Zebra/Honeywell).",
+            e2_t4: "Security & Warranties: Vendor coordination for repairs and applying system security patches.",
+
+            e3_place: "Jul 2020 - Jun 2025", e3_role: "Sales Assistant",
+            e3_t1: "Customer Service: Tailored advice, customer assistance, and satisfaction optimization.",
+            e3_t2: "Stock & Cash Management: Inventory control, product restocking, and cash register operations.",
+
+            e4_place: "Nov 2023 – Apr 2024", e4_role: "IT Helpdesk Intern",
+            e4_t1: "Municipal Support: On-site and remote IT support for municipal staff (HW, SW, networking).",
+            e4_t2: "Systems & Documentation: Linux diagnostic tools, user permissions, and user guide creation."
         },
         skills: {
             categories: {
@@ -418,10 +482,10 @@ const I18N = {
             }
         },
         projects: {
-            p1_desc: "Personal portfolio inspired by the iOS26 interface, developed with HTML, CSS, and JavaScript. Presents professional experience, skills, and projects in a modern and responsive design. Includes dark/light mode, language selection, and an interactive ‘Dynamic Island’ for navigation.",
-            p2_desc: "Complete application for the integral management of a hotel chain. Includes control of reservations, customers, staff, services, and data auditing. Developed in Python (Tkinter) with a PostgreSQL database, it incorporates security, high availability, replication, automated backups, and exports in JSON/PDF.",
-            p3_desc: "Action game set in the 18th century, starring ERAY, a character with magical abilities to defend his home. Includes three types of enemies with different attacks and items that improve the player's statistics. Developed with Unity, available in free executable format.",
-            p4_desc: "2D action game developed with Unity, where players control a spaceship that must face waves of enemies. The game includes power-ups and upgrades for the ship, as well as a scoring system based on survival and enemy destruction. Available in free executable format.",
+            p1_desc: "iOS26-inspired portfolio with HTML, CSS & JS. Dark/light mode, language selector, and Dynamic Island navigation.",
+            p2_desc: "Hotel management app built with Python + PostgreSQL. Reservations, guest management, replication, and automatic backups.",
+            p3_desc: "Action slasher with 3 enemy types and character upgrades. Built with Unity.",
+            p4_desc: "2D space shooter featuring power-ups, scoring system, and enemy waves. Built with Unity.",
             p5_desc: "On-premise ecosystem (.NET 8 & React 19) for tactile restaurant management. Order control, multi-kitchen printing, delivery, and legal invoicing.",
             p5_details: {
                 title: "Snack Tanger 303 – POS & Management Ecosystem",
@@ -461,6 +525,58 @@ const I18N = {
                     "Smart Printing: ESC/POS system for kitchen and bar."
                 ],
                 stack: [".NET", "React", "SQLite", "TailwindCSS", "Entity Framework", "ESC/POS", "GitHub"]
+            },
+            p8_desc: "Corporate web platform and VTC license marketplace in Spain. Includes license management (buy/sell), sector blog, and admin dashboard at /admin.",
+            p8_details: {
+                title: "GetVTC – VTC Marketplace & Consulting",
+                subtitle: "Corporate Web Platform & VTC License Management",
+                description: "Comprehensive platform tailored for the VTC sector in Spain. Combines a public web with a marketplace for buying, selling, and requesting licenses with a private admin dashboard.",
+                features: [
+                    "VTC Marketplace: Real-time license offers management.",
+                    "Admin Dashboard: Control of leads, requests, and posts.",
+                    "Blog & Content: Industry news section and job offers.",
+                    "Serverless Architecture: Cloudflare Pages deployment with Supabase backend."
+                ],
+                stack: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p9_desc: "Public web gallery of AI-generated high-quality food photography for digital menus, POS kiosks, and marketing with zero storage costs.",
+            p9_details: {
+                title: "FoodPix – Food Image Hub",
+                subtitle: "AI-Generated Food Photography Gallery",
+                description: "High-resolution image hub dedicated to food service. Enables restaurant owners and developers to get royalty-free food photos for digital menus and POS systems.",
+                features: [
+                    "Cloudflare R2 Storage: 10GB of WebP images served lightning fast.",
+                    "Internationalization: Multi-language support (ES/EN/FR).",
+                    "Zero Cost: Fully operational on Cloudflare's free tier.",
+                    "Admin Panel: Catalog management via Pages Functions."
+                ],
+                stack: ["React", "Vite", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p10_desc: "Real-time online booking web system for barber shops with automatic notifications via Telegram Bot API, guest booking, and built-in POS.",
+            p10_details: {
+                title: "R7Sultan – Barber Booking & POS",
+                subtitle: "Real-Time Booking Platform & POS System",
+                description: "Next-gen booking system for barber shops. Guarantees zero double-booking via PostgreSQL constraints and instantly notifies barbers via Telegram.",
+                features: [
+                    "Availability Control: Database-level anti-double booking algorithm.",
+                    "Instant Alerts: Automatic notifications via Telegram Bot & Email.",
+                    "Guest Booking: Unique token appointment management without account registration.",
+                    "Admin & POS Panel: Management of appointments, working hours, and cash/card checkout."
+                ],
+                stack: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p11_desc: "Public web and admin panel for Amigos2 restaurant. Interactive digital menu management, promotions, and gallery powered by Supabase.",
+            p11_details: {
+                title: "Amigos2 – Restaurant Web & Admin",
+                subtitle: "Corporate Web Platform & Management Panel",
+                description: "Decoupled dual React solution (Public Web & Admin Panel) enabling the restaurant owner to manage menus, promotions, and photos autonomously.",
+                features: [
+                    "Digital Menu: Categories, items, pricing, and allergen indicators.",
+                    "Admin Panel: Intuitive management dashboard at admin.amigos2.com.",
+                    "Supabase Backend: PostgreSQL database, auth, and media storage.",
+                    "CD Deployment: Continuous integration on Cloudflare Pages."
+                ],
+                stack: ["React", "Vite", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
             }
         },
         contact: { linkedin: "LinkedIn", email: "Email", github: "GitHub", whatsapp: "WhatsApp" },
@@ -534,27 +650,33 @@ const I18N = {
         hero: { title_prefix: "Hola, sóc", subtitle: "Especialista en suport i administració IT, amb experiència en entorns corporatius i públics. Gestiono sistemes Linux i Windows, xarxes, Microsoft 365, maquinari i bases de dades, assegurant operacions estables i eficients. Em motiva resoldre incidències tècniques i millorar l'experiència de l'usuari." },
         cta: { view: "Veure projectes", cv: "Descarregar CV" },
         sections: { exp: "Experiència", sk: "Habilitats", proj: "Projectes", contact: "Contacte",
-            exp_desc: "HIPRA · Ajuntament",
+            exp_desc: "HIPRA · My Home Market · Ajuntament",
             sk_desc: "Xarxes · Cloud · Dev · IA",
             proj_desc: "Snack Tanger · ERAY · Hotel",
             contact_desc: "LinkedIn · Email · GitHub"
         },
         exp: {
-            e1_place: "Juny 2025 - Present", e1_role: "IT Workplace Intern",
-            e1_t1: "Suport tècnic de segon nivell (maquinari, programari i connectivitat).",
-            e1_t2: "Gestió d'incidències mitjançant Remedy i SmartIT.",
-            e1_t3: "Preparació i desplegament d'equips (portàtils, IGEL, perifèrics).",
-            e1_t4: "Configuració d'iOS/Android, telèfons Cisco i escàners.",
-            e1_t5: "Impressora RFID i tèrmiques (Zebra, Honeywell).",
-            e1_t6: "Gestió de garanties i reparacions amb proveïdors.",
-            e1_t7: "Col·laboració en seguretat, pàtching i actualitzacions.",
-            e2_place: "Nov 2023 – Abr 2024", e2_role: "IT Helpdesk Intern",
-            e2_t1: "Suport tècnic presencial i remot per a personal municipal.",
-            e2_t2: "Instal·lació i manteniment d'equips i perifèrics.",
-            e2_t3: "Administració bàsica i permisos d'usuari.",
-            e2_t4: "Eines Linux per a diagnòstic i resolució d'avaries.",
-            e2_t5: "Documentació de procediments i guies d'usuari.",
-            e2_t6: "Preparació i desplegament d'equips."
+            e1_place: "Maig 2026 - Present", e1_role: "IT Workplace Technician",
+            e1_t1: "IT Procurement (SAP): Gestió de compres de maquinari, pressupostos i proves PoC (Try and Buy).",
+            e1_t2: "Projectes Industrials: Coordinació del desplegament d'infraestructura IT en plantes de producció.",
+            e1_t3: "Maquinari i Rènting: Administració de dispositius Apple/Dell, aprovisionament i contractes de rènting.",
+            e1_t4: "Sales AV: Gestió de sales de videoconferència (Cisco Room Bar, Evoko) i migració a MS Teams.",
+            e1_t5: "IT Onboarding i Seguretat: Sessions setmanals d'acollida tècnica i bones pràctiques en ciberseguretat.",
+            e1_t6: "Operacions Diàries: Suport tècnic L2 i resolució d'incidències corporatives i industrials.",
+
+            e2_place: "Juny 2025 - Maig 2026", e2_role: "IT Workplace Intern",
+            e2_t1: "Suport L2 i M365: Resolució d'incidències complexes i gestió d'usuaris Microsoft 365.",
+            e2_t2: "Ticketing i Desplegaments: Incidències a Remedy/SmartIT i preparació d'equips (portàtils, IGEL).",
+            e2_t3: "Mòbils i Impressió: Configuració d'iOS/Android, VoIP Cisco i impressores RFID/tèrmiques (Zebra/Honeywell).",
+            e2_t4: "Seguretat i Garanties: Coordinació amb proveïdors de maquinari i desplegament de parches de seguretat.",
+
+            e3_place: "Juliol 2020 - Juny 2025", e3_role: "Sales Assistant",
+            e3_t1: "Atenció al Client: Assessorament personalitzat i identificació de necessitats.",
+            e3_t2: "Gestió d'Estoc i Caixa: Control d'inventari, reposició de productes i operacions de caixa.",
+
+            e4_place: "Novembre 2023 – Abril 2024", e4_role: "IT Helpdesk Intern",
+            e4_t1: "Suport Municipal: Suport presencial i remot a usuaris municipals en maquinari, programari i xarxa.",
+            e4_t2: "Sistemes i Guies: Diagnòstic amb eines Linux, gestió de permisos i creació de manuals d'usuari."
         },
         skills: {
             categories: {
@@ -701,7 +823,71 @@ const I18N = {
                 ],
                 stack: ["C#", ".NET 8", "React 19", "Vite", "TailwindCSS", "SQLite", "Entity Framework", "ESC/POS"]
             },
-            p7_desc: "Ecosistema integral TPV i Carta Digital per a The Kebab Lab. Gestió de comandes en temps real, KDS, administració avançada i desplegament automàtic. Stack: Python (FastAPI), React i PostgreSQL."
+            p7_desc: "Ecosistema integral TPV i Carta Digital per a The Kebab Lab. Gestió de comandes en temps real, KDS, administració avançada i desplegament automàtic.",
+            p7_details: {
+                title: "The Kebab Lab – TPV & Management Ecosystem",
+                subtitle: "Solució de gestió 360° per a restauració moderna",
+                description: "Plataforma professional dissenyada per optimitzar el cicle complet d'un restaurant. Basat en l'ecosistema Snack Tanger, adaptat a les necessitats específiques de The Kebab Lab.",
+                features: [
+                    "Gestió Tàctil: UX optimitzada per a tablets.",
+                    "Multi-Delivery: Integració de plataformes externes.",
+                    "Facturació Legal: Informes Informe Z i tiquets legals.",
+                    "Smart Printing: Sistema ESC/POS per a cuina i barra."
+                ],
+                stack: [".NET", "React", "SQLite", "TailwindCSS", "Entity Framework", "ESC/POS", "GitHub"]
+            },
+            p8_desc: "Plataforma web corporativa i marketplace de llicències VTC a Espanya. Inclou gestió de llicències (comprar/vendre), blog del sector i tauler d'administració a /admin.",
+            p8_details: {
+                title: "GetVTC – Marketplace & Consultoria VTC",
+                subtitle: "Plataforma web corporativa i gestió de llicències VTC",
+                description: "Plataforma integral orientada al sector VTC a Espanya. Combina una web pública amb marketplace per comprar, vendre i sol·licitar llicències amb un tauler d'administració per a la gestió de clients i continguts.",
+                features: [
+                    "Marketplace VTC: Gestió d'ofertes de llicències en temps real.",
+                    "Tauler Admin: Control de leads, sol·licituds i publicacions.",
+                    "Contingut & Blog: Secció d'actualitat i ofertes de feina.",
+                    "Arquitectura Serverless: Desplegament a Cloudflare Pages amb backend Supabase."
+                ],
+                stack: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p9_desc: "Galeria web pública d'imatges gastronòmiques generades amb IA d'alta qualitat per a cartes digitals, TPVs i màrqueting sense costos d'emmagatzematge.",
+            p9_details: {
+                title: "FoodPix – Food Image Hub",
+                subtitle: "Galeria d'imatges gastronòmiques generades amb IA",
+                description: "Banc d'imatges d'alta resolució dedicat a la restauració. Permet a propietaris i desenvolupadors obtenir fotografies de menjar per a menús digitals i TPVs sense drets d'autor.",
+                features: [
+                    "Emmagatzematge Cloudflare R2: 10GB d'imatges servides en WebP.",
+                    "Internacionalització: Suport multiidioma (ES/EN/FR).",
+                    "Zero Costos: Operativitat total sobre la capa gratuïta de Cloudflare.",
+                    "Tauler Admin: Gestió de catàleg mitjançant Pages Functions."
+                ],
+                stack: ["React", "Vite", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p10_desc: "Sistema web de reserves online en temps real per a mebrosseries/barberies amb notificacions automàtiques per Telegram Bot API, gestió sense registre i TPV integrat.",
+            p10_details: {
+                title: "R7Sultan – Reserves & TPV Barberia",
+                subtitle: "Plataforma de reserves en temps real i gestió TPV",
+                description: "Sistema de reserves d'última generació per a barberies. Garanteix disponibilitat sense encavalcaments mitjançant constraints a PostgreSQL i notifica instantàniament al barber via Telegram.",
+                features: [
+                    "Control de Disponibilitat: Algoritme anti-double booking en base de dades.",
+                    "Alertes Instantànies: Notificacions automàtiques per Telegram Bot i Email.",
+                    "Accés Directe: Gestió de cita mitjançant token únic sense necessitat de registre.",
+                    "Tauler Admin & TPV: Control de cites, horaris i registre de cobraments (Efectiu/Targeta/Bizum)."
+                ],
+                stack: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p11_desc: "Web pública i tauler d'administració per al restaurant Amigos2. Gestió interactiva de carta digital, promocions i galeria amb backend Supabase.",
+            p11_details: {
+                title: "Amigos2 – Web & Admin Restauració",
+                subtitle: "Plataforma web corporativa i tauler de gestió",
+                description: "Solució desacoblada en dues aplicacions React (Web pública i Tauler Admin) que permet al propietari gestionar la carta, promocions i fotos del restaurant de forma autònoma.",
+                features: [
+                    "Carta Digital: Categories, productes, preus i al·lèrgens.",
+                    "Tauler de Gestió: Administració intuïtiva a admin.amigos2.com.",
+                    "Supabase Backend: Base de dades PostgreSQL, autenticació i emmagatzematge.",
+                    "Desplegament CD: Integració contínua a Cloudflare Pages."
+                ],
+                stack: ["React", "Vite", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
+            }
         },
         contact: { linkedin: "LinkedIn", email: "Email", github: "GitHub", whatsapp: "WhatsApp" },
         system: {
@@ -769,27 +955,33 @@ const I18N = {
         hero: { title_prefix: "Salut, je suis", subtitle: "Spécialiste en assistance et administration informatique, avec une expérience dans les environnements d'entreprise et publics. Je gère les systèmes Linux et Windows, les réseaux, Microsoft 365, le matériel et les bases de données, en garantissant des opérations stables et efficaces. Je suis motivé par la résolution des incidents techniques et l'amélioration de l'expérience utilisateur." },
         cta: { view: "Voir les projets", cv: "Télécharger le CV" },
         sections: { exp: "Expérience", sk: "Compétences", proj: "Projets", contact: "Contact",
-            exp_desc: "HIPRA · Ajuntament",
+            exp_desc: "HIPRA · My Home Market · Ajuntament",
             sk_desc: "Réseaux · Cloud · Dev · IA",
             proj_desc: "Snack Tanger · ERAY · Hotel",
             contact_desc: "LinkedIn · Email · GitHub"
         },
         exp: {
-            e1_place: "Juin 2025 - Présent", e1_role: "IT Workplace Intern",
-            e1_t1: "Assistance technique de deuxième niveau (matériel, logiciels et connectivité).",
-            e1_t2: "Gestion des incidents via Remedy et SmartIT.",
-            e1_t3: "Préparation et déploiement d'équipements (ordinateurs portables, IGEL, périphériques).",
-            e1_t4: "Configuration de mobiles iOS/Android, de téléphones Cisco et de scanners.",
-            e1_t5: "Imprimantes RFID et thermiques (Zebra, Honeywell).",
-            e1_t6: "Gestion des garanties et des réparations avec les fournisseurs.",
-            e1_t7: "Collaboration en matière de sécurité, de correctifs et de mises à jour.",
-            e2_place: "Nov 2023 – Avr 2024", e2_role: "IT Helpdesk Intern",
-            e2_t1: "Assistance technique sur site et à distance pour le personnel municipal.",
-            e2_t2: "Installation et maintenance des équipements et périphériques.",
-            e2_t3: "Administration basique et gestion des permissions d'utilisateur.",
-            e2_t4: "Outils Linux pour le diagnostic et la résolution des pannes.",
-            e2_t5: "Documentation des procédures et guides d'utilisation.",
-            e2_t6: "Préparation et déploiement d'équipements."
+            e1_place: "Mai 2026 - Présent", e1_role: "IT Workplace Technician",
+            e1_t1: "IT Procurement (SAP): Gestion des achats matériel, devis et tests PoC (Try and Buy).",
+            e1_t2: "Projets Industriels: Coordination du déploiement d'infrastructures IT sur les sites de production.",
+            e1_t3: "Matériel & Leasing: Administration du parc Apple/Dell, approvisionnement et contrats de leasing.",
+            e1_t4: "Salles AV: Gestion des équipements de visioconférence (Cisco Room Bar, Evoko) et migration vers MS Teams.",
+            e1_t5: "IT Onboarding & Sécurité: Animation des sessions d'intégration technique et formation en cybersécurité.",
+            e1_t6: "Opérations Quotidiennes: Support technique L2 et résolution des tickets d'entreprise et industriels.",
+
+            e2_place: "Juin 2025 - Mai 2026", e2_role: "IT Workplace Intern",
+            e2_t1: "Support L2 & M365: Résolution d'incidents complexes et administration des comptes Microsoft 365.",
+            e2_t2: "Ticketing & Masterisation: Gestion des tickets (Remedy/SmartIT) et déploiement de PC et clients IGEL.",
+            e2_t3: "Mobiles & Impression: Configuration iOS/Android, VoIP Cisco et imprimantes thermiques/RFID (Zebra/Honeywell).",
+            e2_t4: "Sécurité & Garanties: Coordination fournisseurs pour réparations et déploiement des correctifs de sécurité.",
+
+            e3_place: "Juillet 2020 - Juin 2025", e3_role: "Sales Assistant",
+            e3_t1: "Service Client: Conseil personnalisé et accompagnement pour maximiser la satisfaction client.",
+            e3_t2: "Stocks & Caisse: Gestion de l'inventaire, réapprovisionnement et encaissement.",
+
+            e4_place: "Novembre 2023 – Avril 2024", e4_role: "IT Helpdesk Intern",
+            e4_t1: "Support Municipal: Support technique sur site et à distance pour le personnel municipal.",
+            e4_t2: "Systèmes & Guides: Diagnostic Linux, gestion des autorisations et rédaction de guides utilisateurs."
         },
         skills: {
             categories: {
@@ -921,10 +1113,10 @@ const I18N = {
             }
         },
         projects: {
-            p1_desc: "Portfolio personnel inspiré de l'interface iOS26, développé avec HTML, CSS et JavaScript. Il présente l'expérience professionnelle, les compétences et les projets dans un design moderne et réactif. Il comprend un mode sombre/clair, une sélection de langue et une « Dynamic Island » interactive pour la navigation.",
-            p2_desc: "Application complète pour la gestion intégrale d'une chaîne hôtelière. Elle comprend le contrôle des réservations, des clients, du personnel, des services et l'audit des données. Développée en Python (Tkinter) avec une base de données PostgreSQL, elle intègre la sécurité, la haute disponibilité, la réplication, les sauvegardes automatisées et les exportations en JSON/PDF.",
-            p3_desc: "Jeu d'action se déroulant au XVIIIe siècle, mettant en scène ERAY, un personnage doté de pouvoirs magiques pour défendre son foyer. Il comprend trois types d'ennemis avec des attaques différentes et des objets qui améliorent les statistiques du joueur. Développé avec Unity, disponible en format exécutable gratuit.",
-            p4_desc: "Jeu d'action en 2D développé avec Unity, dans lequel les joueurs contrôlent un vaisseau spatial qui doit affronter des vagues d'ennemis. Le jeu comprend des bonus et des améliorations pour le vaisseau, ainsi qu'un système de score basé sur la survie et la destruction des ennemis. Disponible en format exécutable gratuit.",
+            p1_desc: "Portfolio inspiré d'iOS26 avec HTML, CSS & JS. Mode sombre/clair, sélecteur de langue et Dynamic Island.",
+            p2_desc: "Application de gestion hôtelière en Python + PostgreSQL. Réservations, utilisateurs, réplication et sauvegardes.",
+            p3_desc: "Jeu d'action avec 3 types d'ennemis et améliorations de personnage. Conçu avec Unity.",
+            p4_desc: "Shooter 2D avec power-ups, système de score et vagues d'ennemis. Conçu avec Unity.",
             p5_desc: "Écosystème on-premise (.NET 8 & React 19) pour la gestion tactile des restaurants. Contrôle des commandes, impression multi-cuisine, livraison et facturation légale.",
             p5_details: {
                 title: "Snack Tanger 303 – TPV & Management Ecosystem",
@@ -940,7 +1132,71 @@ const I18N = {
                 ],
                 stack: ["C#", ".NET 8", "React 19", "Vite", "TailwindCSS", "SQLite", "Entity Framework", "ESC/POS"]
             },
-            p7_desc: "Système de point de vente (TPV) complet et Menu Numérique pour The Kebab Lab. Gestion des commandes en temps réel, KDS, administration avancée et déploiement automatisé. Stack : Python (FastAPI), React et PostgreSQL."
+            p7_desc: "Système de point de vente (TPV) complet et Menu Numérique pour The Kebab Lab. Gestion des commandes en temps réel, KDS, administration avancée et déploiement automatisé.",
+            p7_details: {
+                title: "The Kebab Lab – TPV & Management Ecosystem",
+                subtitle: "Solution de gestion 360° pour la restauration moderne",
+                description: "Plateforme professionnelle conçue pour optimiser le cycle complet d'un restaurant. Basé sur l'écosystème Snack Tanger, adapté aux besoins spécifiques de The Kebab Lab.",
+                features: [
+                    "Gestion Tactile : UX optimisée pour les tablettes.",
+                    "Multi-Livraison : Intégration de plateformes externes.",
+                    "Facturation Légale : Rapports Z et tickets légaux.",
+                    "Impression Intelligente : Système ESC/POS pour cuisine et bar."
+                ],
+                stack: [".NET", "React", "SQLite", "TailwindCSS", "Entity Framework", "ESC/POS", "GitHub"]
+            },
+            p8_desc: "Plateforme web d'entreprise et marketplace de licences VTC en Espagne. Gestion des licences (achat/vente), blog sectoriel et panneau admin sur /admin.",
+            p8_details: {
+                title: "GetVTC – Marketplace & Conseil VTC",
+                subtitle: "Plateforme web d'entreprise et gestion de licences VTC",
+                description: "Plateforme complète adaptée au secteur VTC en Espagne. Combine un site public avec marketplace d'achat/vente de licences et un panneau d'administration.",
+                features: [
+                    "Marketplace VTC: Gestion en temps réel des offres de licences.",
+                    "Panneau Admin: Contrôle des leads, demandes et publications.",
+                    "Contenu & Blog: Actualités du secteur et offres d'emploi.",
+                    "Architecture Serverless: Déploiement Cloudflare Pages avec backend Supabase."
+                ],
+                stack: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p9_desc: "Galerie web publique de photos culinaires générées par IA pour cartes numériques, kiosques TPV et marketing sans frais de stockage.",
+            p9_details: {
+                title: "FoodPix – Food Image Hub",
+                subtitle: "Galerie de photographies culinaires IA",
+                description: "Banque d'images haute résolution dédiée à la restauration. Permet d'obtenir des photos de nourriture gratuites et libres de droits pour menús et TPVs.",
+                features: [
+                    "Stockage Cloudflare R2: 10 Go d'images WebP servies à très haute vitesse.",
+                    "Internationalisation: Support multilingue (ES/EN/FR).",
+                    "Zéro Coût: Fonctionnement sur l'offre gratuite de Cloudflare.",
+                    "Panneau Admin: Gestion du catalogue via Pages Functions."
+                ],
+                stack: ["React", "Vite", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p10_desc: "Système de réservation en ligne en temps réel pour salons de coiffure avec notifications Telegram Bot API et TPV intégré.",
+            p10_details: {
+                title: "R7Sultan – Réservations & TPV Coiffure",
+                subtitle: "Plateforme de réservation en temps réel et TPV",
+                description: "Système de réservation pour salons de coiffure. Garantit la disponibilité sans double réservation grâce aux contraintes PostgreSQL et notifie via Telegram.",
+                features: [
+                    "Contrôle de Disponibilité: Algorithme anti-double réservation.",
+                    "Alertes Instantanées: Notifications automatiques Telegram Bot & Email.",
+                    "Réservation Sans Compte: Lien unique de gestion du rendez-vous.",
+                    "Panneau Admin & TPV: Suivi des rendez-vous et encaissements (Espèces/Carte/Bizum)."
+                ],
+                stack: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p11_desc: "Site web public et panneau d'administration pour le restaurant Amigos2. Gestion interactive du menu numérique, promotions et galerie via Supabase.",
+            p11_details: {
+                title: "Amigos2 – Web & Admin Restauration",
+                subtitle: "Plateforme web d'entreprise et panneau de gestion",
+                description: "Solution React découplée permettant au restaurateur de gérer son menu, ses offres et sa galerie en toute autonomie.",
+                features: [
+                    "Menu Numérique: Catégories, plats, prix et allergènes.",
+                    "Panneau de Gestion: Administration intuitive sur admin.amigos2.com.",
+                    "Supabase Backend: Base de données PostgreSQL, auth et stockage.",
+                    "Déploiement CD: Intégration continue sur Cloudflare Pages."
+                ],
+                stack: ["React", "Vite", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
+            }
         },
         contact: { linkedin: "LinkedIn", email: "Email", github: "GitHub", whatsapp: "WhatsApp" },
         system: {
@@ -1004,27 +1260,33 @@ const I18N = {
         hero: { title_prefix: "Hallo, ich bin", subtitle: "Spezialist für IT-Support und -Administration mit Erfahrung in Unternehmens- und öffentlichen Umgebungen. Ich verwalte Linux- und Windows-Systeme, Netzwerke, Microsoft 365, Hardware und Datenbanken und sorge für einen stabilen und effizienten Betrieb. Es motiviert mich, technische Probleme zu lösen und die Benutzererfahrung zu verbessern." },
         cta: { view: "Projekte ansehen", cv: "Lebenslauf herunterladen" },
         sections: { exp: "Erfahrung", sk: "Fähigkeiten", proj: "Projekte", contact: "Kontakt",
-            exp_desc: "HIPRA · Ajuntament",
+            exp_desc: "HIPRA · My Home Market · Ajuntament",
             sk_desc: "Netzwerk · Cloud · Dev · IA",
             proj_desc: "Snack Tanger · ERAY · Hotel",
             contact_desc: "LinkedIn · Email · GitHub"
         },
         exp: {
-            e1_place: "Juni 2025 - Heute", e1_role: "IT Workplace Intern",
-            e1_t1: "Technischer Support der Stufe 2 für Hardware, Software und Konnektivität.",
-            e1_t2: "Vorfallmanagement mit Remedy / SmartIT.",
-            e1_t3: "Vorbereitung und Bereitstellung von Geräten (Laptops, IGEL, Peripheriegeräte).",
-            e1_t4: "Konfiguration von iOS/Android, Cisco-Telefonen und Scannern.",
-            e1_t5: "RFID- und Thermodrucker (Zebra, Honeywell).",
-            e1_t6: "Verwaltung von Garantien und Reparaturen mit Lieferanten.",
-            e1_t7: "Zusammenarbeit bei Sicherheit, Patches und Updates.",
-            e2_place: "Nov 2023 – Apr 2024", e2_role: "IT Helpdesk Intern",
-            e2_t1: "Technischer Support vor Ort und per Fernzugriff für Mitarbeiter der Stadtverwaltung.",
-            e2_t2: "Installation und Wartung von Geräten und Peripheriegeräten.",
-            e2_t3: "Grundlegende Systemadministration und Benutzerberechtigungen.",
-            e2_t4: "Linux-Tools zur Diagnose und Fehlerbehebung.",
-            e2_t5: "Dokumentation von Verfahren und Benutzerhandbüchern.",
-            e2_t6: "Vorbereitung und Bereitstellung von Geräten."
+            e1_place: "Mai 2026 - Heute", e1_role: "IT Workplace Technician",
+            e1_t1: "IT Procurement (SAP): Hardware-Einkauf, Angebotseinholung und PoC-Tests (Try & Buy).",
+            e1_t2: "Industrieprojekte: Koordination von IT-Infrastruktur-Deployments in Produktionsstätten.",
+            e1_t3: "Hardware & Leasing: Verwaltung der Apple/Dell-Flotte, Bereitstellung und Leasing-Verträge.",
+            e1_t4: "AV-Lösungen: Betreuung von Videokonferenzräumen (Cisco Room Bar, Evoko) und Migration zu MS Teams.",
+            e1_t5: "IT Onboarding & Sicherheit: Wöchentliche IT-Einführungssitzungen und Schulungen zur Cybersicherheit.",
+            e1_t6: "Tagesgeschäft: L2-Support und Bearbeitung von Unternehmens- und Industrie-Tickets.",
+
+            e2_place: "Juni 2025 - Mai 2026", e2_role: "IT Workplace Intern",
+            e2_t1: "L2-Support & M365: Behebung komplexer Störungen und Verwaltung von Microsoft 365-Konten.",
+            e2_t2: "Ticket-Systeme & Staging: Incident-Management (Remedy/SmartIT) und Staging von Laptops/IGEL-Clients.",
+            e2_t3: "Mobilgeräte & Druck: Konfiguration von iOS/Android, Cisco VoIP und RFID-/Thermodruckern (Zebra/Honeywell).",
+            e2_t4: "Sicherheit & Garantie: Lieferantenkoordination für Reparaturen und Einspielen von Sicherheits-Patches.",
+
+            e3_place: "Juli 2020 - Juni 2025", e3_role: "Sales Assistant",
+            e3_t1: "Kundenbetreuung: Individuelle Beratung, Bedarfsanalyse und Steigerung der Kundenzufriedenheit.",
+            e3_t2: "Bestand & Kasse: Inventarkontrolle, Warennachbestellung und Abwicklung des Kassenbetriebs.",
+
+            e4_place: "November 2023 – April 2024", e4_role: "IT Helpdesk Intern",
+            e4_t1: "Kommunaler Support: Vor-Ort- und Remote-IT-Support für städtische Mitarbeiter.",
+            e4_t2: "Systeme & Handbücher: Linux-Diagnose-Werkzeuge, Rechtevergabe und Erstellung von Anleitungen."
         },
         skills: {
             categories: {
@@ -1156,10 +1418,10 @@ const I18N = {
             }
         },
         projects: {
-            p1_desc: "Persönliches Portfolio, inspiriert von der Benutzeroberfläche von iOS26, entwickelt mit HTML, CSS und JavaScript. Präsentiert Berufserfahrung, Fähigkeiten und Projekte in einem modernen und responsiven Design. Enthält einen Dunkel-/Hellmodus, Sprachauswahl und eine interaktive “Dynamic Island“ für die Navigation.",
-            p2_desc: "Anwendung zur umfassenden Verwaltung einer Hotelkette. Sie umfasst die Verwaltung von Buchungen, Gästen, Personal, Dienstleistungen und die Datenprüfung. Entwickelt in Python (Tkinter) mit einer PostgreSQL-Datenbank, integriert sie Sicherheit, hohe Verfügbarkeit, Replikation, automatisierte Backups und Exporte im JSON/PDF-Format.",
-            p3_desc: "Action-Spiel, das im 18. Jahrhundert spielt und ERAY, einen Charakter mit magischen Kräften zur Verteidigung seines Heims, in den Mittelpunkt stellt. Es umfasst drei Arten von Feinden mit unterschiedlichen Angriffen und Objekten, die die Statistiken des Spielers verbessern. Entwickelt mit Unity, verfügbar im kostenlosen ausführbaren Format.",
-            p4_desc: "2D-Action-Spiel, das mit Unity entwickelt wurde, in dem die Spieler ein Raumschiff steuern, das gegen Wellen von Feinden antreten muss. Das Spiel umfasst Boni und Verbesserungen für das Raumschiff sowie ein Punktesystem, das auf Überleben und Zerstörung von Feinden basiert. Verfügbar im kostenlosen ausführbaren Format.",
+            p1_desc: "Portfolio im iOS26-Design mit HTML, CSS & JS. Dunkel-/Hellmodus, Sprachauswahl und Dynamic Island.",
+            p2_desc: "Hotelmanagement-App mit Python + PostgreSQL. Buchungen, Benutzerverwaltung, Replikation und automatische Backups.",
+            p3_desc: "Action-Slasher mit 3 Gegner-Typen und Charakter-Upgrades. Entwickelt mit Unity.",
+            p4_desc: "2D-Space-Shooter mit Power-Ups, Punktesystem und Gegnerwellen. Entwickelt mit Unity.",
             p5_desc: "On-Premise-Ökosystem (.NET 8 & React 19) für die taktile Restaurantverwaltung. Bestellkontrolle, Multi-Küchendruck, Lieferung und Abrechnung.",
             p5_details: {
                 title: "Snack Tanger 303 – POS & Management Ecosystem",
@@ -1175,7 +1437,71 @@ const I18N = {
                 ],
                 stack: ["C#", ".NET 8", "React 19", "Vite", "TailwindCSS", "SQLite", "Entity Framework", "ESC/POS"]
             },
-            p7_desc: "Integriertes Kassensystem (POS) und digitale Speisekarte für The Kebab Lab. Echtzeit-Bestellverwaltung, KDS, erweiterte Administration und automatisierte Bereitstellung. Stack: Python (FastAPI), React und PostgreSQL."
+            p7_desc: "Integriertes Kassensystem (POS) und digitale Speisekarte für The Kebab Lab. Echtzeit-Bestellverwaltung, KDS, erweiterte Administration und automatisierte Bereitstellung.",
+            p7_details: {
+                title: "The Kebab Lab – POS & Management Ecosystem",
+                subtitle: "360°-Management-Lösung für moderne Restaurants",
+                description: "Professionelle Plattform zur Optimierung des gesamten Restaurantzyklus. Basiert auf dem Snack Tanger-Ökosystem, angepasst an die Anforderungen von The Kebab Lab.",
+                features: [
+                    "Taktile Verwaltung: Optimierte UX für Tablets.",
+                    "Multi-Delivery: Integration externer Lieferplattformen.",
+                    "Rechnungsstellung: Z-Berichte und gesetzliche Belege.",
+                    "Smart Printing: ESC/POS-System für Küche und Bar."
+                ],
+                stack: [".NET", "React", "SQLite", "TailwindCSS", "Entity Framework", "ESC/POS", "GitHub"]
+            },
+            p8_desc: "Unternehmenswebseite und VTC-Lizenz-Marketplace in Spanien. Beinhaltet Lizenzverwaltung (Kauf/Verkauf), Branchenblog und Admin-Dashboard unter /admin.",
+            p8_details: {
+                title: "GetVTC – Marketplace & VTC-Beratung",
+                subtitle: "Unternehmens-Webplattform & VTC-Lizenzverwaltung",
+                description: "Umfassende Plattform für den VTC-Sektor in Spanien. Kombiniert eine öffentliche Website mit Lizenz-Marketplace und privatem Admin-Dashboard.",
+                features: [
+                    "VTC Marketplace: Echtzeitverwaltung von Lizenzangeboten.",
+                    "Admin-Dashboard: Kontrolle von Leads, Anfragen und Beiträgen.",
+                    "Blog & Inhalte: Branchennews und Stellenangebote.",
+                    "Serverless-Architektur: Cloudflare Pages-Deployment mit Supabase-Backend."
+                ],
+                stack: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p9_desc: "Öffentliche Webgalerie für KI-generierte Food-Fotografie für digitale Speisekarten, Kassensysteme und Marketing ohne Speicherkosten.",
+            p9_details: {
+                title: "FoodPix – Food Image Hub",
+                subtitle: "Galerie für KI-generierte Food-Fotografie",
+                description: "Hochauflösende Bilddatenbank für die Gastronomie. Ermöglicht Restaurantbesitzern und Entwicklern den Zugriff auf lizenzfreie Essensfotos.",
+                features: [
+                    "Cloudflare R2 Storage: 10 GB WebP-Bilder rasend schnell serviert.",
+                    "Internationalisierung: Mehrsprachige Unterstützung (ES/EN/FR).",
+                    "Null Kosten: Vollständiger Betrieb im kostenlosen Cloudflare-Tarif.",
+                    "Admin-Panel: Katalogverwaltung über Pages Functions."
+                ],
+                stack: ["React", "Vite", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p10_desc: "Echtzeit-Online-Buchungssystem für Friseursalons mit automatischen Benachrichtigungen über Telegram Bot API und integriertem Kassensystem.",
+            p10_details: {
+                title: "R7Sultan – Friseur-Buchung & POS",
+                subtitle: "Echtzeit-Buchungsplattform & Kassensystem",
+                description: "Buchungssystem der nächsten Generation für Friseursalons. Garantiert überschneidungsfreie Terminvergabe und benachrichtigt Friseure sofort via Telegram.",
+                features: [
+                    "Verfügbarkeitskontrolle: Anti-Doppelbuchungs-Algorithmus auf Datenbankebene.",
+                    "Sofortige Benachrichtigungen: Automatische Telegram Bot- und E-Mail-Hinweise.",
+                    "Gast-Buchung: Terminverwaltung über eindeutigen Token ohne Registrierung.",
+                    "Admin- & POS-Panel: Verwaltung von Terminen, Arbeitszeiten und Kassenabrechnung."
+                ],
+                stack: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
+            },
+            p11_desc: "Öffentliche Website und Admin-Panel für das Restaurant Amigos2. Interaktive digitale Speisekarte, Aktionen und Galerie powered by Supabase.",
+            p11_details: {
+                title: "Amigos2 – Restaurant Web & Admin",
+                subtitle: "Unternehmens-Webplattform & Management-Panel",
+                description: "Entkoppelte duale React-Lösung, die es dem Inhaber ermöglicht, Speisekarte, Aktionen und Fotos selbstständig zu verwalten.",
+                features: [
+                    "Digitale Speisekarte: Kategorien, Produkte, Preise und Allergene.",
+                    "Management-Panel: Intuitive Verwaltung unter admin.amigos2.com.",
+                    "Supabase-Backend: PostgreSQL-Datenbank, Auth und Medien-Speicher.",
+                    "CD-Deployment: Kontinuierliche Integration auf Cloudflare Pages."
+                ],
+                stack: ["React", "Vite", "PostgreSQL", "TailwindCSS", "Cloudflare", "GitHub"]
+            }
         },
         contact: { linkedin: "LinkedIn", email: "E-Mail", github: "GitHub", whatsapp: "WhatsApp" },
         system: {

@@ -7,6 +7,7 @@
    THEME
 ═══════════════════════════════════════════════ */
 function applyTheme(theme) {
+    document.body.classList.add('theme-transitioning');
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
 
@@ -49,6 +50,10 @@ function applyTheme(theme) {
     document.body.style.backgroundImage = `url('${randomWall}')`;
     const loginScreen = document.getElementById('loginScreen');
     if (loginScreen) loginScreen.style.backgroundImage = `url('${randomWall}')`;
+
+    setTimeout(() => {
+        document.body.classList.remove('theme-transitioning');
+    }, 600);
 }
 
 function toggleTheme() {
@@ -113,32 +118,53 @@ function setupReveal() {
 function setupSkills() {
     const btns = document.querySelectorAll('.skill-cat-btn');
     const groups = document.querySelectorAll('.skills-group');
+    const mobileSelect = document.getElementById('skillsMobileSelect');
     
+    function activateCategory(target) {
+        if (!target) return;
+
+        // Update desktop buttons
+        btns.forEach(b => {
+            if (b.getAttribute('data-target') === target) {
+                b.classList.add('active');
+            } else {
+                b.classList.remove('active');
+            }
+        });
+
+        // Sync mobile select value
+        if (mobileSelect && mobileSelect.value !== target) {
+            mobileSelect.value = target;
+        }
+
+        // Update active group display
+        groups.forEach(g => {
+            if (g.id === target) {
+                g.classList.add('active');
+            } else {
+                g.classList.remove('active');
+            }
+        });
+
+        // Mobile scroll to top of display
+        if (window.innerWidth <= 900) {
+            const display = document.querySelector('.skills-display');
+            if (display) display.scrollTop = 0;
+        }
+    }
+
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
             const target = btn.getAttribute('data-target');
-            if (!target) return;
-
-            // Update buttons
-            btns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            
-            // Update groups
-            groups.forEach(g => {
-                if (g.id === target) {
-                    g.classList.add('active');
-                } else {
-                    g.classList.remove('active');
-                }
-            });
-            
-            // Mobile scroll to top of display
-            if (window.innerWidth <= 900) {
-                const display = document.querySelector('.skills-display');
-                if (display) display.scrollTop = 0;
-            }
+            activateCategory(target);
         });
     });
+
+    if (mobileSelect) {
+        mobileSelect.addEventListener('change', (e) => {
+            activateCategory(e.target.value);
+        });
+    }
 }
 
 /* ═══════════════════════════════════════════════
