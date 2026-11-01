@@ -1,1787 +1,237 @@
 <!doctype html>
 <html lang="es">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="google-site-verification" content="HymCg807hs8qPjWImDNcNYt4uszffAdlPjhLlyQZ57g" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="google-site-verification" content="HymCg807hs8qPjWImDNcNYt4uszffAdlPjhLlyQZ57g">
+  <title>Ayoub El Khalifi Idrissi El Jerari · Portafolio</title>
+  <meta name="description" content="Portafolio de Ayoub El Khalifi Idrissi El Jerari: técnico IT en HIPRA y desarrollador de webs, TPV y apps en producción como QuiCondueix, R7Sultan, GetVTC o The Kebab Lab.">
+  <meta name="author" content="Ayoub El Khalifi Idrissi El Jerari">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ayoubjerari.com/">
+  <meta name="theme-color" content="#0b0c0f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f4f0" media="(prefers-color-scheme: light)">
 
-  <!-- SEO Principal -->
-  <title>Ayoub Jerari</title>
-  <meta name="description"
-    content="Especialista en infraestructura IT, administración de sistemas Windows/Linux, operaciones de red, cloud computing (Azure, AWS) y automatización. Experiencia en soporte técnico, virtualización y gestión de bases de datos." />
-  <meta name="keywords"
-    content="Ayoub Jerari, Infrastructure Specialist, Network Operations, SysAdmin, IT Support, Linux, Windows Server, Azure, AWS, Docker, Python, Networking, Cloud Computing" />
-  <meta name="author" content="Ayoub El Khalifi Idrissi El Jerari" />
-  <meta name="theme-color" content="#0b0d12" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://ayoubjerari.com/" />
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ayoubjerari.com/">
+  <meta property="og:site_name" content="Ayoub · Portafolio">
+  <meta property="og:title" content="Ayoub · IT Workplace Technician & Web Developer">
+  <meta property="og:description" content="Técnico IT en HIPRA y desarrollador de webs, TPV y apps en producción.">
+  <meta property="og:image" content="https://ayoubjerari.com/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://ayoubjerari.com/assets/img/og.png">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ayoubjerari.com/" />
-  <meta property="og:site_name" content="Ayoub Jerari Portfolio" />
-  <meta property="og:title" content="Ayoub Jerari — Infrastructure & Network Operations Specialist" />
-  <meta property="og:description"
-    content="Especialista en infraestructura IT, administración de sistemas Windows/Linux, operaciones de red y cloud computing. Portafolio profesional." />
-  <meta property="og:image" content="https://ayoubjerari.com/img/foto.webp" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="es_ES" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@ayoubjerari" />
-  <meta name="twitter:creator" content="@ayoubjerari" />
-  <meta name="twitter:title" content="Ayoub Jerari — Infrastructure & Network Operations Specialist" />
-  <meta name="twitter:description"
-    content="Especialista en infraestructura IT, administración de sistemas Windows/Linux, operaciones de red y cloud computing." />
-  <meta name="twitter:image" content="https://ayoubjerari.com/img/foto.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="preload" as="image" href="assets/img/foto.webp">
 
-  <link rel="icon" href="img/favicon.webp" />
-  
-  <!-- CSS Optimization: Separate links for parallel loading -->
-  <link rel="stylesheet" href="CSS/core/variables.css" />
-  <link rel="stylesheet" href="CSS/core/base.css" />
-  <link rel="stylesheet" href="CSS/core/layout.css" />
-  <link rel="stylesheet" href="CSS/components.css" />
-  <link rel="stylesheet" href="CSS/pages/login.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script>
+    (function () {
+      try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+      document.documentElement.classList.add('js');
+    })();
+  </script>
 
-  <!-- Preload Critical Assets -->
-  <link rel="preload" href="img/logos/Apple-Logo.webp" as="image">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ayoub El Khalifi Idrissi El Jerari",
+    "url": "https://ayoubjerari.com/",
+    "jobTitle": "IT Workplace Technician",
+    "worksFor": { "@type": "Organization", "name": "Laboratorios HIPRA" },
+    "sameAs": ["https://www.linkedin.com/in/ayoub-jerari/", "https://github.com/aybkh"]
+  }
+  </script>
 </head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2" />
+  <line x1="8" x2="16" y1="21" y2="21" />
+  <line x1="12" x2="12" y1="17" y2="21" /></symbol><symbol id="i-languages" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6" />
+  <path d="m4 14 6-6 2-3" />
+  <path d="M2 5h12" />
+  <path d="M7 2h1" />
+  <path d="m22 22-5-10-5 10" />
+  <path d="M14 18h6" /></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3" />
+  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+  <path d="m7 10 5 5 5-5" /></symbol><symbol id="i-arrowUpRight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" />
+  <path d="M7 17 17 7" /></symbol><symbol id="i-arrowRight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" /></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.93 4.93 1.41 1.41" />
+  <path d="m17.66 17.66 1.41 1.41" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.34 17.66-1.41 1.41" />
+  <path d="m19.07 4.93-1.41 1.41" /></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></symbol><symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16" />
+  <path d="M4 12h16" />
+  <path d="M4 19h16" /></symbol><symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18" />
+  <path d="m6 6 12 12" /></symbol><symbol id="i-mapPin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+  <circle cx="12" cy="10" r="3" /></symbol><symbol id="i-chevronDown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></symbol></svg>
+  <a class="skip" href="#main">Saltar al contenido</a>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
-<body class="booting">
-
-  <!-- Apple Boot Sequence -->
-  <div id="bootScreen" class="boot-screen">
-    <div class="boot-content">
-      <img src="img/logos/Apple-Logo.webp" alt="Apple" class="boot-logo">
-      <div class="boot-progress-container">
-        <div id="bootProgress" class="boot-progress"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MacOS Login Screen -->
-  <div id="loginScreen" class="login-screen">
-    <div class="login-content">
-      <img src="img/foto.webp" alt="User" class="login-avatar">
-      <h2 class="login-name">Ayoub El Jerari</h2>
-      <div class="login-input-group">
-        <input type="password" id="loginPass" placeholder="Password" autofocus>
-        <button id="loginBtn" class="login-submit">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  <header class="topbar" id="top">
+    <div class="wrap topbar__in">
+      <a class="pill legacy" href="legacy/" title="Portafolio anterior (macOS)"><svg class="i"><use href="#i-monitor"/></svg><span data-t="legacy">Versión anterior</span></a>
+      <nav class="nav" aria-label="Principal">
+        <a href="#proyectos" data-t="nav.projects">Proyectos</a>
+        <a href="#experiencia" data-t="nav.experience">Experiencia</a>
+        <a href="#habilidades" data-t="nav.skills">Habilidades</a>
+        <a href="#contacto" data-t="nav.contact">Contacto</a>
+      </nav>
+      <div class="tools">
+        <div class="lang">
+          <button class="pill" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+            <svg class="i"><use href="#i-languages"/></svg><span id="langCode">ES</span>
+          </button>
+          <ul class="lang__menu" id="langMenu" role="listbox" hidden></ul>
+        </div>
+        <button class="pill pill--icon" id="themeBtn" aria-label="Cambiar tema">
+          <svg class="i i-sun"><use href="#i-sun"/></svg>
+          <svg class="i i-moon"><use href="#i-moon"/></svg>
         </button>
-      </div>
-      <p class="login-hint" data-i18n="system.login_hint">Press Enter to log in</p>
-    </div>
-    <div class="login-footer">
-      <button class="login-footer-btn">
-        <div class="footer-icon sleep">
-          <i class="fas fa-moon"></i>
-        </div>
-        <span>Sleep</span>
-      </button>
-      <button class="login-footer-btn" onclick="location.reload()">
-        <div class="footer-icon restart">
-          <i class="fas fa-redo"></i>
-        </div>
-        <span>Restart</span>
-      </button>
-      <button class="login-footer-btn">
-        <div class="footer-icon shutdown">
-          <i class="fas fa-power-off"></i>
-        </div>
-        <span>Shut Down</span>
-      </button>
-    </div>
-  </div>
-
-  <!-- MacOS Menu Bar -->
-  <header class="mac-menubar">
-    <div class="menubar-left">
-
-      <!-- Apple Menu -->
-      <div class="menu-item-wrap" id="wrap-apple">
-        <button type="button" class="menu-item bold apple-btn" id="menu-apple" aria-haspopup="true" aria-expanded="false" aria-label="Apple Menu">
-          <img class="apple-logo" src="img/logos/Apple-Logo.webp" alt="">
+        <button class="pill pill--icon menu-btn" id="menuBtn" aria-label="Menú" aria-expanded="false" aria-controls="sheet">
+          <svg class="i"><use href="#i-menu"/></svg>
         </button>
-        <div class="mac-dropdown" id="drop-apple" role="menu">
-          <div class="drop-header">
-            <img src="img/foto.webp" alt="Ayoub" class="drop-avatar">
-            <div>
-              <div class="drop-name">Ayoub K.I.J.</div>
-              <div class="drop-sub">Portfolio v2.0</div>
-            </div>
-          </div>
-          <div class="drop-sep"></div>
-          <button type="button" class="drop-item" id="openAbout" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-            <span data-i18n="menubar.apple_about">Acerca de este Mac</span>
-          </button>
-          <div class="drop-sep"></div>
-          <a class="drop-item" href="https://linkedin.com/in/ayoub-jerari" target="_blank" rel="noopener" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
-          <a class="drop-item" href="https://github.com/aybkh" target="_blank" rel="noopener" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-            GitHub
-          </a>
-          <div class="drop-sep"></div>
-          <button type="button" class="drop-item" id="menuLogout" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
-            <span data-i18n="menubar.logout">Cerrar sesión de Ayoub...</span>
-            <span class="drop-shortcut">⇧⌘Q</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- File Menu -->
-      <div class="menu-item-wrap" id="wrap-file">
-        <button type="button" class="menu-item" id="menu-file" aria-haspopup="true" aria-expanded="false" data-i18n="menubar.file">File</button>
-        <div class="mac-dropdown" id="drop-file" role="menu">
-          <button type="button" class="drop-item cv-btn-open" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span data-i18n="system.download_cv">Descargar CV</span>
-            <span class="drop-shortcut">⌘D</span>
-          </button>
-          <button type="button" class="drop-item cv-btn-open" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-            <span data-i18n="system.print_cv">Imprimir CV</span>
-            <span class="drop-shortcut">⌘P</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Edit Menu -->
-      <div class="menu-item-wrap" id="wrap-edit">
-        <button type="button" class="menu-item" id="menu-edit" aria-haspopup="true" aria-expanded="false" data-i18n="menubar.edit">Edit</button>
-        <div class="mac-dropdown" id="drop-edit" role="menu">
-          <button type="button" class="drop-item" data-copy="ayoubjerari47@gmail.com" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span data-i18n="menubar.copy_email">Copiar Email</span>
-          </button>
-          <button type="button" class="drop-item" data-copy="https://linkedin.com/in/ayoub-jerari" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-            <span data-i18n="menubar.copy_link">Copiar LinkedIn</span>
-          </button>
-          <button type="button" class="drop-item" data-copy="+34631714568" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.63a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.9v2.02z"/></svg>
-            <span data-i18n="menubar.copy_wa">Copiar WhatsApp</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- View Menu -->
-      <div class="menu-item-wrap" id="wrap-view">
-        <button type="button" class="menu-item" id="menu-view" aria-haspopup="true" aria-expanded="false" data-i18n="menubar.view">View</button>
-        <div class="mac-dropdown" id="drop-view" role="menu">
-          <button type="button" class="drop-item" id="menuThemeToggle" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-            <span id="themeToggleLabel">Modo Claro</span>
-            <span class="drop-shortcut">⌘T</span>
-          </button>
-          <button type="button" class="drop-item" id="menuFullscreen" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
-            <span data-i18n="system.fullscreen">Pantalla Completa</span>
-            <span class="drop-shortcut">⌃⌘F</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Go Menu -->
-      <div class="menu-item-wrap" id="wrap-go">
-        <button type="button" class="menu-item" id="menu-go" aria-haspopup="true" aria-expanded="false" data-i18n="menubar.go">Go</button>
-        <div class="mac-dropdown" id="drop-go" role="menu">
-          <a class="drop-item" href="https://github.com/aybkh" target="_blank" rel="noopener" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-            <span data-i18n="contact.github">GitHub</span>
-            <span class="drop-shortcut">⇧⌘G</span>
-          </a>
-          <a class="drop-item" href="https://linkedin.com/in/ayoub-jerari" target="_blank" rel="noopener" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-            <span data-i18n="contact.linkedin">LinkedIn</span>
-          </a>
-          <a class="drop-item" href="https://wa.me/34631714568" target="_blank" rel="noopener" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            <span data-i18n="contact.whatsapp">WhatsApp</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Window Menu -->
-      <div class="menu-item-wrap" id="wrap-window">
-        <button type="button" class="menu-item" id="menu-window" aria-haspopup="true" aria-expanded="false" data-i18n="menubar.window">Window</button>
-        <div class="mac-dropdown" id="drop-window" role="menu">
-          <div class="drop-label" data-i18n="menubar.open_windows">Ventanas Abiertas</div>
-          <a class="drop-item drop-window-item" href="#hero" role="menuitem">
-            <span class="drop-dot" style="background:#ff5f56"></span>
-            <span data-i18n="nav.home">About Me</span>
-          </a>
-          <a class="drop-item drop-window-item" href="#experiencia" role="menuitem" data-i18n="sections.exp">Experiencia</a>
-          <a class="drop-item drop-window-item" href="#skills" role="menuitem" data-i18n="sections.sk">Skills</a>
-          <a class="drop-item drop-window-item" href="#proyectos" role="menuitem" data-i18n="sections.proj">Proyectos</a>
-          <a class="drop-item drop-window-item" href="#contacto" role="menuitem" data-i18n="sections.contact">Contacto</a>
-        </div>
-      </div>
-
-      <!-- Help Menu -->
-      <div class="menu-item-wrap" id="wrap-help">
-        <button type="button" class="menu-item" id="menu-help" aria-haspopup="true" aria-expanded="false" data-i18n="menubar.help">Help</button>
-        <div class="mac-dropdown" id="drop-help" role="menu">
-          <a class="drop-item" href="mailto:ayoubjerari47@gmail.com" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span data-i18n="menubar.send_email">Enviar un Email</span>
-          </a>
-          <div class="drop-sep"></div>
-          <button type="button" class="drop-item" id="menuShortcuts" role="menuitem">
-            <svg class="drop-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            <span data-i18n="menubar.shortcuts">Atajos de Teclado</span>
-          </button>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="menu-center">
-      <div class="menu-item-wrap">
-        <button type="button" class="menu-item clock-btn" id="clockBtn" aria-haspopup="true" aria-expanded="false">
-          <span class="menu-clock" id="macClock"></span>
-        </button>
-        <div class="mac-dropdown calendar-dropdown" id="drop-calendar" style="left:50%; transform: translateX(-50%) translateY(-6px) scale(0.97);">
-          <div class="calendar-panel">
-            <div class="cal-header">
-              <span id="calMonth">June</span>
-              <span id="calYear">2026</span>
-            </div>
-            <div class="cal-grid">
-              <div class="cal-day-name">Su</div><div class="cal-day-name">Mo</div><div class="cal-day-name">Tu</div><div class="cal-day-name">We</div><div class="cal-day-name">Th</div><div class="cal-day-name">Fr</div><div class="cal-day-name">Sa</div>
-              <!-- Calendar days will be generated or static for now -->
-              <div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day">4</div><div class="cal-day">5</div>
-              <div class="cal-day">6</div><div class="cal-day">7</div><div class="cal-day">8</div><div class="cal-day">9</div><div class="cal-day">10</div><div class="cal-day">11</div><div class="cal-day">12</div>
-              <div class="cal-day">13</div><div class="cal-day">14</div><div class="cal-day">15</div><div class="cal-day">16</div><div class="cal-day">17</div><div class="cal-day">18</div><div class="cal-day">19</div>
-              <div class="cal-day">20</div><div class="cal-day">21</div><div class="cal-day today">22</div><div class="cal-day">23</div><div class="cal-day">24</div><div class="cal-day">25</div><div class="cal-day">26</div>
-              <div class="cal-day">27</div><div class="cal-day">28</div><div class="cal-day">29</div><div class="cal-day">30</div>
-            </div>
-            <div class="drop-sep"></div>
-            <button type="button" class="drop-item" data-i18n="system.date_settings">Configuración de fecha y hora...</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="menubar-right">
-      <!-- Battery -->
-      <div class="menu-item-wrap">
-        <button type="button" class="menu-icon battery" id="batteryBtn" title="Batería" aria-haspopup="true" aria-expanded="false" style="background:none; border:none; color:inherit;">
-          <div class="battery-body">
-            <div class="battery-level" id="batteryLevel"></div>
-          </div>
-          <span class="battery-pct" id="batteryPct"></span>
-        </button>
-        <div class="mac-dropdown" id="drop-battery" style="right:0; left:auto; transform-origin: top right;">
-          <div class="drop-label" data-i18n="system.battery">Batería</div>
-          <div class="drop-item" style="cursor:default">
-            <span id="batteryStatusText">Cargando - 100%</span>
-          </div>
-          <div class="drop-sep"></div>
-          <button type="button" class="drop-item" data-i18n="system.config_battery">Configuración de la batería...</button>
-        </div>
-      </div>
-
-      <!-- WiFi -->
-      <div class="menu-item-wrap">
-        <button type="button" class="menu-icon wifi" id="wifiBtn" aria-haspopup="true" aria-expanded="false" style="background:none; border:none; color:inherit;">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-            <path d="M12 2C7.95 2 4.21 3.34 1.2 5.5L12 18.5L22.8 5.5C19.79 3.34 16.05 2 12 2Z" />
-          </svg>
-        </button>
-        <div class="mac-dropdown" id="drop-wifi" style="right:0; left:auto; transform-origin: top right;">
-          <div class="drop-label" data-i18n="system.wifi">Wi-Fi</div>
-          <div class="drop-item" style="justify-content: space-between;">
-            <span data-i18n="system.wifi">Wi-Fi</span>
-            <span style="color:var(--accent)" id="wifiStatusText" data-i18n="system.on">Activado</span>
-          </div>
-          <div class="drop-sep"></div>
-          <div class="drop-label" data-i18n="system.known_networks">Redes Conocidas</div>
-          <div class="drop-item">
-            <svg class="drop-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2C7.95 2 4.21 3.34 1.2 5.5L12 18.5L22.8 5.5C19.79 3.34 16.05 2 12 2Z" /></svg>
-            Wi‑Fi de Ayoub
-          </div>
-          <div class="drop-sep"></div>
-          <button type="button" class="drop-item" data-i18n="system.wifi_settings">Ajustes de Wi-Fi...</button>
-        </div>
-      </div>
-
-      <!-- Spotlight Search -->
-      <div class="menu-icon search" id="spotlightBtn" title="Buscar (Ctrl+K)" style="cursor:pointer">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="8" />
-          <path d="M21 21L16.65 16.65" />
-        </svg>
-      </div>
-
-      <!-- Control Center -->
-      <div class="menu-icon control-center" id="controlCenterBtn" style="cursor:pointer" title="Control Center">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-        <!-- Control Center Panel -->
-        <div class="control-center-panel" id="controlCenterPanel">
-          <div class="cc-title" data-i18n="system.cc">Centro de Control</div>
-          <div class="cc-row cc-status-mobile" style="display:none">
-            <div class="cc-status-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12.55a11 11 0 0114.08 0M7.5 15.57a7.5 7.5 0 019 0M10.58 18.14a3.3 3.3 0 012.84 0M12 21.07V21"/></svg>
-              <span>Wi-Fi</span>
-            </div>
-            <div class="cc-status-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><rect x="2" y="7" width="16" height="10" rx="2" ry="2"/><line x1="22" y1="11" x2="22" y2="13"/></svg>
-              <span id="ccBatteryPct">100%</span>
-            </div>
-          </div>
-          <div class="cc-row">
-            <button type="button" class="cc-btn" id="ccTheme">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
-              <span id="ccThemeLabel">Claro</span>
-            </button>
-            <button type="button" class="cc-btn" id="ccFullscreen">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
-              <span data-i18n="system.fullscreen">Full</span>
-            </button>
-          </div>
-          <div class="cc-slider-wrap">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/></svg>
-            <input type="range" id="brightnessSlider" class="cc-slider" min="30" max="100" value="100" title="Brillo">
-          </div>
-          <div class="drop-sep" style="margin:10px 0"></div>
-          <button type="button" class="cc-link cv-btn-open">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span data-i18n="system.download_cv">Descargar CV</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Language Selector Custom -->
-      <div class="menu-icon language lang-wrap" id="langWrap">
-        <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Selector de idioma">
-          <img src="img/icons/es.svg" alt="" class="lang-flag-img" id="langFlag">
-          <span class="lang-code" id="langCode">ES</span>
-          <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="10" height="10"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="mac-dropdown lang-dropdown" id="langDropdown" role="listbox">
-          <button type="button" class="drop-item lang-option" data-lang="es" role="option">
-            <img src="img/icons/es.svg" alt="" class="lang-flag-img-lg"> Español
-          </button>
-          <button type="button" class="drop-item lang-option" data-lang="en" role="option">
-            <img src="img/icons/en.svg" alt="" class="lang-flag-img-lg"> English
-          </button>
-          <button type="button" class="drop-item lang-option" data-lang="ca" role="option">
-            <img src="img/icons/ca.svg" alt="" class="lang-flag-img-lg"> Català
-          </button>
-          <button type="button" class="drop-item lang-option" data-lang="fr" role="option">
-            <img src="img/icons/fr.svg" alt="" class="lang-flag-img-lg"> Français
-          </button>
-          <button type="button" class="drop-item lang-option" data-lang="de" role="option">
-            <img src="img/icons/de.svg" alt="" class="lang-flag-img-lg"> Deutsch
-          </button>
-        </div>
       </div>
     </div>
   </header>
 
-  <div class="spotlight-overlay" id="spotlightOverlay" aria-hidden="true">
-    <div class="spotlight-modal" role="dialog">
-      <div class="spotlight-bar">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="flex-shrink:0;opacity:.6"><circle cx="11" cy="11" r="8"/><path d="M21 21L16.65 16.65"/></svg>
-        <input type="text" id="spotlightInput" data-i18n-ph="system.search_placeholder" placeholder="Buscar en el portfolio..." autocomplete="off" spellcheck="false">
-        <kbd class="spotlight-esc">esc</kbd>
-      </div>
-      <div class="spotlight-results" id="spotlightResults"></div>
-    </div>
+  <div class="sheet" id="sheet" hidden>
+    <nav class="sheet__nav" aria-label="Móvil">
+      <a href="#proyectos"><span data-t="nav.projects">Proyectos</span><small>01</small></a>
+      <a href="#experiencia"><span data-t="nav.experience">Experiencia</span><small>02</small></a>
+      <a href="#habilidades"><span data-t="nav.skills">Habilidades</span><small>03</small></a>
+      <a href="#contacto"><span data-t="nav.contact">Contacto</span><small>04</small></a>
+    </nav>
   </div>
 
-  <div class="mac-modal-overlay" id="aboutOverlay" aria-hidden="true">
-    <div class="mac-modal genie-effect" role="dialog">
-      <div class="mac-modal-header">
-        <div class="traffic-lights">
-          <span class="traffic-light close" id="aboutClose"></span>
-          <span class="traffic-light minimize"></span>
-          <span class="traffic-light maximize"></span>
-        </div>
-        <div class="window-title" data-i18n="system.about_title">Acerca de este Portfolio</div>
-      </div>
-      <div class="mac-modal-body">
-        <img src="img/foto.webp" alt="Ayoub" class="about-avatar">
-        <h2 class="about-name">Ayoub K. I. J.</h2>
-        <p class="about-role">Infrastructure &amp; IT Support Specialist</p>
-        <div class="about-specs">
-          <div class="spec-row"><span class="spec-label">Portfolio</span><span class="spec-val">v2.0 — 2026</span></div>
-          <div class="spec-row"><span class="spec-label">Stack</span><span class="spec-val">HTML · CSS · JavaScript</span></div>
-          <div class="spec-row"><span class="spec-label" data-i18n="system.languages">Idiomas</span><span class="spec-val">ES · EN · CAT · FR · DE</span></div>
-          <div class="spec-row"><span class="spec-label" data-i18n="system.theme">Tema</span><span class="spec-val" id="aboutThemeVal">Oscuro</span></div>
-        </div>
-        <div class="about-links">
-          <a href="https://linkedin.com/in/ayoub-jerari" target="_blank" rel="noopener" class="about-link">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
-          <a href="https://github.com/aybkh" target="_blank" rel="noopener" class="about-link">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-            GitHub
-          </a>
-          <a href="mailto:ayoubjerari47@gmail.com" class="about-link">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            Email
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="shortcutsOverlay" class="mac-modal-overlay" aria-hidden="true">
-    <div class="mac-modal genie-effect" style="width:500px" role="dialog">
-      <div class="mac-modal-header">
-        <div class="traffic-lights">
-          <span class="traffic-light close" id="shortcutsClose"></span>
-          <span class="traffic-light minimize"></span>
-          <span class="traffic-light maximize"></span>
-        </div>
-        <div class="window-title" data-i18n="system.shortcuts_title">Atajos de Teclado</div>
-      </div>
-      <div class="mac-modal-body shortcuts-body">
-        <div class="shortcut-row"><kbd>Ctrl</kbd><kbd>K</kbd><span data-i18n="system.open_spotlight">Abrir Spotlight</span></div>
-        <div class="shortcut-row"><kbd>Ctrl</kbd><kbd>T</kbd><span data-i18n="system.toggle_theme">Toggle Tema</span></div>
-        <div class="shortcut-row"><kbd>Esc</kbd><span data-i18n="system.close_modals">Cerrar modales</span></div>
-        <div class="shortcut-row"><kbd>↑</kbd><kbd>↓</kbd><span data-i18n="system.nav_spotlight">Navegar en Spotlight</span></div>
-        <div class="shortcut-row"><kbd>Enter</kbd><span data-i18n="system.select_result">Seleccionar resultado</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CV Viewer Modal (Quick Look) -->
-  <div class="mac-modal-overlay" id="cvOverlay" aria-hidden="true">
-    <div class="mac-modal cv-modal genie-effect" role="dialog">
-      <div class="mac-modal-header">
-        <div class="traffic-lights">
-          <span class="traffic-light close" id="cvClose"></span>
-          <span class="traffic-light minimize"></span>
-          <span class="traffic-light maximize" id="cvMaximize"></span>
-        </div>
-        <div class="window-title" id="cvTitle">Curriculum Vitae</div>
-      </div>
-      <div class="mac-modal-body cv-body">
-        <iframe id="cvIframe" src="" frameborder="0"></iframe>
-      </div>
-    </div>
-  </div>
-
-  <main>
-    <!-- HERO Window -->
-    <section class="mac-window" id="hero">
-      <div class="window-header">
-        <div class="traffic-lights">
-          <span class="traffic-light close"></span>
-          <span class="traffic-light minimize"></span>
-          <span class="traffic-light maximize"></span>
-        </div>
-        <div class="window-title">About Me</div>
-      </div>
-      <div class="window-content">
-        <div class="hero-grid">
-          <div class="hero-text">
-            <h1><span data-i18n="hero.title_prefix">Hola, soy </span><span class="accent"> Ayoub K. I. J.</span>
-            </h1>
-            <p class="lead" data-i18n="hero.subtitle">Especialista en soporte y administración IT, con experiencia
-              en
-              entornos corporativos y públicos. Gestiono sistemas Linux y Windows, redes, Microsoft 365, hardware y
-              bases de datos, asegurando operaciones estables y eficientes. Me motiva resolver incidencias técnicas
-              y
-              mejorar la experiencia del usuario.</p>
-            <div class="cta">
-              <a class="btn" href="#proyectos" data-i18n="cta.view">Ver proyectos</a>
-              <button class="btn ghost cv-btn-open" id="heroCVBtn" data-i18n="cta.cv">Ver CV</button>
-            </div>
-
-            <!-- Logos de tecnologías principales -->
-            <ul class="logo-row">
-              <li><img src="img/logos/windows.webp" alt="Windows Server"></li>
-              <li><img src="img/logos/linux.webp" alt="Linux"></li>
-              <li><img src="img/logos/Python.webp" alt="Python"></li>
-              <li><img src="img/logos/sql.webp" alt="SQL"></li>
-              <li><img src="img/logos/git_logo.webp" alt="Git"></li>
-              <li><img src="img/logos/docker.webp" alt="Docker"></li>
-              <li><img src="img/logos/Microsoft_365.webp" alt="Microsoft 365"></li>
-            </ul>
+  <main id="main">
+    <!-- ============ HERO BENTO ============ -->
+    <section class="wrap hero" id="hero">
+      <div class="bento">
+        <article class="tile tile--intro rv">
+          <h1 class="intro__title"><span data-t="hello">Hola, soy</span> Ayoub</h1>
+          <p class="intro__lead" data-t="lead">Técnico IT en HIPRA. Además diseño y programo webs, TPV y apps que negocios reales usan cada día.</p>
+          <div class="intro__cta">
+            <a class="btn btn--primary" href="#proyectos"><span data-t="cta_projects">Ver proyectos</span><svg class="i"><use href="#i-arrowRight"/></svg></a>
+            <a class="btn" href="data/cv_ayoub_es.pdf" download><svg class="i"><use href="#i-download"/></svg><span data-t="cta_cv">Descargar CV</span></a>
           </div>
+        </article>
 
-          <figure class="hero-photo glass">
-            <img src="img/foto.webp" alt="Foto de Ayoub">
-          </figure>
+        <figure class="tile tile--photo rv" id="photo">
+          <img src="assets/img/foto.webp" width="720" height="720" alt="Ayoub" fetchpriority="high">
+          <canvas class="photo__code" aria-hidden="true"></canvas>
+          <button class="photo__replay" type="button" aria-label="Volver a dibujar la foto">&lt;/&gt;</button>
+        </figure>
+
+        <a class="tile tile--now rv" href="#experiencia">
+          <span class="tile__label"><span class="dot"></span><span data-t="now">Ahora</span></span>
+          <span class="now__logo"><img src="assets/logos/hipra.svg" alt="HIPRA" width="152" height="61"></span>
+          <span class="now__role" data-t="now_role">IT Workplace Technician</span>
+          <span class="now__since" data-t="since">desde mayo 2026</span>
+        </a>
+
+        <a class="tile tile--qc rv" href="#p-quicondueix">
+          <span class="tile__label tile__label--dark"><span data-t="latest">Lo último</span></span>
+          <span class="qc__name">Qui<em>Condueix</em>?</span>
+          <span class="qc__text" data-t="qc_tile">Compartir coche, más organizado que nunca.</span>
+          <span class="qc__go"><span data-t="open_project">Ver proyecto</span><svg class="i"><use href="#i-arrowRight"/></svg></span>
+          <img class="qc__phone" src="assets/screens/quicondueix-mob.webp" alt="" width="480" height="1021" loading="lazy">
+        </a>
+
+        <div class="tile tile--num rv">
+          <span class="num" data-count="7">7</span>
+          <span class="num__label" data-t="live">webs y apps en producción</span>
+        </div>
+
+        <div class="tile tile--langs rv">
+          <span class="num">5</span>
+          <span class="num__label" data-t="langs">idiomas</span>
+          <ul class="flags" id="flags"></ul>
+        </div>
+
+        <div class="tile tile--stack rv">
+          <span class="tile__label" data-t="stack">Mi día a día</span>
+          <ul class="stackgrid" id="stackTile"></ul>
         </div>
       </div>
     </section>
 
-    <!-- EXPERIENCIA Window -->
-    <section id="experiencia" class="mac-window">
-      <div class="window-header">
-        <div class="traffic-lights">
-          <span class="traffic-light close"></span>
-          <span class="traffic-light minimize"></span>
-          <span class="traffic-light maximize"></span>
-        </div>
-        <div class="window-title" data-i18n="sections.exp">Experiencia</div>
-      </div>
-      <div class="window-content">
-        <div class="timeline">
+    <!-- ============ PROYECTOS ============ -->
+    <section class="section" id="proyectos">
+      <header class="wrap section__head rv">
+        <p class="kicker" data-t="proj_kicker">Proyectos</p>
+        <h2 data-t="proj_title">Hecho y en producción.</h2>
+        <p class="section__intro" data-t="proj_intro">Cada proyecto lo usa un negocio o un grupo de personas de verdad.</p>
+      </header>
+      <div class="wrap showcase" id="showcase"></div>
+    </section>
 
-          <!-- ITEM 1: HIPRA - Technician -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
-              <i class="fas fa-briefcase"></i>
-            </div>
-            <div class="timeline-content">
-              <header class="timeline-header">
-                <div class="timeline-info">
-                  <div class="timeline-title-row">
-                    <h3>Laboratorios HIPRA, S.A.</h3>
-                    <span class="badge badge-accent" data-i18n="exp.e1_role">IT Workplace Technician</span>
-                  </div>
-                  <p class="location"><i class="fas fa-map-marker-alt"></i> Amer / Aiguaviva, Girona</p>
-                  <p class="timeline-date" data-i18n="exp.e1_place">Mayo 2026 - Presente</p>
-                </div>
-                <div class="timeline-logo-container">
-                  <a href="https://www.hipra.com/" target="_blank" rel="noopener">
-                    <img src="img/logos/hipra.webp" alt="HIPRA" class="exp-logo">
-                  </a>
-                </div>
-              </header>
-              <ul class="tasks-list">
-                <li data-i18n="exp.e1_t1">IT Procurement (SAP): Gestión de compras de hardware, presupuestos y pruebas PoC (Try and Buy).</li>
-                <li data-i18n="exp.e1_t2">Proyectos Industriales: Coordinación del despliegue de infraestructura IT en plantas de producción.</li>
-                <li data-i18n="exp.e1_t3">Hardware & Leasing: Administración de flotas Apple/Dell, aprovisionamiento y contratos de leasing.</li>
-                <li data-i18n="exp.e1_t4">Salas AV: Gestión de salas de videoconferencia (Cisco Room Bar, Evoko) y migración a MS Teams.</li>
-                <li data-i18n="exp.e1_t5">IT Onboarding & Seguridad: Sesiones semanales de bienvenida técnica y buenas prácticas en ciberseguridad.</li>
-                <li data-i18n="exp.e1_t6">Operaciones Diarias: Soporte técnico L2 y resolución de tickets corporativos e industriales.</li>
-              </ul>
-              <div class="tech-chips">
-                <span>SAP ERP</span>
-                <span>IT Procurement</span>
-                <span>Industrial IT</span>
-                <span>Apple & Dell</span>
-                <span>Cisco Room Bar</span>
-                <span>MS Teams</span>
-                <span>Cybersecurity</span>
-              </div>
-            </div>
-          </div>
+    <!-- ============ EXPERIENCIA ============ -->
+    <section class="section wrap" id="experiencia">
+      <header class="section__head rv">
+        <p class="kicker" data-t="exp_kicker">Experiencia</p>
+        <h2 data-t="exp_title">Soporte IT donde importa.</h2>
+        <p class="section__intro" data-t="exp_intro">Entornos industriales, administración pública y atención al cliente.</p>
+      </header>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
 
-          <!-- ITEM 2: HIPRA - Intern -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
-              <i class="fas fa-user-graduate"></i>
-            </div>
-            <div class="timeline-content">
-              <header class="timeline-header">
-                <div class="timeline-info">
-                  <div class="timeline-title-row">
-                    <h3>Laboratorios HIPRA, S.A.</h3>
-                    <span class="badge" data-i18n="exp.e2_role">IT Workplace Intern</span>
-                  </div>
-                  <p class="location"><i class="fas fa-map-marker-alt"></i> Amer / Aiguaviva, Girona</p>
-                  <p class="timeline-date" data-i18n="exp.e2_place">Junio 2025 - Mayo 2026</p>
-                </div>
-                <div class="timeline-logo-container">
-                  <a href="https://www.hipra.com/" target="_blank" rel="noopener">
-                    <img src="img/logos/hipra.webp" alt="HIPRA" class="exp-logo">
-                  </a>
-                </div>
-              </header>
-              <ul class="tasks-list">
-                <li data-i18n="exp.e2_t1">Soporte L2 & M365: Resolución de incidencias complejas y gestión de usuarios Microsoft 365.</li>
-                <li data-i18n="exp.e2_t2">Ticketing & Despliegues: Incidencias en Remedy/SmartIT y preparación de equipos (portátiles, IGEL).</li>
-                <li data-i18n="exp.e2_t3">Móviles e Impresión: Configuració iOS/Android, VoIP Cisco e impresoras RFID/térmicas (Zebra/Honeywell).</li>
-                <li data-i18n="exp.e2_t4">Seguridad & Garantías: Coordinación con proveedores de hardware y despliegue de parches de seguridad.</li>
-              </ul>
-              <div class="tech-chips">
-                <span>L2 Support</span>
-                <span>Microsoft 365</span>
-                <span>Remedy / SmartIT</span>
-                <span>IGEL Thin Clients</span>
-                <span>Zebra RFID</span>
-                <span>Honeywell</span>
-                <span>iOS / Android</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ITEM 3: MY HOME MARKET -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
-              <i class="fas fa-store"></i>
-            </div>
-            <div class="timeline-content">
-              <header class="timeline-header">
-                <div class="timeline-info">
-                  <div class="timeline-title-row">
-                    <h3>My Home Market</h3>
-                    <span class="badge" data-i18n="exp.e3_role">Sales Assistant</span>
-                  </div>
-                  <p class="location"><i class="fas fa-map-marker-alt"></i> Pineda de Mar, Barcelona</p>
-                  <p class="timeline-date" data-i18n="exp.e3_place">Julio 2020 - Junio 2025</p>
-                </div>
-                <div class="timeline-logo-container">
-                  <div class="company-icon-box"><i class="fas fa-shopping-bag"></i></div>
-                </div>
-              </header>
-              <ul class="tasks-list">
-                <li data-i18n="exp.e3_t1">Atención al Cliente: Asesoramiento personalizado e identificación de necesidades.</li>
-                <li data-i18n="exp.e3_t2">Gestión de Stock & Caja: Control de inventario, reposición de productos y operaciones de caja.</li>
-              </ul>
-              <div class="tech-chips">
-                <span>Customer Relations</span>
-                <span>Stock Management</span>
-                <span>POS Operations</span>
-                <span>Problem Solving</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ITEM 4: AJUNTAMENT DE MALGRAT DE MAR -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
-              <i class="fas fa-landmark"></i>
-            </div>
-            <div class="timeline-content">
-              <header class="timeline-header">
-                <div class="timeline-info">
-                  <div class="timeline-title-row">
-                    <h3>Ajuntament de Malgrat de Mar</h3>
-                    <span class="badge" data-i18n="exp.e4_role">IT Helpdesk Intern</span>
-                  </div>
-                  <p class="location"><i class="fas fa-map-marker-alt"></i> Malgrat de Mar, Barcelona</p>
-                  <p class="timeline-date" data-i18n="exp.e4_place">Noviembre 2023 – Abril 2024</p>
-                </div>
-                <div class="timeline-logo-container">
-                  <a href="https://www.ajmalgrat.cat/" target="_blank" rel="noopener">
-                    <img src="img/logos/amm.svg" alt="Ajuntament de Malgrat de Mar" class="exp-logo">
-                  </a>
-                </div>
-              </header>
-              <ul class="tasks-list">
-                <li data-i18n="exp.e4_t1">Soporte Municipal: Soporte presencial y remoto a usuarios municipales en hardware, software y red.</li>
-                <li data-i18n="exp.e4_t2">Sistemas & Guías: Diagnóstico con herramientas Linux, gestión de permisos y creación de manuales.</li>
-              </ul>
-              <div class="tech-chips">
-                <span>Linux Systems</span>
-                <span>Hardware Maintenance</span>
-                <span>Remote Support</span>
-                <span>Active Directory</span>
-                <span>Documentation</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
+    <!-- ============ HABILIDADES ============ -->
+    <section class="section wrap" id="habilidades">
+      <header class="section__head rv">
+        <p class="kicker" data-t="sk_kicker">Habilidades</p>
+        <h2 data-t="sk_title">De la red al código.</h2>
+        <p class="section__intro" data-t="sk_intro">Herramientas que uso en el día a día.</p>
+      </header>
+      <div class="skills rv">
+        <div class="tabs" role="tablist" id="skillTabs"></div>
+        <p class="skill-desc" id="skillDesc"></p>
+        <ul class="skill-grid" id="skillGrid"></ul>
       </div>
     </section>
 
-    <!-- SKILLS Window -->
-    <section id="skills" class="mac-window">
-      <div class="window-header">
-        <div class="traffic-lights">
-          <span class="traffic-light close"></span>
-          <span class="traffic-light minimize"></span>
-          <span class="traffic-light maximize"></span>
+    <!-- ============ CONTACTO ============ -->
+    <section class="section wrap" id="contacto">
+      <div class="contact rv">
+        <div class="contact__glow" aria-hidden="true"></div>
+        <h2 data-t="contact_title">¿Hablamos?</h2>
+        <p data-t="contact_text">Si tienes un proyecto, una vacante o una idea, escríbeme y te respondo en menos de 24 h.</p>
+        <div class="contact__mail">
+          <a class="btn btn--light btn--lg" href="mailto:ayoubjerari47@gmail.com"><img class="lg" src="assets/logos/gmail.svg" alt="">ayoubjerari47@gmail.com</a>
+          <button class="pill pill--icon pill--lg pill--ghost" id="copyMail" aria-label="Copiar email" data-t-aria="copy"><svg class="i"><use href="#i-copy"/></svg></button>
         </div>
-        <div class="window-title" data-i18n="sections.sk">Skills</div>
-      </div>
-        <div class="skills-container">
-          <!-- macOS Mobile Category Popover Menu -->
-          <div class="skills-mobile-header">
-            <button type="button" class="mac-popover-btn" id="skillsPopoverBtn" aria-expanded="false" aria-haspopup="true">
-              <div class="popover-selected-info">
-                <div class="cat-icon-tile bg-blue" id="popoverActiveTile">
-                  <i class="fas fa-network-wired"></i>
-                </div>
-                <span id="popoverActiveText" data-i18n="skills.categories.net">Redes</span>
-              </div>
-              <div class="mac-popup-chevrons">
-                <i class="fas fa-chevron-up"></i>
-                <i class="fas fa-chevron-down"></i>
-              </div>
-            </button>
-
-            <!-- Floating macOS Popover Menu -->
-            <div class="mac-popover-menu" id="skillsPopoverMenu" role="menu">
-              <button type="button" class="mac-popover-item active" data-target="net" role="menuitem">
-                <div class="cat-icon-tile bg-blue"><i class="fas fa-network-wired"></i></div>
-                <span data-i18n="skills.categories.net">Redes</span>
-                <i class="fas fa-check check-mark"></i>
-              </button>
-              <button type="button" class="mac-popover-item" data-target="sys" role="menuitem">
-                <div class="cat-icon-tile bg-grey"><i class="fas fa-desktop"></i></div>
-                <span data-i18n="skills.categories.sys">Sistemas</span>
-                <i class="fas fa-check check-mark"></i>
-              </button>
-              <button type="button" class="mac-popover-item" data-target="cloud" role="menuitem">
-                <div class="cat-icon-tile bg-sky"><i class="fas fa-cloud"></i></div>
-                <span data-i18n="skills.categories.cloud">Cloud & DevOps</span>
-                <i class="fas fa-check check-mark"></i>
-              </button>
-              <button type="button" class="mac-popover-item" data-target="dev" role="menuitem">
-                <div class="cat-icon-tile bg-purple"><i class="fas fa-code"></i></div>
-                <span data-i18n="skills.categories.dev">Desarrollo</span>
-                <i class="fas fa-check check-mark"></i>
-              </button>
-              <button type="button" class="mac-popover-item" data-target="db" role="menuitem">
-                <div class="cat-icon-tile bg-green"><i class="fas fa-database"></i></div>
-                <span data-i18n="skills.categories.db">Bases de Datos</span>
-                <i class="fas fa-check check-mark"></i>
-              </button>
-              <button type="button" class="mac-popover-item" data-target="hw" role="menuitem">
-                <div class="cat-icon-tile bg-orange"><i class="fas fa-microchip"></i></div>
-                <span data-i18n="skills.categories.hw">Hardware & Support</span>
-                <i class="fas fa-check check-mark"></i>
-              </button>
-              <button type="button" class="mac-popover-item" data-target="ia" role="menuitem">
-                <div class="cat-icon-tile bg-pink"><i class="fas fa-brain"></i></div>
-                <span data-i18n="skills.categories.ia">IA & Automatización</span>
-                <i class="fas fa-check check-mark"></i>
-              </button>
-              <button type="button" class="mac-popover-item" data-target="prod" role="menuitem">
-                <div class="cat-icon-tile bg-indigo"><i class="fas fa-list-check"></i></div>
-                <span data-i18n="skills.categories.prod">Productividad</span>
-                <i class="fas fa-check check-mark"></i>
-              </button>
-              <button type="button" class="mac-popover-item" data-target="langs" role="menuitem">
-                <div class="cat-icon-tile bg-yellow"><i class="fas fa-language"></i></div>
-                <span data-i18n="skills.categories.langs">Idiomas</span>
-                <i class="fas fa-check check-mark"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Sidebar: Categories (Desktop/Tablet) -->
-          <aside class="skills-sidebar">
-            <button class="skill-cat-btn active" data-target="net">
-              <div class="cat-icon-tile bg-blue">
-                <i class="fas fa-network-wired"></i>
-              </div>
-              <span data-i18n="skills.categories.net">Redes</span>
-            </button>
-            <button class="skill-cat-btn" data-target="sys">
-              <div class="cat-icon-tile bg-grey">
-                <i class="fas fa-desktop"></i>
-              </div>
-              <span data-i18n="skills.categories.sys">Sistemas</span>
-            </button>
-            <button class="skill-cat-btn" data-target="cloud">
-              <div class="cat-icon-tile bg-sky">
-                <i class="fas fa-cloud"></i>
-              </div>
-              <span data-i18n="skills.categories.cloud">Cloud & DevOps</span>
-            </button>
-            <button class="skill-cat-btn" data-target="dev">
-              <div class="cat-icon-tile bg-purple">
-                <i class="fas fa-code"></i>
-              </div>
-              <span data-i18n="skills.categories.dev">Desarrollo</span>
-            </button>
-            <button class="skill-cat-btn" data-target="db">
-              <div class="cat-icon-tile bg-green">
-                <i class="fas fa-database"></i>
-              </div>
-              <span data-i18n="skills.categories.db">Bases de Datos</span>
-            </button>
-            <button class="skill-cat-btn" data-target="hw">
-              <div class="cat-icon-tile bg-orange">
-                <i class="fas fa-microchip"></i>
-              </div>
-              <span data-i18n="skills.categories.hw">Hardware & Support</span>
-            </button>
-            <button class="skill-cat-btn" data-target="ia">
-              <div class="cat-icon-tile bg-pink">
-                <i class="fas fa-brain"></i>
-              </div>
-              <span data-i18n="skills.categories.ia">IA & Automatización</span>
-            </button>
-            <button class="skill-cat-btn" data-target="prod">
-              <div class="cat-icon-tile bg-indigo">
-                <i class="fas fa-list-check"></i>
-              </div>
-              <span data-i18n="skills.categories.prod">Productividad</span>
-            </button>
-            <button class="skill-cat-btn" data-target="langs">
-              <div class="cat-icon-tile bg-yellow">
-                <i class="fas fa-language"></i>
-              </div>
-              <span data-i18n="skills.categories.langs">Idiomas</span>
-            </button>
-          </aside>
-
-          <!-- Main Area: Content -->
-          <main class="skills-display">
-            
-            <!-- Redes -->
-            <div class="skills-group active" id="net">
-              <div class="skills-group-header">
-                <h3 data-i18n="skills.categories.net">Redes & Seguridad</h3>
-                <p data-i18n="skills.desc.net">Infraestructura, conectividad y seguridad de red.</p>
-              </div>
-              <div class="skills-grid">
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/dns.webp" alt="DNS"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">DNS</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.dns_desc">Domain Resolution & Management</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/dhcp.webp" alt="DHCP"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">DHCP</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.dhcp_desc">Dynamic IP Allocation & Subnetting</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/pfsense.webp" alt="pfSense"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">pfSense</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.pfsense_desc">Firewall, Routing & VPN Config</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/cisco.webp" alt="Cisco"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Cisco</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.cisco_desc">Routing, Switching & IOS Admin</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/grandstream.webp" alt="VoIP"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">VoIP & Telephony</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.grandstream_desc">VoIP & IP Telephony Support</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/Network.webp" alt="VLAN"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">VLANs / Subnetting</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.vlan_desc">Network Segmentation & Security</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/Wireshark.webp" alt="Wireshark"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Wireshark</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.wireshark_desc">Packet Analysis & Troubleshooting</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/nmap.webp" alt="Nmap"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Nmap</span>
-                    <span class="skill-card-desc">Basic Network Scanning</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/ssh.webp" alt="SSH"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">SSH / SFTP</span>
-                    <span class="skill-card-desc">Secure Remote Admin & Data Transfer</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Sistemas -->
-            <div class="skills-group" id="sys">
-              <div class="skills-group-header">
-                <h3 data-i18n="skills.categories.sys">Sistemas & Workspace</h3>
-                <p data-i18n="skills.desc.sys">Administración de sistemas operativos y entornos de trabajo.</p>
-              </div>
-              <div class="skills-grid">
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/linux.webp" alt="Linux"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Linux</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.linux_desc">Server Admin & Troubleshooting</span>
-                  </div>
-                </div>
-                 <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/windows.webp" alt="Windows"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Windows Server / AD</span>
-                    <span class="skill-card-desc">Active Directory & GPO Fundamentals</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/Microsoft_365.webp" alt="M365"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Microsoft 365</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.m365_desc">Tenant Admin & Cloud Apps</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/macos.webp" alt="macOS"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">macOS</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.macos_desc">Advanced support and expert use</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/paralels.webp" alt="Parallels"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Parallels Desktop</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.parallels_desc">Virtualization on Apple systems</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/MDM.webp" alt="MDM"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">MDM / AMM</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.mdm_desc">iOS and Android fleet management</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/Bash.webp" alt="Bash"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Shell Script</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.shell_desc">Bash & PowerShell Automation</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Cloud -->
-            <div class="skills-group" id="cloud">
-              <div class="skills-group-header">
-                <h3 data-i18n="skills.categories.cloud">Cloud & DevOps</h3>
-                <p data-i18n="skills.desc.cloud">Infraestructura escalable y automatización de despliegues.</p>
-              </div>
-              <div class="skills-grid">
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/Azure.webp" alt="Azure"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Azure</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.azure_desc">Cloud Infrastructure & Entra ID</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/Amazon.webp" alt="AWS"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">AWS</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.aws_desc">EC2, S3 & Cloud Foundations</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/docker.webp" alt="Docker"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Docker</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.docker_desc">Containerization & Microservices</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/terraform.webp" alt="Terraform"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Terraform</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.terraform_desc">Infrastructure as Code (IaC)</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/Ansible.webp" alt="Ansible"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Ansible</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.ansible_desc">Configuration Management</span>
-                  </div>
-                </div>
-                 <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/github.webp" alt="GitHub"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.cicd">CI/CD & Automation</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.cicd_desc">GitHub Actions & Pages Hosting</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/cloudflare.webp" alt="Cloudflare"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Cloudflare</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.cloudflare_desc">WAF, DNS & CDN Performance</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Desarrollo -->
-            <div class="skills-group" id="dev">
-              <div class="skills-group-header">
-                <h3 data-i18n="skills.categories.dev">Desarrollo & Herramientas</h3>
-                <p data-i18n="skills.desc.dev">Lenguajes de programación y herramientas de desarrollo.</p>
-              </div>
-              <div class="skills-grid">
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/Python.webp" alt="Python"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.python_fastapi">Python / FastAPI</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.python_fastapi_desc">Backend, Scripting & API Dev</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/js.webp" alt="JS"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.js_react">JavaScript / React</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.js_desc">Advanced Frontend & Logic</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/Bash.webp" alt="Shell"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Terminal / CLI</span>
-                    <span class="skill-card-desc">Advanced Command Line</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/react.webp" alt="React"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">React (Vite)</span>
-                    <span class="skill-card-desc">Basic SPA Development</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/tailwind-css-logo.webp" alt="Tailwind"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Tailwind CSS</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.tailwind_desc">Utility-first CSS Framework</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/dotnet.svg" alt=".NET"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">.NET / C#</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.dotnet_desc">Enterprise App Env</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/html-css.webp" alt="HTML/CSS"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">HTML & CSS</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.htmlcss_desc">Web layout & styling</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/git_logo.webp" alt="GitHub"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Git / GitHub</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.git_desc">Version Control & CI/CD</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/unity.webp" alt="Unity"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Unity Engine</span>
-                    <span class="skill-card-desc">Game Development (C#)</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Databases -->
-            <div class="skills-group" id="db">
-              <div class="skills-group-header">
-                <h3 data-i18n="skills.categories.db">Bases de Datos</h3>
-                <p data-i18n="skills.desc.db">Gestión de datos estructurados y no estructurados.</p>
-              </div>
-              <div class="skills-grid">
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/Postgresql.webp" alt="Postgres"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">PostgreSQL</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.postgres_desc">Replication & Admin</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/mysql.webp" alt="MySQL"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">MySQL</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.mysql_desc">Relational DB Management</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/Sqlite.webp" alt="SQLite"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.sqlite_orm">SQLite & SQLModel</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.sqlite_orm_desc">Local DBs & ORM Mapping</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/oracle.webp" alt="Oracle"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Oracle DB</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.oracle_desc">Corporate DB Management</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/access.webp" alt="Access"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">MS Access</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.access_desc">Relational DBs with Office</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/JSON.webp" alt="JSON"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">JSON / APIs</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.json_desc">Data structures & REST APIs</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/sqlserver.webp" alt="MSSQL"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">SQL Server</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.mssql_desc">Enterprise Database Admin</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/redis.webp" alt="Redis"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Redis</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.redis_desc">Cache & In-memory DB</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/mongodb.webp" alt="MongoDB"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">NoSQL</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.nosql_desc">JSON Document Handling</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Hardware & Support -->
-            <div class="skills-group" id="hw">
-              <div class="skills-group-header">
-                <h3 data-i18n="skills.categories.hw">Hardware & Support</h3>
-                <p data-i18n="skills.desc.hw">Soporte de campo especializado y virtualización.</p>
-              </div>
-              <div class="skills-grid">
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/zebra.webp" alt="Zebra"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.zebra_rfid">Zebra & RFID</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.zebra_rfid_desc">Industrial Printers & RFID specialist</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/honeywell.webp" alt="Honeywell"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.honeywell_scan">Honeywell Scanners</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.honeywell_scan_desc">Industrial Scanning & HW Support</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/igel-logo.webp" alt="IGEL"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.igel_new">Thin Clients (IGEL)</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.igel_new_desc">IGEL OS & Workspace Management</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/vmware.webp" alt="VM"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.vminfra">VM Infrastructure</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.vminfra_desc">VMware ESXi & VirtualBox Ops</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/virtualization.webp" alt="Diag"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.hw_diag">HW Support & Diagnostics</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.hw_diag_desc">Advanced Peripherals & HW Troubleshooting</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- IA -->
-            <div class="skills-group" id="ia">
-              <div class="skills-group-header">
-                <h3 data-i18n="skills.categories.ia">IA & Automatización</h3>
-                <p data-i18n="skills.desc.ia">Nuevas tecnologías para optimizar procesos.</p>
-              </div>
-              <div class="skills-grid">
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/n8n.webp" alt="n8n"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.n8n_new">n8n Automation</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.n8n_new_desc">Advanced Workflow & API Automation</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/ChatGPT.webp" alt="ChatGPT"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.chatgpt_new">ChatGPT</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.chatgpt_new_desc">Expert LLM Prompting & Analysis</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/copilot.webp" alt="Copilot"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.copilot">Copilot</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.copilot_desc">AI-powered coding assistant</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/Claude.webp" alt="Claude"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.claude_new">Claude / Claude Code</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.claude_new_desc">Advanced Reasoning & CLI Tools</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/gemini.webp" alt="Gemini"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.gemini">Google Gemini</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.gemini_desc">LTM & Workspace Mastery</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/ollama.webp" alt="Ollama"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.ollama">Ollama / Local</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.ollama_desc">Edge LLM Execution</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/openclaw.webp" alt="OpenClaw"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.openclaw_new">OpenClaw</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.openclaw_new_desc">Autonomous AI Agents</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/nanobananapro.webp" alt="NanoBanana"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.nanobanana_new">Nano Banana Pro</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.nanobanana_new_desc">Professional Image Generation</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/openai.webp" alt="OpenAI"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name" data-i18n="skills.items.openai_new">OpenAI / GPT</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.openai_new_desc">Model usage & Fine-tuning</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Productividad -->
-            <div class="skills-group" id="prod">
-              <div class="skills-group-header">
-                <h3 data-i18n="skills.categories.prod">Productividad & Colaboración</h3>
-                <p data-i18n="skills.desc.prod">Gestión de proyectos y comunicación corporativa.</p>
-              </div>
-              <div class="skills-grid">
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/teams.webp" alt="Teams"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Microsoft Teams</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.teams_desc">Corporate communication & Teams</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/Office-365.webp" alt="Office"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Office 365</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.office_desc">Office 365 apps administration</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/excel.webp" alt="Excel"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Advanced Excel</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.excel_desc">Advanced Data Analysis</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/Microsoft_Project.webp" alt="Project"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">MS Project</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.project_desc">Planning & Scheduling</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/clickup.webp" alt="ClickUp"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">ClickUp</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.clickup_desc">Task and project management</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/notion.webp" alt="Notion"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Notion</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.notion_desc">Workspace and documentation</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/jira-logo.webp" alt="Jira"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Jira / Agile</span>
-                    <span class="skill-card-desc" data-i18n="skills.items.jira_desc">Issue tracking and Agile</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/hipra_logo.webp" alt="Remedy"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Remedy / SmartIT</span>
-                    <span class="skill-card-desc">Level 2 Incident Management</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Idiomas -->
-            <div class="skills-group" id="langs">
-              <div class="skills-group-header">
-                <h3 data-i18n="skills.categories.langs">Idiomas</h3>
-                <p data-i18n="skills.desc.langs">Capacidad de comunicación en el ámbito profesional.</p>
-              </div>
-              <div class="skills-grid">
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/ES.webp" alt="ES"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Español</span>
-                    <span class="skill-card-desc" data-i18n="system.native">Nativo / Bilingüe</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/CAT.webp" alt="CAT"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Català</span>
-                    <span class="skill-card-desc" data-i18n="system.native">Nativo / Bilingüe</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/AR.webp" alt="AR"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">Árabe</span>
-                    <span class="skill-card-desc" data-i18n="system.native">Nativo / Bilingüe</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                  <div class="skill-card-icon"><img src="img/logos/EN.webp" alt="EN"></div>
-                  <div class="skill-card-info">
-                    <span class="skill-card-name">English</span>
-                    <span class="skill-card-desc" data-i18n="system.prof_eng">Professional Working Proficiency</span>
-                  </div>
-                </div>
-                <div class="skill-card">
-                   <div class="skill-card-icon"><img src="img/logos/FR.webp" alt="FR"></div>
-                   <div class="skill-card-info">
-                     <span class="skill-card-name">Français</span>
-                     <span class="skill-card-desc" data-i18n="system.basic">Connaissance de base</span>
-                   </div>
-                 </div>
-                 <div class="skill-card">
-                   <div class="skill-card-icon"><img src="img/logos/DE.webp" alt="DE"></div>
-                   <div class="skill-card-info">
-                     <span class="skill-card-name">Deutsch</span>
-                     <span class="skill-card-desc" data-i18n="system.a1_level">A1 Beginner</span>
-                   </div>
-                 </div>
-              </div>
-            </div>
-
-          </main>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROYECTOS Window -->
-    <section id="proyectos" class="mac-window">
-      <div class="window-header">
-        <div class="traffic-lights">
-          <span class="traffic-light close"></span>
-          <span class="traffic-light minimize"></span>
-          <span class="traffic-light maximize"></span>
-        </div>
-        <div class="window-title" data-i18n="sections.proj">Proyectos</div>
-      </div>
-      <div class="window-content">
-        <div class="grid">
-
-          <!-- 1. GetVTC -->
-          <article class="card project" data-project="p8">
-            <img class="proj-img" src="img/projects/getvtc.webp" alt="GetVTC">
-            <div class="project-body">
-              <ul class="logo-row">
-                <li><img src="img/logos/react.webp" alt="Next.js"></li>
-                <li><img src="img/logos/Postgresql.webp" alt="Supabase"></li>
-                <li><img src="img/logos/cloudflare.webp" alt="Cloudflare"></li>
-                <li><img src="img/logos/tailwind-css-logo.webp" alt="TailwindCSS"></li>
-                <li><img src="img/logos/github.webp" alt="GitHub"></li>
-              </ul>
-              <h3>GetVTC – Marketplace & Consultoría VTC</h3>
-              <p data-i18n="projects.p8_desc">Plataforma web corporativa y marketplace de licencias VTC en España.</p>
-              <div class="row">
-                <a class="btn web" href="https://getvtcbarcelona.com" target="_blank" rel="noopener">Website</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 2. R7 Barbershop -->
-          <article class="card project" data-project="p10">
-            <img class="proj-img" src="img/projects/r7barbershop.webp" alt="R7 Barbershop">
-            <div class="project-body">
-              <ul class="logo-row">
-                <li><img src="img/logos/react.webp" alt="Next.js"></li>
-                <li><img src="img/logos/Postgresql.webp" alt="Supabase"></li>
-                <li><img src="img/logos/cloudflare.webp" alt="Cloudflare"></li>
-                <li><img src="img/logos/tailwind-css-logo.webp" alt="TailwindCSS"></li>
-                <li><img src="img/logos/github.webp" alt="GitHub"></li>
-              </ul>
-              <h3>R7Sultan – Reservas & TPV Barbería</h3>
-              <p data-i18n="projects.p10_desc">Sistema web de reservas online en tiempo real para barberías con notificaciones automáticas.</p>
-              <div class="row">
-                <a class="btn web" href="https://r7barbershop.com" target="_blank" rel="noopener">Website</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 3. Amigos 2 -->
-          <article class="card project" data-project="p11">
-            <img class="proj-img" src="img/projects/amigos2.webp" alt="Amigos 2">
-            <div class="project-body">
-              <ul class="logo-row">
-                <li><img src="img/logos/react.webp" alt="React"></li>
-                <li><img src="img/logos/vite.webp" alt="Vite"></li>
-                <li><img src="img/logos/Postgresql.webp" alt="Supabase"></li>
-                <li><img src="img/logos/tailwind-css-logo.webp" alt="TailwindCSS"></li>
-                <li><img src="img/logos/cloudflare.webp" alt="Cloudflare"></li>
-              </ul>
-              <h3>Amigos2 – Web & Admin Restauración</h3>
-              <p data-i18n="projects.p11_desc">Web pública y panel de administración para el restaurante Amigos2.</p>
-              <div class="row">
-                <a class="btn web" href="https://amigos2.es" target="_blank" rel="noopener">Website</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 4. The Kebab Lab -->
-          <article class="card project" data-project="p7">
-            <img class="proj-img" src="img/projects/kebab.webp" alt="The Kebab Lab">
-            <div class="project-body">
-              <ul class="logo-row">
-                <li><img src="img/logos/dotnet.svg" alt=".NET"></li>
-                <li><img src="img/logos/react.webp" alt="React"></li>
-                <li><img src="img/logos/Sqlite.webp" alt="SQLite"></li>
-                <li><img src="img/logos/tailwind-css-logo.webp" alt="TailwindCSS"></li>
-                <li><img src="img/logos/Database.webp" alt="Entity Framework"></li>
-                <li><img src="img/logos/Network.webp" alt="ESC/POS"></li>
-                <li><img src="img/logos/github.webp" alt="GitHub"></li>
-              </ul>
-              <h3>The Kebab Lab – POS & Digital Menu</h3>
-              <p data-i18n="projects.p7_desc">Ecosistema integral TPV y Carta Digital para The Kebab Lab. Gestión de pedidos en tiempo real, KDS, administración avanzada y despliegue automático.</p>
-              <div class="row">
-                <a class="btn web" href="https://thekebablab.es" target="_blank" rel="noopener">Website</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 5. Snack Tanger 303 -->
-          <article class="card project" data-project="p5">
-            <img class="proj-img" src="img/projects/snack.webp" alt="Snack Tanger 303">
-            <div class="project-body">
-              <ul class="logo-row">
-                <li><img src="img/logos/dotnet.svg" alt=".NET"></li>
-                <li><img src="img/logos/react.webp" alt="React"></li>
-                <li><img src="img/logos/Sqlite.webp" alt="SQLite"></li>
-                <li><img src="img/logos/tailwind-css-logo.webp" alt="TailwindCSS"></li>
-                <li><img src="img/logos/Database.webp" alt="Entity Framework"></li>
-                <li><img src="img/logos/Network.webp" alt="ESC/POS"></li>
-                <li><img src="img/logos/github.webp" alt="GitHub"></li>
-              </ul>
-              <h3>Snack Tanger 303 – POS & Digital Menu</h3>
-              <p data-i18n="projects.p5_desc">Ecosistema integral on-premise (.NET 8 & React 19) para la gestión táctil de restaurantes. Control de comandas, impresión multi-cocina, delivery y facturación legal.</p>
-              <div class="row">
-                <a class="btn web" href="https://snacktanger303.com/" target="_blank" rel="noopener">Website</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 6. Food Pix -->
-          <article class="card project" data-project="p9">
-            <img class="proj-img" src="img/projects/foodpix.webp" alt="FoodPix">
-            <div class="project-body">
-              <ul class="logo-row">
-                <li><img src="img/logos/react.webp" alt="React"></li>
-                <li><img src="img/logos/vite.webp" alt="Vite"></li>
-                <li><img src="img/logos/cloudflare.webp" alt="Cloudflare R2"></li>
-                <li><img src="img/logos/tailwind-css-logo.webp" alt="TailwindCSS"></li>
-                <li><img src="img/logos/IA.webp" alt="IA"></li>
-              </ul>
-              <h3>FoodPix – Food Image Hub</h3>
-              <p data-i18n="projects.p9_desc">Galería web pública de imágenes gastronómicas generadas con IA.</p>
-              <div class="row">
-                <a class="btn web" href="https://foodpix.es" target="_blank" rel="noopener">Website</a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 7. Software del Hotel -->
-          <article class="card project" data-project="p2">
-            <img class="proj-img" src="img/projects/hotel.webp" alt="Hotel Management System">
-            <div class="project-body">
-              <ul class="logo-row">
-                <li><img src="img/logos/linux.webp" alt="Linux"></li>
-                <li><img src="img/logos/Postgresql.webp" alt="PostgreSQL"></li>
-                <li><img src="img/logos/Python.webp" alt="Python"></li>
-                <li><img src="img/logos/sql.webp" alt="SQL"></li>
-                <li><img src="img/logos/Bash.webp" alt="Bash"></li>
-                <li><img src="img/logos/git_logo.webp" alt="Git"></li>
-                <li><img src="img/logos/github.webp" alt="GitHub"></li>
-              </ul>
-              <h3>Hotel Management System</h3>
-              <p data-i18n="projects.p2_desc">Aplicación completa para la gestión integral de una cadena hotelera.</p>
-              <div class="row">
-                <a class="btn" href="https://github.com/aybkh/HaramResorts" target="_blank" rel="noopener">GitHub</a>
-                <a class="ghost made-in" href="https://www.sapalomera.cat" target="_blank" rel="noopener">
-                  <span>MADE IN</span>
-                  <img src="img/logos/logo-institut-sapalomera.webp" alt="Institut Sa Palomera">
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- 8. ERAY Slasher -->
-          <article class="card project" data-project="p3">
-            <img class="proj-img" src="img/projects/eray.webp" alt="ERAY Slasher">
-            <div class="project-body">
-              <ul class="logo-row">
-                <li><img src="img/logos/unity.webp" alt="Unity"></li>
-                <li><img src="img/logos/Csharp.webp" alt="CSharp"></li>
-                <li><img src="img/logos/dotnet.svg" alt=".Net"></li>
-                <li><img src="img/logos/Visual_Studio.webp" alt="Visual Studio"></li>
-                <li><img src="img/logos/git_logo.webp" alt="Git"></li>
-                <li><img src="img/logos/github.webp" alt="GitHub"></li>
-              </ul>
-              <h3>ERAY Slasher – Roguelite Shooter</h3>
-              <p data-i18n="projects.p3_desc">Juego de acción ambientado en el siglo XVIII, protagonizado por ERAY.</p>
-              <div class="row">
-                <a class="btn" href="https://github.com/aybkh/ErAySlasher" target="_blank" rel="noopener">GitHub</a>
-                <a class="ghost made-in" href="https://www.sapalomera.cat" target="_blank" rel="noopener">
-                  <span>MADE IN</span>
-                  <img src="img/logos/logo-institut-sapalomera.webp" alt="Institut Sa Palomera">
-                </a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO Window -->
-    <section id="contacto" class="mac-window">
-      <div class="window-header">
-        <div class="traffic-lights">
-          <span class="traffic-light close"></span>
-          <span class="traffic-light minimize"></span>
-          <span class="traffic-light maximize"></span>
-        </div>
-        <div class="window-title" data-i18n="sections.contact">Contacto</div>
-      </div>
-      <div class="window-content">
-        <div class="card contact-card" aria-live="polite">
-          <!-- Vista compacta -->
-          <div class="contact-compact" aria-hidden="true">
-            <a href="https://linkedin.com/in/ayoub-jerari" class="ic" target="_blank" rel="noopener">
-              <img src="img/logos/linkedin.webp" alt="LinkedIn">
-            </a>
-            <a href="mailto:ayoubjerari47@gmail.com" class="ic">
-              <img src="img/logos/mail.webp" alt="Email">
-            </a>
-            <a href="https://github.com/aybkh" class="ic" target="_blank" rel="noopener">
-              <img src="img/logos/github.webp" alt="GitHub">
-            </a>
-            <a href="https://wa.me/34631714568" class="ic" target="_blank" rel="noopener">
-              <img src="img/logos/whatsapp.webp" alt="WhatsApp">
-            </a>
-          </div>
-
-          <!-- Vista expandida con logos + texto -->
-          <nav class="contact-expanded" aria-label="Enlaces de contacto">
-            <a href="https://linkedin.com/in/ayoub-jerari" target="_blank" rel="noopener">
-              <img src="img/logos/linkedin.webp" alt=""> LinkedIn
-            </a>
-            <a href="mailto:ayoubjerari47@gmail.com">
-              <img src="img/logos/mail.webp" alt=""> Email
-            </a>
-            <a href="https://github.com/aybkh" target="_blank" rel="noopener">
-              <img src="img/logos/github.webp" alt=""> GitHub
-            </a>
-            <a href="https://wa.me/34631714568" target="_blank" rel="noopener">
-              <img src="img/logos/whatsapp.webp" alt=""> WhatsApp
-            </a>
-          </nav>
-        </div>
+        <ul class="socials">
+          <li><a href="https://www.linkedin.com/in/ayoub-jerari/" target="_blank" rel="noopener"><span class="lgbox"><img class="lg" src="assets/logos/linkedin.svg" alt=""></span>LinkedIn</a></li>
+          <li><a href="https://github.com/aybkh" target="_blank" rel="noopener"><span class="lgbox"><img class="lg" src="assets/logos/github.svg" alt=""></span>GitHub</a></li>
+          <li><a href="https://wa.me/34631714568" target="_blank" rel="noopener"><span class="lgbox"><img class="lg" src="assets/logos/whatsapp.svg" alt=""></span>WhatsApp</a></li>
+          <li><a href="data/cv_ayoub_es.pdf" download><span class="lgbox"><svg class="i"><use href="#i-download"/></svg></span>CV</a></li>
+        </ul>
       </div>
     </section>
   </main>
+  <div class="endpad"></div>
 
-  <!-- MacOS Dock -->
-  <div class="dock-container">
-    <div class="dock">
-      <a href="#hero" class="dock-item" aria-label="Inicio">
-        <div class="dock-icon finder">
-          <img src="img/logos/mac_finder.png" alt="Home" loading="lazy">
-        </div>
-        <span class="dock-tooltip">Home</span>
-      </a>
-      <a href="#experiencia" class="dock-item" aria-label="Experiencia">
-        <div class="dock-icon launchpad">
-          <img src="img/logos/mac_launchpad.png" alt="Experiencia">
-        </div>
-        <span class="dock-tooltip">Experiences</span>
-      </a>
-      <a href="#skills" class="dock-item" aria-label="Skills">
-        <div class="dock-icon settings">
-          <img src="img/logos/mac_settings.png" alt="Skills">
-        </div>
-        <span class="dock-tooltip">Skills</span>
-      </a>
-      <a href="#proyectos" class="dock-item" aria-label="Proyectos">
-        <div class="dock-icon app-store">
-          <img src="img/logos/mac_appstore.png" alt="Proyectos">
-        </div>
-        <span class="dock-tooltip">Projects</span>
-      </a>
-      <a href="#contacto" class="dock-item" aria-label="Contacto">
-        <div class="dock-icon mail">
-          <img src="img/logos/mac_mail.png" alt="Contacto">
-        </div>
-        <span class="dock-tooltip">Contact</span>
-      </a>
+  <dialog class="modal" id="modal" aria-labelledby="modalTitle">
+    <div class="modal__inner" id="modalBody"></div>
+  </dialog>
 
-      <div class="dock-separator"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-      <div class="dock-item" id="themeToggleDock">
-        <div class="dock-icon trash">
-          <img src="img/logos/mac_theme.png" alt="Theme">
-        </div>
-        <span class="dock-tooltip">Theme</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- MacOS Context Menu -->
-  <div class="mac-context-menu" id="macContextMenu">
-    <button type="button" class="ctx-item" onclick="location.reload()">
-      <svg class="ctx-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
-      <span data-i18n="ctx.reload">Recargar</span>
-    </button>
-    <div class="ctx-sep"></div>
-    <button type="button" class="ctx-item" id="ctxCopy">
-      <svg class="ctx-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-      <span data-i18n="ctx.copy">Copiar</span>
-    </button>
-    <button type="button" class="ctx-item" id="ctxPaste">
-      <svg class="ctx-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
-      <span data-i18n="ctx.paste">Pegar</span>
-    </button>
-    <div class="ctx-sep"></div>
-    <button type="button" class="ctx-item" id="ctxWallpaper">
-      <svg class="ctx-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      <span data-i18n="ctx.wallpaper">Cambiar Fondo</span>
-    </button>
-    <div class="ctx-sep"></div>
-    <button type="button" class="ctx-item" id="ctxAbout">
-      <svg class="ctx-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-      <span data-i18n="menubar.apple_about">Acerca de este Mac</span>
-    </button>
-    <button type="button" class="ctx-item" id="ctxTheme">
-      <svg class="ctx-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-      <span data-i18n="system.toggle_theme">Cambiar Tema</span>
-    </button>
-    <div class="ctx-sep"></div>
-    <button type="button" class="ctx-item" onclick="openCV()">
-      <svg class="ctx-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-      <span data-i18n="cta.cv">Ver CV</span>
-    </button>
-    <button type="button" class="ctx-item" onclick="window.print()">
-      <svg class="ctx-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-      <span data-i18n="system.print_cv">Imprimir</span>
-    </button>
-  </div>
-
-  <!-- Brightness Overlay -->
-  <div id="brightnessOverlay" style="position:fixed; inset:0; pointer-events:none; background:black; z-index:1000000; opacity:0;"></div>
-
-
-  <!-- Project Detail Modal -->
-  <div id="projectModal" class="mac-modal-overlay">
-    <div class="mac-modal project-modal-window">
-      <div class="creative-modal-header">
-        <div class="traffic-lights">
-          <span class="traffic-light close" onclick="closeProjectModal()"></span>
-          <span class="traffic-light minimize"></span>
-          <span class="traffic-light maximize"></span>
-        </div>
-      </div>
-      <div class="mac-modal-body project-modal-content">
-        <!-- Hero Section -->
-        <div class="modal-hero">
-          <img id="modalProjectImg" src="" alt="Project Image" class="modal-main-img">
-          <div class="hero-overlay">
-            <p id="modalProjectSubtitle" class="modal-subtitle">Subtitle</p>
-            <div class="project-title-group">
-              <h2 id="modalProjectName">Project Name</h2>
-            </div>
-          </div>
-        </div>
-
-        <!-- Info Grid -->
-        <div class="modal-info-grid">
-          <div class="info-section">
-            <h3 data-i18n="system.mission">The Mission</h3>
-            <p id="modalProjectDesc" class="modal-description">Description</p>
-          </div>
-          <div class="info-section">
-            <h3 data-i18n="system.capabilities">Key Capabilities</h3>
-            <ul id="modalProjectFeatures" class="modal-features-list">
-              <!-- Features will be injected here -->
-            </ul>
-          </div>
-        </div>
-
-        <!-- Footer / Stack -->
-        <div class="modal-footer-creative">
-          <div class="footer-left">
-            <h4 data-i18n="system.engineered">Engineered With</h4>
-            <ul id="modalProjectStack" class="modal-stack">
-              <!-- Stack icons -->
-            </ul>
-          </div>
-          <div class="modal-actions">
-            <a id="modalProjectLink" href="#" target="_blank" class="btn web">Ver Proyecto</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="JS/data.js"></script>
-  <script src="JS/system.js"></script>
-  <script src="JS/ui.js"></script>
-  <script src="JS/main.js" defer></script>
+  <script src="assets/js/i18n-base.js"></script>
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
-
 </html>
-

@@ -1,61 +1,30 @@
-# 🌐 Ayoub Jerari — iOS Glass Portfolio
-<img width="1902" height="904" alt="Image" src="https://github.com/user-attachments/assets/f7807b67-d3ce-4d13-b70e-1df0a1498336" />
-Portafolio personal inspirado en la interfaz de **iOS16**, diseñado con un enfoque moderno, responsivo y minimalista.  
-Desarrollado con **HTML**, **CSS** y **JavaScript**, integra una estética “glassmorphism” con animaciones suaves, modo claro/oscuro y una navegación dinámica tipo *Dynamic Island*.
+# Ayoub Jerari — Portafolio
 
----
+Portafolio personal en [ayoubjerari.com](https://ayoubjerari.com): soporte y administración IT y desarrollo de webs y aplicaciones.
 
-## 🧠 Características principales
+- **Mobile-first**: pensado para 390 px y escalado a tablet y escritorio.
+- **Logos oficiales en color** en `assets/logos/`: SVG siempre que existe (Devicon, LobeHub, web oficial de cada empresa) y WebP cuando la marca no tiene SVG.
+- **Iconos de interfaz** en un sprite SVG (`assets/icons.svg`, [Lucide](https://lucide.dev) y [Simple Icons](https://simpleicons.org)).
+- **Proyectos con dispositivos reales en HTML/CSS** (MacBook, iPhone y terminal TPV, adaptados de Devices.css) que entran con animación al hacer scroll: web → portátil + móvil, TPV → TPV + portátil + móvil, juego/app → portátil. Capturas en `assets/screens/`.
+- **Versión anterior** (simulador de macOS) en `legacy/` → ayoubjerari.com/legacy/
+- **5 idiomas** (ES · CA · EN · FR · DE), tema claro/oscuro automático con selector.
+- Sin frameworks ni build: HTML, CSS y JavaScript. Se publica tal cual en GitHub Pages.
 
-- 🎨 **Diseño Glassmorphism:** inspirado en la interfaz de iOS (transparencias, bordes suaves, sombras difusas).  
-- 🌗 **Modo oscuro y claro:** alternancia instantánea con un interruptor dinámico.  
-- 🌍 **Soporte multilenguaje:** permite cambiar entre idiomas (CAT / ES / EN).  
-- 💡 **Dynamic Island Navbar:** barra de navegación interactiva con animaciones y transiciones suaves.  
-- 🧩 **Secciones modulares:**  
-  - Hero (presentación)  
-  - Experiencia profesional  
-  - Habilidades técnicas (Skills)  
-  - Proyectos destacados  
-  - Contacto dinámico  
-- 📱 **Totalmente responsive:** adaptado a pantallas móviles y escritorio.
+## Estructura
 
----
+| Archivo | Qué contiene |
+|---|---|
+| `index.html` | Página única |
+| `assets/css/main.css` | Estilos (tokens de color, móvil → escritorio) |
+| `assets/js/content.js` | **Proyectos, experiencia, habilidades y textos de la interfaz** — aquí se añade un proyecto nuevo |
+| `assets/js/i18n-base.js` | Textos largos de experiencia y proyectos en los 5 idiomas |
+| `assets/js/app.js` | Renderizado, filtros, idioma, tema y modal |
+| `assets/screens/` | Capturas de cada proyecto (escritorio, móvil y TPV) |
+| `assets/logos/` | Logos de tecnologías y empresas |
+| `legacy/` | Portafolio anterior (simulador de macOS) |
 
-## 🧰 Tecnologías utilizadas
+## Añadir un proyecto
 
-| Categoría | Tecnologías |
-|------------|-------------|
-| Estructura | HTML5 |
-| Estilos | CSS3 (Glassmorphism, Variables, Grid/Flexbox) |
-| Lógica | JavaScript (DOM, eventos, toggles) |
-| Animaciones | Transiciones CSS + efectos Blur |
-| Herramientas | VSCode, Git, GitHub, GitHub Pages |
-
----
-
-## 💼 Secciones del portafolio
-
-- **Inicio (Hero):** Presentación con nombre, foto y breve descripción.  
-- **Experiencia:** Trayectoria profesional con logotipos de empresas.  
-- **Skills:** Bloques interactivos que se expanden al pasar el cursor.  
-- **Proyectos:** Lista de proyectos con tecnologías y enlaces a GitHub.  
-- **Contacto:** Tarjeta interactiva con enlaces directos (LinkedIn, Email, GitHub, WhatsApp).
-
----
-
-## 🧑‍💻 Autor
-
-**Ayoub Jerari**  
-IT Support & Workplace Services  
-📧 [Correo electrónico](mailto:ayoubjerari47@gmail.com)  
-🔗 [LinkedIn](https://www.linkedin.com/in/ayoub-jerari/)  
-💻 [GitHub](https://github.com/aybkh)
-
----
-
-## 🖼️ Vista previa
-<img width="1896" height="581" alt="Image" src="https://github.com/user-attachments/assets/acc719b4-2b2d-4917-9023-05646b71483e" />
-<img width="1900" height="743" alt="Image" src="https://github.com/user-attachments/assets/ee1d4ac1-b7e8-4cf7-b37a-6e29a93e2fc6" />
-<img width="1897" height="939" alt="Image" src="https://github.com/user-attachments/assets/2596e447-6797-43f5-bc9b-52e424036b27" />
-<img width="1896" height="952" alt="Image" src="https://github.com/user-attachments/assets/b06a55cc-f38b-431f-811f-1de83aea7b66" />
-
+1. Exporta las capturas a `assets/screens/<id>-desk-640.webp`, `<id>-desk-1200.webp` (16:10), `<id>-mob.webp` (480 px de ancho) y, si es TPV, `<id>-pos.webp`.
+2. Añade una entrada en `PROJECTS` (`assets/js/content.js`) con su `scene` (`web`, `tpv` o `laptop`), color, URL y stack.
+3. Añade su subtítulo y descripción corta en `SHORT` (5 idiomas) y los detalles largos en `i18n-base.js`.
