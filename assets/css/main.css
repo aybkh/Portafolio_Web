@@ -153,10 +153,14 @@ a.tile:hover { transform: translateY(-3px); }
 .tile--photo { grid-area: photo; padding: 0; min-height: 250px; margin: 0; }
 .tile--photo { background: #0a0e17; }
 .tile--photo img, .photo__code { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
-.js .tile--photo img { opacity: 0; transition: opacity 1.2s var(--ease); }
-.js .tile--photo.drawn img { opacity: 1; }
-.photo__code { transition: opacity 1.2s var(--ease); }
-.tile--photo.drawn .photo__code { opacity: 0; }
+.tile--photo img { opacity: 0; }
+.tile--photo.fallback img { opacity: 1; }
+/* línea de análisis: recorre la foto de arriba abajo cada 2 s */
+.photo__scan { position: absolute; left: 0; right: 0; top: 0; height: 22%; pointer-events: none; opacity: 0; mix-blend-mode: screen;
+  background: linear-gradient(180deg, transparent, rgba(126, 166, 255, .10) 60%, rgba(126, 166, 255, .32));
+  border-bottom: 2px solid rgba(160, 190, 255, .95); box-shadow: 0 6px 18px rgba(126, 166, 255, .55); }
+.tile--photo.drawn:not(.fallback) .photo__scan { opacity: 1; animation: photoscan 2s linear infinite; }
+@keyframes photoscan { from { transform: translateY(-100%); } to { transform: translateY(460%); } }
 .photo__replay {
   position: absolute; right: 10px; bottom: 10px; z-index: 2; height: 30px; padding: 0 10px; border-radius: 999px;
   font: 600 12px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: #cfe0ff;

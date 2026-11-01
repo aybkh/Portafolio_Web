@@ -226,21 +226,23 @@
 
 
   /* ---------- Foto dibujada en código ----------
-     La foto se pinta primero con caracteres de código (coloreados con los píxeles reales),
-     fila a fila como si se escribiera, y luego se funde con la imagen. */
+     La foto se pinta solo con caracteres de código (coloreados con los píxeles reales),
+     fila a fila como si se escribiera. Después queda fija y una línea de análisis
+     la recorre de arriba abajo cada 2 s (CSS). La foto real no se muestra. */
   function drawPhoto() {
     var fig = $('#photo'); if (!fig) return;
     var img = $('img', fig), cv = $('.photo__code', fig), btn = $('.photo__replay', fig);
-    var CH = ' .:-=+*{}<>/;01#%@';
+    // rampa de 70 caracteres, de menos a más «tinta»
+    var CH = " .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";
     var running = false;
-    function run() {
+    function run(instant) {
       if (running) return; running = true;
       fig.classList.remove('drawn');
-      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var dpr = Math.min(window.devicePixelRatio || 1, 3);
       var W = fig.clientWidth, H = fig.clientHeight;
       cv.width = W * dpr; cv.height = H * dpr;
       var ctx = cv.getContext('2d'); ctx.scale(dpr, dpr);
-      var cell = W < 220 ? 6 : 7, cols = Math.ceil(W / cell), rows = Math.ceil(H / (cell * 1.25));
+      var cell = W < 220 ? 1.9 : 2.1, lh = cell * 1.6, cols = Math.ceil(W / cell), rows = Math.ceil(H / lh);
       var ch = H / rows;
       // muestreo con el mismo encuadre que object-fit: cover; object-position: 50% 20%
       var s = document.createElement('canvas'); s.width = cols; s.height = rows;
@@ -251,19 +253,27 @@
       sx.drawImage(img, ox, oy, cw, chh, 0, 0, cols, rows);
       var px = sx.getImageData(0, 0, cols, rows).data;
       ctx.fillStyle = '#0a0e17'; ctx.fillRect(0, 0, W, H);
-      ctx.font = '600 ' + (cell * 1.25) + 'px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+      ctx.font = '700 ' + (lh * 1.02) + 'px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+      // estirar el contraste (percentiles 2 % y 98 %) para que la cara se lea mejor
+      var lums = new Float32Array(cols * rows);
+      for (var q = 0; q < cols * rows; q++) lums[q] = (0.299 * px[q * 4] + 0.587 * px[q * 4 + 1] + 0.114 * px[q * 4 + 2]) / 255;
+      var sorted = Array.prototype.slice.call(lums).sort(function (m, n) { return m - n; });
+      var lo = sorted[Math.floor(sorted.length * .02)], hi = sorted[Math.floor(sorted.length * .98)], span = Math.max(.05, hi - lo);
       ctx.textBaseline = 'top';
-      var row = 0, t0 = performance.now(), DUR = 2200;
+      var row = 0, t0 = performance.now(), DUR = instant ? 1 : 2200;
       function step(now) {
         var target = Math.min(rows, Math.ceil(rows * ((now || performance.now()) - t0) / DUR));
         for (; row < target; row++) {
           ctx.fillStyle = '#0a0e17'; ctx.fillRect(0, row * ch, W, ch + 1);
           for (var x = 0; x < cols; x++) {
             var i = (row * cols + x) * 4, r = px[i], g = px[i + 1], b = px[i + 2];
-            var l = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-            var c = CH[Math.min(CH.length - 1, Math.floor(l * CH.length))];
+            var l = Math.pow(Math.min(1, Math.max(0, (lums[row * cols + x] - lo) / span)), .85);
+            var c = CH[Math.min(CH.length - 1, Math.floor((.18 + .82 * l) * CH.length))];
+            // fondo de la celda con el color real (tenue) + carácter en el mismo color, más brillante
+            ctx.fillStyle = 'rgba(' + r + ',' + g + ',' + b + ',.42)';
+            ctx.fillRect(x * cell, row * ch, cell + .5, ch + .5);
             if (c === ' ') continue;
-            ctx.fillStyle = 'rgb(' + Math.min(255, r * 1.4 | 0) + ',' + Math.min(255, g * 1.4 | 0) + ',' + Math.min(255, b * 1.5 | 0) + ')';
+            ctx.fillStyle = 'rgb(' + Math.min(255, r * 1.3 + 22 | 0) + ',' + Math.min(255, g * 1.3 + 22 | 0) + ',' + Math.min(255, b * 1.3 + 30 | 0) + ')';
             ctx.fillText(c, x * cell, row * ch);
           }
         }
@@ -272,18 +282,27 @@
           ctx.fillStyle = 'rgba(126,166,255,.9)'; ctx.fillRect(0, row * ch, W, 2);
           requestAnimationFrame(step);
         } else {
-          setTimeout(function () { fig.classList.add('drawn'); running = false; }, 1400);
+          fig.classList.add('drawn'); running = false;
         }
       }
       requestAnimationFrame(step);
     }
+    function fail() { running = false; fig.classList.add('drawn', 'fallback'); }
+    function safe(instant) { try { run(instant); } catch (e) { fail(); } }
+    var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
     function start() {
-      if (matchMedia('(prefers-reduced-motion: reduce)').matches || !cv.getContext) { fig.classList.add('drawn'); return; }
-      if (img.complete && img.naturalWidth) run(); else img.addEventListener('load', run, { once: true });
+      if (!cv.getContext) { fail(); return; }
+      if (img.complete && img.naturalWidth) safe(reduced); else img.addEventListener('load', function () { safe(reduced); }, { once: true });
     }
-    btn.addEventListener('click', run);
+    btn.addEventListener('click', function () { safe(false); });
+    // redibujar (sin animación) si cambia el tamaño de la tarjeta
+    var lastW = 0, rt;
+    if ('ResizeObserver' in window) new ResizeObserver(function () {
+      if (!fig.classList.contains('drawn') || fig.classList.contains('fallback') || Math.abs(fig.clientWidth - lastW) < 2) return;
+      lastW = fig.clientWidth; clearTimeout(rt); rt = setTimeout(function () { safe(true); }, 150);
+    }).observe(fig);
     if ('IntersectionObserver' in window) {
-      var o = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { o.disconnect(); setTimeout(start, 250); } }, { threshold: .4 });
+      var o = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { o.disconnect(); lastW = fig.clientWidth; setTimeout(start, 250); } }, { threshold: .4 });
       o.observe(fig);
     } else start();
   }
