@@ -9,8 +9,7 @@
   <meta name="author" content="Ayoub El Khalifi Idrissi El Jerari">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ayoubjerari.com/">
-  <meta name="theme-color" content="#0b0c0f" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#f5f4f0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#f5f4f0">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ayoubjerari.com/">
@@ -24,213 +23,29 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://ayoubjerari.com/assets/img/og.png">
 
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="preload" as="image" href="assets/img/foto.webp">
-
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/img/foto.webp">
   <script>
+    /* tema antes de pintar, para evitar parpadeo */
     (function () {
-      try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
-      document.documentElement.classList.add('js');
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) document.documentElement.classList.add('dark');
+      } catch (e) {}
     })();
   </script>
-
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ayoub El Khalifi Idrissi El Jerari",
-    "url": "https://ayoubjerari.com/",
-    "jobTitle": "IT Workplace Technician",
-    "worksFor": { "@type": "Organization", "name": "Laboratorios HIPRA" },
-    "sameAs": ["https://www.linkedin.com/in/ayoub-jerari/", "https://github.com/aybkh"]
-  }
+  {"@context":"https://schema.org","@type":"Person","name":"Ayoub El Khalifi Idrissi El Jerari","url":"https://ayoubjerari.com/","jobTitle":"IT Workplace Technician","worksFor":{"@type":"Organization","name":"Laboratorios HIPRA"},"sameAs":["https://www.linkedin.com/in/ayoub-jerari/","https://github.com/aybkh"]}
   </script>
 </head>
 <body>
-  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2" />
-  <line x1="8" x2="16" y1="21" y2="21" />
-  <line x1="12" x2="12" y1="17" y2="21" /></symbol><symbol id="i-languages" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6" />
-  <path d="m4 14 6-6 2-3" />
-  <path d="M2 5h12" />
-  <path d="M7 2h1" />
-  <path d="m22 22-5-10-5 10" />
-  <path d="M14 18h6" /></symbol><symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3" />
-  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-  <path d="m7 10 5 5 5-5" /></symbol><symbol id="i-arrowUpRight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10" />
-  <path d="M7 17 17 7" /></symbol><symbol id="i-arrowRight" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" />
-  <path d="m12 5 7 7-7 7" /></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" />
-  <path d="M12 2v2" />
-  <path d="M12 20v2" />
-  <path d="m4.93 4.93 1.41 1.41" />
-  <path d="m17.66 17.66 1.41 1.41" />
-  <path d="M2 12h2" />
-  <path d="M20 12h2" />
-  <path d="m6.34 17.66-1.41 1.41" />
-  <path d="m19.07 4.93-1.41 1.41" /></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" /></symbol><symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16" />
-  <path d="M4 12h16" />
-  <path d="M4 19h16" /></symbol><symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18" />
-  <path d="m6 6 12 12" /></symbol><symbol id="i-mapPin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-  <circle cx="12" cy="10" r="3" /></symbol><symbol id="i-chevronDown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
-  <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></symbol></svg>
-  <a class="skip" href="#main">Saltar al contenido</a>
-  <div class="progress" id="progress" aria-hidden="true"></div>
-
-  <header class="topbar" id="top">
-    <div class="wrap topbar__in">
-      <a class="pill legacy" href="legacy/" title="Portafolio anterior (macOS)"><svg class="i"><use href="#i-monitor"/></svg><span data-t="legacy">Versión anterior</span></a>
-      <nav class="nav" aria-label="Principal">
-        <a href="#proyectos" data-t="nav.projects">Proyectos</a>
-        <a href="#experiencia" data-t="nav.experience">Experiencia</a>
-        <a href="#habilidades" data-t="nav.skills">Habilidades</a>
-        <a href="#contacto" data-t="nav.contact">Contacto</a>
-      </nav>
-      <div class="tools">
-        <div class="lang">
-          <button class="pill" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
-            <svg class="i"><use href="#i-languages"/></svg><span id="langCode">ES</span>
-          </button>
-          <ul class="lang__menu" id="langMenu" role="listbox" hidden></ul>
-        </div>
-        <button class="pill pill--icon" id="themeBtn" aria-label="Cambiar tema">
-          <svg class="i i-sun"><use href="#i-sun"/></svg>
-          <svg class="i i-moon"><use href="#i-moon"/></svg>
-        </button>
-        <button class="pill pill--icon menu-btn" id="menuBtn" aria-label="Menú" aria-expanded="false" aria-controls="sheet">
-          <svg class="i"><use href="#i-menu"/></svg>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <div class="sheet" id="sheet" hidden>
-    <nav class="sheet__nav" aria-label="Móvil">
-      <a href="#proyectos"><span data-t="nav.projects">Proyectos</span><small>01</small></a>
-      <a href="#experiencia"><span data-t="nav.experience">Experiencia</span><small>02</small></a>
-      <a href="#habilidades"><span data-t="nav.skills">Habilidades</span><small>03</small></a>
-      <a href="#contacto"><span data-t="nav.contact">Contacto</span><small>04</small></a>
-    </nav>
-  </div>
-
-  <main id="main">
-    <!-- ============ HERO BENTO ============ -->
-    <section class="wrap hero" id="hero">
-      <div class="bento">
-        <article class="tile tile--intro rv">
-          <h1 class="intro__title"><span data-t="hello">Hola, soy</span> Ayoub</h1>
-          <p class="intro__lead" data-t="lead">Técnico IT en HIPRA. Además diseño y programo webs, TPV y apps que negocios reales usan cada día.</p>
-          <div class="intro__cta">
-            <a class="btn btn--primary" href="#proyectos"><span data-t="cta_projects">Ver proyectos</span><svg class="i"><use href="#i-arrowRight"/></svg></a>
-            <a class="btn" href="#contacto"><span data-t="nav.contact">Contacto</span></a>
-          </div>
-        </article>
-
-        <figure class="tile tile--photo rv" id="photo">
-          <img src="assets/img/foto.webp" width="720" height="720" alt="Ayoub" fetchpriority="high">
-          <canvas class="photo__code" aria-hidden="true"></canvas>
-          <button class="photo__replay" type="button" aria-label="Volver a dibujar la foto">&lt;/&gt;</button>
-        </figure>
-
-        <a class="tile tile--now rv" href="#experiencia">
-          <span class="tile__label"><span class="dot"></span><span data-t="now">Ahora</span></span>
-          <span class="now__logo"><img src="assets/logos/hipra.svg" alt="HIPRA" width="152" height="61"></span>
-          <span class="now__role" data-t="now_role">IT Workplace Technician</span>
-          <span class="now__since" data-t="since">desde mayo 2026</span>
-        </a>
-
-        <a class="tile tile--qc rv" href="#p-quicondueix">
-          <span class="tile__label tile__label--dark"><span data-t="latest">Lo último</span></span>
-          <span class="qc__name">Qui<em>Condueix</em>?</span>
-          <span class="qc__text" data-t="qc_tile">Compartir coche, más organizado que nunca.</span>
-          <span class="qc__go"><span data-t="open_project">Ver proyecto</span><svg class="i"><use href="#i-arrowRight"/></svg></span>
-          <img class="qc__phone" src="assets/screens/quicondueix-mob.webp" alt="" width="480" height="1021" loading="lazy">
-        </a>
-
-        <div class="tile tile--num rv">
-          <span class="num" data-count="7">7</span>
-          <span class="num__label" data-t="live">webs y apps en producción</span>
-        </div>
-
-        <div class="tile tile--langs rv">
-          <span class="num">5</span>
-          <span class="num__label" data-t="langs">idiomas</span>
-          <ul class="flags" id="flags"></ul>
-        </div>
-
-        <div class="tile tile--stack rv">
-          <span class="tile__label" data-t="stack">Mi día a día</span>
-          <ul class="stackgrid" id="stackTile"></ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ PROYECTOS ============ -->
-    <section class="section" id="proyectos">
-      <header class="wrap section__head rv">
-        <p class="kicker" data-t="proj_kicker">Proyectos</p>
-        <h2 data-t="proj_title">Hecho y en producción.</h2>
-        <p class="section__intro" data-t="proj_intro">Cada proyecto lo usa un negocio o un grupo de personas de verdad.</p>
-      </header>
-      <div class="wrap showcase" id="showcase"></div>
-    </section>
-
-    <!-- ============ EXPERIENCIA ============ -->
-    <section class="section wrap" id="experiencia">
-      <header class="section__head rv">
-        <p class="kicker" data-t="exp_kicker">Experiencia</p>
-        <h2 data-t="exp_title">Soporte IT donde importa.</h2>
-        <p class="section__intro" data-t="exp_intro">Entornos industriales, administración pública y atención al cliente.</p>
-      </header>
-      <ol class="timeline" id="timeline"></ol>
-    </section>
-
-    <!-- ============ HABILIDADES ============ -->
-    <section class="section wrap" id="habilidades">
-      <header class="section__head rv">
-        <p class="kicker" data-t="sk_kicker">Habilidades</p>
-        <h2 data-t="sk_title">De la red al código.</h2>
-        <p class="section__intro" data-t="sk_intro">Herramientas que uso en el día a día.</p>
-      </header>
-      <div class="skills rv">
-        <div class="tabs" role="tablist" id="skillTabs"></div>
-        <p class="skill-desc" id="skillDesc"></p>
-        <ul class="skill-grid" id="skillGrid"></ul>
-      </div>
-    </section>
-
-    <!-- ============ CONTACTO ============ -->
-    <section class="section wrap" id="contacto">
-      <div class="contact rv">
-        <div class="contact__glow" aria-hidden="true"></div>
-        <h2 data-t="contact_title">¿Hablamos?</h2>
-        <p data-t="contact_text">Si tienes un proyecto, una vacante o una idea, escríbeme y te respondo en menos de 24 h.</p>
-        <div class="contact__mail">
-          <a class="btn btn--light btn--lg" href="mailto:ayoubjerari47@gmail.com"><img class="lg" src="assets/logos/gmail.svg" alt="">ayoubjerari47@gmail.com</a>
-          <button class="pill pill--icon pill--lg pill--ghost" id="copyMail" aria-label="Copiar email" data-t-aria="copy"><svg class="i"><use href="#i-copy"/></svg></button>
-        </div>
-        <ul class="socials">
-          <li><a href="https://www.linkedin.com/in/ayoub-jerari/" target="_blank" rel="noopener"><span class="lgbox"><img class="lg" src="assets/logos/linkedin.svg" alt=""></span>LinkedIn</a></li>
-          <li><a href="https://github.com/aybkh" target="_blank" rel="noopener"><span class="lgbox"><img class="lg" src="assets/logos/github.svg" alt=""></span>GitHub</a></li>
-          <li><a href="https://wa.me/34631714568" target="_blank" rel="noopener"><span class="lgbox"><img class="lg" src="assets/logos/whatsapp.svg" alt=""></span>WhatsApp</a></li>
-        </ul>
-      </div>
-    </section>
-  </main>
-  <div class="endpad"></div>
-
-  <dialog class="modal" id="modal" aria-labelledby="modalTitle">
-    <div class="modal__inner" id="modalBody"></div>
-  </dialog>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
-  <script src="assets/js/i18n-base.js"></script>
-  <script src="assets/js/content.js"></script>
-  <script src="assets/js/app.js"></script>
+  <div id="root"></div>
+  <noscript>Ayoub El Khalifi Idrissi El Jerari · IT Workplace Technician · <a href="mailto:ayoubjerari47@gmail.com">ayoubjerari47@gmail.com</a></noscript>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
