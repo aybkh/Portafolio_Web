@@ -182,7 +182,7 @@ export const PROJECTS: Project[] = [
     "id": "r7sultan",
     "key": "p10",
     "scene": "web",
-    "title": "R7Sultan",
+    "title": "R7barbershop",
     "color": "#c9a24a",
     "url": "https://r7barbershop.com",
     "stack": [

@@ -48,7 +48,7 @@ export function Header({ theme, onTheme, onPalette }: { theme: string; onTheme: 
       <motion.div className="fixed inset-x-0 top-0 z-[60] h-[3px] origin-left bg-accent" style={{ scaleX: bar }} aria-hidden="true" />
       <header className={`sticky top-0 z-50 transition-[background,border-color] duration-300 ${scrolled ? 'border-b border-line bg-bg/75 backdrop-blur-xl backdrop-saturate-150' : 'border-b border-transparent'}`}>
         <div className="wrap flex h-[60px] items-center gap-2 lg:h-[68px] lg:gap-4">
-          <a href="legacy/" className="pill border-dashed text-muted hover:text-ink max-[380px]:w-10 max-[380px]:px-0" title="Portafolio anterior (macOS)">
+          <a href="/legacy/" className="pill border-dashed text-muted hover:text-ink max-[380px]:w-10 max-[380px]:px-0" title="Portafolio anterior (macOS)">
             <Icon name="monitor" /><span className="max-[380px]:hidden">{t('legacy')}</span>
           </a>
           <nav className="mr-auto hidden gap-0.5 lg:flex" aria-label="Principal">
