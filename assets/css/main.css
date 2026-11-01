@@ -390,7 +390,7 @@ a.tile:hover { transform: translateY(-3px); }
 .contact__mail { display: flex; gap: 8px; margin-top: 8px; width: 100%; max-width: 460px; justify-content: center; }
 .contact__mail .btn { flex: 0 1 auto; }
 .contact__mail .btn { min-width: 0; overflow: hidden; text-overflow: ellipsis; padding: 0 18px; }
-.socials { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; max-width: 640px; margin-top: 6px; }
+.socials { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 100%; max-width: 640px; margin-top: 6px; }
 .socials a {
   display: flex; align-items: center; justify-content: center; gap: 9px; height: 52px; border-radius: 999px; font-weight: 600; font-size: 14.5px;
   background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .14); transition: background .2s;
@@ -476,7 +476,7 @@ a.tile:hover { transform: translateY(-3px); }
   .intro__cta .btn { padding: 0 22px; }
   .bento { grid-template-columns: repeat(4, 1fr); grid-template-areas: "intro intro intro intro" "photo photo now num" "photo photo qc qc" "langs stack qc qc"; }
   .tile--qc { min-height: 0; }
-  .socials { grid-template-columns: repeat(4, 1fr); }
+  .socials { grid-template-columns: repeat(3, 1fr); max-width: 520px; }
   .skill-grid { grid-template-columns: repeat(3, 1fr); }
   .proj__body { padding: 24px 26px 28px; }
   .proj__actions { display: flex; }

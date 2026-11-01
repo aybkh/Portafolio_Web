@@ -211,8 +211,7 @@ window.CONTACT = {
   email: 'ayoubjerari47@gmail.com',
   linkedin: 'https://www.linkedin.com/in/ayoub-jerari/',
   github: 'https://github.com/aybkh',
-  whatsapp: 'https://wa.me/34631714568',
-  cv: 'data/cv_ayoub_es.pdf'
+  whatsapp: 'https://wa.me/34631714568'
 };
 
 /* Textos de interfaz */
