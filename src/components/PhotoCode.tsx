@@ -6,7 +6,8 @@ import { useI18n } from '../lib/i18n';
    de arriba abajo cada 2 s y, a su paso, va dejando la fase siguiente. */
 const CH = " .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$";
 const BG = '#0a0e17';
-const PASS = 2000;
+const PASS = 2000;   // lo que tarda la línea en bajar
+const CYCLE = 5000;  // cada fase se queda 5 s antes de la siguiente pasada
 
 export function PhotoCode({ src, alt }: { src: string; alt: string }) {
   const fig = useRef<HTMLDivElement>(null), cv = useRef<HTMLCanvasElement>(null), img = useRef<HTMLImageElement>(null), scan = useRef<HTMLSpanElement>(null);
@@ -17,7 +18,7 @@ export function PhotoCode({ src, alt }: { src: string; alt: string }) {
     const f = fig.current!, c = cv.current!, im = img.current!, sc = scan.current!;
     const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
     let phases: HTMLCanvasElement[] = [], W = 0, H = 0, dpr = 1, ctx: CanvasRenderingContext2D | null = null;
-    let cur = -1, next = 0, t0 = 0, raf = 0, visible = false, built = false, started = false, lastW = 0, rt = 0;
+    let committed = false, cur = -1, next = 0, t0 = 0, raf = 0, visible = false, built = false, started = false, lastW = 0, rt = 0;
 
     function build() {
       dpr = Math.min(window.devicePixelRatio || 1, 3);
@@ -75,14 +76,16 @@ export function PhotoCode({ src, alt }: { src: string; alt: string }) {
     function loop(now: number) {
       raf = 0;
       if (!t0) t0 = now;
-      let p = (now - t0) / PASS;
-      if (p >= 1) { cur = next; next = (next + 1) % 3; t0 = now; p = 0; }
-      paint(p * (H + 2));
+      // 0 → PASS: la línea baja y deja la fase siguiente; PASS → CYCLE: la fase se queda quieta
+      const el = now - t0;
+      if (el < PASS) { paint((el / PASS) * (H + 2)); sc.style.opacity = ''; }
+      else if (!committed) { committed = true; cur = next; next = (next + 1) % 3; paint(0); sc.style.opacity = '0'; }
+      if (el >= CYCLE) { t0 = now; committed = false; }
       if (visible) raf = requestAnimationFrame(loop);
     }
     function play() { if (!raf && visible && !reduced) raf = requestAnimationFrame(loop); }
     function startFrom(phase: number) {
-      cur = phase; next = phase < 0 ? 0 : (phase + 1) % 3; t0 = 0;
+      cur = phase; next = phase < 0 ? 0 : (phase + 1) % 3; t0 = 0; committed = false;
       f.classList.add('drawn');
       if (reduced) { cur = 2; paint(0); sc.style.opacity = '0'; return; }
       if (raf) { cancelAnimationFrame(raf); raf = 0; }
@@ -97,7 +100,7 @@ export function PhotoCode({ src, alt }: { src: string; alt: string }) {
       if (visible && !started) {
         started = true; lastW = f.clientWidth;
         if (im.complete && im.naturalWidth) setTimeout(init, 200); else im.addEventListener('load', init, { once: true });
-      } else if (visible && built) { t0 = 0; play(); }
+      } else if (visible && built) { t0 = 0; committed = false; play(); }
     }, { threshold: 0.25 });
     io.observe(f);
     const ro = new ResizeObserver(() => {
